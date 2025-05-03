@@ -1,0 +1,27 @@
+﻿<Page x:Class="IELTSAppProject.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IELTSAppProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+  Title="IELTS App" Height="700" Width="1177">
+    <Grid x:Name="mainScreen" Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Margin="0,0,-387,-275">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="647*"/>
+            <ColumnDefinition Width="453*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock FontFamily="Arial Black" FontSize="20" Opacity="0.995" 
+           LineHeight="6" Margin="238,60,196,0" x:Name="welcome" TextAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="46" >
+    <Run Text="Добро пожаловать в приложение для подготовк"/><Run Language="ru-ru" Text="и"/><LineBreak/>
+    <Run Language="ru-ru"/><Run Text=" к экзамену"/><Run Text=" в формате IELTS"/></TextBlock>
+        <Button Content="У меня мало времени&#xD;&#xA;       до экзамена!" HorizontalAlignment="Center" Margin="0,193,0,0" Height="149" Width="274" Click="Button_Click" x:Name="lessTime" FontSize="18" FontFamily="Medium" FontWeight="Medium" VerticalAlignment="Top" Background="#FF35C0CD"/>
+        <Button Content="Найти задания для своих &#xD;&#xA;              учеников" HorizontalAlignment="Left" Margin="19,193,0,0" VerticalAlignment="Top" Height="149" Width="271" Click="Button_Click_1" FontWeight="Medium" x:Name="teacherMode" FontSize="18" Grid.Column="1" Background="#FF35C0CD"/>
+        <Button Content="      Режим разработчика&#xD;&#xA; (для администрации сайта)" HorizontalAlignment="Left" Margin="19,437,0,0" VerticalAlignment="Top" Height="148" Width="280" Click="Button_Click_2" FontWeight="Medium" x:Name="developerMode" FontSize="18" Grid.Column="1" Background="#FF35C0CD"/>
+        <Button Content="Начать (продолжить)&#xD;&#xA;        подготовку" HorizontalAlignment="Center" Margin="0,437,0,0" VerticalAlignment="Top" Height="148" Width="274" Click="Button_Click_3" FontWeight="Medium" x:Name="continueWork" FontSize="18" Background="#FF35C0CD"/>
+        <TextBlock Text="Выберите режим, который вам необходим" FontFamily="Arial Black" FontSize="20" Opacity="0.995" LineHeight="6" Margin="126,135,84,532" x:Name="chooseModule" TextAlignment="Center" Grid.ColumnSpan="2" />
+        <Button Content="Выбор языка" HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Top" Height="97" Width="157" FontWeight="Bold" Click="Button_Click_4" x:Name="chooseLanguage" RenderTransformOrigin="0.489,0.488" Grid.Column="1" FontSize="18" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}"/>
+    </Grid>
+</Page>
