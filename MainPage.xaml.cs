@@ -59,13 +59,13 @@ namespace IELTSAppProject
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new FirstTestPage());
 
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }
