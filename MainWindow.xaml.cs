@@ -23,8 +23,7 @@ namespace IELTSAppProject
         public MainWindow()
         {
             InitializeComponent();
-
-            
+            MainFrame.Navigate(new MainPage());
         }
     }
 }
