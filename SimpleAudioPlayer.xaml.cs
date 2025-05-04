@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace IELTSAppProject
 {
@@ -9,37 +10,40 @@ namespace IELTSAppProject
     {
         private WaveOutEvent waveOut;
         private AudioFileReader audioFile;
-        private System.Windows.Threading.DispatcherTimer timer;
+        private DispatcherTimer timer;
+        private bool isPaused = false;
 
-        public static readonly DependencyProperty AudioPathProperty =
-            DependencyProperty.Register("AudioPath", typeof(string), typeof(SimpleAudioPlayer),
-                new PropertyMetadata(null));
-
-        public string AudioPath
-        {
-            get => (string)GetValue(AudioPathProperty);
-            set => SetValue(AudioPathProperty, value);
-        }
+        public string AudioPath { get; set; }
 
         public SimpleAudioPlayer()
         {
             InitializeComponent();
-            timer = new System.Windows.Threading.DispatcherTimer();
+            timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(200);
             timer.Tick += UpdateProgress;
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (waveOut == null || waveOut.PlaybackState != PlaybackState.Playing)
+            if (waveOut == null)
             {
                 PlayAudio();
                 PlayButton.Content = "| |";
             }
-            else
+            else if (waveOut.PlaybackState == PlaybackState.Playing)
             {
                 PauseAudio();
                 PlayButton.Content = "▶";
+            }
+            else if (isPaused)
+            {
+                ResumeAudio();
+                PlayButton.Content = "| |";
+            }
+            else
+            {
+                PlayAudio();
+                PlayButton.Content = "| |";
             }
         }
 
@@ -49,29 +53,40 @@ namespace IELTSAppProject
             {
                 if (string.IsNullOrEmpty(AudioPath)) return;
 
-                StopAudio();
-
                 audioFile = new AudioFileReader(AudioPath);
                 waveOut = new WaveOutEvent();
-                waveOut.PlaybackStopped += (s, e) => {
-                    PlayButton.Content = "▶";
-                    ProgressSlider.Value = 0;
+                waveOut.PlaybackStopped += (s, e) =>
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        if (!isPaused)
+                        {
+                            PlayButton.Content = "▶";
+                            ProgressSlider.Value = 0;
+                        }
+                    });
                 };
 
                 waveOut.Init(audioFile);
                 waveOut.Play();
                 timer.Start();
+                isPaused = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка при воспроизведении аудио: {ex.Message}");
+                StopAudio();
             }
         }
 
         private void PauseAudio()
         {
-            waveOut?.Pause();
-            timer.Stop();
+            if (waveOut != null && waveOut.PlaybackState == PlaybackState.Playing)
+            {
+                waveOut.Pause();
+                timer.Stop();
+                isPaused = true;
+            }
         }
 
         private void StopAudio()
@@ -82,6 +97,16 @@ namespace IELTSAppProject
             waveOut = null;
             audioFile = null;
             timer.Stop();
+        }
+
+        private void ResumeAudio()
+        {
+            if (waveOut != null && isPaused)
+            {
+                waveOut.Play();
+                timer.Start();
+                isPaused = false;
+            }
         }
 
         private void UpdateProgress(object sender, EventArgs e)
