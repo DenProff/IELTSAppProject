@@ -131,6 +131,9 @@
     </Compile>
     <Compile Include="SpeakingTask.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="TaskCatalogPage.xaml.cs">
+      <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WritingPage.xaml.cs">
       <DependentUpon>WritingPage.xaml</DependentUpon>
     </Compile>
@@ -182,6 +185,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="SpeakingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TaskCatalogPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
