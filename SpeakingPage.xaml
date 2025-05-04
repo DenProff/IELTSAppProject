@@ -12,10 +12,10 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="41*" />
-            <RowDefinition Height="139*" />
-            <RowDefinition Height="90*" />
-            <RowDefinition Height="90*" />
-            <RowDefinition Height="90*" />
+            <RowDefinition Height="49*" />
+            <RowDefinition Height="81*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="219*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*"/>
@@ -28,24 +28,40 @@
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="213*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="0" VerticalAlignment="Center" Height="24">
-            №
-        </TextBox >
-        <TextBox Grid.Column="1" VerticalAlignment="Center" Height="24">
-            id 11111
-        </TextBox >
-        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,0" Width="190">
+
+        <TextBlock Grid.Column="0" VerticalAlignment="Center" Height="32">№</TextBlock>
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" Height="32">id</TextBlock>
+
+        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,0,5" Width="190">
             Конвертировать в docx
         </Button>
-        <Button Grid.Column="4" Grid.Row="0" Margin="0,4,0,5">
-            Поделиться
-        </Button>
-        <Button Grid.Column="6" Grid.Row="0" Margin="0,4,0,5">
-            Добавить в подборку
-        </Button>
-        <TextBox Grid.Column="8" VerticalAlignment="Center" Height="32">
+        <Button Grid.Column="4" Grid.Row="0" Margin="0,4,0,5">Поделиться</Button>
+        <Button Grid.Column="6" Grid.Row="0" Margin="0,4,0,5">Добавить в подборку</Button>
+
+        <TextBlock Grid.Column="8" VerticalAlignment="Center" Height="32">
             Рекоменд. время выполнения:
-        </TextBox >
-        
+        </TextBlock>
+
+        <Button Grid.Row="4" Margin="2,58,132,129" Grid.ColumnSpan="2" Grid.Column="1">Запись</Button>
+        <Button Grid.Row="4" Margin="2,101,132,86" Grid.ColumnSpan="2" Grid.Column="1">Стоп</Button>
+
+        <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top" 
+                   HorizontalAlignment="Left" Background="Red" Height="50" Margin="93,67,0,0" Width="123" >
+            Запись ещё не начата.
+        </TextBlock>
+
+        <Label Grid.Column="1" Content="Запишите свой ответ здесь:" HorizontalAlignment="Left" 
+               Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="230" Height="27" Margin="10,20,0,0"/>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2">The Task</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" >The topic</TextBlock>
+        <Button Grid.Row="4" Margin="2,38,12,149" Grid.Column="6" Content="Играть свою запись" Click="Button_Click"/>
+        <Button Grid.Row="4" Margin="2,81,12,106" Grid.Column="6" Content="Играть пример" Click="Button_Click"/>
+        <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="2" VerticalAlignment="Top" 
+            HorizontalAlignment="Left" Background="Red" Height="50" Margin="3,61,0,0" Width="180"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
+        <Label Grid.Column="6" Content="Результат и пример на макс. балл:" HorizontalAlignment="Left" 
+            Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="230" Height="27" Margin="10,0,0,0"/>
+        <Button Grid.Row="4" Margin="2,127,12,60" Grid.Column="6" Content="Стоп"/>
     </Grid>
 </Page>
