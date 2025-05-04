@@ -46,5 +46,6 @@
         <TextBox Grid.Column="8" VerticalAlignment="Center" Height="32">
             Рекоменд. время выполнения:
         </TextBox >
+        
     </Grid>
 </Page>

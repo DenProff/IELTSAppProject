@@ -125,6 +125,7 @@
     <Compile Include="SimpleAudioPlayer.xaml.cs">
       <DependentUpon>SimpleAudioPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SoundControl.cs" />
     <Compile Include="SpeakingPage.xaml.cs">
       <DependentUpon>SpeakingPage.xaml</DependentUpon>
     </Compile>
