@@ -75,6 +75,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ListeningTask.cs" />
+    <Compile Include="ReadingTask.cs" />
+    <Compile Include="SpeakingTask.cs" />
+    <Compile Include="Task.cs" />
+    <Compile Include="WritingTask.cs" />
     <Page Include="FirstTestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
