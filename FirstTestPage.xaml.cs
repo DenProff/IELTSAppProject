@@ -45,7 +45,7 @@ namespace IELTSAppProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ChooseModulePage());
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
