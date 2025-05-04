@@ -80,12 +80,14 @@ namespace IELTSAppProject
 
         private void varOfExam_Click(object sender, RoutedEventArgs e)
         {
-
+            TaskCatalogPage page = new TaskCatalogPage();
+            NavigationService?.Navigate(page);
         }
 
         private void newCollections_Click(object sender, RoutedEventArgs e)
         {
-
+            TaskCatalogPage page = new TaskCatalogPage();
+            NavigationService?.Navigate(page);
         }
 
         private void testVar_Click(object sender, RoutedEventArgs e)
@@ -95,7 +97,8 @@ namespace IELTSAppProject
 
         private void moduleTasks_Click(object sender, RoutedEventArgs e)
         {
-
+            TaskCatalogPage page = new TaskCatalogPage();
+            NavigationService?.Navigate(page);
         }
     }
 }
