@@ -40,6 +40,7 @@ namespace IELTSAppProject
                         ((Button)elem).Click += Button_Click_4;
                 }
             }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
