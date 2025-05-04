@@ -78,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChooseModulePage.xaml.cs">
+      <DependentUpon>ChooseModulePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <DependentUpon>WritingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WritingTask.cs" />
+    <Page Include="ChooseModulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CollectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
