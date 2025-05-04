@@ -75,12 +75,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CollectionPage.xaml.cs">
+      <DependentUpon>CollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListeningPage.xaml.cs">
+      <DependentUpon>ListeningPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListeningTask.cs" />
+    <Compile Include="ReadingPage.xaml.cs">
+      <DependentUpon>ReadingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadingTask.cs" />
+    <Compile Include="SpeakingPage.xaml.cs">
+      <DependentUpon>SpeakingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SpeakingTask.cs" />
     <Compile Include="Task.cs" />
+    <Compile Include="WritingPage.xaml.cs">
+      <DependentUpon>WritingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WritingTask.cs" />
+    <Page Include="CollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FirstTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListeningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,6 +129,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpeakingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WritingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
