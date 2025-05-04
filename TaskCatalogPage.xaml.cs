@@ -95,7 +95,5 @@ namespace IELTSAppProject
         {
             MessageBox.Show("Нажал всё-таки да, \nа что скажут твои родители");
         }
-
-       
     }
 }
