@@ -8,6 +8,8 @@ namespace IELTSAppProject
 {
     public class ReadingTask : Task<List<string>>
     {
-
+        public ReadingTask(string taskText) : base(taskText)
+        {
+        }
     }
 }

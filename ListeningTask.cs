@@ -8,5 +8,8 @@ namespace IELTSAppProject
 {
     public class ListeningTask : Task<List<string>>
     {
+        public ListeningTask(string taskText) : base(taskText)
+        {
+        }
     }
 }
