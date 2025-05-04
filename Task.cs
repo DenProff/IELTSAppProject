@@ -1,4 +1,4 @@
-﻿namespace ClassLibraryTasks
+﻿namespace IELTSAppProject
 {
     public abstract class Task<TAnswer> // TAnswer - строка, List или массив byte
     {
