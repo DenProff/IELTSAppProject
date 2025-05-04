@@ -42,16 +42,16 @@
             Рекоменд. время выполнения:
         </TextBlock>
 
-        <Button Grid.Row="4" Margin="2,58,132,129" Grid.ColumnSpan="2" Grid.Column="1">Запись</Button>
-        <Button Grid.Row="4" Margin="2,101,132,86" Grid.ColumnSpan="2" Grid.Column="1">Стоп</Button>
+        <Button Grid.Row="4" Margin="2,38,132,149" Grid.ColumnSpan="2" Grid.Column="1">Запись</Button>
+        <Button Grid.Row="4" Margin="2,81,132,106" Grid.ColumnSpan="2" Grid.Column="1">Стоп</Button>
 
         <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top" 
-                   HorizontalAlignment="Left" Background="Red" Height="50" Margin="93,67,0,0" Width="123" >
+                   HorizontalAlignment="Left" Background="Red" Height="50" Margin="93,47,0,0" Width="123" >
             Запись ещё не начата.
         </TextBlock>
 
         <Label Grid.Column="1" Content="Запишите свой ответ здесь:" HorizontalAlignment="Left" 
-               Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="230" Height="27" Margin="10,20,0,0"/>
+               Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="230" Height="27" Margin="10,0,0,0"/>
 
 
         <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2">The Task</TextBlock>
