@@ -17,12 +17,91 @@
         <Button Content="Выбрать язык" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
         <GroupBox Header="Вид заданий" Margin="857,200,33,200" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,2">
-                <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox"/>
-                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat"/>
-                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" />
-                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat"/>
-                <CheckBox Content="Подборки заданий" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat"/>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat"/>
+                <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+
+                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <CheckBox Content="Подборки заданий" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
             </StackPanel>
         </GroupBox>
         <ListBox ItemsSource="{Binding Items}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" MaxHeight="600" MinHeight="300" MaxWidth="1200" MinWidth="500" Margin="37,153,344,151">
