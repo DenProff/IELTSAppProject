@@ -34,7 +34,7 @@ namespace IELTSAppProject
             if (waveOut == null || waveOut.PlaybackState != PlaybackState.Playing)
             {
                 PlayAudio();
-                PlayButton.Content = "⏸";
+                PlayButton.Content = "| |";
             }
             else
             {
