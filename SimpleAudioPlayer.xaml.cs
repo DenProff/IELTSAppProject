@@ -1,5 +1,6 @@
 ﻿using NAudio.Wave;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
@@ -53,6 +54,9 @@ namespace IELTSAppProject
             {
                 if (string.IsNullOrEmpty(AudioPath)) return;
 
+                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+                AudioPath = Path.Combine(projectRoot, "audio", AudioPath);
                 audioFile = new AudioFileReader(AudioPath);
                 waveOut = new WaveOutEvent();
                 waveOut.PlaybackStopped += (s, e) =>

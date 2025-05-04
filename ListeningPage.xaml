@@ -45,6 +45,6 @@
         <TextBox Grid.Column="8" VerticalAlignment="Center" Height="18">
             Рекоменд. время выполнения:
         </TextBox >
-        <local:SimpleAudioPlayer AudioPath="audio/cocoJambo.mp3" Margin="19,48,0,38" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="6" Width="314" Grid.ColumnSpan="3"/>
+        <local:SimpleAudioPlayer AudioPath="cocoJambo.mp3" Margin="19,48,0,38" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="6" Width="314" Grid.ColumnSpan="3"/>
     </Grid>
 </Page>
