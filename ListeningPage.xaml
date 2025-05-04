@@ -42,7 +42,7 @@
         <Button Grid.Column="6" Grid.Row="0">
             Добавить в подборку
         </Button>
-        <TextBox Grid.Column="8" VerticalAlignment="Center" Height="18" TextChanged="TextBox_TextChanged">
+        <TextBox Grid.Column="8" VerticalAlignment="Center" Height="18">
             Рекоменд. время выполнения:
         </TextBox >
     </Grid>
