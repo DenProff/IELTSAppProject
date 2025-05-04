@@ -9,13 +9,8 @@ namespace IELTSAppProject
 {
     public partial class SimpleAudioPlayer : UserControl
     {
-        private WaveOutEvent waveOut;
-        private AudioFileReader audioFile;
         private DispatcherTimer timer;
-        private bool isPaused = false;
-
         public string AudioPath { get; set; }
-
         public SimpleAudioPlayer()
         {
             InitializeComponent();
@@ -26,99 +21,34 @@ namespace IELTSAppProject
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            if (waveOut == null)
+            SoundControl.AudioPath = AudioPath;
+            if (SoundControl.WaveOut == null)
             {
-                PlayAudio();
-                PlayButton.Content = "| |";
+                SoundControl.PlayAudio();
+                timer.Start();
             }
-            else if (waveOut.PlaybackState == PlaybackState.Playing)
+            else if (SoundControl.WaveOut.PlaybackState == PlaybackState.Playing)
             {
-                PauseAudio();
-                PlayButton.Content = "▶";
+                SoundControl.PauseAudio();
+                timer.Stop();
             }
-            else if (isPaused)
+            else if (SoundControl.IsPaused)
             {
-                ResumeAudio();
-                PlayButton.Content = "| |";
+                SoundControl.ResumeAudio();
+                timer.Start();
             }
             else
             {
-                PlayAudio();
-                PlayButton.Content = "| |";
-            }
-        }
-
-        private void PlayAudio()
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(AudioPath)) return;
-
-                string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-                string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
-                AudioPath = Path.Combine(projectRoot, "audio", AudioPath);
-                audioFile = new AudioFileReader(AudioPath);
-                waveOut = new WaveOutEvent();
-                waveOut.PlaybackStopped += (s, e) =>
-                {
-                    Dispatcher.Invoke(() =>
-                    {
-                        if (!isPaused)
-                        {
-                            PlayButton.Content = "▶";
-                            ProgressSlider.Value = 0;
-                        }
-                    });
-                };
-
-                waveOut.Init(audioFile);
-                waveOut.Play();
-                timer.Start();
-                isPaused = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при воспроизведении аудио: {ex.Message}");
-                StopAudio();
-            }
-        }
-
-        private void PauseAudio()
-        {
-            if (waveOut != null && waveOut.PlaybackState == PlaybackState.Playing)
-            {
-                waveOut.Pause();
-                timer.Stop();
-                isPaused = true;
-            }
-        }
-
-        private void StopAudio()
-        {
-            waveOut?.Stop();
-            audioFile?.Dispose();
-            waveOut?.Dispose();
-            waveOut = null;
-            audioFile = null;
-            timer.Stop();
-        }
-
-        private void ResumeAudio()
-        {
-            if (waveOut != null && isPaused)
-            {
-                waveOut.Play();
-                timer.Start();
-                isPaused = false;
+                SoundControl.PlayAudio();
             }
         }
 
         private void UpdateProgress(object sender, EventArgs e)
         {
-            if (audioFile != null)
+            if (SoundControl.AudioFile != null)
             {
-                ProgressSlider.Value = audioFile.CurrentTime.TotalSeconds / audioFile.TotalTime.TotalSeconds * 100;
-                TimeText.Text = audioFile.CurrentTime.ToString(@"m\:ss");
+                ProgressSlider.Value = SoundControl.AudioFile.CurrentTime.TotalSeconds / SoundControl.AudioFile.TotalTime.TotalSeconds * 100;
+                TimeText.Text = SoundControl.AudioFile.CurrentTime.ToString(@"m\:ss");
             }
         }
     }
