@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-            <Button x:Name="PlayButton" Content="▶" Width="30" Height="30" Margin="5"
+            <Button x:Name="PlayButton" Content="▶" Width="50" Height="46" Margin="5"
                     Click="PlayButton_Click"/>
             <Slider x:Name="ProgressSlider" Minimum="0" Maximum="100" Value="0" 
                     Width="200" Margin="10,0" IsEnabled="False" Height="16"/>
