@@ -48,29 +48,11 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // 1. Получаем относительный путь к файлу в проекте
-            string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-            string mp3Path = Path.Combine(projectDir, "audio", "cocoJambo.mp3");
-
-            // 2. Конвертируем MP3 в WAV (временный файл)
-            string wavPath = Path.Combine(Path.GetTempPath(), "converted.wav");
-
-            using (var mp3Reader = new Mp3FileReader(mp3Path))
-            using (var waveStream = WaveFormatConversionStream.CreatePcmStream(mp3Reader))
-            {
-                WaveFileWriter.CreateWaveFile(wavPath, waveStream);
-            }
-
-            // 3. Читаем WAV файл в byte[]
-            byte[] wavBytes = File.ReadAllBytes(wavPath);
-
-            Console.WriteLine($"Размер WAV файла: {wavBytes.Length} байт");
-
-            // Удаляем временный файл (опционально)
-            File.Delete(wavPath);
-
-
-            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", wavBytes, 5);
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+            string audio = Path.Combine(projectRoot, "audio", "cocoJambo.mp3");
+            byte[] data = SoundControl.ConvertMp3ToWavBytes(audio);
+            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", data, 5);
             NavigationService?.Navigate(new SpeakingPage(task));
         }
 

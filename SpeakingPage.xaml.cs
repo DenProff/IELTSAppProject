@@ -54,12 +54,20 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void StopRecord(object sender, RoutedEventArgs e)
         {
-            if (isRecordingInProgress) {
-                SoundControl.StopRecording();
+            if (!isRecordingInProgress) return;
+
+            try
+            {
+                SoundControl.StopRecording(); // Остановка записи
+                Task.UserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
+            }
+            catch (Exception ex)
+            {
+                // Обновление интерфейса
+                isRecordingInProgress = false;
                 isRecordingDone = true;
                 inputRecordingStatusTextBox.Text = "Ответ сохранён.";
-                isRecordingInProgress = false;
-                Task.UserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath); // Запись ответа пользователя в поле Task
+                inputRecordingStatusTextBox.Background = Brushes.LightGreen;
             }
         }
     }

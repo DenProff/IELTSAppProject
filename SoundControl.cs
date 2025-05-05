@@ -102,5 +102,30 @@ namespace IELTSAppProject
                 IsPaused = false;
             }
         }
+
+        public static byte[] ConvertMp3ToWavBytes(string mp3Path)
+        {
+            // Временный файл для конвертации
+            string tempWavPath = Path.GetTempFileName();
+
+            try
+            {
+                // Конвертация MP3 → WAV (через временный файл)
+                using (var mp3Reader = new Mp3FileReader(mp3Path))
+                using (var waveWriter = new WaveFileWriter(tempWavPath, mp3Reader.WaveFormat))
+                {
+                    mp3Reader.CopyTo(waveWriter);
+                }
+
+                // Чтение WAV в массив байтов
+                return File.ReadAllBytes(tempWavPath);
+            }
+            finally
+            {
+                // Удаление временного файла
+                if (File.Exists(tempWavPath))
+                    File.Delete(tempWavPath);
+            }
+        }
     }
 }
