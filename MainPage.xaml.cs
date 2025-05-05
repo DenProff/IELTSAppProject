@@ -45,7 +45,7 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new SpeakingPage());
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
