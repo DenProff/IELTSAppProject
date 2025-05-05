@@ -41,7 +41,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + "мин.";
         }
 
-        private void StartRecordbtn(object sender, RoutedEventArgs e)
+        private void StartRecord(object sender, RoutedEventArgs e)
         {
             if (!isRecordingInProgress && !isRecordingDone)
             {
@@ -52,7 +52,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             }
         }
 
-        private void StopRecordbtn(object sender, RoutedEventArgs e)
+        private void StopRecord(object sender, RoutedEventArgs e)
         {
             if (isRecordingInProgress) {
                 SoundControl.StopRecording();
