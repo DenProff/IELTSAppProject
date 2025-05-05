@@ -11,13 +11,10 @@
 
     <Grid x:Name="readingPart"  Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
         <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
-        <Button Grid.Row="0" HorizontalAlignment="Left" Margin="257,0,0,0" Width="223" Height="58" VerticalAlignment="Top" FontSize="17">
-            Конвертировать в docx
-        </Button>
-        
-        <Button Grid.Row="0" HorizontalAlignment="Left" Margin="560,0,0,0" Width="223" Height="58" VerticalAlignment="Top" FontSize="17" Content="Добавить в подборку"/>
+        <Button Grid.Row="0" HorizontalAlignment="Left" Margin="257,0,0,0" Width="223" Height="58" VerticalAlignment="Top" FontSize="17" x:Name="convertToDocx" Click="convertToDocx_Click" Content="Конвертировать в docx"/>
+        <Button Grid.Row="0" HorizontalAlignment="Left" Margin="560,0,0,0" Width="223" Height="58" VerticalAlignment="Top" FontSize="17" Content="Добавить в подборку" x:Name="addToCollection" Click="Button_Click"/>
         <Border MinWidth="400" MaxWidth="1900" Background=" #514ED9" Padding="30" CornerRadius="20" Margin="0,85,0,0" Height="568" Width="886">
-            <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}">
+            <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}" Margin="0,0,4,0">
                 <StackPanel RenderTransformOrigin="0.5,0.5" Margin="10,25,-14,-5" Height="1234">
                     <StackPanel.RenderTransform>
                         <TransformGroup>
@@ -27,48 +24,48 @@
                             <TranslateTransform Y="-1.081"/>
                         </TransformGroup>
                     </StackPanel.RenderTransform>
-                    <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" Height="35" TextWrapping="Wrap"/>
-                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="37"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="269"/>
+                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39"/>
                     <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="35" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6"/>
                     <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="35" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6"/>
                     <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="35" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6"/>
                     <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="35" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6"/>
                     <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding TaskText6}" x:Name="textTask6" Height="35" TextWrapping="Wrap" />
-                    <TextBox FontSize="18" x:Name="answerBox1" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText7}" x:Name="textTask7" Height="35" TextWrapping="Wrap" />
-                    <TextBox FontSize="18" x:Name="answerBox2" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText8}" x:Name="textTask8" Height="35" TextWrapping="Wrap"/>
-                    <TextBox FontSize="18" x:Name="answerBox3" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBlock FontSize="18" Text="{Binding TaskText9}" x:Name="textTask9" Height="35" TextWrapping="Wrap"/>
-                    <TextBox FontSize="18" x:Name="answerBox4" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText0}" x:Name="textTask0" Height="35" TextWrapping="Wrap"/>
-                    <TextBox FontSize="18" x:Name="answerBox5" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText6}" x:Name="textTask6" Height="59" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBox FontSize="18" x:Name="answerBox1" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText7}" x:Name="textTask7" Height="35" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBox FontSize="18" x:Name="answerBox2" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText8}" x:Name="textTask8" Height="35" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBox FontSize="18" x:Name="answerBox3" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText9}" x:Name="textTask9" Height="35" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBox FontSize="18" x:Name="answerBox4" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText0}" x:Name="textTask0" Height="35" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBox FontSize="18" x:Name="answerBox5" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
                 </StackPanel>
             </ScrollViewer>
         </Border>

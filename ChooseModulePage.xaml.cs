@@ -81,12 +81,14 @@ namespace IELTSAppProject
         private void varOfExam_Click(object sender, RoutedEventArgs e)
         {
             TaskCatalogPage page = new TaskCatalogPage();
+            page.varOfExam.IsChecked = true;
             NavigationService?.Navigate(page);
         }
 
         private void newCollections_Click(object sender, RoutedEventArgs e)
         {
             TaskCatalogPage page = new TaskCatalogPage();
+            page.collectionsOfTasks.IsChecked = true;
             NavigationService?.Navigate(page);
         }
 
@@ -98,6 +100,10 @@ namespace IELTSAppProject
         private void moduleTasks_Click(object sender, RoutedEventArgs e)
         {
             TaskCatalogPage page = new TaskCatalogPage();
+            page.speakCheackBox.IsChecked = true;
+            page.readingCheckBox.IsChecked = true;
+            page.writingCheckBox.IsChecked = true;
+            page.listeningCheckBox.IsChecked = true;
             NavigationService?.Navigate(page);
         }
     }

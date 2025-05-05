@@ -32,7 +32,7 @@
                     </CheckBox.Resources>
                 </CheckBox>
 
-                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="readingCheckBox">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -46,7 +46,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="writingCheckBox">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -60,7 +60,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="listeningCheckBox">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -74,7 +74,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Подборки заданий" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                <CheckBox Content="Подборки заданий" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="collectionsOfTasks">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -88,7 +88,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black">
+                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
