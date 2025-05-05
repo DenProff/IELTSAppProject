@@ -6,45 +6,146 @@
       xmlns:local="clr-namespace:IELTSAppProject"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="ListeningPage">
 
-    <Grid Background="White">
+ <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="13*" />
-            <RowDefinition Height="47*" />
-            <RowDefinition Height="30*" />
-            <RowDefinition Height="30*" />
-            <RowDefinition Height="30*" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="54*"/>
-            <ColumnDefinition Width="61*"/>
-            <ColumnDefinition Width="147*"/>
-            <ColumnDefinition Width="36*"/>
-            <ColumnDefinition Width="70*"/>
-            <ColumnDefinition Width="29*"/>
-            <ColumnDefinition Width="126*"/>
-            <ColumnDefinition Width="22*"/>
-            <ColumnDefinition Width="255*"/>
-        </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="0" VerticalAlignment="Center" Height="26">
-            №
-        </TextBox >
-        <TextBox Grid.Column="1" VerticalAlignment="Center" Height="26">
-            id 11111
-        </TextBox >
-        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Width="144" Margin="0,4,0,3">
-            Конвертировать в docx
-        </Button>
-        <Button Grid.Column="4" Grid.Row="0" Margin="0,4,0,3">
-            Поделиться
-        </Button>
-        <Button Grid.Column="6" Grid.Row="0" Margin="0,4,0,3">
-            Добавить в подборку
-        </Button>
-        <TextBox Grid.Column="8" VerticalAlignment="Center" Height="18">
-            Рекоменд. время выполнения:
-        </TextBox >
-        <local:SimpleAudioPlayer AudioPath="cocoJambo.mp3" Margin="19,48,0,38" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="6" Width="314" Grid.ColumnSpan="3"/>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.7*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="numTextBox" Grid.Column="0" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="20">№</TextBlock>
+            <TextBlock x:Name="idTextBox" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="30">id</TextBlock>
+
+            <Button Grid.Column="2" Grid.Row="0" Margin="14,5,14,5" MinWidth="120" FontSize="13">
+                Конвертировать в docx
+            </Button>
+            <Button Grid.Column="3" Grid.Row="0" Margin="15,5,14,5" MinWidth="80" FontSize="13">
+                Поделиться
+            </Button>
+            <Button Grid.Column="4" Grid.Row="0" Margin="10,5,15,5" MinWidth="120" FontSize="13">
+                Добавить в подборку
+            </Button>
+
+            <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="6" VerticalAlignment="Center" Margin="10,0,0,0" 
+                       HorizontalAlignment="Right" MinWidth="150">
+                Рекоменд. время выполнения:
+                <LineBreak/>
+                52
+            </TextBlock>
+        </Grid>
+
+        <local:SimpleAudioPlayer AudioPath="cocoJambo.mp3" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" 
+                                VerticalAlignment="Center" MinHeight="44" MinWidth="400"/>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="5,0,0,0">
+                <TextBlock Text="LISTENING" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+
+                <TextBlock Text="Listen to the lecture-presentation ONCE and complete the following tasks." 
+                       Margin="0,0,0,20"
+                       TextWrapping="Wrap"/>
+
+                <TextBlock Text="In tasks 1-5 listen to the audio and choose one correct variant A, B, or C." 
+                       Margin="0,0,0,20"
+                       FontWeight="SemiBold"
+                       TextWrapping="Wrap"/>
+
+                <StackPanel Margin="20,0,0,0">
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="1. According to the speaker, what will be the most likely cause of a global catastrophe in the near future?" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. A nuclear war" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. A global pandemic" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. A natural disaster" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="2. What is the main issue with the disease prevention system?" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. It exists, but functions poorly" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. It doesn't exist at all" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. It only exists in certain countries" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="3. Which organization is funded to monitor epidemics?" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. The WHO" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. The UN" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. Médecins Sans Frontières" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="4. Which fortunate condition prevented Ebola from spreading further?" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. A cure was found quickly" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. People were provided with protective gear" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. The virus did not spread through urban areas" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,20">
+                        <TextBlock Text="5. How can people's movements be monitored nowadays?" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. Through satellite maps" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. Through street cameras" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. Through cell phones" Margin="20,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Text="In tasks 6-10 fill in the gaps, using NO MORE THAN 3 WORDS AND/OR NUMBERS for each answer." 
+                       Margin="0,0,0,20"
+                       FontWeight="SemiBold"
+                       TextWrapping="Wrap"/>
+
+                <StackPanel Margin="20,0,0,0">
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="6. NATO has a ______ that is always ready to go." 
+                               TextWrapping="Wrap"/>
+                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="7. Among the key pieces are ______ in underprivileged countries." 
+                               TextWrapping="Wrap"/>
+                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="8. To get the military ready for action we need to run ______ and detect problem areas." 
+                               TextWrapping="Wrap"/>
+                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="9. The speaker can't give a/an ______ for the cost of medical research." 
+                               TextWrapping="Wrap"/>
+                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,20">
+                        <TextBlock Text="10. The World Bank predicts that in case of a global pandemic the ______ will be drastically reduced." 
+                               TextWrapping="Wrap"/>
+                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

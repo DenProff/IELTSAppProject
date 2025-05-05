@@ -48,7 +48,7 @@ namespace IELTSAppProject
             if (SoundControl.AudioFile != null)
             {
                 ProgressSlider.Value = SoundControl.AudioFile.CurrentTime.TotalSeconds / SoundControl.AudioFile.TotalTime.TotalSeconds * 100;
-                TimeText.Text = SoundControl.AudioFile.CurrentTime.ToString(@"m\:ss");
+                TimeText.Text = SoundControl.AudioFile.CurrentTime.ToString(@"m\:ss") + " / " + SoundControl.AudioFile.TotalTime.ToString(@"m\:ss");
             }
         }
     }

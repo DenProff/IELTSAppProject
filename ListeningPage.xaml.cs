@@ -24,5 +24,10 @@ namespace IELTSAppProject
         {
             InitializeComponent();
         }
+
+        private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
