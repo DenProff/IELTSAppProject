@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace IELTSAppProject
 {
@@ -20,19 +21,46 @@ namespace IELTSAppProject
     /// </summary>
     public partial class SpeakingPage : Page
     {
-        public SpeakingPage()
-        {
-            InitializeComponent();
-        }
+        public SpeakingTask Task { get; set; }
+        static private bool isRecordingInProgress = false;
+        static private bool isRecordingDone = false;
+        static string taskText = @"You should:
+- Express your attitude toward the given problem.
+- Analyze the problem and justify your position, providing at least 2 supporting arguments.
+- Summarize your ideas.
 
-        private void StopRecordbtn(object sender, RoutedEventArgs e)
+Your speech should last no less than 3 minutes and no longer than 5 minutes.";
+
+        public SpeakingPage(SpeakingTask task)
         {
-            SoundControl.StartRecording();
+            Task = task;
+            InitializeComponent();
+            taskTextBlock.Text = taskText;
+            topicTextBlock.Text = task.TaskText;
+            idTextBox.Text += (task.id).ToString();
+            recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + "мин.";
         }
 
         private void StartRecordbtn(object sender, RoutedEventArgs e)
         {
+            if (!isRecordingInProgress && !isRecordingDone)
+            {
+                SoundControl.StartRecording();
+                isRecordingInProgress = true;
+                inputRecordingStatusTextBox.Text = "Запись идёт.";
+                inputRecordingStatusTextBox.Background = Brushes.LightGreen;
+            }
+        }
 
+        private void StopRecordbtn(object sender, RoutedEventArgs e)
+        {
+            if (isRecordingInProgress) {
+                SoundControl.StopRecording();
+                isRecordingDone = true;
+                inputRecordingStatusTextBox.Text = "Ответ сохранён.";
+                isRecordingInProgress = false;
+                Task.UserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath); // Запись ответа пользователя в поле Task
+            }
         }
     }
 }

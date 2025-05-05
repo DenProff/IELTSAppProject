@@ -20,7 +20,7 @@ namespace IELTSAppProject
         private static AudioFileReader audioFile; // Для считывания аудиофайла
         private static string audioPath; // Путь к аудиофайлу
         private static bool isPaused = false; // Флаг для приостановки
-        private static string outputFilePath = "recordedForTest.wav"; // Куда идёт запись - именно файл расширения .wav
+        public static string OutputFilePath { get { return "recordedForTest.wav"; } } // Куда идёт запись - именно файл расширения .wav
 
         public static string AudioPath { get => audioPath; set => audioPath = value; }
         public static bool IsPaused { get => isPaused; set => isPaused = value; }
@@ -32,7 +32,7 @@ namespace IELTSAppProject
             waveIn = new WaveInEvent();
             waveIn.DeviceNumber = 0; // 0 это микрофон по умолчанию
             waveIn.WaveFormat = new WaveFormat(44100, 16, 1); // Параметры записи
-            writer = new WaveFileWriter(outputFilePath, waveIn.WaveFormat);
+            writer = new WaveFileWriter(OutputFilePath, waveIn.WaveFormat);
 
             waveIn.DataAvailable += (s, e) =>
             {

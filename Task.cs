@@ -1,13 +1,16 @@
-﻿namespace IELTSAppProject
+﻿using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
+
+namespace IELTSAppProject
 {
     public abstract class Task<TAnswer> // TAnswer - строка, List или массив byte
     {
-        private static int IdCounter = 0;
+        private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         public int id;
         public TAnswer Answer { get; set; }
         public TAnswer UserAnswer { get; set; }
         public string TaskText { get; set; }
+        public double RecommendedTime{ get; set; }
 
         // Поля для фильтрации - надо бы попридумывать
         public bool WithMistake { get; set; } // Была ли в этом задании допущена и не исправлена ошибка
