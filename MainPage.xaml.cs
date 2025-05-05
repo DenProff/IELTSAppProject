@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NAudio.Wave;
+using Path = System.IO.Path;
 
 namespace IELTSAppProject
 {
@@ -45,7 +48,29 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", );
+            // 1. Получаем относительный путь к файлу в проекте
+            string projectDir = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+            string mp3Path = Path.Combine(projectDir, "audio", "cocoJambo.mp3");
+
+            // 2. Конвертируем MP3 в WAV (временный файл)
+            string wavPath = Path.Combine(Path.GetTempPath(), "converted.wav");
+
+            using (var mp3Reader = new Mp3FileReader(mp3Path))
+            using (var waveStream = WaveFormatConversionStream.CreatePcmStream(mp3Reader))
+            {
+                WaveFileWriter.CreateWaveFile(wavPath, waveStream);
+            }
+
+            // 3. Читаем WAV файл в byte[]
+            byte[] wavBytes = File.ReadAllBytes(wavPath);
+
+            Console.WriteLine($"Размер WAV файла: {wavBytes.Length} байт");
+
+            // Удаляем временный файл (опционально)
+            File.Delete(wavPath);
+
+
+            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", wavBytes, 5);
             NavigationService?.Navigate(new SpeakingPage(task));
         }
 

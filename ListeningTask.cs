@@ -12,7 +12,7 @@ namespace IELTSAppProject
 
         public List<string> Options { get; set; }
 
-        public ListeningTask(string taskText) : base(taskText)
+        public ListeningTask(string taskText, List<string> answer, double recTime) : base(taskText, answer, recTime)
         {
         }
     }

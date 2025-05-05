@@ -9,7 +9,7 @@ namespace IELTSAppProject
 {
     public class SpeakingTask : Task<byte[]>
     {
-        public SpeakingTask(string taskText, byte[] ans) : base(taskText, ans) // Запись поля
+        public SpeakingTask(string taskText, byte[] ans, double recTime) : base(taskText, ans, recTime) // Запись поля
         {
             Answer = ans;
         }

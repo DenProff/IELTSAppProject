@@ -8,7 +8,7 @@ namespace IELTSAppProject
 {
     public class WritingTask : Task<string>
     {
-        public WritingTask(string taskText, string answer) : base(taskText) // Запись поля
+        public WritingTask(string taskText, string answer, double recTime) : base(taskText, answer, recTime) // Запись поля
         {
             Answer = answer;
         }
