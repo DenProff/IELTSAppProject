@@ -24,6 +24,8 @@ namespace IELTSAppProject
         public SpeakingTask Task { get; set; }
         static private bool isRecordingInProgress = false;
         static private bool isRecordingDone = false;
+        static private bool isPlayingUserAnswerInProgress = false;
+        static private bool isPlayingRealAnswerInProgress = false;
         static string taskText = @"You should:
 - Express your attitude toward the given problem.
 - Analyze the problem and justify your position, providing at least 2 supporting arguments.
@@ -69,6 +71,22 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 inputRecordingStatusTextBox.Text = "Ответ сохранён.";
                 inputRecordingStatusTextBox.Background = Brushes.LightGreen;
             }
+        }
+
+        private void PlayUserAnswer(object sender, RoutedEventArgs e)
+        {
+            SoundControl.AudioFile = 
+            SoundControl.PlayAudio();
+        }
+
+        private void PlayRealAnswer(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void StopPlaying(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
