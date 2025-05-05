@@ -6,6 +6,7 @@
 
         public int id;
         public TAnswer Answer { get; set; }
+        public TAnswer UserAnswer { get; set; }
         public string TaskText { get; set; }
 
         // Поля для фильтрации - надо бы попридумывать

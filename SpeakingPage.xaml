@@ -42,8 +42,8 @@
             Рекоменд. время выполнения:
         </TextBlock>
 
-        <Button Grid.Row="4" Margin="2,38,132,149" Grid.ColumnSpan="2" Grid.Column="1">Запись</Button>
-        <Button Grid.Row="4" Margin="2,81,132,106" Grid.ColumnSpan="2" Grid.Column="1">Стоп</Button>
+        <Button x:Name="startRecordbtn" Grid.Row="4" Margin="2,38,132,149" Grid.ColumnSpan="2" Grid.Column="1" Click="StartRecord">Запись</Button>
+        <Button x:Name="stopRecordbtn" Grid.Row="4" Margin="2,81,132,106" Grid.ColumnSpan="2" Grid.Column="1" Click="StopRecord">Стоп</Button>
 
         <TextBlock TextWrapping="Wrap" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" VerticalAlignment="Top" 
                    HorizontalAlignment="Left" Background="Red" Height="50" Margin="93,47,0,0" Width="123" >

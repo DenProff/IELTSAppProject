@@ -24,5 +24,15 @@ namespace IELTSAppProject
         {
             InitializeComponent();
         }
+
+        private void StopRecordbtn(object sender, RoutedEventArgs e)
+        {
+            SoundControl.StartRecording();
+        }
+
+        private void StartRecordbtn(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
