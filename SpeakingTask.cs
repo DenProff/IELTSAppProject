@@ -9,9 +9,9 @@ namespace IELTSAppProject
 {
     public class SpeakingTask : Task<byte[]>
     {
-        public SpeakingTask(string taskText, string filePath) : base(taskText) // Запись поля
+        public SpeakingTask(string taskText, byte[] ans) : base(taskText, ans) // Запись поля
         {
-            Answer = File.ReadAllBytes(filePath);
+            Answer = ans;
         }
     }
 }

@@ -15,8 +15,10 @@ namespace IELTSAppProject
         // Поля для фильтрации - надо бы попридумывать
         public bool WithMistake { get; set; } // Была ли в этом задании допущена и не исправлена ошибка
 
-        public Task(string taskText)
+        public Task(string taskText, TAnswer ans, double recTime)
         {
+            RecommendedTime = recTime;
+            Answer = ans;
             id = IdCounter++;
             this.TaskText = taskText;
             WithMistake = false;

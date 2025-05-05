@@ -45,7 +45,8 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new SpeakingPage());
+            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", );
+            NavigationService?.Navigate(new SpeakingPage(task));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
