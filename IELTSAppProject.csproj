@@ -220,6 +220,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="resourcesTask\Reading\readingTasks.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -228,7 +229,6 @@
     <Folder Include="resourcesTask\Collections\" />
     <Folder Include="resourcesTask\Languages\" />
     <Folder Include="resourcesTask\Listening\" />
-    <Folder Include="resourcesTask\Reading\" />
     <Folder Include="resourcesTask\Speaking\" />
     <Folder Include="resourcesTask\Writing\" />
   </ItemGroup>
