@@ -26,31 +26,31 @@
                     </StackPanel.RenderTransform>
                     <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="42" Width="787" HorizontalAlignment="Left"/>
                     <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="269" Width="793" HorizontalAlignment="Left"/>
-                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39" Width="778"/>
+                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39" Width="778" HorizontalAlignment="Left"/>
                     <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778"/>
+                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
                     <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781"/>
+                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
                     <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6" Width="766"/>
+                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
                     <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="773"/>
+                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
                     <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
@@ -60,42 +60,42 @@
                 <StackPanel Margin="20,0,0,0">
                     <StackPanel Margin="0,0,0,15">
                         <TextBlock Text="{Binding task6}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="A. A nuclear war" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. A global pandemic" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. A natural disaster" Margin="20,0,0,0"/>
+                               TextWrapping="Wrap" Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer1}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer2}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer3}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="White"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding task7}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding}" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. It doesn't exist at all" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. It only exists in certain countries" Margin="20,0,0,0"/>
+                               TextWrapping="Wrap"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer4}" Margin="20,5,0,0"  x:Name="answer71"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer5}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer6}" Margin="20,0,0,0" x:Name="answer73"  Foreground="White"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding task8}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="A. The WHO" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. The UN" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. Médecins Sans Frontières" Margin="20,0,0,0"/>
+                               TextWrapping="Wrap"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer7}" Margin="20,5,0,0" x:Name="answer81"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer8}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer9}" Margin="20,0,0,0" x:Name="answer83"  Foreground="White"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding task9}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="A. A cure was found quickly" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. People were provided with protective gear" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. The virus did not spread through urban areas" Margin="20,0,0,0"/>
+                               TextWrapping="Wrap"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer10}" Margin="20,5,0,0" x:Name="answer91"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer11}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer12}" Margin="20,0,0,0" x:Name="answer93"  Foreground="White"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
                             <TextBlock Text="{Binding task0}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="A. Through satellite maps" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. Through street cameras" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. Through cell phones" Margin="20,0,0,0"/>
+                               TextWrapping="Wrap"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer13}" Margin="20,5,0,0" x:Name="answer01"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer14}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer15}" Margin="20,0,0,0" x:Name="answer03"  Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
                 </StackPanel>

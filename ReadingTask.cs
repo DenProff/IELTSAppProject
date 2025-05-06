@@ -10,7 +10,7 @@ namespace IELTSAppProject
 {
     public class ReadingTask : Task<List<string>>
     {
-
+        
 
         public string TextForReading { get; set; } //текст для прочтения и решения заданий по нему
 
@@ -26,24 +26,19 @@ namespace IELTSAppProject
         public string Task9 { get; set; }
         public string Task0 { get; set; }
 
-        //поля для ответов на вопросы
-        public string TaskAnswer1 { get; set; }
-        public string TaskAnswer2 { get; set; }
-        public string TaskAnswer3 { get; set; }
-        public string TaskAnswer4 { get; set; }
-        public string TaskAnswer5 { get; set; }
-
-        public string TaskAnswer6 { get; set; }
-        public string TaskAnswer7 { get; set; }
-        public string TaskAnswer8 { get; set; }
-        public string TaskAnswer9 { get; set; }
-        public string TaskAnswer0 { get; set; }
+        //списки для вариантов ответов (a,b or c)
+        public List<string> TaskAnswer6 { get; set; }
+        public List<string> TaskAnswer7 { get; set; }
+        public List<string> TaskAnswer8 { get; set; }
+        public List<string> TaskAnswer9 { get; set; }
+        public List<string> TaskAnswer0 { get; set; }
 
 
 
 
         public ReadingTask(string taskText, List<string> answer, double recTime, string textForReading, string task1, string task2, string task3,
-            string task4, string task5, string task6, string task7, string task8, string task9, string task0) : base(taskText, answer, recTime)
+            string task4, string task5, string task6, string task7, string task8, string task9, string task0, List<string> firstList, List<string> secondList,
+            List<string> thirdList, List<string> fourthList, List<string> fifthList) : base(taskText, answer, recTime)
         {
             TextForReading = textForReading;
             Task1 = task1;
@@ -56,6 +51,11 @@ namespace IELTSAppProject
             Task8 = task8;
             Task9 = task9;
             Task0 = task0;
+            TaskAnswer6 = firstList;
+            TaskAnswer7 = secondList;
+            TaskAnswer8 = thirdList;
+            TaskAnswer9 = fourthList;
+            TaskAnswer0 = fifthList;
         }
     }
 }
