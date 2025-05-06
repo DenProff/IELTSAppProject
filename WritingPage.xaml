@@ -54,7 +54,7 @@
             <ComboBoxItem Content="Шестая тема"/>
         </ComboBox>
         <Button Grid.Column="8" Grid.Row="1" HorizontalAlignment="Center" Width="200">Сохранить выбор</Button>
-        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" materialDesign:HintAssist.Hint="Введите ваш ответ" Margin="0,0,0,10"/>
+        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" materialDesign:HintAssist.Hint="Введите ваш ответ" Margin="0,0,0,10"/>
         <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Сохранить ответ" Margin="0,21,0,166" Click="Button_Click"/>
         <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Смотреть эссе на макс." Margin="0,73,0,114" Click="Button_Click"/>
     </Grid>
