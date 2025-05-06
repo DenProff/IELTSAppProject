@@ -1,8 +1,9 @@
 ﻿using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
+using System;
 
 namespace IELTSAppProject
 {
-    public abstract class Task<TAnswer> // TAnswer - строка, List или массив byte
+    public abstract class Task<TAnswer> : IComparable<Task<TAnswer>>// TAnswer - строка, List или массив byte
     {
         private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -22,6 +23,17 @@ namespace IELTSAppProject
             id = IdCounter++;
             this.TaskText = taskText;
             WithMistake = false;
+        }
+
+        //переопределение метода для бинарного поиска
+        public int CompareTo(Task<TAnswer> other)
+        {
+            if (this.id < other.id)
+                return -1;
+            if (this.id > other.id)
+                return 1;
+            else 
+                return 0;
         }
     }
 }
