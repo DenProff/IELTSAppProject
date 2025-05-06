@@ -24,48 +24,80 @@
                             <TranslateTransform Y="-1.081"/>
                         </TransformGroup>
                     </StackPanel.RenderTransform>
-                    <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="37"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="269"/>
-                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39"/>
+                    <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="42" Width="787" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="269" Width="793" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39" Width="778"/>
                     <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBlock FontSize="18" Text="{Binding task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778"/>
                     <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBlock FontSize="18" Text="{Binding task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781"/>
                     <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBlock FontSize="18" Text="{Binding task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6" Width="766"/>
                     <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6"/>
+                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="773"/>
                     <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
                         <ComboBoxItem Content="True"/>
                         <ComboBoxItem Content="False"/>
                         <ComboBoxItem Content="Not Stated"/>
                     </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding TaskText6}" x:Name="textTask6" Height="59" TextWrapping="Wrap" LineHeight="6"/>
-                    <TextBox FontSize="18" x:Name="answerBox1" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText7}" x:Name="textTask7" Height="35" TextWrapping="Wrap" LineHeight="6"/>
-                    <TextBox FontSize="18" x:Name="answerBox2" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText8}" x:Name="textTask8" Height="35" TextWrapping="Wrap" LineHeight="6"/>
-                    <TextBox FontSize="18" x:Name="answerBox3" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText9}" x:Name="textTask9" Height="35" TextWrapping="Wrap" LineHeight="6"/>
-                    <TextBox FontSize="18" x:Name="answerBox4" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText0}" x:Name="textTask0" Height="35" TextWrapping="Wrap" LineHeight="6"/>
-                    <TextBox FontSize="18" x:Name="answerBox5" Foreground="White" BorderBrush="White" ForceCursor="True" materialDesign:HintAssist.Hint="Введите ответ здесь" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextWrapping="Wrap" Width="770"/>
+                    
+                <StackPanel Margin="20,0,0,0">
+                    <StackPanel Margin="0,0,0,15">
+                        <TextBlock Text="{Binding task6}" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. A nuclear war" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. A global pandemic" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. A natural disaster" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="{Binding task7}" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="{Binding}" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. It doesn't exist at all" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. It only exists in certain countries" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="{Binding task8}" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. The WHO" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. The UN" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. Médecins Sans Frontières" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,15">
+                            <TextBlock Text="{Binding task9}" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. A cure was found quickly" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. People were provided with protective gear" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. The virus did not spread through urban areas" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,0,0,20">
+                            <TextBlock Text="{Binding task0}" 
+                               TextWrapping="Wrap"/>
+                        <RadioButton Content="A. Through satellite maps" Margin="20,5,0,0"/>
+                        <RadioButton Content="B. Through street cameras" Margin="20,0,0,0"/>
+                        <RadioButton Content="C. Through cell phones" Margin="20,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </Border>

@@ -26,12 +26,18 @@ namespace IELTSAppProject
         public string Task9 { get; set; }
         public string Task0 { get; set; }
 
-        //поля для ответов на вопросы (не true/false/..)
+        //поля для ответов на вопросы
         public string TaskAnswer1 { get; set; }
         public string TaskAnswer2 { get; set; }
         public string TaskAnswer3 { get; set; }
         public string TaskAnswer4 { get; set; }
         public string TaskAnswer5 { get; set; }
+
+        public string TaskAnswer6 { get; set; }
+        public string TaskAnswer7 { get; set; }
+        public string TaskAnswer8 { get; set; }
+        public string TaskAnswer9 { get; set; }
+        public string TaskAnswer0 { get; set; }
 
 
 

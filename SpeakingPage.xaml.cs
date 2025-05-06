@@ -75,8 +75,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void PlayUserAnswer(object sender, RoutedEventArgs e)
         {
-            SoundControl.AudioFile = 
-            SoundControl.PlayAudio();
+
         }
 
         private void PlayRealAnswer(object sender, RoutedEventArgs e)
