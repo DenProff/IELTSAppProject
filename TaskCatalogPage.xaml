@@ -15,7 +15,7 @@
         <Button Content="Мои ошибки" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
         <Button Content="Мои подборки&#xD;&#xA;     заданий" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="collections_Click" FontSize="17" FontWeight="Bold" x:Name="collections" Margin="736,0,0,0"/>
         <Button Content="Выбрать язык" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
-        <GroupBox Header="Вид заданий" Margin="857,200,33,200" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
+        <GroupBox Header="Вид заданий" Margin="857,200,33,187" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,2">
                 <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black">
                     <CheckBox.Resources>
@@ -89,6 +89,20 @@
                     </CheckBox.Resources>
                 </CheckBox>
                 <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam">
+                    <CheckBox.Resources>
+                        <Style TargetType="CheckBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Background" Value="#B7F200"/>
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Background" Value="#514ED9"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </CheckBox.Resources>
+                </CheckBox>
+                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>

@@ -48,12 +48,9 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
-            string audio = Path.Combine(projectRoot, "audio", "cocoJambo.mp3");
-            byte[] data = SoundControl.ConvertMp3ToWavBytes(audio);
-            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", data, 5);
-            NavigationService?.Navigate(new SpeakingPage(task));
+            TaskCatalogPage page = new TaskCatalogPage();
+            page.actualTasks.IsChecked = true;
+            NavigationService?.Navigate(page);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -74,7 +71,12 @@ namespace IELTSAppProject
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+            string audio = Path.Combine(projectRoot, "audio", "cocoJambo.mp3");
+            byte[] data = SoundControl.ConvertMp3ToWavBytes(audio);
+            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", data, 5);
+            NavigationService?.Navigate(new SpeakingPage(task));
         }
     }
 }
