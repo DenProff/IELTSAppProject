@@ -62,38 +62,38 @@ namespace IELTSAppProject
 
             //поиск нужного элемента из json
 
-            JsonTextReader reader = new JsonTextReader(new StreamReader("tasks.json"));
-            reader.SupportMultipleContent = true;
-            JsonSerializer serializer = new JsonSerializer();
-            ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
+            //JsonTextReader reader = new JsonTextReader(new StreamReader("tasks.json"));
+            //reader.SupportMultipleContent = true;
+            //JsonSerializer serializer = new JsonSerializer();
+            //ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
 
-            //вызовы методов для заполнения полей
-            NumAndTask(newTask);
-            Task1(newTask);
-            Task2(newTask);
-            Task3(newTask);
-            Task4(newTask);
-            Task5(newTask);
-            Task6(newTask);
-            Task7(newTask);
-            Task8(newTask);
-            Task9(newTask);
-            Task0(newTask);
-            TaskAnswer1(newTask);
-            TaskAnswer2(newTask);
-            TaskAnswer3(newTask);
-            TaskAnswer4(newTask);
-            TaskAnswer5(newTask);
-            TaskAnswer6(newTask);
-            TaskAnswer7(newTask);
-            TaskAnswer8(newTask);
-            TaskAnswer9(newTask);
-            TaskAnswer10(newTask);
-            TaskAnswer11(newTask);
-            TaskAnswer12(newTask);
-            TaskAnswer13(newTask);
-            TaskAnswer14(newTask);
-            TaskAnswer15(newTask);
+            ////вызовы методов для заполнения полей
+            //NumAndTask(newTask);
+            //Task1(newTask);
+            //Task2(newTask);
+            //Task3(newTask);
+            //Task4(newTask);
+            //Task5(newTask);
+            //Task6(newTask);
+            //Task7(newTask);
+            //Task8(newTask);
+            //Task9(newTask);
+            //Task0(newTask);
+            //TaskAnswer1(newTask);
+            //TaskAnswer2(newTask);
+            //TaskAnswer3(newTask);
+            //TaskAnswer4(newTask);
+            //TaskAnswer5(newTask);
+            //TaskAnswer6(newTask);
+            //TaskAnswer7(newTask);
+            //TaskAnswer8(newTask);
+            //TaskAnswer9(newTask);
+            //TaskAnswer10(newTask);
+            //TaskAnswer11(newTask);
+            //TaskAnswer12(newTask);
+            //TaskAnswer13(newTask);
+            //TaskAnswer14(newTask);
+            //TaskAnswer15(newTask);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -250,5 +250,9 @@ namespace IELTSAppProject
             return elem.TaskAnswer0[2];
         }
 
+        private void checkAnswer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
