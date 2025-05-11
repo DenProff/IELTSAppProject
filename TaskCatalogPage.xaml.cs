@@ -93,7 +93,7 @@ namespace IELTSAppProject
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Нажал всё-таки да, \nа что скажут твои родители");
+            
         }
     }
 }

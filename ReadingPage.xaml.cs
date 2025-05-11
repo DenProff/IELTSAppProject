@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using DocumentFormat.OpenXml.Office2021.DocumentTasks;
 
 namespace IELTSAppProject
 {
@@ -43,57 +46,69 @@ namespace IELTSAppProject
             List<string> third = new List<string>();
             List<string> fourth = new List<string>();
             List<string> fifth = new List<string>();
+            List<string> answer = new List<string>();
 
-            AddToList(ref first, "", "", "");
-            AddToList(ref second, "", "", "");
-            AddToList(ref third, "", "", "");
-            AddToList(ref fourth, "", "", "");
-            AddToList(ref fifth, "", "", "");
+            AddToList(ref first, "вариант", "вариант", "вариант");
+            AddToList(ref second, "вариант", "вариант", "вариант");
+            AddToList(ref third, "вариант", "вариант", "вариант");
+            AddToList(ref fourth, "вариант", "вариант", "вариант");
+            AddToList(ref fifth, "вариант", "вариант", "вариант");
+            AddToList(ref answer, "вариант", "вариант", "вариант");
 
-            //ReadingTask task = new ReadingTask();
+            ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
+                "задание", "задание", "задание", first, second, third, fourth, fifth);
 
+
+            try
+            {
+                string jsonObject = JsonConvert.SerializeObject(task);
+
+                string file = "D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json";
+                File.WriteAllText("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json", string.Empty);
+
+                File.AppendAllText("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json", jsonObject);
+
+                //поиск нужного элемента из json
+
+                JsonTextReader reader = new JsonTextReader(new StreamReader("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json"));
+                reader.SupportMultipleContent = true;
+                JsonSerializer serializer = new JsonSerializer();
+                ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
+                this.DataContext = newTask;
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
+            }
+            catch (JsonException ex)
+            {
+                MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
+            }
+           
             
 
-            //string jsonObject = JsonConvert.SerializeObject(task);
 
-            //File.WriteAllText("tasks.json", string.Empty);
-
-            //File.AppendAllText("tasks.json", jsonObject);
-
-            //поиск нужного элемента из json
-
-            //JsonTextReader reader = new JsonTextReader(new StreamReader("tasks.json"));
-            //reader.SupportMultipleContent = true;
-            //JsonSerializer serializer = new JsonSerializer();
-            //ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
-
-            ////вызовы методов для заполнения полей
-            //NumAndTask(newTask);
-            //Task1(newTask);
-            //Task2(newTask);
-            //Task3(newTask);
-            //Task4(newTask);
-            //Task5(newTask);
-            //Task6(newTask);
-            //Task7(newTask);
-            //Task8(newTask);
-            //Task9(newTask);
-            //Task0(newTask);
-            //TaskAnswer1(newTask);
-            //TaskAnswer2(newTask);
-            //TaskAnswer3(newTask);
-            //TaskAnswer4(newTask);
-            //TaskAnswer5(newTask);
-            //TaskAnswer6(newTask);
-            //TaskAnswer7(newTask);
-            //TaskAnswer8(newTask);
-            //TaskAnswer9(newTask);
-            //TaskAnswer10(newTask);
-            //TaskAnswer11(newTask);
-            //TaskAnswer12(newTask);
-            //TaskAnswer13(newTask);
-            //TaskAnswer14(newTask);
-            //TaskAnswer15(newTask);
+            foreach (UIElement elem in readingPart.Children)
+            {
+                if (elem is Button)
+                {
+                    if (elem == checkAnswer)
+                    {
+                        //RightAnswer1(newTask);
+                        //RightAnswer2(newTask);
+                        //RightAnswer3(newTask);
+                        //RightAnswer4(newTask);
+                        //RightAnswer5(newTask);
+                        //RightAnswer6(newTask);
+                        //RightAnswer7(newTask);
+                        //RightAnswer8(newTask);
+                        //RightAnswer9(newTask);
+                        //RightAnswer0(newTask);
+                        ((Button)elem).Click += checkAnswer_Click;
+                    }
+                }
+            }
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -113,146 +128,91 @@ namespace IELTSAppProject
             list.Add(thirdStroke);
         }
 
-        //методы для получения строк заданий
-        public static string NumAndTask(ReadingTask elem)
-        {
-            return elem.id.ToString() + elem.TaskText;
-        }
-
-        public static string TaskText(ReadingTask elem)
-        {
-            return elem.TextForReading;
-        }
-
-        public static string Task1(ReadingTask elem)
-        {
-            return elem.Task1;
-        }
-
-        public static string Task2(ReadingTask elem)
-        {
-            return elem.Task2;
-        }
-
-        public static string Task3(ReadingTask elem)
-        {
-            return elem.Task3;
-        }
-
-        public static string Task4(ReadingTask elem)
-        {
-            return elem.Task4;
-        }
-
-        public static string Task5(ReadingTask elem)
-        {
-            return elem.Task5;
-        }
-
-        public static string Task6(ReadingTask elem)
-        {
-            return elem.Task6;
-        }
-
-        public static string Task7(ReadingTask elem)
-        {
-            return elem.Task7;
-        }
-
-        public static string Task8(ReadingTask elem)
-        {
-            return elem.Task8;
-        }
-
-        public static string Task9(ReadingTask elem)
-        {
-            return elem.Task9;
-        }
-
-        public static string Task0(ReadingTask elem)
-        {
-            return elem.Task0;
-        }
-
-        //методы для вывода вариантов ответов в секции выбора a,b or c
-        public static string TaskAnswer1(ReadingTask elem)
-        {
-            return elem.TaskAnswer6[0];
-        }
-
-        public static string TaskAnswer2(ReadingTask elem)
-        {
-            return elem.TaskAnswer6[1];
-        }
-
-        public static string TaskAnswer3(ReadingTask elem)
-        {
-            return elem.TaskAnswer6[2];
-        }
-
-        public static string TaskAnswer4(ReadingTask elem)
-        {
-            return elem.TaskAnswer7[0];
-        }
-
-        public static string TaskAnswer5(ReadingTask elem)
-        {
-            return elem.TaskAnswer7[1];
-        }
-
-        public static string TaskAnswer6(ReadingTask elem)
-        {
-            return elem.TaskAnswer7[2];
-        }
-
-        public static string TaskAnswer7(ReadingTask elem)
-        {
-            return elem.TaskAnswer8[0];
-        }
-
-        public static string TaskAnswer8(ReadingTask elem)
-        {
-            return elem.TaskAnswer8[1];
-        }
-
-        public static string TaskAnswer9(ReadingTask elem)
-        {
-            return elem.TaskAnswer8[2];
-        }
-
-        public static string TaskAnswer10(ReadingTask elem)
-        {
-            return elem.TaskAnswer9[0];
-        }
-
-        public static string TaskAnswer11(ReadingTask elem)
-        {
-            return elem.TaskAnswer9[1];
-        }
-
-        public static string TaskAnswer12(ReadingTask elem)
-        {
-            return elem.TaskAnswer9[2];
-        }
-
-        public static string TaskAnswer13(ReadingTask elem)
-        {
-            return elem.TaskAnswer0[0];
-        }
-
-        public static string TaskAnswer14(ReadingTask elem)
-        {
-            return elem.TaskAnswer0[1];
-        }
-
-        public static string TaskAnswer15(ReadingTask elem)
-        {
-            return elem.TaskAnswer0[2];
-        }
-
+        
+        //проявление резульаттов ответа по клику
         private void checkAnswer_Click(object sender, RoutedEventArgs e)
         {
-
+            this.rightAnswer0.IsEnabled = true;
+            this.rightAnswer9.IsEnabled = true;
+            this.rightAnswer8.IsEnabled = true;
+            this.rightAnswer7.IsEnabled = true;
+            this.rightAnswer6.IsEnabled = true;
+            this.rightAnswer5.IsEnabled = true;
+            this.rightAnswer4.IsEnabled = true;
+            this.rightAnswer3.IsEnabled = true;
+            this.rightAnswer2.IsEnabled = true;
+            this.rightAnswer1.IsEnabled = true;
         }
+
+        ////методы появление надписей правильно или нет
+        //public static string RightAnswer1(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer2(ReadingTask elem)
+        //{
+        //     "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer3(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer4(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer5(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer6(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer7(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer8(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer9(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
+
+        //public static string RightAnswer0(ReadingTask elem)
+        //{
+        //    return "Правильный ответ!";
+
+        //    return "Неправильный ответ!";
+        //}
     }
 }

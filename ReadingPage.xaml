@@ -14,6 +14,7 @@
         <Button Grid.Row="0" HorizontalAlignment="Left" Margin="560,0,0,0" Width="223" Height="58" VerticalAlignment="Top" FontSize="17" Content="Добавить в подборку" x:Name="addToCollection" Click="Button_Click"/>
         <Border MinWidth="400" MaxWidth="1900" Background=" #514ED9" Padding="30" CornerRadius="20" Margin="0,85,0,0" Height="568" Width="886">
             <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}" Margin="0,0,4,0">
+                
                 <StackPanel RenderTransformOrigin="0.5,0.5" Margin="10,25,-14,-5" Height="1619">
                     <StackPanel.RenderTransform>
                         <TransformGroup>
@@ -23,45 +24,68 @@
                             <TranslateTransform Y="-1.081"/>
                         </TransformGroup>
                     </StackPanel.RenderTransform>
-                    <TextBlock FontSize="20" Text="{Binding NumAndTask}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="42" Width="787" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="20" Text="{Binding TextForReading}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="42" Width="787" HorizontalAlignment="Left"/>
                     <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="350" Width="793" HorizontalAlignment="Left"/>
+                    
                     <TextBlock FontSize="18" Text="{Binding Task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39" Width="778" HorizontalAlignment="Left"/>
-                    <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
-                        <ComboBoxItem Content="True"/>
-                        <ComboBoxItem Content="False"/>
-                        <ComboBoxItem Content="Not Stated"/>
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
+                            <ComboBoxItem Content="True"/>
+                            <ComboBoxItem Content="False"/>
+                            <ComboBoxItem Content="Not Stated"/>
+                        </ComboBox>
+                        <TextBlock FontSize="18" Text="{Binding RightAnswer1}" x:Name="rightAnswer1" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
+                    
                     <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
-                    <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
-                        <ComboBoxItem Content="True"/>
-                        <ComboBoxItem Content="False"/>
-                        <ComboBoxItem Content="Not Stated"/>
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
+                            <ComboBoxItem Content="True"/>
+                            <ComboBoxItem Content="False"/>
+                            <ComboBoxItem Content="Not Stated"/>
+                        </ComboBox>
+                        <TextBlock FontSize="18" Text="{Binding RightAnswer2}" x:Name="rightAnswer2" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
+                    
                     <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
-                    <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
-                        <ComboBoxItem Content="True"/>
-                        <ComboBoxItem Content="False"/>
-                        <ComboBoxItem Content="Not Stated"/>
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
+                            <ComboBoxItem Content="True"/>
+                            <ComboBoxItem Content="False"/>
+                            <ComboBoxItem Content="Not Stated"/>
+                        </ComboBox>
+                        <TextBlock FontSize="18" Text="{Binding RightAnswer3}" x:Name="rightAnswer3" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
+                    
                     <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
-                    <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
-                        <ComboBoxItem Content="True"/>
-                        <ComboBoxItem Content="False"/>
-                        <ComboBoxItem Content="Not Stated"/>
-                    </ComboBox>
-                    <TextBlock FontSize="18" Text="{Binding task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
-                    <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
-                        <ComboBoxItem Content="True"/>
-                        <ComboBoxItem Content="False"/>
-                        <ComboBoxItem Content="Not Stated"/>
-                    </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
+                            <ComboBoxItem Content="True"/>
+                            <ComboBoxItem Content="False"/>
+                            <ComboBoxItem Content="Not Stated"/>
+                        </ComboBox>
+                        <TextBlock FontSize="18" Text="{Binding RightAnswer4}" x:Name="rightAnswer4" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
+                    
+                    <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
+                            <ComboBoxItem Content="True"/>
+                            <ComboBoxItem Content="False"/>
+                            <ComboBoxItem Content="Not Stated"/>
+                        </ComboBox>
+                        <TextBlock FontSize="18" Text="{Binding RightAnswer5}" x:Name="rightAnswer5" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                    </StackPanel>
 
                     <StackPanel Margin="20,0,0,0">
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task6}" 
                                TextWrapping="Wrap" Foreground="White"/>
                             <RadioButton Content="{Binding  TaskAnswer1}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer2}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="{Binding  TaskAnswer2}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White"/>
+                                <TextBlock FontSize="18" Text="{Binding RightAnswer6}" x:Name="rightAnswer6" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            </StackPanel>
                             <RadioButton Content="{Binding  TaskAnswer3}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="White"/>
                         </StackPanel>
 
@@ -69,7 +93,10 @@
                             <TextBlock Text="{Binding Task7}" 
                                TextWrapping="Wrap"  Foreground="White"/>
                             <RadioButton Content="{Binding  TaskAnswer4}" Margin="20,5,0,0"  x:Name="answer71"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer5}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="{Binding  TaskAnswer5}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White"/>
+                                <TextBlock FontSize="18" Text="{Binding RightAnswer7}" x:Name="rightAnswer7" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            </StackPanel>
                             <RadioButton Content="{Binding  TaskAnswer6}" Margin="20,0,0,0" x:Name="answer73"  Foreground="White"/>
                         </StackPanel>
 
@@ -77,7 +104,10 @@
                             <TextBlock Text="{Binding Task8}" 
                                TextWrapping="Wrap"  Foreground="White"/>
                             <RadioButton Content="{Binding  TaskAnswer7}" Margin="20,5,0,0" x:Name="answer81"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer8}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="{Binding  TaskAnswer8}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White"/>
+                                <TextBlock FontSize="18" Text="{Binding RightAnswer8}" x:Name="rightAnswer8" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            </StackPanel>
                             <RadioButton Content="{Binding  TaskAnswer9}" Margin="20,0,0,0" x:Name="answer83"  Foreground="White"/>
                         </StackPanel>
 
@@ -85,7 +115,10 @@
                             <TextBlock Text="{Binding Task9}" 
                                TextWrapping="Wrap"  Foreground="White"/>
                             <RadioButton Content="{Binding  TaskAnswer10}" Margin="20,5,0,0" x:Name="answer91"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer11}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="{Binding  TaskAnswer11}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White"/>
+                                <TextBlock FontSize="18" Text="{Binding RightAnswer9}" x:Name="rightAnswer9" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            </StackPanel>
                             <RadioButton Content="{Binding  TaskAnswer12}" Margin="20,0,0,0" x:Name="answer93"  Foreground="White"/>
                         </StackPanel>
 
@@ -93,11 +126,16 @@
                             <TextBlock Text="{Binding Task0}" 
                                TextWrapping="Wrap"  Foreground="White"/>
                             <RadioButton Content="{Binding  TaskAnswer13}" Margin="20,5,0,0" x:Name="answer01"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer14}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White"/>
+                            <StackPanel Orientation="Horizontal">
+                                <RadioButton Content="{Binding  TaskAnswer14}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White"/>
+                                <TextBlock FontSize="18" Text="{Binding RightAnswer0}" x:Name="rightAnswer0" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            </StackPanel>
                             <RadioButton Content="{Binding  TaskAnswer15}" Margin="20,0,0,0" x:Name="answer03"  Foreground="White"/>
                         </StackPanel>
+                        
                     </StackPanel>
                     <Button HorizontalAlignment="Center" FontSize="17" x:Name="checkAnswer" Click="checkAnswer_Click" Content="Проверить" Height="45"/>
+                    
                 </StackPanel>
             </ScrollViewer>
         </Border>

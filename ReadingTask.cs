@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace IELTSAppProject
 {
-    public class ReadingTask : Task<List<string>>
+    public class ReadingTask : Task<List<string>>, INotifyPropertyChanged
     {
         
 
@@ -27,13 +28,94 @@ namespace IELTSAppProject
         public string Task0 { get; set; }
 
         //списки для вариантов ответов (a,b or c)
-        public List<string> TaskAnswer6 { get; set; }
-        public List<string> TaskAnswer7 { get; set; }
-        public List<string> TaskAnswer8 { get; set; }
-        public List<string> TaskAnswer9 { get; set; }
-        public List<string> TaskAnswer0 { get; set; }
+        public List<string> TaskAnswerList6 { get; set; }
+        public List<string> TaskAnswerList7 { get; set; }
+        public List<string> TaskAnswerList8 { get; set; }
+        public List<string> TaskAnswerList9 { get; set; }
+        public List<string> TaskAnswerList0 { get; set; }
 
+        //свойства вариантов ответов из списков
+        public string TaskAnswer1
+        {
+            get => TaskAnswerList6[0];
+        }
 
+        public string TaskAnswer2
+        {
+            get => TaskAnswerList6[1];
+        }
+
+        public string TaskAnswer3
+        {
+            get => TaskAnswerList6[2];
+        }
+
+        public string TaskAnswer4
+        {
+            get => TaskAnswerList7[0];
+        }
+
+        public string TaskAnswer5
+        {
+            get => TaskAnswerList7[1];
+        }
+
+        public string TaskAnswer6
+        {
+            get => TaskAnswerList7[2];
+        }
+
+        public string TaskAnswer7
+        {
+            get => TaskAnswerList8[0];
+        }
+
+        public string TaskAnswer8
+        {
+            get => TaskAnswerList8[1];
+        }
+
+        public string TaskAnswer9
+        {
+            get => TaskAnswerList8[2];
+        }
+
+        public string TaskAnswer10
+        {
+            get => TaskAnswerList9[0];
+        }
+
+        public string TaskAnswer11
+        {
+            get => TaskAnswerList9[1];
+        }
+
+        public string TaskAnswer12
+        {
+            get => TaskAnswerList9[2];
+        }
+
+        public string TaskAnswer13
+        {
+            get => TaskAnswerList0[0];
+        }
+
+        public string TaskAnswer14
+        {
+            get => TaskAnswerList0[1];
+        }
+
+        public string TaskAnswer15
+        {
+            get => TaskAnswerList0[2];
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
 
         public ReadingTask(string taskText, List<string> answer, double recTime, string textForReading, string task1, string task2, string task3,
@@ -51,11 +133,11 @@ namespace IELTSAppProject
             Task8 = task8;
             Task9 = task9;
             Task0 = task0;
-            TaskAnswer6 = firstList;
-            TaskAnswer7 = secondList;
-            TaskAnswer8 = thirdList;
-            TaskAnswer9 = fourthList;
-            TaskAnswer0 = fifthList;
+            TaskAnswerList6 = firstList;
+            TaskAnswerList7 = secondList;
+            TaskAnswerList8 = thirdList;
+            TaskAnswerList9 = fourthList;
+            TaskAnswerList0 = fifthList;
         }
     }
 }
