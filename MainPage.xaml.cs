@@ -75,7 +75,7 @@ namespace IELTSAppProject
             string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
             string audio = Path.Combine(projectRoot, "audio", "cocoJambo.mp3");
             byte[] data = SoundControl.ConvertMp3ToWavBytes(audio);
-            SpeakingTask task = new SpeakingTask("Проблема фимоза в человеческом обществе", data, 5);
+            SpeakingTask task = new SpeakingTask("Is it worth buying an apartment on the first floor?", data, 5);
             NavigationService?.Navigate(new SpeakingPage(task));
         }
     }
