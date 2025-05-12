@@ -14,6 +14,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -147,5 +148,13 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
+        <Border Grid.Row="3" Background="#F5F5F5" Padding="10" BorderThickness="0,1,0,0" BorderBrush="LightGray">
+            <Button x:Name="CheckAnswersButton" 
+                    Content="Проверить ответы" 
+                    HorizontalAlignment="Center" 
+                    Width="185" 
+                    Height="36"
+                    FontSize="15"/>
+        </Border>
     </Grid>
 </Page>
