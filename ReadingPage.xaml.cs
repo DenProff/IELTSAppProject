@@ -144,6 +144,11 @@ namespace IELTSAppProject
             this.rightAnswer1.IsEnabled = true;
         }
 
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         ////методы появление надписей правильно или нет
         //public static string RightAnswer1(ReadingTask elem)
         //{
