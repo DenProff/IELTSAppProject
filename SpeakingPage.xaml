@@ -63,6 +63,6 @@
         <Label Grid.Column="6" Content="Результат и пример на макс. балл:" HorizontalAlignment="Left" 
             Grid.Row="4" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="230" Height="27" Margin="10,0,0,0"/>
         <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="2,127,12,60" Grid.Column="6" Content="Стоп" Click="StopPlaying"/>
-        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,161,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.ColumnSpan="3" Grid.Row="4"/>
+        <Button x:Name="HELP"  Content="Помощь" HorizontalAlignment="Left" Margin="0,161,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" Click="help_Click" Grid.ColumnSpan="3" Grid.Row="4" Tag="speaking"/>
     </Grid>
 </Page>
