@@ -18,6 +18,7 @@
         <Button Content="Самые новые подборки заданий" HorizontalAlignment="Left" Margin="708,187,0,0" VerticalAlignment="Top" Height="206" Width="338" Background="#FF35C0CD" Click="newCollections_Click" FontWeight="SemiBold" FontSize="19" x:Name="newCollections"/>
         <Button Content="Входное тестирование" HorizontalAlignment="Left" Margin="708,435,0,0" VerticalAlignment="Top" Height="206" Width="338" Background="#FF35C0CD" Click="testVar_Click" FontWeight="SemiBold" FontSize="19" x:Name="testVar"/>
         <Button Content="            Задания по разделам&#xD;&#xA; (Listening, Reading, Speaking, Writing)" HorizontalAlignment="Left" Margin="105,435,0,0" VerticalAlignment="Top" Height="206" Width="338" Background="#FF35C0CD" Click="moduleTasks_Click" FontWeight="SemiBold" FontSize="17" x:Name="moduleTasks"/>
+        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>
 </Page>
