@@ -1,4 +1,5 @@
 ﻿
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -48,8 +49,6 @@ namespace IELTSAppProject
                     //    ((Button)elem).Click += newCollections_Click;
                     //if (elem == testVar)
                     //    ((Button)elem).Click += testVar_Click;
-                    if (elem == fimox)
-                        ((Button)elem).Click += Button_Click_1;
 
 
                 }
@@ -91,9 +90,9 @@ namespace IELTSAppProject
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void help_Click(object sender, RoutedEventArgs e)
         {
-            
+            Hel
         }
     }
 }

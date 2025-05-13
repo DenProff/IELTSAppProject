@@ -134,16 +134,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="fimox" Content="le grand&#xD;&#xA; de fimox" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionAccentButton}" Height="110" Width="110"  Margin="0,590,0,0" FontSize="18" Click="Button_Click_1" Background="Red" FontStyle="Italic" FontWeight="Bold" BorderBrush="#FFD82410" Foreground="#DDFCFBFB">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
+        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>
 </Page>
