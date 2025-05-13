@@ -92,7 +92,6 @@ namespace IELTSAppProject
 
         private void help_Click(object sender, RoutedEventArgs e)
         {
-            Hel
         }
     }
 }
