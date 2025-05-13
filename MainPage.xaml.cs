@@ -78,5 +78,10 @@ namespace IELTSAppProject
             SpeakingTask task = new SpeakingTask("Is it worth buying an apartment on the first floor?", data, 5);
             NavigationService?.Navigate(new SpeakingPage(task));
         }
+
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

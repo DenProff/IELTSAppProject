@@ -52,5 +52,10 @@ namespace IELTSAppProject
         {
             NavigationService?.Navigate(new MainPage());
         }
+
+        public void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

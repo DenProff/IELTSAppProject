@@ -20,5 +20,6 @@
         <Button Content="Решать входной вариант" HorizontalAlignment="Left" Margin="148,421,0,0" VerticalAlignment="Top" Height="169" Width="295" Background="#FF35C0CD" Click="Button_Click" FontSize="17" x:Name="testVar"/>
         <Button Content="Работать по своему усмотрению&#xD;&#xA;   (не решать входной вариант)" HorizontalAlignment="Left" Margin="725,421,0,0" VerticalAlignment="Top" Height="169" Width="301" Background="#FF35C0CD" Click="Button_Click_1" FontWeight="SemiBold" FontSize="17" x:Name="continue"/>
         <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_2" FontSize="16" FontWeight="Bold" x:Name="turnBack"/>
+        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </Page>

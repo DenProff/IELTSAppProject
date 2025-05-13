@@ -107,5 +107,10 @@ namespace IELTSAppProject
             page.listeningCheckBox.IsChecked = true;
             NavigationService?.Navigate(page);
         }
+
+        public void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
