@@ -87,5 +87,10 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
 
         }
+
+        public void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
