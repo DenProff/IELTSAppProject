@@ -24,5 +24,6 @@
         <Button Content="Начать (продолжить)&#xD;&#xA;        подготовку" HorizontalAlignment="Center" Margin="0,437,0,0" VerticalAlignment="Top" Height="148" Width="274" Click="Button_Click_3" FontWeight="Medium" x:Name="continueWork" FontSize="18" Background="#FF35C0CD"/>
         <TextBlock Text="Выберите режим, который вам необходим" FontFamily="Arial Black" FontSize="20" Opacity="0.995" LineHeight="6" Margin="126,135,84,532" x:Name="chooseModule" TextAlignment="Center" Grid.ColumnSpan="2" />
         <Button Content="Выбор языка" HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Top" Height="97" Width="157" FontWeight="Bold" Click="Button_Click_4" x:Name="chooseLanguage" RenderTransformOrigin="0.489,0.488" Grid.Column="1" FontSize="18" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}"/>
+        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </Page>
