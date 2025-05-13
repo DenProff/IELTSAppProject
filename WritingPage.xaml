@@ -43,7 +43,7 @@
         </TextBlock>
 
 
-        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="2"><Run Language="ru-ru" Text="Задание"/></TextBlock>
+        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2"><Run Language="ru-ru" Text="Задание"/></TextBlock>
         <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" >Тема</TextBlock>
         <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="5" Height="30" Margin="10,0,0,0">
             <ComboBoxItem Content="Первая тема"/>
@@ -59,5 +59,6 @@
         <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Смотреть эссе на макс." Margin="0,140,0,47" Click="Button_Click"/>
         <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Смотреть своё эссе" Margin="0,177,0,10" Click="Button_Click"/>
         <TextBlock Background="Red" Grid.Column="8" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="193"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
+        <Button Content="Помощь" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="8"/>
     </Grid>
 </Page>
