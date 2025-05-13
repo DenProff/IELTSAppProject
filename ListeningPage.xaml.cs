@@ -29,5 +29,10 @@ namespace IELTSAppProject
         {
 
         }
+
+        public void help_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

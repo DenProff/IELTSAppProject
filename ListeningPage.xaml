@@ -9,7 +9,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="ListeningPage">
 
- <Grid Background="White">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -152,5 +152,16 @@
                     Height="36"
                     FontSize="15"/>
         </Border>
+        <Button x:Name="help"
+                Content="Помощь"
+                HorizontalAlignment="Right"
+                Background="#F13C73"
+                Width="93"
+                Height="36"
+                Click="help_Click"
+                Margin="0,29,0,0"
+                FontSize="13"
+                BorderThickness="0"
+                Grid.Row="3"/>
     </Grid>
 </Page>
