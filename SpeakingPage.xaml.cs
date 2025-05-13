@@ -97,25 +97,12 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 // 1. Путь к CHM-файлу (в корне проекта)
                 string chmPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "referenceData.chm");
 
-                // 2. Проверка существования файла
-                if (!File.Exists(chmPath))
-                {
-                    
-                    MessageBox.Show(
-                        "Файл справки (referenceData.chm) не найден в папке приложения.",
-                        "Ошибка",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Error
-                    );
-                    return;
-                }
-
-                // 3. Формируем команду для открытия CHM
+                // 2. Формирование команды для открытия CHM
                 string helpCommand = string.IsNullOrEmpty((string)HELP.Tag)
                 ? chmPath  // Если раздел не указан, открываем оглавление
                     : $@"mk:@MSITStore:{chmPath}::/{(string)HELP.Tag}.htm";  // Иначе конкретный раздел
-                MessageBox.Show($@"mk:@MSITStore:{chmPath}::/{(string)HELP.Tag}.htm");
-                // 4. Запускаем CHM через стандартную программу hh.exe
+
+                // 3. Запуск CHM через стандартную программу hh.exe
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = "hh.exe",
@@ -125,12 +112,6 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    $"Не удалось открыть справку:\n{ex.Message}",
-                    "Ошибка",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Error
-                );
             }
         }
     }
