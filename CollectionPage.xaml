@@ -5,8 +5,11 @@
       Title="Combined Tasks"
       Background="WhiteSmoke">
 
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
+        
         <StackPanel>
+            <Button Click="Button_Click" Height="93" Width="170">Вернуться назад</Button>
             <!-- Speaking Task -->
             <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
                 <Frame x:Name="SpeakingFrame" 

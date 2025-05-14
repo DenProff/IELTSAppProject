@@ -38,5 +38,10 @@ namespace IELTSAppProject
             ListeningFrame.Navigate(new ListeningPage());
             WritingFrame.Navigate(new WritingPage());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new FirstTestPage());
+        }
     }
 }
