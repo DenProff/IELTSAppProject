@@ -28,6 +28,13 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
+            this.Loaded += (sender, e) =>
+            {
+                this.Focus();
+                this.Focusable = true;
+                Keyboard.Focus(this);
+            };
+
             this.KeyDown += (sender, e) =>
             {
                 if (e.Key == Key.F1)
