@@ -1,14 +1,32 @@
 ﻿<Page x:Class="IELTSAppProject.CollectionPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IELTSAppProject"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="CollectionPage">
+      Title="Combined Tasks"
+      Background="WhiteSmoke">
 
-    <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <!-- Speaking Task -->
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
+                <Frame x:Name="SpeakingFrame" 
+                       NavigationUIVisibility="Hidden" 
+                       Height="500"/>
+            </Border>
 
-    </Grid>
+            <!-- Listening Task -->
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
+                <Frame x:Name="ListeningFrame" 
+                       NavigationUIVisibility="Hidden" 
+                       Height="600"/>
+            </Border>
+
+            <!-- Writing Task -->
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
+                <Frame x:Name="WritingFrame" 
+                       NavigationUIVisibility="Hidden" 
+                       Height="500"/>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
 </Page>
