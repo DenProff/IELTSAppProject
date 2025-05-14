@@ -97,7 +97,7 @@ namespace IELTSAppProject
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new MainPage());
+            NavigationService?.Navigate(new FirstTestPage());
         }
 
         private void statistic_Click(object sender, RoutedEventArgs e)
