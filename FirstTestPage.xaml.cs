@@ -68,7 +68,7 @@ namespace IELTSAppProject
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            NavigationService?.GoBack();
+            NavigationService?.Navigate(new MainPage());
         }
 
         public void help_Click(object sender, RoutedEventArgs e)
