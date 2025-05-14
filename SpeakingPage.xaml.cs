@@ -39,6 +39,16 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             Task = task;
             InitializeComponent();
+
+            this.KeyDown += (sender, e) =>
+            {
+                if (e.Key == Key.F1)
+                {
+                    OpenChmHelp();
+                    e.Handled = true;
+                }
+            };
+
             taskTextBlock.Text = taskText;
             topicTextBlock.Text = task.TaskText;
             idTextBox.Text += (task.id).ToString();
@@ -90,29 +100,32 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         }
 
-        public void help_Click(object sender, RoutedEventArgs e)
+        private void OpenChmHelp()
         {
-            try
+            string chmPath = System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
+
+            if (File.Exists(chmPath))
             {
-                // 1. Путь к CHM-файлу (в корне проекта)
-                string chmPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "referenceData.chm");
-
-                // 2. Формирование команды для открытия CHM
-                string helpCommand = string.IsNullOrEmpty((string)HELP.Tag)
-                ? chmPath  // Если раздел не указан, открываем оглавление
-                    : $@"mk:@MSITStore:{chmPath}::/{(string)HELP.Tag}.htm";  // Иначе конкретный раздел
-
-                // 3. Запуск CHM через стандартную программу hh.exe
-                Process.Start(new ProcessStartInfo
+                try
                 {
-                    FileName = "hh.exe",
-                    Arguments = helpCommand,
-                    UseShellExecute = true
-                });
+                    // Открыть страницу "settings.html" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/speaking.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            catch (Exception ex)
-            {
-            }
+        }
+
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            OpenChmHelp();
         }
     }
 }
