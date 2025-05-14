@@ -40,6 +40,13 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             Task = task;
             InitializeComponent();
 
+            this.Loaded += (sender, e) =>
+            {
+                this.Focus();
+                this.Focusable = true;
+                Keyboard.Focus(this);
+            };
+
             this.KeyDown += (sender, e) =>
             {
                 if (e.Key == Key.F1)
