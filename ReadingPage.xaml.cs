@@ -17,6 +17,8 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+using System.Diagnostics;
+using Path = System.IO.Path;
 
 namespace IELTSAppProject
 {
@@ -28,6 +30,15 @@ namespace IELTSAppProject
         public ReadingPage()
         {
             InitializeComponent();
+
+            this.KeyDown += (sender, e) =>
+            {
+                if (e.Key == Key.F1)
+                {
+                    OpenChmHelp();
+                    e.Handled = true;
+                }
+            };
 
             foreach (UIElement elem in readingPart.Children)
             {
@@ -63,14 +74,14 @@ namespace IELTSAppProject
             {
                 string jsonObject = JsonConvert.SerializeObject(task);
 
-                string file = "D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json";
-                File.WriteAllText("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json", string.Empty);
+                string file = "D://Максим//ВЫШКА ПРОГА//Проект//Какое-то начало 2//точное начало//resourcesTask//tasks//tasks.json";
+                File.WriteAllText(file, string.Empty);
 
-                File.AppendAllText("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json", jsonObject);
+                File.AppendAllText(file, jsonObject);
 
                 //поиск нужного элемента из json
 
-                JsonTextReader reader = new JsonTextReader(new StreamReader("D:/Максим/ВЫШКА ПРОГА/Проект/Какое-то начало 2/точное начало/resourcesTask/VseNahui/tasks.json"));
+                JsonTextReader reader = new JsonTextReader(new StreamReader(file));
                 reader.SupportMultipleContent = true;
                 JsonSerializer serializer = new JsonSerializer();
                 ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
@@ -111,6 +122,29 @@ namespace IELTSAppProject
            
         }
 
+        private void OpenChmHelp()
+        {
+            string chmPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
+
+            if (File.Exists(chmPath))
+            {
+                try
+                {
+                    // Открыть страницу "settings.html" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/reading.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -146,7 +180,7 @@ namespace IELTSAppProject
 
         private void help_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenChmHelp();
         }
 
         ////методы появление надписей правильно или нет

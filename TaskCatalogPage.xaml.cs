@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -16,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Path = System.IO.Path;
 
 namespace IELTSAppProject
 {
@@ -28,6 +31,15 @@ namespace IELTSAppProject
         public TaskCatalogPage()
         {
             InitializeComponent();
+
+            this.KeyDown += (sender, e) =>
+            {
+                if (e.Key == Key.F1)
+                {
+                    OpenChmHelp();
+                    e.Handled = true;
+                }
+            };
 
             foreach (UIElement elem in taskCatalog.Children)
             {
@@ -51,6 +63,29 @@ namespace IELTSAppProject
                     //    ((Button)elem).Click += testVar_Click;
 
 
+                }
+            }
+        }
+
+        private void OpenChmHelp()
+        {
+            string chmPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
+
+            if (File.Exists(chmPath))
+            {
+                try
+                {
+                    // Открыть страницу "settings.html" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/taskСollections.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
         }
@@ -92,6 +127,7 @@ namespace IELTSAppProject
 
         private void help_Click(object sender, RoutedEventArgs e)
         {
+            OpenChmHelp();
         }
     }
 }
