@@ -99,7 +99,7 @@ namespace IELTSAppProject
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new ChooseModulePage());
+            NavigationService?.GoBack();
         }
 
         private void statistic_Click(object sender, RoutedEventArgs e)

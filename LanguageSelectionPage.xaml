@@ -143,5 +143,16 @@
                 </RadioButton.Template>
             </RadioButton>
         </StackPanel>
+        <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
+        <Button x:Name="help"
+            Content="Помощь"
+            HorizontalAlignment="Left"
+            Background="#F13C73"
+            Width="93"
+            Height="56"
+            Click="help_Click"
+            Margin="0,644,0,0"
+            FontSize="13"
+            BorderThickness="0"/>
     </Grid>
 </Page>
