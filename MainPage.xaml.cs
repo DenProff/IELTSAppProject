@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,15 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
+            this.KeyDown += (sender, e) =>
+            {
+                if (e.Key == Key.F1)
+                {
+                    OpenChmHelp();
+                    e.Handled = true;
+                }
+            };
+
             foreach (UIElement elem in mainScreen.Children)
             {
                 if (elem is Button)
@@ -44,6 +54,29 @@ namespace IELTSAppProject
                 }
             }
             
+        }
+
+        private void OpenChmHelp()
+        {
+            string chmPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
+
+            if (File.Exists(chmPath))
+            {
+                try
+                {
+                    // Открыть страницу "settings.html" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/applicationModes.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -81,7 +114,7 @@ namespace IELTSAppProject
 
         private void help_Click(object sender, RoutedEventArgs e)
         {
-
+            OpenChmHelp();
         }
     }
 }
