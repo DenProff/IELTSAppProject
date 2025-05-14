@@ -220,7 +220,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="resourcesTask\VseNahui\tasks.json" />
+    <None Include="resourcesTask\tasks\tasks.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
