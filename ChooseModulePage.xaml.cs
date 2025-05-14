@@ -117,7 +117,7 @@ namespace IELTSAppProject
 
         private void language_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
         private void varOfExam_Click(object sender, RoutedEventArgs e)
