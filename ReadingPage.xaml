@@ -81,45 +81,630 @@
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task6}" 
                                TextWrapping="Wrap" Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer1}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer2}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer3}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer1}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                                                Width="17" 
+                                                Height="17"
+                                                Margin="5,5,5,2"
+                                                CornerRadius="8" 
+                                                BorderThickness="2" 
+                                                BorderBrush="Black"
+                                                Background="White"> 
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                                                    Width="8" 
+                                                     Height="8" 
+                                                     Fill="Transparent"/>
+                                                </Border>
+                                                <ContentPresenter x:Name="Content" 
+                                                    Margin="5,0,0,0" 
+                                                    VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer2}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                                                Width="17" 
+                                                Height="17"
+                                                Margin="5,5,5,2"
+                                                CornerRadius="8" 
+                                                BorderThickness="2" 
+                                                BorderBrush="Black"
+                                                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                                                    Width="8" 
+                                                     Height="8" 
+                                                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                                                Margin="5,5,0,0" 
+                                                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer3}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                 Width="17" 
+                 Height="17"
+                 Margin="5,5,5,2"
+                 CornerRadius="8" 
+                 BorderThickness="2" 
+                 BorderBrush="Black"
+                 Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                     Width="8" 
+                      Height="8" 
+                      Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                 Margin="5,5,0,0" 
+                 VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
                             <TextBlock FontSize="18" Text="{Binding RightAnswer6}" x:Name="rightAnswer6" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
-                        </StackPanel>
+                            </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task7}" 
                                TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer4}" Margin="20,5,0,0"  x:Name="answer71"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer5}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer6}" Margin="20,0,0,0" x:Name="answer73"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer4}" Margin="20,5,0,0"  x:Name="answer71"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                 Width="17" 
+                 Height="17"
+                 Margin="5,5,5,2"
+                 CornerRadius="8" 
+                 BorderThickness="2" 
+                 BorderBrush="Black"
+                 Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                     Width="8" 
+                      Height="8" 
+                      Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                 Margin="5,5,0,0" 
+                 VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer5}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                 Width="17" 
+                 Height="17"
+                 Margin="5,5,5,2"
+                 CornerRadius="8" 
+                 BorderThickness="2" 
+                 BorderBrush="Black"
+                 Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                     Width="8" 
+                      Height="8" 
+                      Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                 Margin="5,5,0,0" 
+                 VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer6}" Margin="20,0,0,0" x:Name="answer73"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+Width="17" 
+Height="17"
+Margin="5,5,5,2"
+CornerRadius="8" 
+BorderThickness="2" 
+BorderBrush="Black"
+Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+    Width="8" 
+     Height="8" 
+     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+Margin="5,5,0,0" 
+VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
                             <TextBlock FontSize="18" Text="{Binding RightAnswer7}" x:Name="rightAnswer7" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task8}" 
                                TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer7}" Margin="20,5,0,0" x:Name="answer81"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer8}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer9}" Margin="20,0,0,0" x:Name="answer83"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer7}" Margin="20,5,0,0" x:Name="answer81"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer8}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer9}" Margin="20,0,0,0" x:Name="answer83"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
                             <TextBlock FontSize="18" Text="{Binding RightAnswer8}" x:Name="rightAnswer8" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task9}" 
                                TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer10}" Margin="20,5,0,0" x:Name="answer91"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer11}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer12}" Margin="20,0,0,0" x:Name="answer93"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer10}" Margin="20,5,0,0" x:Name="answer91"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer11}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer12}" Margin="20,0,0,0" x:Name="answer93"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
                             <TextBlock FontSize="18" Text="{Binding RightAnswer9}" x:Name="rightAnswer9" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,20">
                             <TextBlock Text="{Binding Task0}" 
                                TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer13}" Margin="20,5,0,0" x:Name="answer01"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer14}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White"/>
-                            <RadioButton Content="{Binding  TaskAnswer15}" Margin="20,0,0,0" x:Name="answer03"  Foreground="White"/>
+                            <RadioButton Content="{Binding  TaskAnswer13}" Margin="20,5,0,0" x:Name="answer01"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer14}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
+                            <RadioButton Content="{Binding  TaskAnswer15}" Margin="20,0,0,0" x:Name="answer03"  Foreground="White">
+                                <RadioButton.Template>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <StackPanel Orientation="Horizontal">
+                                            <!-- Внешний круг -->
+                                            <Border x:Name="OuterCircle" 
+                Width="17" 
+                Height="17"
+                Margin="5,5,5,2"
+                CornerRadius="8" 
+                BorderThickness="2" 
+                BorderBrush="Black"
+                Background="White">
+                                                <!-- Внутренний круг -->
+                                                <Ellipse x:Name="InnerCircle" 
+                    Width="8" 
+                     Height="8" 
+                     Fill="Transparent"/>
+                                            </Border>
+                                            <ContentPresenter x:Name="Content" 
+                Margin="5,5,0,0" 
+                VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                        <ControlTemplate.Triggers>
+                                            <!-- Цвет для выбранного состояния -->
+                                            <Trigger Property="IsChecked" Value="True">
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                                            </Trigger>
+
+                                            <!-- Цвет для неактивного состояния -->
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </RadioButton.Template>
+                            </RadioButton>
                             <TextBlock FontSize="18" Text="{Binding RightAnswer0}" x:Name="rightAnswer0" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
                         </StackPanel>
 
