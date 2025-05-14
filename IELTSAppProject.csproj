@@ -118,6 +118,9 @@
       <DependentUpon>ListeningPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListeningTask.cs" />
+    <Compile Include="LanguageSelectionPage.xaml.cs">
+      <DependentUpon>LanguageSelectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadingPage.xaml.cs">
       <DependentUpon>ReadingPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="LanguageSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReadingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

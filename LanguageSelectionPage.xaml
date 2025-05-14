@@ -1,0 +1,147 @@
+﻿<Page x:Class="IELTSAppProject.LanguageSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IELTSAppProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1177"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="IELTS App" Height="700" Width="1165">
+    <Grid x:Name="languageSelection"  Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
+        <StackPanel Margin="253,256,269,243" Background=" #514ED9">
+            <TextBlock Text="Выберите язык, на котором вы хотите работать в приложении" 
+                       FontSize="16"
+                       Foreground="Wheat"
+                       Margin="0,20,0,20"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"/>
+
+            <!-- Русский (выбран) -->
+            <RadioButton Content="Русский" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="russianLanguage" Click="russianLanguage_Click">
+                <RadioButton.Template>
+                    <ControlTemplate TargetType="RadioButton">
+                        <StackPanel Orientation="Horizontal">
+                            <!-- Внешний круг -->
+                            <Border x:Name="OuterCircle" 
+                                Width="17" 
+                                Height="17"
+                                Margin="5,0,0,0"
+                                CornerRadius="8" 
+                                BorderThickness="2" 
+                                BorderBrush="Black"
+                                Background="White">
+                                <!-- Внутренний круг -->
+                                <Ellipse x:Name="InnerCircle" 
+                                     Width="8" 
+                                     Height="8" 
+                                     Fill="Transparent"/>
+                            </Border>
+                            <ContentPresenter x:Name="Content" 
+                                 Margin="5,0,0,0" 
+                                 VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <!-- Цвет для выбранного состояния -->
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                            </Trigger>
+
+                            <!-- Цвет для неактивного состояния -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </RadioButton.Template>
+            </RadioButton>
+
+            <!-- Китайский -->
+            <RadioButton Content="Китайский" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="chineseLanguage" Click="russianLanguage_Click">
+                <RadioButton.Template>
+                    <ControlTemplate TargetType="RadioButton">
+                        <StackPanel Orientation="Horizontal">
+                            <!-- Внешний круг -->
+                            <Border x:Name="OuterCircle" 
+                                Width="17" 
+                                Height="17"
+                                Margin="5,0,0,0"
+                                CornerRadius="8" 
+                                BorderThickness="2" 
+                                BorderBrush="Black"
+                                Background="White">
+                                <!-- Внутренний круг -->
+                                <Ellipse x:Name="InnerCircle" 
+                                     Width="8" 
+                                     Height="8" 
+                                     Fill="Transparent"/>
+                            </Border>
+                            <ContentPresenter x:Name="Content" 
+                                 Margin="5,0,0,0" 
+                                 VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <!-- Цвет для выбранного состояния -->
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                            </Trigger>
+
+                            <!-- Цвет для неактивного состояния -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </RadioButton.Template>
+            </RadioButton>
+
+            <!-- Английский -->
+            <RadioButton Content="Английский" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="englishLanguage" Click="englishLanguage_Click">
+                <RadioButton.Template>
+                    <ControlTemplate TargetType="RadioButton">
+                        <StackPanel Orientation="Horizontal">
+                            <!-- Внешний круг -->
+                            <Border x:Name="OuterCircle" 
+                        Width="17" 
+                        Height="17"
+                        Margin="5,0,0,0"
+                        CornerRadius="8" 
+                        BorderThickness="2" 
+                        BorderBrush="Black"
+                        Background="White">
+                                <!-- Внутренний круг -->
+                                <Ellipse x:Name="InnerCircle" 
+                             Width="8" 
+                             Height="8" 
+                             Fill="Transparent"/>
+                            </Border>
+                            <ContentPresenter x:Name="Content" 
+                                 Margin="5,0,0,0" 
+                                 VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <!-- Цвет для выбранного состояния -->
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="#FF0078D7"/>
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="#FF0078D7"/>
+                            </Trigger>
+
+                            <!-- Цвет для неактивного состояния -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="OuterCircle" Property="BorderBrush" Value="LightGray"/>
+                                <Setter TargetName="InnerCircle" Property="Fill" Value="LightGray"/>
+                                <Setter TargetName="Content" Property="TextElement.Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </RadioButton.Template>
+            </RadioButton>
+        </StackPanel>
+    </Grid>
+</Page>
