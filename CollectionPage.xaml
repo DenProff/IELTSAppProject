@@ -4,32 +4,26 @@
       xmlns:local="clr-namespace:IELTSAppProject"
       Title="Combined Tasks"
       Background="WhiteSmoke">
-
-
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
-        
-        <StackPanel>
-            <Button Click="Button_Click" Height="93" Width="170" HorizontalAlignment="Left">Вернуться назад</Button>
-            <!-- Speaking Task -->
-            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
-                <Frame x:Name="SpeakingFrame" 
-                       NavigationUIVisibility="Hidden" 
-                       Height="500"/>
-            </Border>
-
-            <!-- Listening Task -->
-            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
-                <Frame x:Name="ListeningFrame" 
-                       NavigationUIVisibility="Hidden" 
-                       Height="600"/>
-            </Border>
-
-            <!-- Writing Task -->
-            <Border BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="5" Background="White">
-                <Frame x:Name="WritingFrame" 
-                       NavigationUIVisibility="Hidden" 
-                       Height="500"/>
-            </Border>
-        </StackPanel>
-    </ScrollViewer>
+    <Grid MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300"  Height="700" Width="1177">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="2"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Disabled">
+            <ItemsControl x:Name="TasksContainer">
+                <!-- UserControl-ы будут добавляться сюда -->
+            </ItemsControl>
+        </ScrollViewer>
+        <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="0" Margin="50 0 50 0" FontSize="20" Click="Check_Click">Проверить всё</Button>
+        <Button x:Name="Convert"  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="50 0 50 0" FontSize="20" Click="Convert_Click">Конвертировать всё в docx</Button>
+        <TextBlock x:Name="VariantId" FontSize="20">Id: </TextBlock>
+        <TextBlock x:Name="VariantName" Grid.Column="1" FontSize="20">Название: </TextBlock>
+    </Grid>
 </Page>
