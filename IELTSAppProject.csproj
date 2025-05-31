@@ -137,6 +137,7 @@
     <Compile Include="TaskCatalogPage.xaml.cs">
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TaskCollection.cs" />
     <Compile Include="WritingPage.xaml.cs">
       <DependentUpon>WritingPage.xaml</DependentUpon>
     </Compile>
