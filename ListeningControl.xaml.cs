@@ -19,11 +19,11 @@ using Path = System.IO.Path;
 namespace IELTSAppProject
 {
     /// <summary>
-    /// Логика взаимодействия для ListeningPage.xaml
+    /// Логика взаимодействия для ListeningControl.xaml
     /// </summary>
-    public partial class ListeningPage : Page
+    public partial class ListeningControl : UserControl
     {
-        public ListeningPage()
+        public ListeningControl()
         {
             InitializeComponent();
 
