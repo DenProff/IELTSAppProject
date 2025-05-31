@@ -76,22 +76,22 @@ namespace IELTSAppProject
             ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
                 "задание", "задание", "задание", first, second, third, fourth, fifth);
 
-
             try
             {
+                string file = "D://Максим//ВЫШКА ПРОГА//Проект//Какое-то начало 2//точное начало//resourcesTask//tasks//tasks.json";
+
+                // Сериализуем объект в JSON
                 string jsonObject = JsonConvert.SerializeObject(task);
 
-                string file = "D://Максим//ВЫШКА ПРОГА//Проект//Какое-то начало 2//точное начало//resourcesTask//tasks//tasks.json";
-                File.WriteAllText(file, string.Empty);
+                // Записываем JSON в файл (перезаписываем, если существует)
+                File.WriteAllText(file, jsonObject);
 
-                File.AppendAllText(file, jsonObject);
+                // Читаем JSON из файла (после закрытия потока)
+                string jsonFromFile = File.ReadAllText(file);
 
-                //поиск нужного элемента из json
+                // Десериализуем обратно в объект
+                ReadingTask newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
 
-                JsonTextReader reader = new JsonTextReader(new StreamReader(file));
-                reader.SupportMultipleContent = true;
-                JsonSerializer serializer = new JsonSerializer();
-                ReadingTask newTask = serializer.Deserialize<ReadingTask>(reader);
                 this.DataContext = newTask;
             }
             catch (IOException ex)
@@ -142,7 +142,7 @@ namespace IELTSAppProject
             {
                 try
                 {
-                    // Открыть страницу "settings.html" внутри CHM
+                    // Открыть страницу "reading.htm" внутри CHM
                     Process.Start("hh.exe", $"{chmPath}::/reading.htm");
                 }
                 catch (Exception ex)
