@@ -121,8 +121,8 @@
     <Compile Include="LanguageSelectionPage.xaml.cs">
       <DependentUpon>LanguageSelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReadingPage.xaml.cs">
-      <DependentUpon>ReadingPage.xaml</DependentUpon>
+    <Compile Include="ReadingControl.xaml.cs">
+      <DependentUpon>ReadingControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReadingTask.cs" />
     <Compile Include="SimpleAudioPlayer.xaml.cs">
@@ -183,7 +183,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ReadingPage.xaml">
+    <Page Include="ReadingControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

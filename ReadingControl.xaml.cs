@@ -25,9 +25,9 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ReadingPage.xaml
     /// </summary>
-    public partial class ReadingPage : Page
+    public partial class ReadingControl : UserControl
     {
-        public ReadingPage()
+        public ReadingControl()
         {
             InitializeComponent();
 
