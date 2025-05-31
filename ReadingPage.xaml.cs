@@ -78,7 +78,12 @@ namespace IELTSAppProject
 
             try
             {
-                string file = "D://Максим//ВЫШКА ПРОГА//Проект//Какое-то начало 2//точное начало//resourcesTask//tasks//tasks.json";
+                string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tasks.json");
+                if (!File.Exists(file))
+                {
+                    MessageBox.Show("Файл не найден!");
+                    return;
+                }
 
                 // Сериализуем объект в JSON
                 string jsonObject = JsonConvert.SerializeObject(task);
