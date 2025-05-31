@@ -78,7 +78,8 @@ namespace IELTSAppProject
 
             try
             {
-                string file = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tasks.json");
+                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
                 if (!File.Exists(file))
                 {
                     MessageBox.Show("Файл не найден!");
