@@ -41,19 +41,6 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-
-            foreach (UIElement elem in firstTest.Children)
-            {
-                if (elem is Button)
-                {
-                    if (elem == testVar)
-                        ((Button)elem).Click += Button_Click;
-                    if (elem == @continue)
-                        ((Button)elem).Click += Button_Click_1;
-                    if (elem == turnBack)
-                        ((Button)elem).Click += Button_Click_2;
-                }
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -68,7 +55,7 @@ namespace IELTSAppProject
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new MainPage());
+            NavigationService?.GoBack();
         }
 
         public void help_Click(object sender, RoutedEventArgs e)

@@ -26,13 +26,7 @@ namespace IELTSAppProject
     {
         public MainPage()
         {
-
-            this.Loaded += (sender, e) =>
-            {
-                this.Focus();
-                this.Focusable = true;
-                Keyboard.Focus(this);
-            };
+            InitializeComponent();
 
             this.Loaded += (sender, e) =>
             {
@@ -49,8 +43,6 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-
-            InitializeComponent();
 
             foreach (UIElement elem in mainScreen.Children)
             {

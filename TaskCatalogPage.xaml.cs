@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace IELTSAppProject
 {
@@ -47,31 +48,6 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-
-            foreach (UIElement elem in taskCatalog.Children)
-            {
-                if (elem is Button)
-                {
-                    if (elem == turnBack)
-                        ((Button)elem).Click += turnBack_Click;
-                    if (elem == statistic)
-                        ((Button)elem).Click += statistic_Click;
-                    if (elem == mistakes)
-                        ((Button)elem).Click += mistakes_Click;
-                    if (elem == collections)
-                        ((Button)elem).Click += collections_Click;
-                    if (elem == language)
-                        ((Button)elem).Click += language_Click;
-                    //if (elem == convert)
-                    //    ((Button)elem).Click += varOfExam_Click;
-                    //if (elem == newCollections)
-                    //    ((Button)elem).Click += newCollections_Click;
-                    //if (elem == testVar)
-                    //    ((Button)elem).Click += testVar_Click;
-
-
-                }
-            }
         }
 
         private void OpenChmHelp()
@@ -99,7 +75,7 @@ namespace IELTSAppProject
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new MainPage());
+            NavigationService?.GoBack();
         }
 
         private void statistic_Click(object sender, RoutedEventArgs e)
