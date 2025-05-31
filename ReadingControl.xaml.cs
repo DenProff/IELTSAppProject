@@ -23,7 +23,7 @@ using Path = System.IO.Path;
 namespace IELTSAppProject
 {
     /// <summary>
-    /// Логика взаимодействия для ReadingPage.xaml
+    /// Логика взаимодействия для ReadingControl.xaml
     /// </summary>
     public partial class ReadingControl : UserControl
     {
