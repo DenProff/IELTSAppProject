@@ -43,23 +43,6 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-
-            foreach (UIElement elem in mainScreen.Children)
-            {
-                if (elem is Button)
-                {
-                    if (elem == lessTime)
-                        ((Button)elem).Click += Button_Click;
-                    if (elem == teacherMode)
-                        ((Button)elem).Click += Button_Click_1;
-                    if (elem == developerMode)
-                        ((Button)elem).Click += Button_Click_2;
-                    if (elem == continueWork)
-                        ((Button)elem).Click += Button_Click_3;
-                    if (elem == chooseLanguage)
-                        ((Button)elem).Click += Button_Click_4;
-                }
-            }
             
         }
 
