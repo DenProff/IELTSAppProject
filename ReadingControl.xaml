@@ -34,53 +34,53 @@
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text="{Binding RightAnswer1}" x:Name="rightAnswer1" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                        <TextBlock FontSize="18" Text ="" x:Name="rightAnswer1" Margin="15,0, 0, 0" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Margin="0,10,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text="{Binding RightAnswer2}" x:Name="rightAnswer2" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                        <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer2" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Margin="0,10,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text="{Binding RightAnswer3}" x:Name="rightAnswer3" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                        <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer3" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Height="48" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Margin="0,10,0,0" Height="48" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text="{Binding RightAnswer4}" x:Name="rightAnswer4" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                        <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer4" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Margin="0,10,0,0" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text="{Binding RightAnswer5}" x:Name="rightAnswer5" Width="137" HorizontalAlignment="Center" IsEnabled="False"/>
+                        <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer5" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
                     <StackPanel Margin="20,0,0,0">
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task6}" 
-                               TextWrapping="Wrap" Foreground="White"/>
+                               TextWrapping="Wrap" Foreground="White" Margin="0, 15, 0, 0"/>
                             <RadioButton Content="{Binding  TaskAnswer1}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
@@ -201,7 +201,7 @@
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <TextBlock FontSize="18" Text="{Binding RightAnswer6}" x:Name="rightAnswer6" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            <TextBlock FontSize="18" Margin="0,10, 0, 0" x:Name="rightAnswer6" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                             </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
@@ -327,7 +327,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <TextBlock FontSize="18" Text="{Binding RightAnswer7}" x:Name="rightAnswer7" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            <TextBlock FontSize="18" Margin="0,10, 0, 0" x:Name="rightAnswer7" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
@@ -453,7 +453,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <TextBlock FontSize="18" Text="{Binding RightAnswer8}" x:Name="rightAnswer8" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            <TextBlock FontSize="18" Margin="0,10, 0, 0" x:Name="rightAnswer8" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,15">
@@ -579,7 +579,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <TextBlock FontSize="18" Text="{Binding RightAnswer9}" x:Name="rightAnswer9" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            <TextBlock FontSize="18" Margin="0,10, 0, 0" x:Name="rightAnswer9" Width="300" HorizontalAlignment="Left" Visibility="Visible"/>
                         </StackPanel>
 
                         <StackPanel Margin="0,0,0,20">
@@ -705,7 +705,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <TextBlock FontSize="18" Text="{Binding RightAnswer0}" x:Name="rightAnswer0" Width="150" HorizontalAlignment="Right" IsEnabled="False"/>
+                            <TextBlock FontSize="18" Margin="0,10, 0, 10" x:Name="rightAnswer0" Width="300" HorizontalAlignment="Left" Visibility="Visible"/>
                         </StackPanel>
 
                     </StackPanel>

@@ -19,6 +19,8 @@ using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Office2021.DocumentTasks;
 using System.Diagnostics;
 using Path = System.IO.Path;
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
+using System.Management.Automation;
 
 namespace IELTSAppProject
 {
@@ -47,17 +49,6 @@ namespace IELTSAppProject
                 }
             };
 
-            foreach (UIElement elem in readingPart.Children)
-            {
-                if (elem is Button)
-                {
-                    if (elem == addToCollection)
-                        ((Button)elem).Click += Button_Click;
-                    if (elem == convertToDocx)
-                        ((Button)elem).Click += convertToDocx_Click;
-                }
-            }
-
             //запись в json
             List<string> first = new List<string>();
             List<string> second = new List<string>();
@@ -66,15 +57,18 @@ namespace IELTSAppProject
             List<string> fifth = new List<string>();
             List<string> answer = new List<string>();
 
-            AddToList(ref first, "вариант", "вариант", "вариант");
-            AddToList(ref second, "вариант", "вариант", "вариант");
-            AddToList(ref third, "вариант", "вариант", "вариант");
-            AddToList(ref fourth, "вариант", "вариант", "вариант");
-            AddToList(ref fifth, "вариант", "вариант", "вариант");
-            AddToList(ref answer, "вариант", "вариант", "вариант");
+            AddToList(ref first, "1", "2", "3");
+            AddToList(ref second, "1", "2", "3");
+            AddToList(ref third, "1", "2", "3");
+            AddToList(ref fourth, "а", "б", "в");
+            AddToList(ref fifth, "a", "b", "c");
+            AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2", 
+                "3", "1", "а", "c");
 
             ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
                 "задание", "задание", "задание", first, second, third, fourth, fifth);
+
+            ReadingTask newTask = null;
 
             try
             {
@@ -96,7 +90,7 @@ namespace IELTSAppProject
                 string jsonFromFile = File.ReadAllText(file);
 
                 // Десериализуем обратно в объект
-                ReadingTask newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
+                newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
 
                 this.DataContext = newTask;
             }
@@ -108,34 +102,62 @@ namespace IELTSAppProject
             {
                 MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
             }
-            
-           
-            
 
+            //подписка на событие клика
+            checkAnswer.Click += (sender, e) => ValidateAnswers(newTask);
 
-            foreach (UIElement elem in readingPart.Children)
-            {
-                if (elem is Button)
-                {
-                    if (elem == checkAnswer)
-                    {
-                        //RightAnswer1(newTask);
-                        //RightAnswer2(newTask);
-                        //RightAnswer3(newTask);
-                        //RightAnswer4(newTask);
-                        //RightAnswer5(newTask);
-                        //RightAnswer6(newTask);
-                        //RightAnswer7(newTask);
-                        //RightAnswer8(newTask);
-                        //RightAnswer9(newTask);
-                        //RightAnswer0(newTask);
-                        ((Button)elem).Click += checkAnswer_Click;
-                    }
-                }
-            }
-           
         }
 
+        //проверка ответов
+        private void ValidateAnswers(ReadingTask task)
+        {
+            if (task.Answer[0] == answer1.Text)
+                rightAnswer1.Text = "Правильный ответ!";
+            else
+                rightAnswer1.Text = "Неправильный ответ!";
+
+            if (task.Answer[1] == answer2.Text)
+                rightAnswer2.Text = "Правильный ответ!";
+            else
+                rightAnswer2.Text = "Неправильный ответ!";
+
+            if (task.Answer[2] == answer3.Text)
+                rightAnswer3.Text = "Правильный ответ!";
+            else
+                rightAnswer3.Text = "Неправильный ответ!";
+
+            if (task.Answer[3] == answer4.Text)
+                rightAnswer4.Text = "Правильный ответ!";
+            else
+                rightAnswer4.Text = "Неправильный ответ!";
+
+            if (task.Answer[4] == answer5.Text)
+                rightAnswer5.Text = "Правильный ответ!";
+            else
+                rightAnswer5.Text = "Неправильный ответ!";
+
+            rightAnswer6.Text = IsAnswerCorrect(task.Answer[5], answer61, answer62, answer63)
+                ? "Правильный ответ!" : "Неправильный ответ!";
+
+            rightAnswer7.Text = IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73)
+                ? "Правильный ответ!" : "Неправильный ответ!";
+
+            rightAnswer8.Text = IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83)
+                ? "Правильный ответ!" : "Неправильный ответ!";
+
+            rightAnswer9.Text = IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93) 
+                ? "Правильный ответ!" : "Неправильный ответ!";
+
+            rightAnswer0.Text = IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03) 
+                ? "Правильный ответ!" : "Неправильный ответ!";
+        }
+
+        private bool IsAnswerCorrect(string expected, params RadioButton[] options)
+        {
+            return options.Any(btn => btn.IsChecked == true && btn.Content?.ToString() == expected);
+        }
+
+        //открытие справки
         private void OpenChmHelp()
         {
             string chmPath = Path.Combine(
@@ -169,103 +191,35 @@ namespace IELTSAppProject
 
         }
 
-        public static void AddToList(ref List<string> list, string firstStroke, string secondStroke, string thirdStroke)
+        //добавление в списки
+        public static void AddToList(ref List<string> list, params string[] answers)
         {
-            list.Add(firstStroke);
-            list.Add(secondStroke);
-            list.Add(thirdStroke);
+            for (int i = 0; i < answers.Length; i++)
+                list.Add(answers[i]);
         }
 
-        
-        //проявление резульаттов ответа по клику
+
+        //проявление резульатов ответа по клику
         private void checkAnswer_Click(object sender, RoutedEventArgs e)
         {
-            this.rightAnswer0.IsEnabled = true;
-            this.rightAnswer9.IsEnabled = true;
-            this.rightAnswer8.IsEnabled = true;
-            this.rightAnswer7.IsEnabled = true;
-            this.rightAnswer6.IsEnabled = true;
-            this.rightAnswer5.IsEnabled = true;
-            this.rightAnswer4.IsEnabled = true;
-            this.rightAnswer3.IsEnabled = true;
-            this.rightAnswer2.IsEnabled = true;
-            this.rightAnswer1.IsEnabled = true;
+            this.rightAnswer0.Visibility = Visibility.Visible;
+            this.rightAnswer9.Visibility = Visibility.Visible;
+            this.rightAnswer8.Visibility = Visibility.Visible;
+            this.rightAnswer7.Visibility = Visibility.Visible;
+            this.rightAnswer6.Visibility = Visibility.Visible;
+            this.rightAnswer5.Visibility = Visibility.Visible;
+            this.rightAnswer4.Visibility = Visibility.Visible;
+            this.rightAnswer3.Visibility = Visibility.Visible;
+            this.rightAnswer2.Visibility = Visibility.Visible;
+            this.rightAnswer1.Visibility = Visibility.Visible;
         }
 
+        //открытие справки
         private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
         }
 
-        ////методы появление надписей правильно или нет
-        //public static string RightAnswer1(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer2(ReadingTask elem)
-        //{
-        //     "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer3(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer4(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer5(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer6(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer7(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer8(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer9(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
-
-        //public static string RightAnswer0(ReadingTask elem)
-        //{
-        //    return "Правильный ответ!";
-
-        //    return "Неправильный ответ!";
-        //}
+       
     }
 }

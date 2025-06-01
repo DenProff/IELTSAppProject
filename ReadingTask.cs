@@ -110,6 +110,8 @@ namespace IELTSAppProject
             get => TaskAnswerList0[2];
         }
 
+        //список правильных ответов
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged(string propertyName)
