@@ -1,5 +1,6 @@
 ﻿using NAudio.Wave;
 using System;
+using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +11,15 @@ namespace IELTSAppProject
     public partial class SimpleAudioPlayer : UserControl
     {
         private DispatcherTimer timer;
-        public string AudioPath { get; set; }
+        public static readonly DependencyProperty AudioPathProperty =
+        DependencyProperty.Register("AudioPath", typeof(string), typeof(SimpleAudioPlayer));
+
+        public string AudioPath
+        {
+            get => (string)GetValue(AudioPathProperty);
+            set => SetValue(AudioPathProperty, value);
+        }
+
         public SimpleAudioPlayer()
         {
             InitializeComponent();

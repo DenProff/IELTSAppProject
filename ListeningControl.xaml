@@ -37,14 +37,11 @@
             </Button>
 
             <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="6" VerticalAlignment="Center" Margin="10,0,0,0" 
-                       HorizontalAlignment="Right" MinWidth="150">
-                Рекоменд. время выполнения:
-                <LineBreak/>
-                52
+                       HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0}     '}">
             </TextBlock>
         </Grid>
 
-        <local:SimpleAudioPlayer AudioPath="cocoJambo.mp3" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" 
+        <local:SimpleAudioPlayer AudioPath="{Binding AudioPath}" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" 
                                 VerticalAlignment="Center" MinHeight="44" MinWidth="400"/>
 
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
@@ -54,7 +51,7 @@
                        FontWeight="Bold" 
                        Margin="0,0,0,10"/>
 
-                <TextBlock Text="Listen to the lecture-presentation ONCE and complete the following tasks." 
+                <TextBlock Text="{Binding TaskText}" 
                        Margin="0,0,0,20"
                        TextWrapping="Wrap"/>
 
@@ -65,43 +62,43 @@
 
                 <StackPanel Margin="20,0,0,0">
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="1. According to the speaker, what will be the most likely cause of a global catastrophe in the near future?" 
+                        <TextBlock Text="{Binding Task1}"
                                TextWrapping="Wrap"/>
-                        <RadioButton Content="A. A nuclear war" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. A global pandemic" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. A natural disaster" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[0]}" Margin="20,5,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[1]}" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[2]}" Margin="20,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="2. What is the main issue with the disease prevention system?" 
+                        <TextBlock Text="{Binding Task2}" 
                                TextWrapping="Wrap"/>
-                        <RadioButton Content="A. It exists, but functions poorly" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. It doesn't exist at all" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. It only exists in certain countries" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[0]}" Margin="20,5,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[1]}" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[2]}" Margin="20,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="3. Which organization is funded to monitor epidemics?" 
+                        <TextBlock Text="{Binding Task3}" 
                                TextWrapping="Wrap"/>
-                        <RadioButton Content="A. The WHO" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. The UN" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. Médecins Sans Frontières" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[0]}" Margin="20,5,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[1]}" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[2]}" Margin="20,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="4. Which fortunate condition prevented Ebola from spreading further?" 
+                        <TextBlock Text="{Binding Task4}" 
                                TextWrapping="Wrap"/>
-                        <RadioButton Content="A. A cure was found quickly" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. People were provided with protective gear" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. The virus did not spread through urban areas" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[0]}" Margin="20,5,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[1]}" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[2]}" Margin="20,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
-                        <TextBlock Text="5. How can people's movements be monitored nowadays?" 
+                        <TextBlock Text="{Binding Task5}" 
                                TextWrapping="Wrap"/>
-                        <RadioButton Content="A. Through satellite maps" Margin="20,5,0,0"/>
-                        <RadioButton Content="B. Through street cameras" Margin="20,0,0,0"/>
-                        <RadioButton Content="C. Through cell phones" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[0]}" Margin="20,5,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[1]}" Margin="20,0,0,0"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[2]}" Margin="20,0,0,0"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -112,31 +109,31 @@
 
                 <StackPanel Margin="20,0,0,0">
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="6. NATO has a ______ that is always ready to go." 
+                        <TextBlock Text="{Binding Task6}" 
                                TextWrapping="Wrap"/>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="7. Among the key pieces are ______ in underprivileged countries." 
+                        <TextBlock Text="{Binding Task7}" 
                                TextWrapping="Wrap"/>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="8. To get the military ready for action we need to run ______ and detect problem areas." 
+                        <TextBlock Text="{Binding Task8}" 
                                TextWrapping="Wrap"/>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="9. The speaker can't give a/an ______ for the cost of medical research." 
+                        <TextBlock Text="{Binding Task9}" 
                                TextWrapping="Wrap"/>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
-                        <TextBlock Text="10. The World Bank predicts that in case of a global pandemic the ______ will be drastically reduced." 
+                        <TextBlock Text="{Binding Task0}" 
                                TextWrapping="Wrap"/>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>

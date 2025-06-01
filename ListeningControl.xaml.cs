@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -42,6 +44,35 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
+
+            ListeningTask newTask = null;
+
+            try
+            {
+                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                string file = Path.Combine(projectDir, "resourcesTask", "tasks", "listeningtask1.json");
+                if (!File.Exists(file))
+                {
+                    MessageBox.Show("Файл не найден!");
+                    return;
+                }
+
+                // Читаем JSON из файла
+                string jsonFromFile = File.ReadAllText(file);
+
+                // Десериализуем обратно в объект
+                newTask = JsonConvert.DeserializeObject<ListeningTask>(jsonFromFile);
+
+                this.DataContext = newTask;
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
+            }
+            catch (JsonException ex)
+            {
+                MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
+            }
         }
 
         private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)
