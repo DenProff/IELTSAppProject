@@ -715,7 +715,7 @@ VerticalAlignment="Center"/>
             </ScrollViewer>
         </Border>
         <TextBlock HorizontalAlignment="Left" Height="42" Margin="788,16,0,0" TextWrapping="Wrap" Text="Рекомендованное время:" VerticalAlignment="Top" Width="238" Foreground="White" FontSize="17"/>
-        <TextBlock HorizontalAlignment="Left" Height="42" Margin="1007,16,0,0" TextWrapping="Wrap" Text="{Binding RecTime}" VerticalAlignment="Top" Width="148" Foreground="White" x:Name="recTime" FontSize="17"/>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="1007,16,0,0" TextWrapping="Wrap" Text="{Binding RecomTime, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Top" Width="148" Foreground="White" x:Name="recTime" FontSize="17"/>
         <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </UserControl>

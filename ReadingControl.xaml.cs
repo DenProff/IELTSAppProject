@@ -29,6 +29,8 @@ namespace IELTSAppProject
     /// </summary>
     public partial class ReadingControl : UserControl, ICheckable
     {
+
+        public string RecomTime { get; set; }
         public ReadingControl(ReadingTask data)
         {
             InitializeComponent();
@@ -68,43 +70,43 @@ namespace IELTSAppProject
             //ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
             //    "задание", "задание", "задание", first, second, third, fourth, fifth);
 
-            ReadingTask newTask = null;
+            //ReadingTask newTask = null;
 
-            try
-            {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
-                if (!File.Exists(file))
-                {
-                    MessageBox.Show("Файл не найден!");
-                    return;
-                }
+            //try
+            //{
+            //    string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            //    string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
+            //    if (!File.Exists(file))
+            //    {
+            //        MessageBox.Show("Файл не найден!");
+            //        return;
+            //    }
+            this.RecomTime = data.RecommendedTime.ToString() + "мин.";
+            //    // Сериализуем объект в JSON
+            //    string jsonObject = JsonConvert.SerializeObject(data);
 
-                // Сериализуем объект в JSON
-                string jsonObject = JsonConvert.SerializeObject(data);
+            //    // Записываем JSON в файл (перезаписываем, если существует)
+            //    File.WriteAllText(file, jsonObject);
 
-                // Записываем JSON в файл (перезаписываем, если существует)
-                File.WriteAllText(file, jsonObject);
+            //    // Читаем JSON из файла (после закрытия потока)
+            //    string jsonFromFile = File.ReadAllText(file);
 
-                // Читаем JSON из файла (после закрытия потока)
-                string jsonFromFile = File.ReadAllText(file);
+            //    // Десериализуем обратно в объект
+            //    newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
 
-                // Десериализуем обратно в объект
-                newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
-
-                this.DataContext = newTask;
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
-            }
-            catch (JsonException ex)
-            {
-                MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
-            }
+            this.DataContext = data;
+            //}
+            //catch (IOException ex)
+            //{
+            //    MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
+            //}
+            //catch (JsonException ex)
+            //{
+            //    MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
+            //}
 
             //подписка на событие клика
-            checkAnswer.Click += (sender, e) => ValidateAnswers(newTask);
+            checkAnswer.Click += (sender, e) => ValidateAnswers(data);
         }
 
         //проверка ответов
