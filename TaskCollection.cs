@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace IELTSAppProject
 {
     public delegate void Checking(object source, EventArgs args);
-    public class TaskCollection : IEnumerable<Task>
+    public class TaskCollection : IEnumerable<int> // Класс подборки
     {
         public int VariantId { get; set; } // id данной подборки
         public string VariantName { get; set; } // Название данной подборки

@@ -11,7 +11,7 @@ namespace IELTSAppProject
 {
     public abstract class JsonControl
     {
-        public static Task[] TaskList // Свойство, возвращающее массив с заданиями
+        public static Task[] TaskArray // Свойство, возвращающее массив с заданиями
         {
             get
             {

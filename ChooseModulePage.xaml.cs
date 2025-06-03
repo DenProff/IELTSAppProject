@@ -108,7 +108,7 @@ namespace IELTSAppProject
 
         private void testVar_Click(object sender, RoutedEventArgs e)
         {
-            WritingPage page = new WritingPage();
+            WritingUserControl page = new WritingUserControl();
             NavigationService?.Navigate(page);
         }
 

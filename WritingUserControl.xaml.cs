@@ -21,9 +21,9 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для WritingPage.xaml
     /// </summary>
-    public partial class WritingPage : Page
+    public partial class WritingUserControl : UserControl
     {
-        public WritingPage()
+        public WritingUserControl()
         {
             InitializeComponent();
 

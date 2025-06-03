@@ -130,8 +130,8 @@
       <DependentUpon>SimpleAudioPlayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="SoundControl.cs" />
-    <Compile Include="SpeakingPage.xaml.cs">
-      <DependentUpon>SpeakingPage.xaml</DependentUpon>
+    <Compile Include="SpeakingUserControl.xaml.cs">
+      <DependentUpon>SpeakingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SpeakingTask.cs" />
     <Compile Include="Task.cs" />
@@ -139,8 +139,8 @@
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TaskCollection.cs" />
-    <Compile Include="WritingPage.xaml.cs">
-      <DependentUpon>WritingPage.xaml</DependentUpon>
+    <Compile Include="WritingUserControl.xaml.cs">
+      <DependentUpon>WritingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WritingTask.cs" />
     <Page Include="ChooseModulePage.xaml">
@@ -193,7 +193,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SpeakingPage.xaml">
+    <Page Include="SpeakingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,7 +201,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WritingPage.xaml">
+    <Page Include="WritingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

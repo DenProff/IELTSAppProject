@@ -21,7 +21,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для SpeakingPage.xaml
     /// </summary>
-    public partial class SpeakingPage : System.Windows.Controls.Page
+    public partial class SpeakingUserControl : UserControl
     {
         public SpeakingTask Task { get; set; }
         static private bool isRecordingInProgress = false;
@@ -35,7 +35,7 @@ namespace IELTSAppProject
 
 Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
-        public SpeakingPage(SpeakingTask task)
+        public SpeakingUserControl(SpeakingTask task)
         {
             Task = task;
             InitializeComponent();

@@ -1,4 +1,4 @@
-﻿<Page x:Class="IELTSAppProject.WritingPage"
+﻿<UserControl x:Class="IELTSAppProject.WritingUserControl"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:IELTSAppProject"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Title="WritingPage">
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -42,9 +41,8 @@
             Рекоменд. время выполнения:
         </TextBlock>
 
-
         <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2"><Run Language="ru-ru" Text="Задание"/></TextBlock>
-        <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" >Тема</TextBlock>
+        <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">Тема</TextBlock>
         <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="5" Height="30" Margin="10,0,0,0">
             <ComboBoxItem Content="Первая тема"/>
             <ComboBoxItem Content="Вторая тема"/>
@@ -61,4 +59,4 @@
         <TextBlock Background="Red" Grid.Column="8" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="193"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
         <Button Content="Помощь" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="8"/>
     </Grid>
-</Page>
+</UserControl>
