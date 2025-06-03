@@ -198,7 +198,7 @@ namespace IELTSAppProject
         }
 
 
-        //проявление резульатов ответа по клику
+        //проявление результатов ответа по клику
         private void checkAnswer_Click(object sender, RoutedEventArgs e)
         {
             this.rightAnswer0.Visibility = Visibility.Visible;

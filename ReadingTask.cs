@@ -12,7 +12,7 @@ namespace IELTSAppProject
     public class ReadingTask : GeneralizedTask, INotifyPropertyChanged
     {
 
-        List<string> Answer;
+        public List<string> Answer;
 
         public string TextForReading { get; set; } //текст для прочтения и решения заданий по нему
 
