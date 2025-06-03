@@ -105,7 +105,6 @@ namespace IELTSAppProject
 
             //подписка на событие клика
             checkAnswer.Click += (sender, e) => ValidateAnswers(newTask);
-
         }
 
         //проверка ответов
@@ -219,7 +218,5 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
-
-       
     }
 }
