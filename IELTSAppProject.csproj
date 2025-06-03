@@ -114,6 +114,7 @@
     <Compile Include="CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="JsonControl.cs" />
     <Compile Include="ListeningControl.xaml.cs">
       <DependentUpon>ListeningControl.xaml</DependentUpon>
     </Compile>
