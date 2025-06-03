@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace IELTSAppProject
 {
-    public class WritingTask : GeneralizedTask<string>
+    public class WritingTask : GeneralizedTask
     {
-        public WritingTask(string taskText, string answer, double recTime) : base(taskText, answer, recTime) // Запись поля
+        public string Answer { get; set; }
+        public string UserAnswer { get; set; }
+
+        public WritingTask(string taskText, string answer, double recTime) : base(taskText, recTime) // Запись поля
         {
             Answer = answer;
         }

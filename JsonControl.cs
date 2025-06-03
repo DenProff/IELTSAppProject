@@ -11,7 +11,7 @@ namespace IELTSAppProject
 {
     public abstract class JsonControl
     {
-        public static Task[] TaskArray // Свойство, возвращающее массив с заданиями
+        public static GeneralizedTask[] TaskArray // Свойство, возвращающее массив с заданиями
         {
             get
             {
@@ -24,7 +24,7 @@ namespace IELTSAppProject
                 string jsonFromFile = File.ReadAllText(file);
 
                 // Десериализация
-                return JsonConvert.DeserializeObject<Task[]>(jsonFromFile);
+                return JsonConvert.DeserializeObject<GeneralizedTask[]>(jsonFromFile);
             }
             private set { }
         }

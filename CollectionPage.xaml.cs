@@ -29,7 +29,7 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
-            Task[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
 
             foreach (int taskId in taskCollection) // Перебор id, хранящихся в поле-списке TaskCollection (id заданий, которые надо подгрузить)
             {
@@ -56,7 +56,7 @@ namespace IELTSAppProject
 
         }
 
-        private int SearchForIndexById(ref Task[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
+        private int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
         {
             int left = 0;
             int right = array.Length;
@@ -64,7 +64,7 @@ namespace IELTSAppProject
             while (left < right)
             {
                 mid = left + (right - left) / 2;
-                if (array[mid].Id >= id)
+                if (array[mid].id >= id)
                 {
                     right = mid;
                 }
@@ -79,26 +79,26 @@ namespace IELTSAppProject
             else throw new Exception("Задания с нужным id нет. Возможно была нарушена упорядоченность id по возрастанию в файле json.");
         }
 
-        public ICheckable FindUserControlType(Task task) // Определяет тип на основе которого нужно создать UserControl и возвращает создаваемый UserControl
+        public ICheckable FindUserControlType(GeneralizedTask task) // Определяет тип на основе которого нужно создать UserControl и возвращает создаваемый UserControl
         {
             UserControl newUserControlObject = new UserControl();
             if (task is SpeakingTask)
             {
-                newUserControlObject = new SpeakingUserControl(task);
+                newUserControlObject = new SpeakingUserControl((SpeakingTask)task);
             }
             else if (task is ListeningTask)
             {
-                newUserControlObject = new ListeningControl(task);
+                newUserControlObject = new ListeningControl((ListeningTask)task);
             }
             else if (task is ReadingTask)
             {
-                newUserControlObject = new ReadingControl(task);
+                newUserControlObject = new ReadingControl((ReadingTask)task);
             }
             else if (task is WritingTask)
             {
-                newUserControlObject = new WritingUserControl(task);
+                newUserControlObject = new WritingUserControl((WritingTask)task);
             }
-            return (ICheckable)newUserControlObject;
+            return (ICheckable)newUserControlObject; // Возвращается именно ICheckable, чтобы в конструкторе было удобно подписывать метод Check
         }
     }
 }
