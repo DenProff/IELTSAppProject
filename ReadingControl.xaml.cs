@@ -27,7 +27,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ReadingControl.xaml
     /// </summary>
-    public partial class ReadingControl : UserControl
+    public partial class ReadingControl : UserControl, ICheckable
     {
         public ReadingControl(ReadingTask data)
         {
@@ -217,6 +217,11 @@ namespace IELTSAppProject
         private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
+        }
+
+        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        {
+            throw new NotImplementedException();
         }
     }
 }

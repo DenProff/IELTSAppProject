@@ -21,7 +21,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для SpeakingPage.xaml
     /// </summary>
-    public partial class SpeakingUserControl : UserControl
+    public partial class SpeakingUserControl : UserControl, ICheckable
     {
         public SpeakingTask Task { get; set; }
         static private bool isRecordingInProgress = false;
@@ -134,5 +134,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             OpenChmHelp();
         }
+
+        public bool Check() => true;
     }
 }

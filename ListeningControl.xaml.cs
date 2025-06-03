@@ -23,7 +23,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ListeningControl.xaml
     /// </summary>
-    public partial class ListeningControl : UserControl
+    public partial class ListeningControl : UserControl, ICheckable
     {
         public ListeningControl()
         {
@@ -106,6 +106,11 @@ namespace IELTSAppProject
         private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
+        }
+
+        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        {
+            throw new NotImplementedException();
         }
     }
 }

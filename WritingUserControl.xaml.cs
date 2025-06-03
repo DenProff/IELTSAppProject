@@ -21,7 +21,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для WritingPage.xaml
     /// </summary>
-    public partial class WritingUserControl : UserControl
+    public partial class WritingUserControl : UserControl, ICheckable
     {
         public WritingUserControl()
         {
@@ -76,5 +76,7 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
+
+        public bool Check() => true;
     }
 }

@@ -52,15 +52,15 @@ namespace IELTSAppProject
 
         }
 
-        private int SearchForIndexById(ref Task[] list, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
+        private int SearchForIndexById(ref Task[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
         {
             int left = 0;
-            int right = list.Length;
+            int right = array.Length;
             int mid;
             while (left < right)
             {
                 mid = left + (right - left) / 2;
-                if (list[mid].Id >= id)
+                if (array[mid].Id >= id)
                 {
                     right = mid;
                 }
