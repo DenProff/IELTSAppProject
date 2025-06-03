@@ -29,7 +29,7 @@ namespace IELTSAppProject
     /// </summary>
     public partial class ReadingControl : UserControl
     {
-        public ReadingControl()
+        public ReadingControl(ReadingTask data)
         {
             InitializeComponent();
 
@@ -49,24 +49,24 @@ namespace IELTSAppProject
                 }
             };
 
-            //запись в json
-            List<string> first = new List<string>();
-            List<string> second = new List<string>();
-            List<string> third = new List<string>();
-            List<string> fourth = new List<string>();
-            List<string> fifth = new List<string>();
-            List<string> answer = new List<string>();
+            ////запись в json
+            //List<string> first = new List<string>();
+            //List<string> second = new List<string>();
+            //List<string> third = new List<string>();
+            //List<string> fourth = new List<string>();
+            //List<string> fifth = new List<string>();
+            //List<string> answer = new List<string>();
 
-            AddToList(ref first, "1", "2", "3");
-            AddToList(ref second, "1", "2", "3");
-            AddToList(ref third, "1", "2", "3");
-            AddToList(ref fourth, "а", "б", "в");
-            AddToList(ref fifth, "a", "b", "c");
-            AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2", 
-                "3", "1", "а", "c");
+            //AddToList(ref first, "1", "2", "3");
+            //AddToList(ref second, "1", "2", "3");
+            //AddToList(ref third, "1", "2", "3");
+            //AddToList(ref fourth, "а", "б", "в");
+            //AddToList(ref fifth, "a", "b", "c");
+            //AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2", 
+            //    "3", "1", "а", "c");
 
-            ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
-                "задание", "задание", "задание", first, second, third, fourth, fifth);
+            //ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
+            //    "задание", "задание", "задание", first, second, third, fourth, fifth);
 
             ReadingTask newTask = null;
 
@@ -81,7 +81,7 @@ namespace IELTSAppProject
                 }
 
                 // Сериализуем объект в JSON
-                string jsonObject = JsonConvert.SerializeObject(task);
+                string jsonObject = JsonConvert.SerializeObject(data);
 
                 // Записываем JSON в файл (перезаписываем, если существует)
                 File.WriteAllText(file, jsonObject);
