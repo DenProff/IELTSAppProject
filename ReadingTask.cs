@@ -11,7 +11,8 @@ namespace IELTSAppProject
 {
     public class ReadingTask : GeneralizedTask, INotifyPropertyChanged
     {
-        
+
+        List<string> Answer;
 
         public string TextForReading { get; set; } //текст для прочтения и решения заданий по нему
 
@@ -43,10 +44,11 @@ namespace IELTSAppProject
         }
 
 
-        public ReadingTask(string taskText, List<string> answer, double recTime, string textForReading, string task1, string task2, string task3,
+        public ReadingTask(string taskText, double recTime, List<string> answer, string textForReading, string task1, string task2, string task3,
             string task4, string task5, string task6, string task7, string task8, string task9, string task0, List<string> firstList, List<string> secondList,
             List<string> thirdList, List<string> fourthList, List<string> fifthList) : base(taskText, recTime)
         {
+            Answer = answer;
             TextForReading = textForReading;
             Task1 = task1;
             Task2 = task2;
