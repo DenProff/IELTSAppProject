@@ -23,6 +23,7 @@ namespace IELTSAppProject
     /// </summary>
     public partial class CollectionPage : Page
     {
+        public event EventHandler TaskCollectionDone; // Событие, генерируемое, когда пользователь хочет проверить все ответы
         public CollectionPage(TaskCollection taskCollection)
         {
             InitializeComponent();
@@ -36,13 +37,14 @@ namespace IELTSAppProject
                 int index = SearchForIndexById(ref taskArray, taskId); // Поиск индекса задания с нужным id
 
                 UserControl userControl = FindUserControlType(taskArray[index]); // Создание UserControl-a на основе задания с найденным id
-                TasksContainer.Items.Add(userControl); // Добавление UserControl-а
+                TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
             }
         }
 
         private void Check_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Проверить всё"
         {
-
+            TaskCollectionDone?.Invoke(this, EventArgs.Empty); // Вызов методов проверки, которые были подписаны на событие TaskCollectionDone в
+                                                               // конструкторе выше
         }
 
         private void Convert_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Конвертировать всё в docx"
