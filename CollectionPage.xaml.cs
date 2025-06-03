@@ -25,9 +25,13 @@ namespace IELTSAppProject
     /// </summary>
     public partial class CollectionPage : Page
     {
-        public CollectionPage()
+        public CollectionPage(TaskCollection taskCollection)
         {
             InitializeComponent();
+            foreach (int task in taskCollection)
+            {
+                // Обработка id-шек и подтягивание из json - не реализовано
+            }
         }
 
         private void Check_Click(object sender, RoutedEventArgs e)
