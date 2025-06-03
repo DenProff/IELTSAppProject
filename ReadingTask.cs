@@ -9,7 +9,7 @@ using System.ComponentModel;
 
 namespace IELTSAppProject
 {
-    public class ReadingTask : Task<List<string>>, INotifyPropertyChanged
+    public class ReadingTask : GeneralizedTask<List<string>>, INotifyPropertyChanged
     {
         
 

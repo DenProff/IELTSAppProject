@@ -134,7 +134,7 @@
       <DependentUpon>SpeakingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SpeakingTask.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="GeneralizedTask.cs" />
     <Compile Include="TaskCatalogPage.xaml.cs">
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>

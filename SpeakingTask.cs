@@ -7,7 +7,7 @@ using System.IO;
 
 namespace IELTSAppProject
 {
-    public class SpeakingTask : Task<byte[]>
+    public class SpeakingTask : GeneralizedTask<byte[]>
     {
         public SpeakingTask(string taskText, byte[] ans, double recTime) : base(taskText, ans, recTime) // Запись поля
         {

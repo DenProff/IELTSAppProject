@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IELTSAppProject
 {
-    public class ListeningTask : Task<List<string>>, INotifyPropertyChanged
+    public class ListeningTask : GeneralizedTask<List<string>>, INotifyPropertyChanged
     {
         public string AudioPath { get; set; } // Путь к аудиофайлу
 
