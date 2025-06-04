@@ -66,9 +66,9 @@
                             <TextBlock Text="{Binding Task1}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer1" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <RadioButton Content="{Binding TaskAnswerList1[0]}" Margin="20,5,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList1[1]}" Margin="20,0,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList1[2]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[0]}" x:Name="answer1A" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[1]}" x:Name="answer1B" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[2]}" x:Name="answer1C" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -76,9 +76,9 @@
                             <TextBlock Text="{Binding Task2}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer2" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <RadioButton Content="{Binding TaskAnswerList2[0]}" Margin="20,5,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList2[1]}" Margin="20,0,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList2[2]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[0]}" x:Name="answer2A" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[1]}" x:Name="answer2B" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[2]}" x:Name="answer2C" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -86,9 +86,9 @@
                             <TextBlock Text="{Binding Task3}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer3" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <RadioButton Content="{Binding TaskAnswerList3[0]}" Margin="20,5,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList3[1]}" Margin="20,0,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList3[2]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[0]}" x:Name="answer3A" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[1]}" x:Name="answer3B" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[2]}" x:Name="answer3C" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -96,9 +96,9 @@
                             <TextBlock Text="{Binding Task4}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer4" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <RadioButton Content="{Binding TaskAnswerList4[0]}" Margin="20,5,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList4[1]}" Margin="20,0,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList4[2]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[0]}" x:Name="answer4A" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[1]}" x:Name="answer4B" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[2]}" x:Name="answer4C" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
@@ -106,9 +106,9 @@
                             <TextBlock Text="{Binding Task5}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer5" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <RadioButton Content="{Binding TaskAnswerList5[0]}" Margin="20,5,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList5[1]}" Margin="20,0,0,0" FontSize="14"/>
-                        <RadioButton Content="{Binding TaskAnswerList5[2]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[0]}" x:Name="answer5A" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[1]}" x:Name="answer5B" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[2]}" x:Name="answer5C" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -123,7 +123,7 @@
                             <TextBlock Text="{Binding Task6}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer6" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                        <TextBox Margin="20,5,0,0" x:Name="answer6" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -131,7 +131,7 @@
                             <TextBlock Text="{Binding Task7}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer7" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                        <TextBox Margin="20,5,0,0" x:Name="answer7" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -139,7 +139,7 @@
                             <TextBlock Text="{Binding Task8}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer8" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                        <TextBox Margin="20,5,0,0" x:Name="answer8" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
@@ -147,7 +147,7 @@
                             <TextBlock Text="{Binding Task9}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer9" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                        <TextBox Margin="20,5,0,0" x:Name="answer9" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
@@ -155,14 +155,15 @@
                             <TextBlock Text="{Binding Task0}" TextWrapping="Wrap" FontSize="14"/>
                             <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer0" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
                         </StackPanel>
-                        <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
+                        <TextBox Margin="20,5,0,0" x:Name="answer0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
         <Border Grid.Row="3" Background="#F5F5F5" Padding="10" BorderThickness="0,1,0,0" BorderBrush="LightGray">
             <Button x:Name="CheckAnswersButton" 
-                    Content="Проверить ответы" 
+                    Content="Проверить ответы"
+                    Click="Check_Click"
                     HorizontalAlignment="Center" 
                     Width="185" 
                     Height="36"

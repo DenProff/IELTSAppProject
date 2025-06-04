@@ -50,21 +50,49 @@ namespace IELTSAppProject
 
         public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
         {
-            //rightAnswer0.Text = IsAnswerCorrect(task.Answer[0], answer61, answer62, answer63)
-            //    ? "Правильный ответ!" : "Неправильный ответ!";
+            ListeningTask task = (ListeningTask)DataContext;
+            bool hasErrors = false;
 
-            //rightAnswer1.Text = IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73)
-            //    ? "Правильный ответ!" : "Неправильный ответ!";
+            // Создаем массивы для хранения элементов
+            RadioButton[][] radioButtonsGroups = new[]
+            {
+                new[] { answer1A, answer1B, answer1C },
+                new[] { answer2A, answer2B, answer2C },
+                new[] { answer3A, answer3B, answer3C },
+                new[] { answer4A, answer4B, answer4C },
+                new[] { answer5A, answer5B, answer5C }
+            };
 
-            //rightAnswer2.Text = IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83)
-            //    ? "Правильный ответ!" : "Неправильный ответ!";
+            // Создаем массивы для хранения элементов
+            TextBox[] textBoxesGroups = new[]
+            {
+                answer6, answer7, answer8, answer9, answer0
+            };
 
-            //rightAnswer3.Text = IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93)
-            //    ? "Правильный ответ!" : "Неправильный ответ!";
+            TextBlock[] resultTextBlocks = new[]
+            {
+                rightAnswer1, rightAnswer2, rightAnswer3, rightAnswer4, rightAnswer5, rightAnswer6, rightAnswer7, rightAnswer8, rightAnswer9, rightAnswer0
+            };
 
-            //rightAnswer4.Text = IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03)
-            //    ? "Правильный ответ!" : "Неправильный ответ!";
-            throw new NotImplementedException();
+            // Проверяем все группы RadioButton в цикле
+            for (int i = 0; i < 5; i++)
+            {
+                bool isCorrect = IsAnswerCorrect(task.Answer[i], radioButtonsGroups[i]);
+                resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
+                resultTextBlocks[i].Visibility = Visibility.Visible;
+                if (!isCorrect) hasErrors = true;
+            }
+
+            // Проверяем все группы TextBox в цикле
+            for (int i = 5; i < 10; i++)
+            {
+                bool isCorrect = task.Answer[i] == textBoxesGroups[i-5].Text.ToLower();
+                resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
+                resultTextBlocks[i].Visibility = Visibility.Visible;
+                if (!isCorrect) hasErrors = true;
+            }
+
+            return hasErrors; // true - если есть ошибки, false - если нет
         }
 
         private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)
@@ -100,10 +128,15 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        // Метод для проверки правильности ответа в RadioButton
-        private bool IsAnswerCorrect(char expected, params RadioButton[] options)
+        private void Check_Click(object sender, RoutedEventArgs e)
         {
-            return options.Any(btn => btn.IsChecked == true && btn.Content?.ToString()[0] == expected);
+            Check();
+        }
+
+        // Метод для проверки правильности ответа в RadioButton
+        private bool IsAnswerCorrect(string expected, params RadioButton[] options)
+        {
+            return options.Any(btn => btn.IsChecked == true && (bool)btn.Content?.ToString().StartsWith(expected));
         }
     }
 }

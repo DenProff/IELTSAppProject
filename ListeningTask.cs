@@ -42,6 +42,7 @@ namespace IELTSAppProject
             string task4, string task5, string task6, string task7, string task8, string task9, string task0, List<string> firstList, List<string> secondList,
             List<string> thirdList, List<string> fourthList, List<string> fifthList) : base(taskText, recTime)
         {
+            Answer = answer;
             AudioPath = audioPath;
             Task1 = task1;
             Task2 = task2;
