@@ -48,6 +48,25 @@ namespace IELTSAppProject
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
         }
 
+        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        {
+            //rightAnswer0.Text = IsAnswerCorrect(task.Answer[0], answer61, answer62, answer63)
+            //    ? "Правильный ответ!" : "Неправильный ответ!";
+
+            //rightAnswer1.Text = IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73)
+            //    ? "Правильный ответ!" : "Неправильный ответ!";
+
+            //rightAnswer2.Text = IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83)
+            //    ? "Правильный ответ!" : "Неправильный ответ!";
+
+            //rightAnswer3.Text = IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93)
+            //    ? "Правильный ответ!" : "Неправильный ответ!";
+
+            //rightAnswer4.Text = IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03)
+            //    ? "Правильный ответ!" : "Неправильный ответ!";
+            throw new NotImplementedException();
+        }
+
         private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)
         {
 
@@ -81,9 +100,10 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        // Метод для проверки правильности ответа в RadioButton
+        private bool IsAnswerCorrect(char expected, params RadioButton[] options)
         {
-            throw new NotImplementedException();
+            return options.Any(btn => btn.IsChecked == true && btn.Content?.ToString()[0] == expected);
         }
     }
 }

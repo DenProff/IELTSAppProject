@@ -37,7 +37,7 @@
             </Button>
 
             <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="6" VerticalAlignment="Center" Margin="10,0,0,0" 
-                       HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0}     '}">
+                       HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0}     '}" FontSize="14">
             </TextBlock>
         </Grid>
 
@@ -47,94 +47,114 @@
         <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="5,0,0,0">
                 <TextBlock Text="LISTENING" 
-                       FontSize="24" 
+                       FontSize="25" 
                        FontWeight="Bold" 
                        Margin="0,0,0,10"/>
 
                 <TextBlock Text="{Binding TaskText}" 
                        Margin="0,0,0,20"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap" FontSize="14"/>
 
                 <TextBlock Text="In tasks 1-5 listen to the audio and choose one correct variant A, B, or C." 
                        Margin="0,0,0,20"
                        FontWeight="SemiBold"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap" FontSize="14"/>
 
                 <StackPanel Margin="20,0,0,0">
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task1}"
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding TaskAnswerList1[0]}" Margin="20,5,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList1[1]}" Margin="20,0,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList1[2]}" Margin="20,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task1}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer1" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
+                        <RadioButton Content="{Binding TaskAnswerList1[0]}" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[1]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList1[2]}" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task2}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding TaskAnswerList2[0]}" Margin="20,5,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList2[1]}" Margin="20,0,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList2[2]}" Margin="20,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task2}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer2" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
+                        <RadioButton Content="{Binding TaskAnswerList2[0]}" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[1]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList2[2]}" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task3}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding TaskAnswerList3[0]}" Margin="20,5,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList3[1]}" Margin="20,0,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList3[2]}" Margin="20,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task3}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer3" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
+                        <RadioButton Content="{Binding TaskAnswerList3[0]}" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[1]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList3[2]}" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task4}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding TaskAnswerList4[0]}" Margin="20,5,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList4[1]}" Margin="20,0,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList4[2]}" Margin="20,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task4}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer4" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
+                        <RadioButton Content="{Binding TaskAnswerList4[0]}" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[1]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList4[2]}" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
-                        <TextBlock Text="{Binding Task5}" 
-                               TextWrapping="Wrap"/>
-                        <RadioButton Content="{Binding TaskAnswerList5[0]}" Margin="20,5,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList5[1]}" Margin="20,0,0,0"/>
-                        <RadioButton Content="{Binding TaskAnswerList5[2]}" Margin="20,0,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task5}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer5" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
+                        <RadioButton Content="{Binding TaskAnswerList5[0]}" Margin="20,5,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[1]}" Margin="20,0,0,0" FontSize="14"/>
+                        <RadioButton Content="{Binding TaskAnswerList5[2]}" Margin="20,0,0,0" FontSize="14"/>
                     </StackPanel>
                 </StackPanel>
 
                 <TextBlock Text="In tasks 6-10 fill in the gaps, using NO MORE THAN 3 WORDS AND/OR NUMBERS for each answer." 
                        Margin="0,0,0,20"
                        FontWeight="SemiBold"
-                       TextWrapping="Wrap"/>
+                       TextWrapping="Wrap" FontSize="14"/>
 
                 <StackPanel Margin="20,0,0,0">
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task6}" 
-                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task6}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer6" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task7}" 
-                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task7}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer7" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task8}" 
-                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task8}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer8" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,15">
-                        <TextBlock Text="{Binding Task9}" 
-                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task9}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer9" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
 
                     <StackPanel Margin="0,0,0,20">
-                        <TextBlock Text="{Binding Task0}" 
-                               TextWrapping="Wrap"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Task0}" TextWrapping="Wrap" FontSize="14"/>
+                            <TextBlock FontSize="17" Margin="25,-5,0,0" x:Name="rightAnswer0" Width="300" HorizontalAlignment="Left" Visibility="Hidden"/>
+                        </StackPanel>
                         <TextBox Margin="20,5,0,0" Width="300" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </StackPanel>

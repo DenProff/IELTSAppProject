@@ -16,7 +16,7 @@
   "TaskAnswerList3": [ "A. The WHO", "B. The UN", "C. Médecins Sans Frontières" ],
   "TaskAnswerList4": [ "A. A cure was found quickly", "B. People were provided with protective gear", "C. The virus did not spread through urban areas" ],
   "TaskAnswerList5": [ "A. Through satellite maps", "B. Through street camera", "C. Through cell phones" ],
-  "Answer": [ "True", "False", "Not Stated", "True", "False", "2", "3", "1", "а", "c" ],
+  "Answer": [ "B", "B", "A", "C", "A", "mobile unit", "strong health systems", "simulations", "exact budget", "global wealth" ],
   "UserAnswer": null,
   "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
   "RecommendedTime": 52.0,
