@@ -37,7 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>иконка.ico</ApplicationIcon>
+    <ApplicationIcon>иконка2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocumentFormat.OpenXml, Version=3.3.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
@@ -250,7 +250,7 @@
     <Folder Include="resourcesTask\Languages\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="иконка.ico">
+    <Resource Include="иконка2.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
