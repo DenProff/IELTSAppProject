@@ -9,10 +9,8 @@ namespace IELTSAppProject
 {
     public class ListeningTask : GeneralizedTask, INotifyPropertyChanged
     {
-        public string AudioPath { get; set; } // Путь к аудиофайлу
-
         public List<string> Answer { get; set; }
-        public List<string> UserAnswer { get; set; }
+        public string AudioPath { get; set; } // Путь к аудиофайлу
 
         //поля к заданиям
         public string Task1 { get; set; }

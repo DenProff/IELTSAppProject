@@ -25,7 +25,7 @@ namespace IELTSAppProject
     /// </summary>
     public partial class ListeningControl : UserControl, ICheckable
     {
-        public ListeningControl()
+        public ListeningControl(ListeningTask data)
         {
             InitializeComponent();
 
@@ -45,34 +45,7 @@ namespace IELTSAppProject
                 }
             };
 
-            ListeningTask newTask = null;
-
-            try
-            {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "tasks", "listeningtask1.json");
-                if (!File.Exists(file))
-                {
-                    MessageBox.Show("Файл не найден!");
-                    return;
-                }
-
-                // Читаем JSON из файла
-                string jsonFromFile = File.ReadAllText(file);
-
-                // Десериализуем обратно в объект
-                newTask = JsonConvert.DeserializeObject<ListeningTask>(jsonFromFile);
-
-                this.DataContext = newTask;
-            }
-            catch (IOException ex)
-            {
-                MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
-            }
-            catch (JsonException ex)
-            {
-                MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
-            }
+            this.DataContext = data; // Запись в Binding информации из свойств объекта data
         }
 
         private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)
