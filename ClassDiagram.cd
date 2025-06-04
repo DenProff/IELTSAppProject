@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="IELTSAppProject.GeneralizedTask" Collapsed="true">
-    <Position X="3.75" Y="3" Width="1.5" />
+    <Position X="5.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAAAAAAAAAAAAgAAAAAEAAAAAQAAAAAAgA=</HashCode>
       <FileName>GeneralizedTask.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IELTSAppProject.SpeakingTask" Collapsed="true">
-    <Position X="1.5" Y="1.25" Width="1.5" />
+    <Position X="3.5" Y="2.75" Width="1.5" />
     <InheritanceLine Type="IELTSAppProject.GeneralizedTask" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="4.5" Y="3" />
-        <Point X="4.5" Y="1.625" />
-        <Point X="3" Y="1.625" />
+        <Point X="6.5" Y="1.812" />
+        <Point X="6.5" Y="2.375" />
+        <Point X="4.25" Y="2.375" />
+        <Point X="4.25" Y="2.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -23,12 +24,13 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ListeningTask" Collapsed="true">
-    <Position X="1.5" Y="2.25" Width="1.5" />
-    <InheritanceLine Type="IELTSAppProject.GeneralizedTask" FixedToPoint="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="IELTSAppProject.GeneralizedTask" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.5" Y="3" />
-        <Point X="4.5" Y="2.438" />
-        <Point X="3" Y="2.438" />
+        <Point X="6.5" Y="1.812" />
+        <Point X="6.5" Y="2.375" />
+        <Point X="5.812" Y="2.375" />
+        <Point X="5.812" Y="2.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -38,12 +40,13 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.WritingTask" Collapsed="true">
-    <Position X="1.5" Y="3.75" Width="1.5" />
-    <InheritanceLine Type="IELTSAppProject.GeneralizedTask" FixedToPoint="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="IELTSAppProject.GeneralizedTask" ManuallyRouted="true" FixedToPoint="true">
       <Path>
-        <Point X="4.5" Y="3.562" />
-        <Point X="4.5" Y="4.125" />
-        <Point X="3" Y="4.125" />
+        <Point X="6.5" Y="1.812" />
+        <Point X="6.5" Y="2.375" />
+        <Point X="7.312" Y="2.375" />
+        <Point X="7.312" Y="2.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -53,7 +56,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ReadingTask" Collapsed="true">
-    <Position X="1.5" Y="4.75" Width="1.5" />
+    <Position X="8" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAAAIAAQAAAAiARIBAAABAgAAgAAAgE=</HashCode>
       <FileName>ReadingTask.cs</FileName>
@@ -61,14 +64,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.SoundControl" Collapsed="true">
-    <Position X="6" Y="3.5" Width="1.5" />
+    <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAAAAASAAAAEoBAAEIAEAgAQAggACAIAA=</HashCode>
       <FileName>SoundControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IELTSAppProject.JsonControl" Collapsed="true">
-    <Position X="6" Y="2.75" Width="1.5" />
+    <Position X="6.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>JsonControl.cs</FileName>
