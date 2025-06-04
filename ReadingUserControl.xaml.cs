@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
@@ -17,10 +14,11 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 using System.Diagnostics;
 using Path = System.IO.Path;
-using DocumentFormat.OpenXml.Vml.Spreadsheet;
-using System.Management.Automation;
 
 namespace IELTSAppProject
 {
@@ -106,51 +104,9 @@ namespace IELTSAppProject
             //}
 
             //подписка на событие клика
-            checkAnswer.Click += (sender, e) => ValidateAnswers(data);
-        }
-
-        //проверка ответов
-        private void ValidateAnswers(ReadingTask task)
-        {
-            if (task.Answer[0] == answer1.Text)
-                rightAnswer1.Text = "Правильный ответ!";
-            else
-                rightAnswer1.Text = "Неправильный ответ!";
-
-            if (task.Answer[1] == answer2.Text)
-                rightAnswer2.Text = "Правильный ответ!";
-            else
-                rightAnswer2.Text = "Неправильный ответ!";
-
-            if (task.Answer[2] == answer3.Text)
-                rightAnswer3.Text = "Правильный ответ!";
-            else
-                rightAnswer3.Text = "Неправильный ответ!";
-
-            if (task.Answer[3] == answer4.Text)
-                rightAnswer4.Text = "Правильный ответ!";
-            else
-                rightAnswer4.Text = "Неправильный ответ!";
-
-            if (task.Answer[4] == answer5.Text)
-                rightAnswer5.Text = "Правильный ответ!";
-            else
-                rightAnswer5.Text = "Неправильный ответ!";
-
-            rightAnswer6.Text = IsAnswerCorrect(task.Answer[5], answer61, answer62, answer63)
-                ? "Правильный ответ!" : "Неправильный ответ!";
-
-            rightAnswer7.Text = IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73)
-                ? "Правильный ответ!" : "Неправильный ответ!";
-
-            rightAnswer8.Text = IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83)
-                ? "Правильный ответ!" : "Неправильный ответ!";
-
-            rightAnswer9.Text = IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93) 
-                ? "Правильный ответ!" : "Неправильный ответ!";
-
-            rightAnswer0.Text = IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03) 
-                ? "Правильный ответ!" : "Неправильный ответ!";
+            //checkAnswer.Click += (sender, e) => ValidateAnswers(data);
+            convertToDocx.Click += (sender, e) => Convert(data);
+            
         }
 
         private bool IsAnswerCorrect(string expected, params RadioButton[] options)
@@ -182,12 +138,51 @@ namespace IELTSAppProject
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Convert(ReadingTask elem)
         {
+            //Путь к файлу
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ReadingTask.docx";
 
+            //Создание документа
+            using (WordprocessingDocument doc = WordprocessingDocument.Create(filePath,
+                WordprocessingDocumentType.Document))
+            {
+                //Основная часть документа
+                MainDocumentPart mainPart = doc.AddMainDocumentPart();
+                mainPart.Document = new Document();
+                Body body = mainPart.Document.AppendChild(new Body());
+
+                //Заголовок
+                Paragraph title = new Paragraph();
+                Run runTitle = new Run();
+                runTitle.AppendChild(new Text($"Id задания - {elem.id}\n{elem.TaskText}"));
+                runTitle.RunProperties = new RunProperties(new Bold());
+                title.AppendChild(runTitle);
+                body.AppendChild(title);
+
+                //Текст
+                Paragraph paragraph = new Paragraph();
+                Run runText = new Run();
+                runText.AppendChild(new Text(elem.TextForReading));
+                paragraph.AppendChild(runText);
+                body.AppendChild(paragraph);
+
+                //Задания
+                Paragraph tasks = new Paragraph();
+                Run tasksText = new Run();
+                tasksText.AppendChild(new Text(elem.TextForReading + "\n"));
+                //Запись заданий
+                tasksText.AppendChild(new Text($"{elem.Task1}\nTrue\nFalse\nNot Stated\n{elem.Task2}\nTrue\nFalse\nNot Stated\n{elem.Task3}\nTrue\nFalse\nNot Stated\n{elem.Task4}" +
+                    $"\nTrue\nFalse\nNot Stated\n{elem.Task5}\nTrue\nFalse\nNot Stated\n{elem.Task6}\n{elem.TaskAnswerList6[0]}\n{elem.TaskAnswerList6[1]}\n{elem.TaskAnswerList6[2]}\n" +
+                    $"{elem.Task7}\n{elem.TaskAnswerList7[0]}\n{elem.TaskAnswerList7[1]}\n{elem.TaskAnswerList7[2]}\n{elem.Task8}\n{elem.TaskAnswerList8[0]}\n{elem.TaskAnswerList8[1]}\n{elem.TaskAnswerList8[2]}\n" +
+                    $"{elem.Task9}\n{elem.TaskAnswerList9[0]}\n{elem.TaskAnswerList9[1]}\n{elem.TaskAnswerList9[2]}\n{elem.Task0}\n{elem.TaskAnswerList0[0]}\n{elem.TaskAnswerList0[1]}\n{elem.TaskAnswerList0[2]}"));
+                paragraph.AppendChild(tasksText);
+                body.AppendChild(tasks);
+            }
+            MessageBox.Show("Файл с заданием скачан и находится на вашем рабочем столе");
         }
 
-        private void convertToDocx_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
@@ -221,9 +216,98 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
+        //проверка ответов
         public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
         {
-            throw new NotImplementedException();
+            ReadingTask task = (ReadingTask)this.DataContext;
+            bool result = false;
+            if (task.Answer[0] == answer1.Text)
+                rightAnswer1.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer1.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+
+            if (task.Answer[1] == answer2.Text)
+                rightAnswer2.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer2.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+
+            if (task.Answer[2] == answer3.Text)
+                rightAnswer3.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer3.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+
+            if (task.Answer[3] == answer4.Text)
+                rightAnswer4.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer4.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+
+            if (task.Answer[4] == answer5.Text)
+                rightAnswer5.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer5.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+
+            if (IsAnswerCorrect(task.Answer[5], answer61, answer62, answer63))
+                rightAnswer6.Text = "Правильный ответ!";
+            else
+            {
+                result = true;
+                rightAnswer6.Text = "Неправильный ответ!";
+            }
+
+
+            if (IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73))
+                rightAnswer7.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer7.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+            if (IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83))
+                rightAnswer8.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer8.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+            if (IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93))
+                rightAnswer9.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer9.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+            if (IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73))
+                rightAnswer0.Text = "Правильный ответ!";
+            else
+            {
+                rightAnswer0.Text = "Неправильный ответ!";
+                result = true;
+            }
+
+            return result;
         }
     }
 }
