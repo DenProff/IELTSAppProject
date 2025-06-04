@@ -3,10 +3,9 @@
   <Class Name="IELTSAppProject.GeneralizedTask" Collapsed="true">
     <Position X="3.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAQAAAAAAAgAAAAAEAAAAAQAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAgAAAAAEAAAAAQAAAAAAgA=</HashCode>
       <FileName>GeneralizedTask.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.SpeakingTask" Collapsed="true">
     <Position X="1.5" Y="1.25" Width="1.5" />

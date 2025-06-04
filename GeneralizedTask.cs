@@ -3,7 +3,7 @@ using System;
 
 namespace IELTSAppProject
 {
-    public abstract class GeneralizedTask : IComparable<GeneralizedTask>
+    public abstract class GeneralizedTask
     {
         private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -20,17 +20,6 @@ namespace IELTSAppProject
             id = IdCounter++;
             this.TaskText = taskText;
             WithMistake = false;
-        }
-
-        //переопределение метода для бинарного поиска
-        public int CompareTo(GeneralizedTask other)
-        {
-            if (this.id < other.id)
-                return -1;
-            if (this.id > other.id)
-                return 1;
-            else 
-                return 0;
         }
     }
 }
