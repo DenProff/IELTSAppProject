@@ -14,9 +14,6 @@ using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using DocumentFormat.OpenXml.Office2021.DocumentTasks;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
 using System.Diagnostics;
 using Path = System.IO.Path;
 
@@ -50,23 +47,24 @@ namespace IELTSAppProject
             };
 
             ////запись в json
-            //List<string> first = new List<string>();
-            //List<string> second = new List<string>();
-            //List<string> third = new List<string>();
-            //List<string> fourth = new List<string>();
-            //List<string> fifth = new List<string>();
-            //List<string> answer = new List<string>();
+            List<string> first = new List<string>();
+            List<string> second = new List<string>();
+            List<string> third = new List<string>();
+            List<string> fourth = new List<string>();
+            List<string> fifth = new List<string>();
+            List<string> answer = new List<string>();
 
-            //AddToList(ref first, "1", "2", "3");
-            //AddToList(ref second, "1", "2", "3");
-            //AddToList(ref third, "1", "2", "3");
-            //AddToList(ref fourth, "а", "б", "в");
-            //AddToList(ref fifth, "a", "b", "c");
-            //AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2", 
-            //    "3", "1", "а", "c");
+            AddToList(ref first, "1", "2", "3");
+            AddToList(ref second, "1", "2", "3");
+            AddToList(ref third, "1", "2", "3");
+            AddToList(ref fourth, "а", "б", "в");
+            AddToList(ref fifth, "a", "b", "c");
+            AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2",
+                "3", "1", "а", "c");
 
-            //ReadingTask task = new ReadingTask("текст", answer, 10, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
-            //    "задание", "задание", "задание", first, second, third, fourth, fifth);
+            ReadingTask task = new ReadingTask("текст",10, answer, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
+                "задание", "задание", "задание", first, second, third, fourth, fifth);
+            data = task;
 
             //ReadingTask newTask = null;
 
@@ -109,9 +107,10 @@ namespace IELTSAppProject
 
             //подписка на событие клика
             //checkAnswer.Click += (sender, e) => ValidateAnswers(data);
-            convertToDocx.Click += (sender, e) => Convert(data);
+            convertToDocx.Click += (sender, e) => Сonversion.ConvertReading(data);
             
         }
+        
 
         private bool IsAnswerCorrect(string expected, params RadioButton[] options)
         {
@@ -142,54 +141,9 @@ namespace IELTSAppProject
             }
         }
 
-        public void Convert(ReadingTask elem)
-        {
-            //Путь к файлу
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ReadingTask.docx";
+        
 
-            //Создание документа
-            using (WordprocessingDocument doc = WordprocessingDocument.Create(filePath,
-                WordprocessingDocumentType.Document))
-            {
-                //Основная часть документа
-                MainDocumentPart mainPart = doc.AddMainDocumentPart();
-                mainPart.Document = new Document();
-                Body body = mainPart.Document.AppendChild(new Body());
-
-                if (elem != null)
-                {
-                    //Заголовок
-                    Paragraph title = new Paragraph();
-                    Run runTitle = new Run();
-                    runTitle.AppendChild(new Text($"Id задания - {elem.id}\n{elem.TaskText}"));
-                    runTitle.RunProperties = new RunProperties(new Bold());
-                    title.AppendChild(runTitle);
-                    body.AppendChild(title);
-
-                    //Текст
-                    Paragraph paragraph = new Paragraph();
-                    Run runText = new Run();
-                    runText.AppendChild(new Text(elem.TextForReading));
-                    paragraph.AppendChild(runText);
-                    body.AppendChild(paragraph);
-
-                    //Задания
-                    Paragraph tasks = new Paragraph();
-                    Run tasksText = new Run();
-                    tasksText.AppendChild(new Text(elem.TextForReading + "\n"));
-                    //Запись заданий
-                    tasksText.AppendChild(new Text($"{elem.Task1}\nTrue\nFalse\nNot Stated\n{elem.Task2}\nTrue\nFalse\nNot Stated\n{elem.Task3}\nTrue\nFalse\nNot Stated\n{elem.Task4}" +
-                        $"\nTrue\nFalse\nNot Stated\n{elem.Task5}\nTrue\nFalse\nNot Stated\n{elem.Task6}\n{elem.TaskAnswerList6[0]}\n{elem.TaskAnswerList6[1]}\n{elem.TaskAnswerList6[2]}\n" +
-                        $"{elem.Task7}\n{elem.TaskAnswerList7[0]}\n{elem.TaskAnswerList7[1]}\n{elem.TaskAnswerList7[2]}\n{elem.Task8}\n{elem.TaskAnswerList8[0]}\n{elem.TaskAnswerList8[1]}\n{elem.TaskAnswerList8[2]}\n" +
-                        $"{elem.Task9}\n{elem.TaskAnswerList9[0]}\n{elem.TaskAnswerList9[1]}\n{elem.TaskAnswerList9[2]}\n{elem.Task0}\n{elem.TaskAnswerList0[0]}\n{elem.TaskAnswerList0[1]}\n{elem.TaskAnswerList0[2]}"));
-                    paragraph.AppendChild(tasksText);
-                    body.AppendChild(tasks);
-                }
-                
-            }
-
-            MessageBox.Show("Файл с заданием скачан и находится на вашем рабочем столе");
-        }
+           
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

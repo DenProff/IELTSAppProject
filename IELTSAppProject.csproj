@@ -147,6 +147,7 @@
       <DependentUpon>WritingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="WritingTask.cs" />
+    <Compile Include="Сonversion.cs" />
     <Page Include="ChooseModulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
