@@ -1,48 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="IELTSAppProject.Task&lt;TAnswer&gt;" Collapsed="true">
+  <Class Name="IELTSAppProject.GeneralizedTask" Collapsed="true">
     <Position X="4.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAQACAAAAAgAAAAAEAAAAAQAAgAAAgA=</HashCode>
-      <FileName>Task.cs</FileName>
+      <HashCode>AAAAAAAABAAAAAQAAAAAAAgAAAAAEAAAAAQAAAAAAgA=</HashCode>
+      <FileName>GeneralizedTask.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.SpeakingTask" Collapsed="true">
     <Position X="1.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>SpeakingTask.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ListeningTask" Collapsed="true">
     <Position X="3.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAKAAQAAgAiARIBAAABAgAAgAAAgE=</HashCode>
       <FileName>ListeningTask.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.WritingTask" Collapsed="true">
     <Position X="5.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>WritingTask.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ReadingTask" Collapsed="true">
     <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAoEgAAAAAAoUAQAAAAyARIBAAAJAgAAgAAAkE=</HashCode>
+      <HashCode>AAAAAAAIAAAAAAAAIAAQAAAAiARIBAAABAgAAgAAAgE=</HashCode>
       <FileName>ReadingTask.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.SoundControl" Collapsed="true">
-    <Position X="7.5" Y="1.75" Width="1.5" />
+    <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAAAAASAAAAEoBAAEIAEAgAQAggACAIAA=</HashCode>
       <FileName>SoundControl.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="IELTSAppProject.JsonControl" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>JsonControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="IELTSAppProject.ICheckable" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICheckable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

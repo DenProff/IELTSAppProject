@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.ComponentModel;
 
 namespace IELTSAppProject
 {
-    public class SpeakingTask : GeneralizedTask
+    public class SpeakingTask : GeneralizedTask, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public byte[] Answer { get; set; }
         public byte[] UserAnswer { get; set; }
 
