@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IELTSAppProject"
         mc:Ignorable="d"
-        Title="IELTS App" Height="800" Width="1400" WindowStartupLocation="CenterScreen">
+        Title="IELTS App" Height="800" Width="1400" WindowStartupLocation="CenterScreen" Icon="иконка.ico">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
     </Grid>
