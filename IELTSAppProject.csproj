@@ -116,15 +116,15 @@
     </Compile>
     <Compile Include="ICheckable.cs" />
     <Compile Include="JsonControl.cs" />
-    <Compile Include="ListeningControl.xaml.cs">
-      <DependentUpon>ListeningControl.xaml</DependentUpon>
+    <Compile Include="ListeningUserControl.xaml.cs">
+      <DependentUpon>ListeningUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListeningTask.cs" />
     <Compile Include="LanguageSelectionPage.xaml.cs">
       <DependentUpon>LanguageSelectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReadingControl.xaml.cs">
-      <DependentUpon>ReadingControl.xaml</DependentUpon>
+    <Compile Include="ReadingUserControl.xaml.cs">
+      <DependentUpon>ReadingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReadingTask.cs" />
     <Compile Include="SimpleAudioPlayer.xaml.cs">
@@ -156,7 +156,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListeningControl.xaml">
+    <Page Include="ListeningUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -186,7 +186,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ReadingControl.xaml">
+    <Page Include="ReadingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

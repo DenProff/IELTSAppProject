@@ -27,11 +27,11 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ReadingControl.xaml
     /// </summary>
-    public partial class ReadingControl : UserControl, ICheckable
+    public partial class ReadingUserControl : UserControl, ICheckable
     {
 
         public string RecomTime { get; set; }
-        public ReadingControl(ReadingTask data)
+        public ReadingUserControl(ReadingTask data)
         {
             InitializeComponent();
 

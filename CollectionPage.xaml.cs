@@ -88,11 +88,11 @@ namespace IELTSAppProject
             }
             else if (task is ListeningTask)
             {
-                newUserControlObject = new ListeningControl((ListeningTask)task);
+                newUserControlObject = new ListeningUserControl((ListeningTask)task);
             }
             else if (task is ReadingTask)
             {
-                newUserControlObject = new ReadingControl((ReadingTask)task);
+                newUserControlObject = new ReadingUserControl((ReadingTask)task);
             }
             else if (task is WritingTask)
             {

@@ -23,9 +23,9 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ListeningControl.xaml
     /// </summary>
-    public partial class ListeningControl : UserControl, ICheckable
+    public partial class ListeningUserControl : UserControl, ICheckable
     {
-        public ListeningControl(ListeningTask data)
+        public ListeningUserControl(ListeningTask data)
         {
             InitializeComponent();
 
