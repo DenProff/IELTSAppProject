@@ -79,20 +79,24 @@ namespace IELTSAppProject
             //        MessageBox.Show("Файл не найден!");
             //        return;
             //    }
-            this.RecomTime = data.RecommendedTime.ToString() + "мин.";
-            //    // Сериализуем объект в JSON
-            //    string jsonObject = JsonConvert.SerializeObject(data);
+            if (data != null)
+            {
+                this.RecomTime = data.RecommendedTime.ToString() + "мин.";
+                //    // Сериализуем объект в JSON
+                //    string jsonObject = JsonConvert.SerializeObject(data);
 
-            //    // Записываем JSON в файл (перезаписываем, если существует)
-            //    File.WriteAllText(file, jsonObject);
+                //    // Записываем JSON в файл (перезаписываем, если существует)
+                //    File.WriteAllText(file, jsonObject);
 
-            //    // Читаем JSON из файла (после закрытия потока)
-            //    string jsonFromFile = File.ReadAllText(file);
+                //    // Читаем JSON из файла (после закрытия потока)
+                //    string jsonFromFile = File.ReadAllText(file);
 
-            //    // Десериализуем обратно в объект
-            //    newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
+                //    // Десериализуем обратно в объект
+                //    newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
 
-            this.DataContext = data;
+                this.DataContext = data;
+            }
+            
             //}
             //catch (IOException ex)
             //{
@@ -152,33 +156,38 @@ namespace IELTSAppProject
                 mainPart.Document = new Document();
                 Body body = mainPart.Document.AppendChild(new Body());
 
-                //Заголовок
-                Paragraph title = new Paragraph();
-                Run runTitle = new Run();
-                runTitle.AppendChild(new Text($"Id задания - {elem.id}\n{elem.TaskText}"));
-                runTitle.RunProperties = new RunProperties(new Bold());
-                title.AppendChild(runTitle);
-                body.AppendChild(title);
+                if (elem != null)
+                {
+                    //Заголовок
+                    Paragraph title = new Paragraph();
+                    Run runTitle = new Run();
+                    runTitle.AppendChild(new Text($"Id задания - {elem.id}\n{elem.TaskText}"));
+                    runTitle.RunProperties = new RunProperties(new Bold());
+                    title.AppendChild(runTitle);
+                    body.AppendChild(title);
 
-                //Текст
-                Paragraph paragraph = new Paragraph();
-                Run runText = new Run();
-                runText.AppendChild(new Text(elem.TextForReading));
-                paragraph.AppendChild(runText);
-                body.AppendChild(paragraph);
+                    //Текст
+                    Paragraph paragraph = new Paragraph();
+                    Run runText = new Run();
+                    runText.AppendChild(new Text(elem.TextForReading));
+                    paragraph.AppendChild(runText);
+                    body.AppendChild(paragraph);
 
-                //Задания
-                Paragraph tasks = new Paragraph();
-                Run tasksText = new Run();
-                tasksText.AppendChild(new Text(elem.TextForReading + "\n"));
-                //Запись заданий
-                tasksText.AppendChild(new Text($"{elem.Task1}\nTrue\nFalse\nNot Stated\n{elem.Task2}\nTrue\nFalse\nNot Stated\n{elem.Task3}\nTrue\nFalse\nNot Stated\n{elem.Task4}" +
-                    $"\nTrue\nFalse\nNot Stated\n{elem.Task5}\nTrue\nFalse\nNot Stated\n{elem.Task6}\n{elem.TaskAnswerList6[0]}\n{elem.TaskAnswerList6[1]}\n{elem.TaskAnswerList6[2]}\n" +
-                    $"{elem.Task7}\n{elem.TaskAnswerList7[0]}\n{elem.TaskAnswerList7[1]}\n{elem.TaskAnswerList7[2]}\n{elem.Task8}\n{elem.TaskAnswerList8[0]}\n{elem.TaskAnswerList8[1]}\n{elem.TaskAnswerList8[2]}\n" +
-                    $"{elem.Task9}\n{elem.TaskAnswerList9[0]}\n{elem.TaskAnswerList9[1]}\n{elem.TaskAnswerList9[2]}\n{elem.Task0}\n{elem.TaskAnswerList0[0]}\n{elem.TaskAnswerList0[1]}\n{elem.TaskAnswerList0[2]}"));
-                paragraph.AppendChild(tasksText);
-                body.AppendChild(tasks);
+                    //Задания
+                    Paragraph tasks = new Paragraph();
+                    Run tasksText = new Run();
+                    tasksText.AppendChild(new Text(elem.TextForReading + "\n"));
+                    //Запись заданий
+                    tasksText.AppendChild(new Text($"{elem.Task1}\nTrue\nFalse\nNot Stated\n{elem.Task2}\nTrue\nFalse\nNot Stated\n{elem.Task3}\nTrue\nFalse\nNot Stated\n{elem.Task4}" +
+                        $"\nTrue\nFalse\nNot Stated\n{elem.Task5}\nTrue\nFalse\nNot Stated\n{elem.Task6}\n{elem.TaskAnswerList6[0]}\n{elem.TaskAnswerList6[1]}\n{elem.TaskAnswerList6[2]}\n" +
+                        $"{elem.Task7}\n{elem.TaskAnswerList7[0]}\n{elem.TaskAnswerList7[1]}\n{elem.TaskAnswerList7[2]}\n{elem.Task8}\n{elem.TaskAnswerList8[0]}\n{elem.TaskAnswerList8[1]}\n{elem.TaskAnswerList8[2]}\n" +
+                        $"{elem.Task9}\n{elem.TaskAnswerList9[0]}\n{elem.TaskAnswerList9[1]}\n{elem.TaskAnswerList9[2]}\n{elem.Task0}\n{elem.TaskAnswerList0[0]}\n{elem.TaskAnswerList0[1]}\n{elem.TaskAnswerList0[2]}"));
+                    paragraph.AppendChild(tasksText);
+                    body.AppendChild(tasks);
+                }
+                
             }
+
             MessageBox.Show("Файл с заданием скачан и находится на вашем рабочем столе");
         }
 

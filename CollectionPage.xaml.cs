@@ -96,7 +96,7 @@ namespace IELTSAppProject
             }
             else if (task is WritingTask)
             {
-                newUserControlObject = new WritingUserControl((WritingTask)task);
+              //  newUserControlObject = new WritingUserControl((WritingTask)task);
             }
             return (ICheckable)newUserControlObject; // Возвращается именно ICheckable, чтобы в конструкторе было удобно подписывать метод Check
         }
