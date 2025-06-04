@@ -112,5 +112,45 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
+
+        private void firstCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void convertCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addToCollection_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void seventhCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sixthCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void fifthCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void fourthCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void thirdCollection_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
