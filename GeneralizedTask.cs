@@ -3,7 +3,7 @@ using System;
 
 namespace IELTSAppProject
 {
-    public abstract class GeneralizedTask
+    public class GeneralizedTask
     {
         private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -20,6 +20,10 @@ namespace IELTSAppProject
             id = IdCounter++;
             this.TaskText = taskText;
             WithMistake = false;
+        }
+
+        public GeneralizedTask()
+        {
         }
     }
 }

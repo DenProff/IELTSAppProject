@@ -44,6 +44,7 @@ namespace IELTSAppProject
             };
         }
 
+        public WritingUserControl(WritingTask task) { }
         private void OpenChmHelp()
         {
             string chmPath = Path.Combine(
