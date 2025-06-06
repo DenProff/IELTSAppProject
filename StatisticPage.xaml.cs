@@ -1,11 +1,15 @@
-﻿using System;
-using System.IO;
+﻿
+using DocumentFormat.OpenXml.Vml.Spreadsheet;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.IO;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -15,15 +19,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace IELTSAppProject
 {
     /// <summary>
-    /// Логика взаимодействия для ChooseModulePage.xaml
+    /// Логика взаимодействия для StatisticPage.xaml
     /// </summary>
-    public partial class ChooseModulePage : Page
+    public partial class StatisticPage : Page
     {
-        public ChooseModulePage()
+        
+        public StatisticPage()
         {
             InitializeComponent();
 
@@ -42,6 +48,8 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
+
+
         }
 
         private void OpenChmHelp()
@@ -57,7 +65,7 @@ namespace IELTSAppProject
                 try
                 {
                     // Открыть страницу "settings.html" внутри CHM
-                    Process.Start("hh.exe", $"{chmPath}::/generalInformation.htm");
+                    Process.Start("hh.exe", $"{chmPath}::/statistics.htm");
                 }
                 catch (Exception ex)
                 {
@@ -74,7 +82,7 @@ namespace IELTSAppProject
 
         private void statistic_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new StatisticPage());
+
         }
 
         private void mistakes_Click(object sender, RoutedEventArgs e)
@@ -92,36 +100,7 @@ namespace IELTSAppProject
             NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
-        private void varOfExam_Click(object sender, RoutedEventArgs e)
-        {
-            TaskCatalogPage page = new TaskCatalogPage();
-            page.varOfExam.IsChecked = true;
-            NavigationService?.Navigate(page);
-        }
-
-        private void newCollections_Click(object sender, RoutedEventArgs e)
-        {
-            TaskCatalogPage page = new TaskCatalogPage();
-            NavigationService?.Navigate(page);
-        }
-
-        private void testVar_Click(object sender, RoutedEventArgs e)
-        {
-            WritingUserControl page = new WritingUserControl();
-            NavigationService?.Navigate(page);
-        }
-
-        private void moduleTasks_Click(object sender, RoutedEventArgs e)
-        {
-            TaskCatalogPage page = new TaskCatalogPage();
-            page.speakCheackBox.IsChecked = true;
-            page.readingCheckBox.IsChecked = true;
-            page.writingCheckBox.IsChecked = true;
-            page.listeningCheckBox.IsChecked = true;
-            NavigationService?.Navigate(page);
-        }
-
-        public void help_Click(object sender, RoutedEventArgs e)
+        private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
         }

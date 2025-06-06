@@ -82,7 +82,7 @@ namespace IELTSAppProject
 
         private void statistic_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new StatisticPage());
         }
 
         private void mistakes_Click(object sender, RoutedEventArgs e)

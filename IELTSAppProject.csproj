@@ -129,6 +129,9 @@
     <Compile Include="LanguageSelectionPage.xaml.cs">
       <DependentUpon>LanguageSelectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatisticPage.xaml.cs">
+      <DependentUpon>StatisticPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadingUserControl.xaml.cs">
       <DependentUpon>ReadingUserControl.xaml</DependentUpon>
     </Compile>
@@ -199,6 +202,10 @@
     <Page Include="LanguageSelectionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StatisticPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ReadingUserControl.xaml">
       <SubType>Designer</SubType>
