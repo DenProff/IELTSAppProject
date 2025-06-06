@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.VariantTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace IELTSAppProject
     /// </summary>
     public partial class ButtonControlCatalog : UserControl
     {
-        public ButtonControlCatalog()
+        public ButtonControlCatalog(TaskCollection task)
         {
             InitializeComponent();
+
+            this.DataContext = task;
+
+            var multiBind = new MultiBinding();
+
+            multiBind.StringFormat = "Вариант: {0} Название: {1} Дата публикации: {2}";
+
+            multiBind.Bindings.Add(new Binding("VariantId"));
+            multiBind.Bindings.Add(new Binding("VariantName"));
+            multiBind.Bindings.Add(new Binding("DateOfAccess"));
+
+            collection.SetBinding(Button.ContentProperty, multiBind);
         }
 
         private void collection_Click(object sender, RoutedEventArgs e)

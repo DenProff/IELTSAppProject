@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="68" d:DesignWidth="750">
     <Grid>
-        <Button Content="Button" Height="68" x:Name="collection" Click="collection_Click" Width="750">
+        <Button FontSize="16" Height="68" x:Name="collection" Click="collection_Click" Width="750">
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
