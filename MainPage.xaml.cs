@@ -73,6 +73,10 @@ namespace IELTSAppProject
         {
             TaskCatalogPage page = new TaskCatalogPage();
             page.actualTasks.IsChecked = true;
+            page.speakCheackBox.IsChecked = true;
+            page.readingCheckBox.IsChecked = true;
+            page.writingCheckBox.IsChecked = true;
+            page.listeningCheckBox.IsChecked = true;
             NavigationService?.Navigate(page);
         }
 
