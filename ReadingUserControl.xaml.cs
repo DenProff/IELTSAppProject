@@ -47,24 +47,24 @@ namespace IELTSAppProject
             };
 
             ////запись в json
-            List<string> first = new List<string>();
-            List<string> second = new List<string>();
-            List<string> third = new List<string>();
-            List<string> fourth = new List<string>();
-            List<string> fifth = new List<string>();
-            List<string> answer = new List<string>();
+            //List<string> first = new List<string>();
+            //List<string> second = new List<string>();
+            //List<string> third = new List<string>();
+            //List<string> fourth = new List<string>();
+            //List<string> fifth = new List<string>();
+            //List<string> answer = new List<string>();
 
-            AddToList(ref first, "1", "2", "3");
-            AddToList(ref second, "1", "2", "3");
-            AddToList(ref third, "1", "2", "3");
-            AddToList(ref fourth, "а", "б", "в");
-            AddToList(ref fifth, "a", "b", "c");
-            AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2",
-                "3", "1", "а", "c");
+            //AddToList(ref first, "1", "2", "3");
+            //AddToList(ref second, "1", "2", "3");
+            //AddToList(ref third, "1", "2", "3");
+            //AddToList(ref fourth, "а", "б", "в");
+            //AddToList(ref fifth, "a", "b", "c");
+            //AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2",
+            //    "3", "1", "а", "c");
 
-            ReadingTask task = new ReadingTask("текст",10, answer, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
-                "задание", "задание", "задание", first, second, third, fourth, fifth);
-            data = task;
+            //ReadingTask task = new ReadingTask("текст",10, answer, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
+            //    "задание", "задание", "задание", first, second, third, fourth, fifth);
+            //data = task;
 
             //ReadingTask newTask = null;
 
