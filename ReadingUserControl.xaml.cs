@@ -37,21 +37,21 @@ namespace IELTSAppProject
                 Keyboard.Focus(this);
             };
 
-            ////запись в json
-            List<string> first = new List<string>();
-            List<string> second = new List<string>();
-            List<string> third = new List<string>();
-            List<string> fourth = new List<string>();
-            List<string> fifth = new List<string>();
-            List<string> answer = new List<string>();
+            //////запись в json
+            //List<string> first = new List<string>();
+            //List<string> second = new List<string>();
+            //List<string> third = new List<string>();
+            //List<string> fourth = new List<string>();
+            //List<string> fifth = new List<string>();
+            //List<string> answer = new List<string>();
 
-            AddToList(ref first, "1", "2", "3");
-            AddToList(ref second, "1", "2", "3");
-            AddToList(ref third, "1", "2", "3");
-            AddToList(ref fourth, "а", "б", "в");
-            AddToList(ref fifth, "a", "b", "c");
-            AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2",
-                "3", "1", "а", "c");
+            //AddToList(ref first, "1", "2", "3");
+            //AddToList(ref second, "1", "2", "3");
+            //AddToList(ref third, "1", "2", "3");
+            //AddToList(ref fourth, "а", "б", "в");
+            //AddToList(ref fifth, "a", "b", "c");
+            //AddToList(ref answer, "True", "False", "Not Stated", "True", "False", "2",
+            //    "3", "1", "а", "c");
 
             //ReadingTask task = new ReadingTask("текст",10, answer, "текст", "задание", "задание", "задание", "задание", "задание", "задание", "задание",
             //    "задание", "задание", "задание", first, second, third, fourth, fifth);
@@ -97,12 +97,11 @@ namespace IELTSAppProject
             //}
 
             //подписка на событие клика
-            //checkAnswer.Click += (sender, e) => ValidateAnswers(data);
             convertToDocx.Click += (sender, e) => Сonversion.ConvertReading(data);
             
         }
         
-
+        //проверка ответов
         private bool IsAnswerCorrect(string expected, params RadioButton[] options)
         {
             return options.Any(btn => btn.IsChecked == true && btn.Content?.ToString() == expected);
@@ -132,9 +131,6 @@ namespace IELTSAppProject
             }
         }
 
-        
-
-           
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -148,22 +144,6 @@ namespace IELTSAppProject
                 list.Add(answers[i]);
         }
 
-
-        //проявление результатов ответа по клику
-        private void checkAnswer_Click(object sender, RoutedEventArgs e)
-        {
-            this.rightAnswer0.Visibility = Visibility.Visible;
-            this.rightAnswer9.Visibility = Visibility.Visible;
-            this.rightAnswer8.Visibility = Visibility.Visible;
-            this.rightAnswer7.Visibility = Visibility.Visible;
-            this.rightAnswer6.Visibility = Visibility.Visible;
-            this.rightAnswer5.Visibility = Visibility.Visible;
-            this.rightAnswer4.Visibility = Visibility.Visible;
-            this.rightAnswer3.Visibility = Visibility.Visible;
-            this.rightAnswer2.Visibility = Visibility.Visible;
-            this.rightAnswer1.Visibility = Visibility.Visible;
-        }
-
         //открытие справки
         private void help_Click(object sender, RoutedEventArgs e)
         {
@@ -171,7 +151,7 @@ namespace IELTSAppProject
         }
 
         //проверка ответов
-        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        public bool Check()
         {
             ReadingTask task = (ReadingTask)this.DataContext;
             bool result = false;
@@ -253,13 +233,24 @@ namespace IELTSAppProject
                 result = true;
             }
 
-            if (IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73))
+            if (IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03))
                 rightAnswer0.Text = "Правильный ответ!";
             else
             {
                 rightAnswer0.Text = "Неправильный ответ!";
                 result = true;
             }
+
+            this.rightAnswer0.Visibility = Visibility.Visible;
+            this.rightAnswer9.Visibility = Visibility.Visible;
+            this.rightAnswer8.Visibility = Visibility.Visible;
+            this.rightAnswer7.Visibility = Visibility.Visible;
+            this.rightAnswer6.Visibility = Visibility.Visible;
+            this.rightAnswer5.Visibility = Visibility.Visible;
+            this.rightAnswer4.Visibility = Visibility.Visible;
+            this.rightAnswer3.Visibility = Visibility.Visible;
+            this.rightAnswer2.Visibility = Visibility.Visible;
+            this.rightAnswer1.Visibility = Visibility.Visible;
 
             return result;
         }
