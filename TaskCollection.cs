@@ -23,6 +23,13 @@ namespace IELTSAppProject
 
         public event Checking Solved; // Событие, генерируемое при нажатии пользователем кнопки "проверить всё"
 
+        public TaskCollection(int varId, string varName, string date, List<int> taskIdList)
+        {
+            VariantId = varId;
+            VariantName = varName;
+            DateOfAccess = date;
+            TaskIdList = taskIdList;
+        }
 
 
         // yield return - важно для оптимизации, поэтому ниже реализована перечисляемость для коллекции

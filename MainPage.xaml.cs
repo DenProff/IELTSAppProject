@@ -97,7 +97,8 @@ namespace IELTSAppProject
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new LanguageSelectionPage());
+            NavigationService?.Navigate(new CollectionPage(new TaskCollection(0, "zalupa variant", "date", new List<int>{0, 1})));
+            //NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
         private void help_Click(object sender, RoutedEventArgs e)
