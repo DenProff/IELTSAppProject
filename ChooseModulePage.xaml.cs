@@ -102,7 +102,6 @@ namespace IELTSAppProject
         private void newCollections_Click(object sender, RoutedEventArgs e)
         {
             TaskCatalogPage page = new TaskCatalogPage();
-            page.collectionsOfTasks.IsChecked = true;
             NavigationService?.Navigate(page);
         }
 

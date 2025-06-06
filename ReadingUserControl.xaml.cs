@@ -79,7 +79,7 @@ namespace IELTSAppProject
             //    }
             if (data != null)
             {
-                this.RecomTime = data.RecommendedTime.ToString() + "мин.";
+                this.RecomTime = data.RecommendedTime.ToString() + " мин.";
                 //    // Сериализуем объект в JSON
                 //    string jsonObject = JsonConvert.SerializeObject(data);
 

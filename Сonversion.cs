@@ -16,7 +16,7 @@ namespace IELTSAppProject
         public static void ConvertReading(ReadingTask elem)
         {
             //Путь к файлу
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\ReadingTask{elem.id}.docx";
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + $"\\ReadingTask{elem?.id}.docx";
 
             //Создание документа
             using (WordprocessingDocument doc = WordprocessingDocument.Create(filePath,
