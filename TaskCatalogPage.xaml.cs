@@ -48,6 +48,8 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
+
+
         }
 
         private void OpenChmHelp()
@@ -98,59 +100,11 @@ namespace IELTSAppProject
             NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
-        private void convert_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void addToCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
         }
 
-        private void firstCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void convertCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void addToCollection_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void seventhCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void sixthCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void fifthCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void fourthCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void thirdCollection_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

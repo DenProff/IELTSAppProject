@@ -15,8 +15,8 @@
         <Button Content="Мои ошибки" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
         <Button Content="Мои подборки&#xD;&#xA;     заданий" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="collections_Click" FontSize="17" FontWeight="Bold" x:Name="collections" Margin="736,0,0,0"/>
         <Button Content="Выбрать язык" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
-        <GroupBox Header="Вид заданий" Margin="857,200,33,187" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
-            <StackPanel Margin="0,0,0,2">
+        <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
+            <StackPanel Margin="0,0,0,9">
                 <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -74,20 +74,6 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Подборки заданий" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="collectionsOfTasks">
-                    <CheckBox.Resources>
-                        <Style TargetType="CheckBox">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#B7F200"/>
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Background" Value="#514ED9"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </CheckBox.Resources>
-                </CheckBox>
                 <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -120,111 +106,9 @@
         </GroupBox>
         <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderThickness="0" MaxHeight="600" MinHeight="300" MaxWidth="1200" MinWidth="500" Margin="37,153,344,151">
 
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="firstCollection" Click="firstCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="secondCollection" Click="firstCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertSecondCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="thirdCollection" Click="thirdCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertThirdCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="fourthCollection" Click="fourthCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertFourthCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="fifthCollection" Click="fifthCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertFifthCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="sixthCollection" Click="sixthCollection_Click" Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertSixthCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
-            <Grid>
-                <Button Content="Button" Height="68" x:Name="seventhCollection" Click="seventhCollection_Click"  Width="750">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
-                                <ContentPresenter 
-                                    Margin="10,0,0,0"
-                                    HorizontalAlignment="Left" 
-                                    VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertSeventhdCollection" Click="convertCollection_Click" FontSize="12"/>
-            </Grid>
+            <ItemsControl x:Name="TasksContainer">
+                <!-- UserControl-ы будут добавляться сюда -->
+            </ItemsControl>
 
         </ListBox>
         <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
