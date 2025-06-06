@@ -37,15 +37,6 @@ namespace IELTSAppProject
                 Keyboard.Focus(this);
             };
 
-            this.KeyDown += (sender, e) =>
-            {
-                if (e.Key == Key.F1)
-                {
-                    OpenChmHelp();
-                    e.Handled = true;
-                }
-            };
-
             ////запись в json
             List<string> first = new List<string>();
             List<string> second = new List<string>();

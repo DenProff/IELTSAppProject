@@ -29,6 +29,22 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
+            this.Loaded += (sender, e) =>
+            {
+                this.Focus();
+                this.Focusable = true;
+                Keyboard.Focus(this);
+            };
+
+            this.KeyDown += (sender, e) =>
+            {
+                if (e.Key == Key.F1)
+                {
+                    OpenChmHelp();
+                    e.Handled = true;
+                }
+            };
+
             GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
 
             foreach (int taskId in taskCollection) // Перебор id, хранящихся в поле-списке TaskCollection (id заданий, которые надо подгрузить)
@@ -99,6 +115,30 @@ namespace IELTSAppProject
                 newUserControlObject = (new WritingUserControl((WritingTask)task));
             }
             return newUserControlObject; // Возвращается именно ICheckable, чтобы в конструкторе было удобно подписывать метод Check
+        }
+
+        //открытие справки
+        private void OpenChmHelp()
+        {
+            string chmPath = System.IO.Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
+
+            if (File.Exists(chmPath))
+            {
+                try
+                {
+                    // Открыть страницу "reading.htm" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/partsOfExam.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
     }
 }
