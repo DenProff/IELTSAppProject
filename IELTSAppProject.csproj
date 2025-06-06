@@ -142,6 +142,9 @@
     </Compile>
     <Compile Include="SpeakingTask.cs" />
     <Compile Include="GeneralizedTask.cs" />
+    <Compile Include="MistakesPage.xaml.cs">
+      <DependentUpon>MistakesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskCatalogPage.xaml.cs">
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>
@@ -208,6 +211,10 @@
     <Page Include="SpeakingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MistakesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="TaskCatalogPage.xaml">
       <SubType>Designer</SubType>

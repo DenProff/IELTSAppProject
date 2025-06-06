@@ -87,7 +87,7 @@ namespace IELTSAppProject
 
         private void mistakes_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new MistakesPage());
         }
 
         private void collections_Click(object sender, RoutedEventArgs e)
