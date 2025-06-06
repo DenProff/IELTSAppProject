@@ -20,10 +20,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="1.5*"/>
-                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="1.45*"/>
+                <ColumnDefinition Width="1.45*"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.15*"/>
             </Grid.ColumnDefinitions>
 
             <TextBlock x:Name="numTextBox" Grid.Column="0" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="20">№</TextBlock>
@@ -37,14 +37,14 @@
             </Button>
 
             <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="6" VerticalAlignment="Center" Margin="10,0,0,0" 
-                       HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0}     '}" FontSize="14">
+                       HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0} мин  '}" FontSize="14">
             </TextBlock>
         </Grid>
 
         <local:SimpleAudioPlayer AudioPath="{Binding AudioPath}" Grid.Row="1" HorizontalAlignment="Left" Margin="10,10,0,10" 
                                 VerticalAlignment="Center" MinHeight="44" MinWidth="400"/>
 
-        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+        <Grid Grid.Row="2">
             <StackPanel Margin="5,0,0,0">
                 <TextBlock Text="LISTENING" 
                        FontSize="25" 
@@ -159,26 +159,25 @@
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </ScrollViewer>
-        <Border Grid.Row="3" Background="#F5F5F5" Padding="10" BorderThickness="0,1,0,0" BorderBrush="LightGray">
-            <Button x:Name="CheckAnswersButton" 
-                    Content="Проверить ответы"
-                    Click="Check_Click"
-                    HorizontalAlignment="Center" 
-                    Width="185" 
-                    Height="36"
-                    FontSize="15"/>
-        </Border>
-        <Button x:Name="help"
-                Content="Помощь"
-                HorizontalAlignment="Right"
-                Background="#F13C73"
-                Width="93"
-                Height="36"
-                Click="help_Click"
-                Margin="0,29,0,0"
-                FontSize="13"
-                BorderThickness="0"
-                Grid.Row="3"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="help"
+                    Content="Помощь"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Background="#F13C73"
+                    Width="93"
+                    Height="52"
+                    Click="help_Click"
+                    Margin="0,35,0,0"
+                    FontSize="13"
+                    BorderThickness="2"
+                    Grid.Column="0"/>
+        </Grid>
     </Grid>
 </UserControl>
