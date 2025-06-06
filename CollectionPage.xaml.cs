@@ -81,7 +81,6 @@ namespace IELTSAppProject
 
         public ICheckable FindUserControlType(GeneralizedTask task) // Определяет тип на основе которого нужно создать UserControl и возвращает создаваемый UserControl
         {
-            ReadingTask T = (ReadingTask)task;
             ICheckable newUserControlObject;
             if (task is SpeakingTask)
             {

@@ -14,12 +14,13 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Row="0" Grid.ColumnSpan="2"
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2"
                   VerticalScrollBarVisibility="Auto"
-                  HorizontalScrollBarVisibility="Disabled">
+                  HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,2">
             <ItemsControl x:Name="TasksContainer">
-                <!-- UserControl-ы будут добавляться сюда -->
-            </ItemsControl>
+                    <!-- UserControl-ы будут добавляться сюда -->
+                </ItemsControl>
+
         </ScrollViewer>
         <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="0" Margin="50 0 50 0" FontSize="20" Click="Check_Click">Проверить всё</Button>
         <Button x:Name="Convert"  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="50 0 50 0" FontSize="20" Click="Convert_Click">Конвертировать всё в docx</Button>
