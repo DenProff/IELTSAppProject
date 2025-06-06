@@ -15,7 +15,7 @@ namespace IELTSAppProject
         public string Answer { get; set; }
         public string UserAnswer { get; set; }
 
-        public WritingTask(string taskText, string answer, double recTime) : base(taskText, recTime) // Запись поля
+        public WritingTask(string taskType, string taskText, string answer, double recTime) : base(taskText, recTime, taskType) // Запись поля
         {
             Answer = answer;
         }
