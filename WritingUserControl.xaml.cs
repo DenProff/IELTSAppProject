@@ -23,7 +23,7 @@ namespace IELTSAppProject
     /// </summary>
     public partial class WritingUserControl : UserControl, ICheckable
     {
-        public WritingUserControl()
+        public WritingUserControl(WritingTask data)
         {
             InitializeComponent();
 
@@ -42,9 +42,16 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
+
+            this.DataContext = data; // Запись в Binding информации из свойств объекта data
+
+            //Подписка для конвертации
+            writingConvert.Click += (sender, e) => Conversion.ConvertWriting(data);
+            writingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
 
-        public WritingUserControl(WritingTask task) { }
+        public WritingUserControl() { }
+
         private void OpenChmHelp()
         {
             string chmPath = Path.Combine(
