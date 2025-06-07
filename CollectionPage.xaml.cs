@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using System.Windows.Threading;
 
 namespace IELTSAppProject
 {
@@ -28,6 +29,8 @@ namespace IELTSAppProject
         public CollectionPage(TaskCollection taskCollection)
         {
             InitializeComponent();
+
+            this.Opacity = 0; // Делаем странцу прозрачной
 
             this.Loaded += (sender, e) =>
             {
@@ -58,6 +61,13 @@ namespace IELTSAppProject
 
                 TaskCollectionDone += userControl.Check; // Подписка метода проверки добавляемого UserControl-а
             }
+
+            // После полной загрузки элементов, включаем видимость страницы и прокручиваем вверх до ее начала
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                this.Opacity = 1;
+                MainScrollViewer.ScrollToHome();
+            }), DispatcherPriority.Loaded);
         }
 
         private void Check_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Проверить всё" - при нажатии на кнопку сработают
