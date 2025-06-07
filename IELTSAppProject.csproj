@@ -260,6 +260,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="resourcesTask\Collections\taskCollections.json" />
     <None Include="resourcesTask\tasks\listeningtask1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -271,7 +272,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resourcesTask\Collections\" />
     <Folder Include="resourcesTask\Languages\" />
     <Folder Include="speakingAudioUsersAnswers\" />
   </ItemGroup>
