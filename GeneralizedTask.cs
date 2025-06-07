@@ -5,7 +5,7 @@ using JsonSubTypes;
 
 namespace IELTSAppProject
 {
-    [JsonConverter(typeof(JsonSubtypes), "TaskType")] // Указываем поле-дискриминатор
+    [JsonConverter(typeof(JsonSubtypes), "TaskType")] // Указывает поле-дискриминатор
     [JsonSubtypes.KnownSubType(typeof(ListeningTask), "ListeningTask")]
     [JsonSubtypes.KnownSubType(typeof(ReadingTask), "ReadingTask")]
     public class GeneralizedTask
@@ -13,12 +13,9 @@ namespace IELTSAppProject
         private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         public int id;
-        public string TaskText { get; set; }
-        public double RecommendedTime{ get; set; }
-
-        public string TaskType { get; set; }
-
-        // Поля для фильтрации - надо бы попридумывать
+        public string TaskText { get; set; } // Текст задания
+        public double RecommendedTime{ get; set; } // Рекомендуемое время для выполнения задания
+        public string TaskType { get; set; } // Для работы json
         public bool WithMistake { get; set; } // Была ли в этом задании допущена и не исправлена ошибка
 
         public GeneralizedTask(string taskText, double recTime, string taskType)
@@ -28,10 +25,6 @@ namespace IELTSAppProject
             id = IdCounter++;
             this.TaskText = taskText;
             WithMistake = false;
-        }
-
-        public GeneralizedTask()
-        {
         }
     }
 }
