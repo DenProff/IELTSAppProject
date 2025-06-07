@@ -273,6 +273,8 @@
   <ItemGroup>
     <Folder Include="resourcesTask\Collections\" />
     <Folder Include="resourcesTask\Languages\" />
+    <Folder Include="speakingAudioIdealAnswers\" />
+    <Folder Include="speakingAudioUsersAnswers\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="иконка2.ico">

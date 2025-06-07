@@ -40,31 +40,15 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             Task = task;
             InitializeComponent();
 
-            this.Loaded += (sender, e) =>
-            {
-                this.Focus();
-                this.Focusable = true;
-                Keyboard.Focus(this);
-            };
-
-            this.KeyDown += (sender, e) =>
-            {
-                if (e.Key == Key.F1)
-                {
-                    OpenChmHelp();
-                    e.Handled = true;
-                }
-            };
-
             taskTextBlock.Text = taskText;
             topicTextBlock.Text = task.TaskText;
             idTextBox.Text += (task.id).ToString();
             recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + "мин.";
         }
 
-        private void StartRecord(object sender, RoutedEventArgs e)
+        private void StartRecord(object sender, RoutedEventArgs e) // Начало записи
         {
-            if (!isRecordingInProgress && !isRecordingDone)
+            if (!isRecordingInProgress && !isRecordingDone) // Если запись ещё не проводилась и запись не идёт прямо сейчас
             {
                 SoundControl.StartRecording();
                 isRecordingInProgress = true;
@@ -75,21 +59,21 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void StopRecord(object sender, RoutedEventArgs e)
         {
-            if (!isRecordingInProgress) return;
+            //if (!isRecordingInProgress) return;
 
-            try
-            {
-                SoundControl.StopRecording(); // Остановка записи
-                Task.UserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
-            }
-            catch (Exception ex)
-            {
-                // Обновление интерфейса
-                isRecordingInProgress = false;
-                isRecordingDone = true;
-                inputRecordingStatusTextBox.Text = "Ответ сохранён.";
-                inputRecordingStatusTextBox.Background = Brushes.LightGreen;
-            }
+            //try
+            //{
+            //    SoundControl.StopRecording(); // Остановка записи
+            //    Task.AudioPathUserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
+            //}
+            //catch (Exception ex)
+            //{
+            //    // Обновление интерфейса
+            //    isRecordingInProgress = false;
+            //    isRecordingDone = true;
+            //    inputRecordingStatusTextBox.Text = "Ответ сохранён.";
+            //    inputRecordingStatusTextBox.Background = Brushes.LightGreen;
+            //}
         }
 
         private void PlayUserAnswer(object sender, RoutedEventArgs e)
