@@ -29,7 +29,7 @@ namespace IELTSAppProject
         public static WaveOutEvent WaveOut { get => waveOut; set => waveOut = value; }
         public static AudioFileReader AudioFile { get => audioFile; set => audioFile = value; }
 
-        public static string GetUserAnswerFilePath(int taskId, bool isUserAudioNeeded) // Метод для получения пути к файлу ответа пользователя или идеальному ответу speaking
+        public static string GetAnswerFilePath(int taskId, bool isUserAudioNeeded) // Метод для получения пути к файлу ответа пользователя или идеальному ответу speaking
         {
             // Получение пути к папке проекта
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
@@ -44,7 +44,7 @@ namespace IELTSAppProject
 
         public static void StartRecording(int taskId, bool isUserAudioNeeded) // Название файла для записи ответа формируется на основе id задания speaking
         {
-            string filePath = GetUserAnswerFilePath(taskId, isUserAudioNeeded);
+            string filePath = GetAnswerFilePath(taskId, isUserAudioNeeded);
             
             string dir = Path.GetDirectoryName(filePath);
 

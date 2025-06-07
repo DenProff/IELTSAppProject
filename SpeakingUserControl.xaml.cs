@@ -97,7 +97,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             }
 
             // Получение пути к файлу
-            string filePath = SoundControl.GetUserAnswerFilePath(Task.id, true);
+            string filePath = SoundControl.GetAnswerFilePath(Task.id, true);
 
             // Проверка существования файла
             if (!File.Exists(filePath))
@@ -119,7 +119,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             }
 
             // Получение пути к файлу
-            string filePath = SoundControl.GetUserAnswerFilePath(Task.id, false);
+            string filePath = SoundControl.GetAnswerFilePath(Task.id, false);
 
             // Проверка существования файла
             if (!File.Exists(filePath))
