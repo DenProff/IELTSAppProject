@@ -8,6 +8,8 @@ namespace IELTSAppProject
     [JsonConverter(typeof(JsonSubtypes), "TaskType")] // Указывает поле-дискриминатор
     [JsonSubtypes.KnownSubType(typeof(ListeningTask), "ListeningTask")]
     [JsonSubtypes.KnownSubType(typeof(ReadingTask), "ReadingTask")]
+    [JsonSubtypes.KnownSubType(typeof(SpeakingTask), "SpeakingTask")]
+    [JsonSubtypes.KnownSubType(typeof(WritingTask), "WritingTask")]
     public class GeneralizedTask
     {
         private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
