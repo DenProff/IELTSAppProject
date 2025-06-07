@@ -281,7 +281,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="audio\cocoJambo.mp3" />
+    <Content Include="listeningAudio\listeningTrack1.mp3" />
     <Content Include="speakingAudioIdealAnswers\idealAnswer0.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
