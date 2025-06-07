@@ -96,6 +96,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 return;
             }
 
+            isPlayingSomeAnswerInProgress = true;
+
             // Получение пути к файлу
             string filePath = SoundControl.GetAnswerFilePath(Task.id, true);
 
@@ -118,6 +120,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 return;
             }
 
+            isPlayingSomeAnswerInProgress = true;
+
             // Получение пути к файлу
             string filePath = SoundControl.GetAnswerFilePath(Task.id, false);
 
@@ -134,13 +138,21 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void StopPlaying(object sender, RoutedEventArgs e)
         {
+            if (!isPlayingSomeAnswerInProgress)
+            {
+                resultTextBlock.Text = "Сейчас ничего не проигрывается.";
+                return;
+            }
 
+            SoundControl.StopAudio(); // Остановка воспроизведения
+            isPlayingSomeAnswerInProgress = false;
+            resultTextBlock.Text = "Воспроизведение остановлено.";
         }
 
         private void OpenChmHelp()
         {
             string chmPath = System.IO.Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
+                AppDomain.CurrentDomain.BaseDirectory,  
                 "Help",
                 "referenceData.chm"
             );

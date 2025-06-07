@@ -20,9 +20,6 @@ namespace IELTSAppProject
         private static AudioFileReader audioFile; // Для считывания аудиофайла
         private static string audioPath; // Путь к аудиофайлу
         private static bool isPaused = false; // Флаг для приостановки
-        
-        // Свойство ниже из первой версии класса, может ещё понадобиться
-        //public static string OutputFilePath { get { return "recordedForTest.wav"; } } // Куда идёт запись - именно файл расширения .wav
 
         public static string AudioPath { get => audioPath; set => audioPath = value; }
         public static bool IsPaused { get => isPaused; set => isPaused = value; }
@@ -66,28 +63,6 @@ namespace IELTSAppProject
             };
             waveIn.StartRecording();
         }
-
-        // Ниже старая версия StartRecording
-        //public static void StartRecording() // Начать запись
-        //{
-        //    waveIn = new WaveInEvent();
-        //    waveIn.DeviceNumber = 0; // 0 это микрофон по умолчанию
-        //    waveIn.WaveFormat = new WaveFormat(44100, 16, 1); // Параметры записи
-        //    writer = new WaveFileWriter(OutputFilePath, waveIn.WaveFormat);
-
-        //    waveIn.DataAvailable += (s, e) =>
-        //    {
-        //        writer.Write(e.Buffer, 0, e.BytesRecorded);
-        //    };
-
-        //    waveIn.RecordingStopped += (s, e) =>
-        //    {
-        //        writer?.Dispose();
-        //        waveIn?.Dispose();
-        //        waveIn = null;
-        //    };
-        //    waveIn.StartRecording();
-        //}
 
         public static void StopRecording() // Закончить запись
         {
@@ -144,29 +119,30 @@ namespace IELTSAppProject
             }
         }
 
-        public static byte[] ConvertMp3ToWavBytes(string mp3Path)
-        {
-            // Временный файл для конвертации
-            string tempWavPath = Path.GetTempFileName();
+        // Ниже метод перевода Mp3 в массив byte - не нужен но может пригодиться
+        //public static byte[] ConvertMp3ToWavBytes(string mp3Path)
+        //{
+        //    // Временный файл для конвертации
+        //    string tempWavPath = Path.GetTempFileName();
 
-            try
-            {
-                // Конвертация MP3 → WAV (через временный файл)
-                using (var mp3Reader = new Mp3FileReader(mp3Path))
-                using (var waveWriter = new WaveFileWriter(tempWavPath, mp3Reader.WaveFormat))
-                {
-                    mp3Reader.CopyTo(waveWriter);
-                }
+        //    try
+        //    {
+        //        // Конвертация MP3 → WAV (через временный файл)
+        //        using (var mp3Reader = new Mp3FileReader(mp3Path))
+        //        using (var waveWriter = new WaveFileWriter(tempWavPath, mp3Reader.WaveFormat))
+        //        {
+        //            mp3Reader.CopyTo(waveWriter);
+        //        }
 
-                // Чтение WAV в массив байтов
-                return File.ReadAllBytes(tempWavPath);
-            }
-            finally
-            {
-                // Удаление временного файла
-                if (File.Exists(tempWavPath))
-                    File.Delete(tempWavPath);
-            }
-        }
+        //        // Чтение WAV в массив байтов
+        //        return File.ReadAllBytes(tempWavPath);
+        //    }
+        //    finally
+        //    {
+        //        // Удаление временного файла
+        //        if (File.Exists(tempWavPath))
+        //            File.Delete(tempWavPath);
+        //    }
+        //}
     }
 }

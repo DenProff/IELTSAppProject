@@ -12,19 +12,17 @@ namespace IELTSAppProject
     [JsonSubtypes.KnownSubType(typeof(WritingTask), "WritingTask")]
     public class GeneralizedTask
     {
-        private static int IdCounter = 0; // ЕГО НАДО ИЗ JSON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
         public int id;
         public string TaskText { get; set; } // Текст задания
         public double RecommendedTime{ get; set; } // Рекомендуемое время для выполнения задания
         public string TaskType { get; set; } // Для работы json
         public bool WithMistake { get; set; } // Была ли в этом задании допущена и не исправлена ошибка
 
-        public GeneralizedTask(string taskText, double recTime, string taskType)
+        public GeneralizedTask(int id, string taskText, double recTime, string taskType)
         {
             TaskType = taskType;
             RecommendedTime = recTime;
-            id = IdCounter++;
+            this.id = id;
             this.TaskText = taskText;
             WithMistake = false;
         }
