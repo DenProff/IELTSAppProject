@@ -40,7 +40,9 @@ namespace IELTSAppProject
 
         private void collection_Click(object sender, RoutedEventArgs e)
         {
-            //CollectionPage page = new CollectionPage(task);
+            TaskCollection task = (TaskCollection)this.DataContext; 
+            CollectionPage page = new CollectionPage(task);
+            
         }
 
         private void convertCollection_Click(object sender, RoutedEventArgs e)

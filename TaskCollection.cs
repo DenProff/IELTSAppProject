@@ -14,12 +14,12 @@ namespace IELTSAppProject
         public string VariantName { get; set; } // Название данной подборки
         public string DateOfAccess {  get; set; } // Дата последнего обращения к данной подборке в формате: xx.xx.xxxx
         public List<int> TaskIdList { get; set; } // Список из id, которые нужно подгружать из json
-        bool isListening { get; set; } //есть ли в подборке Listening
-        bool isSpeaking { get; set; } //есть ли в подборке Speaking
-        bool isWriting { get; set; } //есть ли в подборке Writing
-        bool isReading { get; set; } //есть ли в подборке Reading
-        bool isFastRepeat { get; set; } //есть ли в подборке задания для быстрого повторения
-        bool isVariants { get; set; } //есть ли в подборке варианты экзамена
+        public bool isListening { get; set; } //есть ли в подборке Listening
+        public bool isSpeaking { get; set; } //есть ли в подборке Speaking
+        public bool isWriting { get; set; } //есть ли в подборке Writing
+        public bool isReading { get; set; } //есть ли в подборке Reading
+        public bool isFastRepeat { get; set; } //есть ли в подборке задания для быстрого повторения
+        public bool isVariants { get; set; } //есть ли в подборке варианты экзамена
 
         public event Checking Solved; // Событие, генерируемое при нажатии пользователем кнопки "проверить всё"
 
