@@ -15,7 +15,7 @@
         <Border MinWidth="400" MaxWidth="1900" Background=" #514ED9" Padding="30" CornerRadius="20" Margin="0,85,0,0" Height="568" Width="886">
             <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}" Margin="0,0,4,0">
 
-                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="10,25,-14,-5" Height="1619">
+                <StackPanel RenderTransformOrigin="0.5,0.5" Margin="10,25,-14,-5" Height="2129">
                     <StackPanel.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -24,20 +24,20 @@
                             <TranslateTransform Y="-1.081"/>
                         </TransformGroup>
                     </StackPanel.RenderTransform>
-                    <TextBlock FontSize="20" Text="{Binding TextForReading}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="42" Width="787" HorizontalAlignment="Left"/>
-                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="350" Width="793" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="20" Text="{Binding TextForReading}" x:Name="numAndTask" TextWrapping="Wrap" LineHeight="6" Height="81" Width="787" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding TaskText}" x:Name="textTask" TextWrapping="Wrap" LineHeight="6" Height="925" Width="793" HorizontalAlignment="Left"/>
 
-                    <TextBlock FontSize="18" Text="{Binding Task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="39" Width="778" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="44" Width="778" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
                             <ComboBoxItem Content="False"/>
                             <ComboBoxItem Content="Not Stated"/>
                         </ComboBox>
-                        <TextBlock FontSize="18" Text ="" x:Name="rightAnswer1" Margin="15,0, 0, 0" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
+                        <TextBlock FontSize="18" Text ="" x:Name="rightAnswer1" Margin="10,0, 0, 0" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Margin="0,10,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
@@ -47,7 +47,7 @@
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer2" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Margin="0,10,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
@@ -57,7 +57,7 @@
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer3" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Margin="0,10,0,0" Height="48" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
@@ -67,7 +67,7 @@
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer4" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Margin="0,10,0,0" Height="57" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
                         <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FFCB73">
                             <ComboBoxItem Content="True"/>
