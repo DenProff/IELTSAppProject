@@ -1,23 +1,5 @@
 [
   {
-    "TaskType": "ReadingTask",
-    "id": 1,
-    "TextForReading": "You should spend about 20 minutes on Questions. Read the texts below and answer the following questions",
-    "Task1": "The Vitamin Shoppe has an above average salary, according to the review.",
-    "Task2": "Advantage Sales & Marketing owns 65 offices all over the world",
-    "Task3": "Universal Protection Service offers various security services in the USA.",
-    "Task4": "Reviewer of the PSA Healthcare praises its high wages.",
-    "Task5": "None of the offers included an approximate salary in the description.",
-    "Task6": "Which offer has the most part-time openings?",
-    "Task7": "Which of these companies operate both in USA and Canada?",
-    "Task8": "Main office of which company is situated in Atlanta?",
-    "Task9": "VitaPath is the other name of which company?",
-    "Task0": "Which review doesn’t mention a comfortable timetable?",
-    "TaskAnswerList6": [ "Chipotle", "PSA Healthcare", "The Vitamin Shoppe" ],
-    "TaskAnswerList7": [ "The Vitamin Shoppe and Advantage Sales & Marketing", "PSA Healthcare and Advantage Sales & Marketing", "Chipotle and PSA Healthcare" ],
-    "TaskAnswerList8": [ "The Vitamin Shoppe", "PSA Healthcare", "Chipotle" ],
-    "TaskAnswerList9": [ "PSA Healthcare", "Universal Protection Service", "The Vitamin Shoppe" ],
-    "TaskAnswerList0": [ "Chipotle", "Advantage Sales & Marketing", "The Vitamin Shoppe" ],
     "Answer": [
       "True",
       "False",
@@ -30,34 +12,156 @@
       "The Vitamin Shoppe",
       "The Vitamin Shoppe"
     ],
-    "UserAnswer": null,
+    "id": 1,
+    "TextForReading": "You should spend about 20 minutes on Questions. Read the texts below and answer the following questions",
+    "Task1": "The Vitamin Shoppe has an above average salary, according to the review.",
+    "Task2": "Advantage Sales & Marketing owns 65 offices all over the world",
+    "Task3": "Universal Protection Service offers various security services in the USA.",
+    "Task4": "Reviewer of the PSA Healthcare praises its high wages.",
+    "Task5": "None of the offers included an approximate salary in the description.",
+    "Task6": "Which offer has the most part-time openings?",
+    "Task7": "Which of these companies operate both in USA and Canada?",
+    "Task8": "Main office of which company is situated in Atlanta?",
+    "Task9": "VitaPath is the other name of which company?",
+    "Task0": "Which review doesn’t mention a comfortable timetable?",
+    "TaskAnswerList6": [
+      "Chipotle",
+      "PSA Healthcare",
+      "The Vitamin Shoppe"
+    ],
+    "TaskAnswerList7": [
+      "The Vitamin Shoppe and Advantage Sales & Marketing",
+      "PSA Healthcare and Advantage Sales & Marketing",
+      "Chipotle and PSA Healthcare"
+    ],
+    "TaskAnswerList8": [
+      "The Vitamin Shoppe",
+      "PSA Healthcare",
+      "Chipotle"
+    ],
+    "TaskAnswerList9": [
+      "PSA Healthcare",
+      "Universal Protection Service",
+      "The Vitamin Shoppe"
+    ],
+    "TaskAnswerList0": [
+      "Chipotle",
+      "Advantage Sales & Marketing",
+      "The Vitamin Shoppe"
+    ],
     "TaskText": "1. The Vitamin Shoppe: 1,946 part-time openings. The Vitamin Shoppe is a New Jersey-based retailer of nutritional supplements. They also operate stores in Canada under the name \"VitaPath\". The company provides approximately 8,000 different SKU's of supplements through its retail stores and over 20,000 different SKU's of supplements through its online retail websites.\nEmployee Review: Good growth opportunities and stores opening all over the US all year 'round. Company based out of NJ, so more progressive policies on employment and benefits. Good vacation, health, and dental benefits. Payment is above average. Good policies on customer service interaction as well. Focus on Customer service vs. pushing products.\n\n2. Chipotle: 1,553 part-time openings.Chipotle is known for its use of organic meats throughout its more than 1,500 restaurants, which are located in 45 states. Since having been founded in 1993, the chain has since exploded and now counts some 37,000 employees. It is a pioneer in the \"fast casual\" dining movement.\nEmployee Review: The people I work with are awesome and the food is good. It pays my bills and makes me laugh. The schedule is super flexible but it's a lot of work. If you're looking for something easy and laid back, keep looking.\n\n3. Advantage Sales & Marketing: 1,742 part-time openings.Advantage Sales & Marketing provides outsourced sales, merchandising, and marketing services to consumer goods and food product manufacturers and suppliers. Owning more than 65 offices in the US and Canada, ASM does merchandising for 1,200 clients -- including Johnson & Johnson, Mars, Unilever, Energizer.\nEmployee Review: Long lasting business, able to adapt to changes in market. Well-thought out schedule, and flexible time off for both vacation and illness.\n\n4. Universal Protection Service: 1,219 part-time openings.Universal Protection Service is one of the largest providers of security services in the U.S. They offer an expansive range of security solutions for airports, healthcare facilities, office buildings, and more.\nEmployee Review: Good pay depending on where you work. Room for advancement based on availability. Better company than any other I have worked for in security.\n\n5. PSA Healthcare: 1,295 part-time openingsPSA Healthcare, also known as Pediatric Services of America, provides comprehensive home health services through a branch of office across the United States. The company is headquartered in Atlanta, Ga.\nEmployee Review: I love working one-on-one with the pediatric patient and their families. You have the time needed to give great compassionate care! Office staff and supervisors are very good with both employees and clients. There is a lot of flexibility with staffing. I never received grief for requesting a day off.",
     "RecommendedTime": 20.0,
+    "TaskType": "ReadingTask",
     "WithMistake": false
   },
   {
-    "TaskType": "ListeningTask",
+    "Answer": [
+      "True",
+      "False",
+      "Not Stated",
+      "True",
+      "False",
+      "US shows",
+      "seven people",
+      "Armando Iannucci",
+      "people who make enduring TV-shows",
+      "It has improved international viewing standards."
+    ],
     "id": 2,
-    "AudioPath": "listeningTrack1.mp3",
-    "Task1": "1. Initially, the Great Wall was built to",
-    "Task2": "2. The construction of the Great Wall started",
-    "Task3": "3. The Chinese name of the monument is",
-    "Task4": "4. The wall as it exists today was constructed mainly by",
-    "Task5": "5. During the Ming dynasty, the wall’s main purpose was",
-    "Task6": "6. Before the use of bricks, the Great Wall was mainly built from stones, wood and _______.",
-    "Task7": "7. Many western sections of the wall are constructed from mud and thus are more _______.",
-    "Task8": "8. A part of the wall in Gansu province may disappear in the next 20 years, due to _______.",
-    "Task9": "9. To see the wall from the Moon would require superhuman _______.",
-    "Task0": "10. The Great Wall is generally recognized as one of the most impressive _______ in history.",
-    "TaskAnswerList1": [ "A. prevent invaders from entering China", "B. function as a psychological barrier", "C. show country’s enduring strength" ],
-    "TaskAnswerList2": [ "A. in third century B.C.", "B. in 220 B.C.", "C. in 390 A.D." ],
-    "TaskAnswerList3": [ "A. the Great Wall", "B. the Big Wall", "C. the Long Wall" ],
-    "TaskAnswerList4": [ "A. Qin dynasty", "B. Northern Wei dynasty", "C. Ming dynasty" ],
-    "TaskAnswerList5": [ "A. to be a military fortification", "B. to protect caravans traveling along the trade routes", "C. to contribute to the defense of the country" ],
-    "Answer": [ "A", "B", "C", "C", "C", "rammed earth", "susceptible to erosion", "frequent sandstorms", "eyesight", "architectural feats" ],
-    "UserAnswer": null,
+    "TextForReading": "You should spend about 20 minutes on Questions 27–40, which are based on Reading Passage 3 below.",
+    "Task1": "Armando Iannucci expressed a need of having more popular channels.",
+    "Task2": "John Whittingdale wanted to dismantle the BBC.",
+    "Task3": "Iannucci delivered the 30th annual MacTaggart Lecture.",
+    "Task4": "Ianucci believes that British television has contributed to the success of American TV-shows.",
+    "Task5": "There have been negotiations over the future of the BBC in July.",
+    "Task6": "Ianucci praised everything EXCEPT",
+    "Task7": "To advise on the charter renewal Mr Whittingdale appointed a panel of",
+    "Task8": "Who of these people was NOT invited to the discussion concerning BBC renewal?",
+    "Task9": "There panel of experts lacks:",
+    "Task0": "How does Iannucci describe the impact of British TV on global viewing habits?",
+    "TaskAnswerList6": [
+      "US shows",
+      "British shows",
+      " British programming"
+    ],
+    "TaskAnswerList7": [
+      "five people",
+      "seven people",
+      "four people"
+    ],
+    "TaskAnswerList8": [
+      "Armando Iannucci",
+      "Dawn Airey",
+      "John Whittingdale"
+    ],
+    "TaskAnswerList9": [
+      "media owners",
+      "people who make enduring TV-shows",
+      "top executives"
+    ],
+    "TaskAnswerList0": [
+      "It has made international television less entertaining.",
+      "It has improved international viewing standards.",
+      "It has had no significant influence outside the UK."
+    ],
+    "TaskText": "Britain needs strong TV industry\r\nComedy writer Armando Iannucci has called for an industry-wide defence of the BBC and British programme-makers. \"The Thick of It\" creator made his remarks in the annual MacTaggart Lecture at the Edinburgh TV Festival.\n\"It's more important than ever that we have more strong, popular channels... that act as beacons, drawing audiences to the best content,\" he said. Speaking earlier, Culture Secretary John Whittingdale rejected suggestions that he wanted to dismantle the BBC.\r\n\r\n'Champion supporters'\r\n\r\nIannucci co-wrote \"I'm Alan Partridge\", wrote the movie \"In the Loop\" and created and wrote the hit \"HBO\" and \"Sky Atlantic show Veep\". He delivered the 40th annual MacTaggart Lecture, which has previously been given by Oscar winner Kevin Spacey, former BBC director general Greg Dyke, Jeremy Paxman and Rupert Murdoch. Iannucci said: \"Faced with a global audience, British television needs its champion supporters.\"\r\nHe continued his praise for British programming by saying the global success of American TV shows had come about because they were emulating British television. \"The best US shows are modelling themselves on what used to make British TV so world-beating,\" he said. \"US prime-time schedules are now littered with those quirky formats from the UK - the \"Who Do You Think You Are\"'s and the variants on \"Strictly Come Dancing\" - as well as the single-camera non-audience sitcom, which we brought into the mainstream first. We have changed international viewing for the better.\"\r\n\r\nWith the renewal of the BBC's royal charter approaching, Iannucci also praised the corporation. He said: \"If public service broadcasting - one of the best things we've ever done creatively as a country - if it was a car industry, our ministers would be out championing it overseas, trying to win contracts, boasting of the British jobs that would bring.\" In July, the government issued a green paper setting out issues that will be explored during negotiations over the future of the BBC, including the broadcaster's size, its funding and governance.\r\n\rPrimarily Mr Whittingdale wanted to appoint a panel of five people, but finally he invited two more people to advise on the channer renewal, namely former Channel 4 boss Dawn Airey and journalism professor Stewart Purvis, a former editor-in-chief of ITN. Iannucci bemoaned the lack of \"creatives\" involved in the discussions.\r\n\r\n\"When the media, communications and information industries make up nearly 8% our GDP, larger than the car and oil and gas industries put together, we need to be heard, as those industries are heard. But when I see the panel of experts who've been asked by the culture secretary to take a root and branch look at the BBC, I don't see anyone who is a part of that cast and crew list. I see executives, media owners, industry gurus, all talented people - but not a single person who's made a classic and enduring television show.\"\r\n\r\n'Don't be modest'\r\n\r\nIannucci suggested one way of easing the strain on the licence fee was \"by pushing ourselves more commercially abroad\".\r\n\r\n\"Use the BBC's name, one of the most recognised brands in the world,\" he said. \"And use the reputation of British television across all networks, to capitalise financially oversees. Be more aggressive in selling our shows, through advertising, through proper international subscription channels, freeing up BBC Worldwide to be fully commercial, whatever it takes.\r\n\r\n\"Frankly, don't be icky and modest about making money, let's monetise the bezeesus Mary and Joseph out of our programmes abroad so that money can come back, take some pressure off the licence fee at home and be invested in even more ambitious quality shows, that can only add to our value.\"\r\n\r\nMr Whittingdale, who was interviewed by ITV News' Alastair Stewart at the festival, said he wanted an open debate about whether the corporation should do everything it has done in the past.  He said he had a slight sense that people who rushed to defend the BBC were \"trying to have an argument that's never been started\".\r\n\r\n\"Whatever my view is, I don't determine what programmes the BBC should show,\" he added. \"That's the job of the BBC.\" Mr Whittingdale said any speculation that the Conservative Party had always wanted to change the BBC due to issues such as its editorial line was \"absolute nonsense\".",
+    "RecommendedTime": 20.0,
+    "TaskType": "Reading",
+    "WithMistake": false
+  },
+  {
+    "id": 6,
+    "Answer": [
+      "B",
+      "B",
+      "A",
+      "C",
+      "A",
+      "mobile unit",
+      "strong health systems",
+      "simulations",
+      "exact budget",
+      "global wealth"
+    ],
+    "AudioPath": "cocoJambo.mp3",
+    "Task1": "1. According to the speaker, what will be the most likely cause of a global catastrophe in the near future?",
+    "Task2": "2. What is the main issue with the disease prevention system?",
+    "Task3": "3. Which organization is funded to monitor epidemics?",
+    "Task4": "4. Which fortunate condition prevented Ebola from spreading further?",
+    "Task5": "5. How can people's movements be monitored nowadays?",
+    "Task6": "6. NATO has a ______ that is always ready to go.",
+    "Task7": "7. Among the key pieces are ______ in underprivileged countries.",
+    "Task8": "8. To get the military ready for action we need to run ______ and detect problem areas.",
+    "Task9": "9. The speaker can't give a/an ______ for the cost of medical research.",
+    "Task0": "10. The World Bank predicts that in case of a global pandemic the ______ will be drastically reduced.",
+    "TaskAnswerList1": [
+      "A. A nuclear war",
+      "B. A global pandemic",
+      "C. A natural disaster"
+    ],
+    "TaskAnswerList2": [
+      "A. It exists, but functions poorly",
+      "B. It doesn't exist at all",
+      "C. It only exists in certain countries"
+    ],
+    "TaskAnswerList3": [
+      "A. The WHO",
+      "B. The UN",
+      "C. Médecins Sans Frontières"
+    ],
+    "TaskAnswerList4": [
+      "A. A cure was found quickly",
+      "B. People were provided with protective gear",
+      "C. The virus did not spread through urban areas"
+    ],
+    "TaskAnswerList5": [
+      "A. Through satellite maps",
+      "B. Through street camera",
+      "C. Through cell phones"
+    ],
     "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
     "RecommendedTime": 52.0,
+    "TaskType": "ListeningTask",
     "WithMistake": false
   }
 ]
