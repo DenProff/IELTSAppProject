@@ -20,19 +20,38 @@ namespace IELTSAppProject
         private static AudioFileReader audioFile; // Для считывания аудиофайла
         private static string audioPath; // Путь к аудиофайлу
         private static bool isPaused = false; // Флаг для приостановки
-        public static string OutputFilePath { get { return "recordedForTest.wav"; } } // Куда идёт запись - именно файл расширения .wav
+        
+        // Свойство ниже из первой версии класса, может ещё понадобиться
+        //public static string OutputFilePath { get { return "recordedForTest.wav"; } } // Куда идёт запись - именно файл расширения .wav
 
         public static string AudioPath { get => audioPath; set => audioPath = value; }
         public static bool IsPaused { get => isPaused; set => isPaused = value; }
         public static WaveOutEvent WaveOut { get => waveOut; set => waveOut = value; }
         public static AudioFileReader AudioFile { get => audioFile; set => audioFile = value; }
 
-        public static void StartRecording() // Начать запись
+        public static string GetUserAnswerFilePath(int answerNumber) // Метод для получения пути к файлу для записи ответа пользователя на speaking
         {
+            // Получение пути к папке проекта
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+
+            // Путь к папке speakingAudioUsersAnswers
+            string userAnswersDir = Path.Combine(projectRoot, "speakingAudioUsersAnswers");
+
+            // Возвращение полного пути к файлу
+            return Path.Combine(userAnswersDir, $"userAnswer{answerNumber}.wav");
+        }
+
+        public static void StartRecording(int taskId) // Название файла для записи ответа формируется на основе id задания speaking
+        {
+            string filePath = GetUserAnswerFilePath(taskId);
+            
+            string dir = Path.GetDirectoryName(filePath);
+
             waveIn = new WaveInEvent();
-            waveIn.DeviceNumber = 0; // 0 это микрофон по умолчанию
-            waveIn.WaveFormat = new WaveFormat(44100, 16, 1); // Параметры записи
-            writer = new WaveFileWriter(OutputFilePath, waveIn.WaveFormat);
+            waveIn.DeviceNumber = 0;
+            waveIn.WaveFormat = new WaveFormat(44100, 16, 1);
+            writer = new WaveFileWriter(filePath, waveIn.WaveFormat);
 
             waveIn.DataAvailable += (s, e) =>
             {
@@ -47,6 +66,28 @@ namespace IELTSAppProject
             };
             waveIn.StartRecording();
         }
+
+        // Ниже старая версия StartRecording
+        //public static void StartRecording() // Начать запись
+        //{
+        //    waveIn = new WaveInEvent();
+        //    waveIn.DeviceNumber = 0; // 0 это микрофон по умолчанию
+        //    waveIn.WaveFormat = new WaveFormat(44100, 16, 1); // Параметры записи
+        //    writer = new WaveFileWriter(OutputFilePath, waveIn.WaveFormat);
+
+        //    waveIn.DataAvailable += (s, e) =>
+        //    {
+        //        writer.Write(e.Buffer, 0, e.BytesRecorded);
+        //    };
+
+        //    waveIn.RecordingStopped += (s, e) =>
+        //    {
+        //        writer?.Dispose();
+        //        waveIn?.Dispose();
+        //        waveIn = null;
+        //    };
+        //    waveIn.StartRecording();
+        //}
 
         public static void StopRecording() // Закончить запись
         {

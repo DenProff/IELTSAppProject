@@ -25,7 +25,7 @@ namespace IELTSAppProject
     {
         public SpeakingTask Task { get; set; }
         static private bool isRecordingInProgress = false;
-        static private bool isRecordingDone = false;
+        private bool isRecordingDone = false; // В одной подборке мб несколько заданий speaking
         static private bool isPlayingUserAnswerInProgress = false;
         static private bool isPlayingRealAnswerInProgress = false;
         static string taskText = @"You should:
@@ -50,29 +50,33 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingInProgress && !isRecordingDone) // Если запись ещё не проводилась и запись не идёт прямо сейчас
             {
-                SoundControl.StartRecording();
+                SoundControl.StartRecording(Task.id);
                 isRecordingInProgress = true;
                 inputRecordingStatusTextBox.Text = "Запись идёт.";
-                inputRecordingStatusTextBox.Background = Brushes.LightGreen;
+                inputRecordingStatusTextBox.Background = Brushes.LightGreen; // При начале записи цвет квадрата с текстом меняется с красного на зелёный
             }
         }
 
         private void StopRecord(object sender, RoutedEventArgs e)
         {
-            //if (!isRecordingInProgress) return;
+            if (!isRecordingInProgress) return;
 
+            SoundControl.StopRecording(); // Остановка записи
+
+            //Обновление интерфейса
+            isRecordingInProgress = false;
+            isRecordingDone = true;
+            inputRecordingStatusTextBox.Text = "Ответ сохранён.";
+            inputRecordingStatusTextBox.Background = Brushes.LightGreen;
             //try
             //{
-            //    SoundControl.StopRecording(); // Остановка записи
-            //    Task.AudioPathUserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
+            //    // Строчка ниже из первой версии класса
+            //    //Task.AudioPathUserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
             //}
             //catch (Exception ex)
             //{
-            //    // Обновление интерфейса
-            //    isRecordingInProgress = false;
-            //    isRecordingDone = true;
-            //    inputRecordingStatusTextBox.Text = "Ответ сохранён.";
-            //    inputRecordingStatusTextBox.Background = Brushes.LightGreen;
+            //    
+                  // Тут было обновление интерфейса
             //}
         }
 

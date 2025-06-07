@@ -12,13 +12,13 @@ namespace IELTSAppProject
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string AudioPathIdealAnswer { get; set; } // Путь к аудиофайлу с идеальным ответом
-        public string AudioPathUserAnswer { get; set; } // Путь к аудиофайлу с ответом пользователя
+        //public string AudioPathIdealAnswer { get; set; } // Путь к аудиофайлу с идеальным ответом
+        //public string AudioPathUserAnswer { get; set; } // Путь к аудиофайлу с ответом пользователя
 
-        public SpeakingTask(string taskText, double recTime, string taskType, string idealAns, string userAns) : base(taskText, recTime, taskType)
+        public SpeakingTask(string taskText, double recTime, string taskType/*, string idealAns, string userAns*/) : base(taskText, recTime, taskType)
         {
-            AudioPathIdealAnswer = idealAns;
-            AudioPathUserAnswer = userAns;
+            //AudioPathIdealAnswer = idealAns;
+            //AudioPathUserAnswer = userAns;
         }
     }
 }
