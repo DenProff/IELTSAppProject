@@ -29,22 +29,22 @@ namespace IELTSAppProject
         public static WaveOutEvent WaveOut { get => waveOut; set => waveOut = value; }
         public static AudioFileReader AudioFile { get => audioFile; set => audioFile = value; }
 
-        public static string GetUserAnswerFilePath(int answerNumber) // Метод для получения пути к файлу для записи ответа пользователя на speaking
+        public static string GetUserAnswerFilePath(int taskId, bool isUserAudioNeeded) // Метод для получения пути к файлу ответа пользователя или идеальному ответу speaking
         {
             // Получение пути к папке проекта
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
 
             // Путь к папке speakingAudioUsersAnswers
-            string userAnswersDir = Path.Combine(projectRoot, "speakingAudioUsersAnswers");
+            string userAnswersDir = Path.Combine(projectRoot, isUserAudioNeeded ? "speakingAudioUsersAnswers" : "speakingAudioIdealAnswers");
 
             // Возвращение полного пути к файлу
-            return Path.Combine(userAnswersDir, $"userAnswer{answerNumber}.wav");
+            return Path.Combine(userAnswersDir, isUserAudioNeeded ? $"userAnswer{taskId}.wav" : $"idealAnswer{taskId}.wav");
         }
 
-        public static void StartRecording(int taskId) // Название файла для записи ответа формируется на основе id задания speaking
+        public static void StartRecording(int taskId, bool isUserAudioNeeded) // Название файла для записи ответа формируется на основе id задания speaking
         {
-            string filePath = GetUserAnswerFilePath(taskId);
+            string filePath = GetUserAnswerFilePath(taskId, isUserAudioNeeded);
             
             string dir = Path.GetDirectoryName(filePath);
 

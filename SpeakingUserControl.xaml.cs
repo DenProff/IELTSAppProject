@@ -55,7 +55,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingInProgress && !isRecordingDone) // Если запись ещё не проводилась и запись не идёт прямо сейчас
             {
-                SoundControl.StartRecording(Task.id);
+                SoundControl.StartRecording(Task.id, true);
                 isRecordingInProgress = true;
                 inputRecordingStatusTextBox.Text = "Запись идёт.";
                 inputRecordingStatusTextBox.Background = Brushes.LightGreen; // При начале записи цвет квадрата с текстом меняется с красного на зелёный
@@ -73,6 +73,9 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             isRecordingDone = true;
             inputRecordingStatusTextBox.Text = "Ответ сохранён.";
             inputRecordingStatusTextBox.Background = Brushes.LightGreen;
+
+            resultTextBlock.Text = "Можно слушать свой и пример идеального варианты ответа.";
+            resultTextBlock.Background = Brushes.LightGreen;
             //try
             //{
             //    // Строчка ниже из первой версии класса
@@ -87,12 +90,46 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void PlayUserAnswer(object sender, RoutedEventArgs e)
         {
+            if (!isRecordingDone)
+            {
+                resultTextBlock.Text = "Сначала запишите свой ответ.";
+                return;
+            }
 
+            // Получение пути к файлу
+            string filePath = SoundControl.GetUserAnswerFilePath(Task.id, true);
+
+            // Проверка существования файла
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Файл записи не найден, это ошибка, приносим свои извинения.");
+                return;
+            }
+
+            SoundControl.AudioPath = filePath;
+            SoundControl.PlayAudio(); // Воспроизведение аудио
         }
 
-        private void PlayRealAnswer(object sender, RoutedEventArgs e)
+        private void PlayIdealAnswer(object sender, RoutedEventArgs e)
         {
+            if (!isRecordingDone)
+            {
+                resultTextBlock.Text = "Сначала запишите свой ответ.";
+                return;
+            }
 
+            // Получение пути к файлу
+            string filePath = SoundControl.GetUserAnswerFilePath(Task.id, false);
+
+            // Проверка существования файла
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("Файл записи не найден, это ошибка, приносим свои извинения.");
+                return;
+            }
+
+            SoundControl.AudioPath = filePath;
+            SoundControl.PlayAudio(); // Воспроизведение аудио
         }
 
         private void StopPlaying(object sender, RoutedEventArgs e)
