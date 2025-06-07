@@ -68,6 +68,8 @@ namespace IELTSAppProject
                 this.Opacity = 1;
                 MainScrollViewer.ScrollToHome();
             }), DispatcherPriority.Loaded);
+
+            Convert.Click += (sender, e) => ConvertTasks(taskCollection);
         }
 
         private void Check_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Проверить всё" - при нажатии на кнопку сработают
@@ -77,12 +79,7 @@ namespace IELTSAppProject
                                                                // конструкторе выше
         }
 
-        private void Convert_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Конвертировать всё в docx"
-        {
-
-        }
-
-        private int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
+        public static int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
         {
             int left = 0;
             int right = array.Length;
@@ -105,7 +102,7 @@ namespace IELTSAppProject
             else throw new Exception("Задания с нужным id нет. Возможно была нарушена упорядоченность id по возрастанию в файле json.");
         }
 
-        public ICheckable FindUserControlType(GeneralizedTask task) // Определяет тип на основе которого нужно создать UserControl и возвращает создаваемый UserControl
+        public static ICheckable FindUserControlType(GeneralizedTask task) // Определяет тип на основе которого нужно создать UserControl и возвращает создаваемый UserControl
         {
             ICheckable newUserControlObject;
             if (task is SpeakingTask)
@@ -149,6 +146,44 @@ namespace IELTSAppProject
                                   MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        //метод для получения списка заданий
+        public List<UserControl> PrepareToConvert(TaskCollection task)
+        {
+            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+
+            List<UserControl> list = new List<UserControl>();
+
+            foreach (int taskId in task) // Перебор id, хранящихся в поле-списке TaskCollection (id заданий, которые надо подгрузить)
+            {
+                // Подтягивание заданий из json по id при помощи бинарного поиска - не реализовано
+
+                int index = SearchForIndexById(ref taskArray, taskId); // Поиск индекса задания с нужным id
+
+                list.Add((UserControl)FindUserControlType(taskArray[index])); // Создание UserControl-a на основе задания с найденным id
+            }
+
+            return list;
+        }
+
+        //метод для привязки к кнопке конвертации
+        public void ConvertTasks(TaskCollection task)
+        {
+            List<UserControl> list = PrepareToConvert(task);
+
+            foreach (var item in list)
+            {
+                if (item.DataContext is ReadingTask)
+                    Conversion.ConvertReading((ReadingTask)item.DataContext);
+                else if (item.DataContext is ListeningTask)
+                    Conversion.ConvertListening((ListeningTask)item.DataContext);
+                else if (item.DataContext is WritingTask)
+                    Conversion.ConvertWriting((WritingTask)item.DataContext);
+                else if (item.DataContext is SpeakingTask)
+                    Conversion.ConvertSpeaking((SpeakingTask)item.DataContext);
+            }
+            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
     }
 }

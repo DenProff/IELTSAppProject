@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace IELTSAppProject
 {
-    public class Сonversion
+    public class Conversion
     {
 
         public static void ConvertReading(ReadingTask elem)
@@ -66,8 +66,7 @@ namespace IELTSAppProject
                 }
                 
             }
-            ChangeFontSizeEverywhere(filePath, 14);
-            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+            
         }
 
         public static void ConvertListening(ListeningTask elem)
@@ -121,8 +120,6 @@ namespace IELTSAppProject
                 }
                 
             }
-            ChangeFontSizeEverywhere(filePath, 14);
-            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
 
 
@@ -154,8 +151,6 @@ namespace IELTSAppProject
                 }
                 
             }
-            ChangeFontSizeEverywhere(filePath, 14);
-            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
 
         public static void ConvertSpeaking(SpeakingTask elem)
@@ -183,29 +178,6 @@ namespace IELTSAppProject
                         new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"{elem.TaskText}")))));
                 }
                 
-            }
-            ChangeFontSizeEverywhere(filePath, 14);
-            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
-        }
-
-        public static void ChangeFontSizeEverywhere(string filePath, int newFontSizeInPoints)
-        {
-            using (WordprocessingDocument doc = WordprocessingDocument.Open(filePath, true))
-            {
-                var runs = doc.MainDocumentPart.Document.Body
-                    .Descendants<Run>()
-                    .Where(r => r.RunProperties != null);
-
-                foreach (var run in runs)
-                {
-                    // Удаляем старый FontSize
-                    run.RunProperties.Elements<FontSize>().ToList().ForEach(fs => fs.Remove());
-
-                    // Добавляем новый
-                    run.RunProperties.Append(new FontSize() { Val = (newFontSizeInPoints * 2).ToString() });
-                }
-
-                doc.Save();
             }
         }
 

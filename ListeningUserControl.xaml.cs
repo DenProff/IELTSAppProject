@@ -46,6 +46,9 @@ namespace IELTSAppProject
             };
 
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
+
+            listeningConvert.Click += (sender, e) => Conversion.ConvertListening(data);
+            listeningConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
 
         public bool Check() // Данный метод должен реализовывать проверку ответов пользователя

@@ -23,7 +23,7 @@
 
         </ScrollViewer>
         <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="0" Margin="50 0 50 0" FontSize="20" Click="Check_Click">Проверить всё</Button>
-        <Button x:Name="Convert"  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="50 0 50 0" FontSize="20" Click="Convert_Click">Конвертировать всё в docx</Button>
+        <Button x:Name="Convert"  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="50 0 50 0" FontSize="20">Конвертировать всё в docx</Button>
         <TextBlock x:Name="VariantId" FontSize="20">Id: </TextBlock>
         <TextBlock x:Name="VariantName" Grid.Column="1" FontSize="20">Название: </TextBlock>
     </Grid>

@@ -42,12 +42,46 @@ namespace IELTSAppProject
         {
             TaskCollection task = (TaskCollection)this.DataContext; 
             CollectionPage page = new CollectionPage(task);
-            
         }
 
+        //конвертация
         private void convertCollection_Click(object sender, RoutedEventArgs e)
         {
+            List<UserControl> list = PrepareToConvert();
 
+            foreach (var item in list)
+            {
+                if (item.DataContext is ReadingTask)
+                    Conversion.ConvertReading((ReadingTask)item.DataContext);
+                else if (item.DataContext is ListeningTask)
+                    Conversion.ConvertListening((ListeningTask)item.DataContext);
+                else if (item.DataContext is WritingTask)
+                    Conversion.ConvertWriting((WritingTask)item.DataContext);
+                else if (item.DataContext is SpeakingTask)
+                    Conversion.ConvertSpeaking((SpeakingTask)item.DataContext);
+            }
+            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+        }
+
+        //метод для получения списка заданий
+        public List<UserControl> PrepareToConvert()
+        {
+            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+
+            TaskCollection task = (TaskCollection)this.DataContext;
+
+            List<UserControl> list = new List<UserControl>();
+
+            foreach (int taskId in task) // Перебор id, хранящихся в поле-списке TaskCollection (id заданий, которые надо подгрузить)
+            {
+                // Подтягивание заданий из json по id при помощи бинарного поиска - не реализовано
+
+                int index = CollectionPage.SearchForIndexById(ref taskArray, taskId); // Поиск индекса задания с нужным id
+
+                list.Add((UserControl)CollectionPage.FindUserControlType(taskArray[index])); // Создание UserControl-a на основе задания с найденным id
+            }
+
+            return list;
         }
     }
 }

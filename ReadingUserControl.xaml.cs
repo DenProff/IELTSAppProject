@@ -97,8 +97,8 @@ namespace IELTSAppProject
             //}
 
             //подписка на событие клика
-            convertToDocx.Click += (sender, e) => Сonversion.ConvertReading(data);
-            
+            convertToDocx.Click += (sender, e) => Conversion.ConvertReading(data);
+            convertToDocx.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
         
         //проверка ответов
