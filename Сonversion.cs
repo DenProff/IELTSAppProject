@@ -29,6 +29,8 @@ namespace IELTSAppProject
 
                 if (elem != null)
                 {
+                    //Тип задания
+                    body.AppendChild(new Paragraph(new Run(new Text($"Тип задания: {elem.TaskType}"))));
                     //Заголовок
                     body.AppendChild(new Paragraph(
                         new Run(new RunProperties(new FontSize() { Val = "32"}, new Bold()), new Text($"Id задания - {elem.id}"),
@@ -82,6 +84,9 @@ namespace IELTSAppProject
                 MainDocumentPart mainPart = doc.AddMainDocumentPart();
                 mainPart.Document = new Document();
                 Body body = mainPart.Document.AppendChild(new Body());
+                
+                //Тип задания
+                body.AppendChild(new Paragraph(new Run(new Text($"Тип задания: {elem.TaskType}"))));
 
                 body.AppendChild(new Paragraph(new Run(new Text($"Рекомендованное время {elem.RecommendedTime} мин"))));
 
@@ -132,6 +137,9 @@ namespace IELTSAppProject
                 mainPart.Document = new Document();
                 Body body = mainPart.Document.AppendChild(new Body());
 
+                //Тип задания
+                body.AppendChild(new Paragraph(new Run(new Text($"Тип задания: {elem.TaskType}"))));
+
                 body.AppendChild(new Paragraph(new Run(new Text($"Рекомендованное время {elem.RecommendedTime} мин"))));
 
                 if (elem != null)
@@ -161,6 +169,9 @@ namespace IELTSAppProject
                 MainDocumentPart mainPart = doc.AddMainDocumentPart();
                 mainPart.Document = new Document();
                 Body body = mainPart.Document.AppendChild(new Body());
+                
+                //Тип задания
+                body.AppendChild(new Paragraph(new Run(new Text($"Тип задания: {elem.TaskType}"))));
 
                 body.AppendChild(new Paragraph(new Run(new Text($"Рекомендованное время {elem.RecommendedTime} мин"))));
 
