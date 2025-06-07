@@ -94,29 +94,24 @@ namespace IELTSAppProject
                         new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"{elem.TaskText}")))));
 
                     //Задания (True/False/Not Stated)
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task1)), new Run(new Break()), new Run(new Text("True      " +
-                        "False      Not Stated"))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task2)), new Run(new Break()), new Run(new Text("True      " +
-                        "False      Not Stated"))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task3)), new Run(new Break()), new Run(new Text("True      " +
-                        "False      Not Stated"))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task4)), new Run(new Break()), new Run(new Text("True      " +
-                        "False      Not Stated"))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task5)), new Run(new Break()), new Run(new Text("True      " +
-                        "False      Not Stated"))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task1), new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[0])),
+                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[2])))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task2)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[0])),
+                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[2]))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task3)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[0])),
+                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[2]))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task4)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[0])),
+                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[2]))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task5)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[0])),
+                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[2]))));
 
 
                     //Задания (Выбор варианта ответа)
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task6)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[0])),
-                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList1[2]))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task7)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[0])),
-                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList2[2]))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task8)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[0])),
-                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList3[2]))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task9)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[0])),
-                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList4[2]))));
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task0)), new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[0])),
-                        new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[1])), new Run(new Break()), new Run(new Text(elem.TaskAnswerList5[2]))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task6)), new Run(new Break()), new Run(new Text("__________________"))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task7)), new Run(new Break()), new Run(new Text("__________________"))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task8)), new Run(new Break()), new Run(new Text("__________________"))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task9)), new Run(new Break()), new Run(new Text("__________________"))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.Task0)), new Run(new Break()), new Run(new Text("__________________"))));
                 }
                 
             }
