@@ -82,7 +82,7 @@ namespace IELTSAppProject
         public static int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве
         {
             int left = 0;
-            int right = array.Length;
+            int right = array.Length - 1;
             int mid;
             while (left < right)
             {
@@ -96,7 +96,7 @@ namespace IELTSAppProject
                     left = mid + 1;
                 }
             }
-            if (left == id)
+            if (array[left].id == id)
                 return left;
 
             else throw new Exception("Задания с нужным id нет. Возможно была нарушена упорядоченность id по возрастанию в файле json.");
