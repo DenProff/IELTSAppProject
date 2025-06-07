@@ -110,58 +110,53 @@
     "WithMistake": false
   },
   {
+    "TaskType": "ListeningTask",
     "id": 6,
-    "Answer": [
-      "B",
-      "B",
-      "A",
-      "C",
-      "A",
-      "mobile unit",
-      "strong health systems",
-      "simulations",
-      "exact budget",
-      "global wealth"
-    ],
-    "AudioPath": "cocoJambo.mp3",
-    "Task1": "1. According to the speaker, what will be the most likely cause of a global catastrophe in the near future?",
-    "Task2": "2. What is the main issue with the disease prevention system?",
-    "Task3": "3. Which organization is funded to monitor epidemics?",
-    "Task4": "4. Which fortunate condition prevented Ebola from spreading further?",
-    "Task5": "5. How can people's movements be monitored nowadays?",
-    "Task6": "6. NATO has a ______ that is always ready to go.",
-    "Task7": "7. Among the key pieces are ______ in underprivileged countries.",
-    "Task8": "8. To get the military ready for action we need to run ______ and detect problem areas.",
-    "Task9": "9. The speaker can't give a/an ______ for the cost of medical research.",
-    "Task0": "10. The World Bank predicts that in case of a global pandemic the ______ will be drastically reduced.",
-    "TaskAnswerList1": [
-      "A. A nuclear war",
-      "B. A global pandemic",
-      "C. A natural disaster"
-    ],
-    "TaskAnswerList2": [
-      "A. It exists, but functions poorly",
-      "B. It doesn't exist at all",
-      "C. It only exists in certain countries"
-    ],
-    "TaskAnswerList3": [
-      "A. The WHO",
-      "B. The UN",
-      "C. Médecins Sans Frontières"
-    ],
-    "TaskAnswerList4": [
-      "A. A cure was found quickly",
-      "B. People were provided with protective gear",
-      "C. The virus did not spread through urban areas"
-    ],
-    "TaskAnswerList5": [
-      "A. Through satellite maps",
-      "B. Through street camera",
-      "C. Through cell phones"
-    ],
+    "AudioPath": "listeningTrack1.mp3",
+    "Task1": "1. Initially, the Great Wall was built to",
+    "Task2": "2. The construction of the Great Wall started",
+    "Task3": "3. The Chinese name of the monument is",
+    "Task4": "4. The wall as it exists today was constructed mainly by",
+    "Task5": "5. During the Ming dynasty, the wall’s main purpose was",
+    "Task6": "6. Before the use of bricks, the Great Wall was mainly built from stones, wood and _______.",
+    "Task7": "7. Many western sections of the wall are constructed from mud and thus are more _______.",
+    "Task8": "8. A part of the wall in Gansu province may disappear in the next 20 years, due to _______.",
+    "Task9": "9. To see the wall from the Moon would require superhuman _______.",
+    "Task0": "10. The Great Wall is generally recognized as one of the most impressive _______ in history.",
+    "TaskAnswerList1": [ "A. prevent invaders from entering China", "B. function as a psychological barrier", "C. show country’s enduring strength" ],
+    "TaskAnswerList2": [ "A. in third century B.C.", "B. in 220 B.C.", "C. in 390 A.D." ],
+    "TaskAnswerList3": [ "A. the Great Wall", "B. the Big Wall", "C. the Long Wall" ],
+    "TaskAnswerList4": [ "A. Qin dynasty", "B. Northern Wei dynasty", "C. Ming dynasty" ],
+    "TaskAnswerList5": [ "A. to be a military fortification", "B. to protect caravans traveling along the trade routes", "C. to contribute to the defense of the country" ],
+    "Answer": [ "A", "B", "C", "C", "C", "rammed earth", "susceptible to erosion", "frequent sandstorms", "eyesight", "architectural feats" ],
+    "UserAnswer": null,
     "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
     "RecommendedTime": 52.0,
+    "WithMistake": false
+  },
+  {
     "TaskType": "ListeningTask",
+    "id": 7,
+    "AudioPath": "listeningTrack2.mp3",
+    "Task1": "1. Students entering the design competition have to",
+    "Task2": "2. John chose a dishwasher because he wanted to make dishwashers",
+    "Task3": "3. The stone in John’s ‘Rockpool’ design is used",
+    "Task4": "4. In the holding chamber, the carbon dioxide",
+    "Task5": "5. At the end of the cleaning process, the carbon dioxide",
+    "Task6": "6. John needs help preparing for his _______.",
+    "Task7": "7. The professor advises John to make a _______.",
+    "Task8": "8. John’s main problem is getting good quality _______.",
+    "Task9": "9. The professor suggests John apply for a _______.",
+    "Task0": "10. The professor will check the _______ information in John’s written report.",
+    "TaskAnswerList1": [ "A. produce an energy-efficient design", "B. adapt an existing energy-saving appliance", "C. develop a new use for current technology" ],
+    "TaskAnswerList2": [ "A. more appealing", "B. more common", "C. more economical" ],
+    "TaskAnswerList3": [ "A. for decoration", "B. to switch it on", "C. to stop water escaping" ],
+    "TaskAnswerList4": [ "A. changes back to a gas", "B. dries the dishes", "C. is allowed to cool" ],
+    "TaskAnswerList5": [ "A. is released into the air", "B. is disposed of with the waste", "C. is collected ready to be re-used" ],
+    "Answer": [ "C", "A", "B", "A", "C", "presentation", "model", "materials", "grant", "technical" ],
+    "UserAnswer": null,
+    "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
+    "RecommendedTime": 52.0,
     "WithMistake": false
   }
 ]
