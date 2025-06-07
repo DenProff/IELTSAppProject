@@ -24,10 +24,9 @@ namespace IELTSAppProject
     public partial class SpeakingUserControl : UserControl, ICheckable
     {
         public SpeakingTask Task { get; set; }
-        static private bool isRecordingInProgress = false;
+        static private bool isRecordingInProgress = false; // Сейчас идёт какая-то запись?
         private bool isRecordingDone = false; // В одной подборке мб несколько заданий speaking
-        static private bool isPlayingUserAnswerInProgress = false;
-        static private bool isPlayingRealAnswerInProgress = false;
+        static private bool isPlayingSomeAnswerInProgress = false; // Сейчас воспроизводится какой-то ответ?
         static string taskText = @"You should:
 - Express your attitude toward the given problem.
 - Analyze the problem and justify your position, providing at least 2 supporting arguments.
