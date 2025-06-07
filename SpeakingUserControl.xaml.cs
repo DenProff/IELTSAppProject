@@ -90,7 +90,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void PlayUserAnswer(object sender, RoutedEventArgs e)
         {
-            if (!isRecordingDone)
+            if (!isRecordingDone || isPlayingSomeAnswerInProgress)
             {
                 resultTextBlock.Text = "Сначала запишите свой ответ.";
                 return;
@@ -114,7 +114,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void PlayIdealAnswer(object sender, RoutedEventArgs e)
         {
-            if (!isRecordingDone)
+            if (!isRecordingDone || isPlayingSomeAnswerInProgress)
             {
                 resultTextBlock.Text = "Сначала запишите свой ответ.";
                 return;
