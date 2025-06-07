@@ -49,8 +49,104 @@ namespace IELTSAppProject
                 }
             };
 
+            //НУЖЕН МАССИВ ДИСЕРИАЛИЗОВАННЫЙ ТИПА ТАСККОЛЛЕКШН
+
+            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+
+            foreach (var task in taskArray) // Перебор подборок в массиве для добавления их на экран
+            {
+                ButtonControlCatalog userControl = new ButtonControlCatalog(null); // Создание UserControl-a на основе подборки
+                TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
+            }
+
+            while (true)
+            {
+                foreach (ButtonControlCatalog item in TasksContainer.Items)
+                {
+                    IsVariantsExist(item);
+                    IsFastRepeatExist(item);
+                    IsReadingExist(item);
+                    IsListeningExist(item);
+                    IsWritingExist(item);
+                    IsSpeakingExist(item);
+                }
+            }
 
         }
+
+        //проверка на существование в подборке задания Reading
+        private void IsReadingExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == false)
+                elem.IsEnabled = false;
+            else //(((TaskCollection)elem.DataContext).isReading && speakCheackBox.IsChecked == true)
+                elem.IsEnabled = true;
+        }
+
+        //проверка на существование в подборке задания Listening
+        private void IsListeningExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == false)
+                elem.IsEnabled = false;
+            else 
+                elem.IsEnabled = true;
+        }
+
+        //проверка на существование в подборке задания Writing
+        private void IsWritingExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == false)
+                elem.IsEnabled = false;
+            else 
+                elem.IsEnabled = true;
+        }
+
+        //проверка на существование в подборке задания Speaking
+        private void IsSpeakingExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == false)
+                elem.IsEnabled = false;
+            else 
+                elem.IsEnabled = true;
+        }
+
+        //проверка на существование в подборке целого варианта экзамена
+        private void IsVariantsExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == false)
+                elem.IsEnabled = false;
+            else
+            {
+                elem.IsEnabled = true;
+                readingCheckBox.IsChecked = true;
+                listeningCheckBox.IsChecked = true;
+                writingCheckBox.IsChecked = true;
+                speakCheackBox.IsChecked = true;
+            }
+                
+        }
+
+        //проверка на существование в подборке заданий для быстрого повторения
+        private void IsFastRepeatExist(ButtonControlCatalog elem)
+        {
+            if (((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == false ||
+                !((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == true ||
+                !((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == false)
+                elem.IsEnabled = false;
+            else
+                elem.IsEnabled = true;
+        }
+
 
         private void OpenChmHelp()
         {
