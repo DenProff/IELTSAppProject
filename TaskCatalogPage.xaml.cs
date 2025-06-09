@@ -49,8 +49,6 @@ namespace IELTSAppProject
                 }
             };
 
-            //НУЖЕН МАССИВ ДИСЕРИАЛИЗОВАННЫЙ ТИПА ТАСККОЛЛЕКШН
-
             TaskCollection[] collectionArray = JsonControl.CollectionArray; // Десериализация в список json-файла со всеми заданиями
 
 
@@ -59,7 +57,7 @@ namespace IELTSAppProject
                 ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
                 userControl.NavigationRequested += (s, set) =>
                 {
-                    NavigationService.Navigate(new CollectionPage(set));
+                    NavigationService.Navigate(new CollectionPage(set)); //подписка на событие для клика по user control
                 };
                 TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
             }
@@ -78,16 +76,6 @@ namespace IELTSAppProject
             }
 
         }
-
-        //private void OnMyButtonClick(object sender, RoutedEventArgs e)
-        //{
-        //    // Выполняем навигацию
-        //    var task = (sender as ButtonControlCatalog)?.DataContext as TaskCollection;
-        //    if (task != null)
-        //    {
-        //        NavigationService.Navigate(new CollectionPage(task));
-        //    }
-        //}
 
         //проверка на существование в подборке задания Reading
         private void IsReadingExist(ButtonControlCatalog elem)
