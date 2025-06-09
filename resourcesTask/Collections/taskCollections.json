@@ -1,0 +1,78 @@
+[
+  {
+    "VariantId": 1,
+    "VariantName": "Райт + рид",
+    "DateOfAccess": "09.06.2025",
+    "TaskIdList": [
+      0,
+      1
+    ],
+    "isListening": false,
+    "isSpeaking": false,
+    "isWriting": true,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": false
+  },
+  {
+    "VariantId": 2,
+    "VariantName": "Рид + лист",
+    "DateOfAccess": "09.06.2025",
+    "TaskIdList": [
+      1,
+      6
+    ],
+    "isListening": true,
+    "isSpeaking": false,
+    "isWriting": false,
+    "isReading": true,
+    "isFastRepeat": true,
+    "isVariants": false
+  },
+  {
+    "VariantId": 3,
+    "VariantName": "Райт + лист",
+    "DateOfAccess": "09.06.2025",
+    "TaskIdList": [
+      0,
+      6
+    ],
+    "isListening": true,
+    "isSpeaking": false,
+    "isWriting": true,
+    "isReading": false,
+    "isFastRepeat": false,
+    "isVariants": false
+  },
+  {
+    "VariantId": 4,
+    "VariantName": "Рид + лист2",
+    "DateOfAccess": "09.06.2025",
+    "TaskIdList": [
+      3,
+      7
+    ],
+    "isListening": true,
+    "isSpeaking": false,
+    "isWriting": false,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": false
+  },
+  {
+    "VariantId": 5,
+    "VariantName": "Райт + рид + лист",
+    "DateOfAccess": "09.06.2025",
+    "TaskIdList": [
+      0,
+      2,
+      7
+    ],
+    "isListening": true,
+    "isSpeaking": false,
+    "isWriting": true,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": false
+  }
+]

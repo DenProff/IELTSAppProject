@@ -51,15 +51,20 @@ namespace IELTSAppProject
 
             //НУЖЕН МАССИВ ДИСЕРИАЛИЗОВАННЫЙ ТИПА ТАСККОЛЛЕКШН
 
-            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+            TaskCollection[] collectionArray = JsonControl.CollectionArray; // Десериализация в список json-файла со всеми заданиями
 
-            foreach (var task in taskArray) // Перебор подборок в массиве для добавления их на экран
+
+            foreach (var task in collectionArray) // Перебор подборок в массиве для добавления их на экран
             {
-                ButtonControlCatalog userControl = new ButtonControlCatalog(null); // Создание UserControl-a на основе подборки
+                ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
+                userControl.NavigationRequested += (s, set) =>
+                {
+                    NavigationService.Navigate(new CollectionPage(set));
+                };
                 TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
             }
 
-            while (true)
+            while (this.NavigationService != null && this.NavigationService.Content == this)
             {
                 foreach (ButtonControlCatalog item in TasksContainer.Items)
                 {
@@ -73,6 +78,16 @@ namespace IELTSAppProject
             }
 
         }
+
+        //private void OnMyButtonClick(object sender, RoutedEventArgs e)
+        //{
+        //    // Выполняем навигацию
+        //    var task = (sender as ButtonControlCatalog)?.DataContext as TaskCollection;
+        //    if (task != null)
+        //    {
+        //        NavigationService.Navigate(new CollectionPage(task));
+        //    }
+        //}
 
         //проверка на существование в подборке задания Reading
         private void IsReadingExist(ButtonControlCatalog elem)

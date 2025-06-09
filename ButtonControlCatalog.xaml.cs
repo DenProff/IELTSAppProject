@@ -21,6 +21,7 @@ namespace IELTSAppProject
     /// </summary>
     public partial class ButtonControlCatalog : UserControl
     {
+        public event EventHandler<TaskCollection> NavigationRequested;
         public ButtonControlCatalog(TaskCollection task)
         {
             InitializeComponent();
@@ -37,11 +38,13 @@ namespace IELTSAppProject
 
             collection.SetBinding(Button.ContentProperty, multiBind);
         }
+        
 
         private void collection_Click(object sender, RoutedEventArgs e)
         {
-            TaskCollection task = (TaskCollection)this.DataContext; 
-            CollectionPage page = new CollectionPage(task);
+            TaskCollection task = (TaskCollection)this.DataContext;
+
+            NavigationRequested?.Invoke(this, task);
         }
 
         //конвертация

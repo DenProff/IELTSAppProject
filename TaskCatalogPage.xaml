@@ -104,13 +104,15 @@
                 </CheckBox>
             </StackPanel>
         </GroupBox>
-        <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderThickness="0" MaxHeight="600" MinHeight="300" MaxWidth="1200" MinWidth="500" Margin="37,153,344,151">
+        <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}">
+            <StackPanel MaxHeight="600" MinHeight="300" MaxWidth="1200" MinWidth="500" Margin="37,153,344,151">
 
-            <ItemsControl x:Name="TasksContainer">
-                <!-- UserControl-ы будут добавляться сюда -->
-            </ItemsControl>
+                <ItemsControl x:Name="TasksContainer">
+                    <!-- UserControl-ы будут добавляться сюда -->
+                </ItemsControl>
 
-        </ListBox>
+            </StackPanel>
+        </ScrollViewer>
         <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>

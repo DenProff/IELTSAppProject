@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using NAudio.Wave;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Path = System.IO.Path;
 
 namespace IELTSAppProject
@@ -43,7 +45,41 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-            
+
+            //List<int> list1 = new List<int> { 0, 1 };
+            //List<int> list2 = new List<int> { 1, 6 };
+            //List<int> list3 = new List<int> { 0, 6 };
+            //List<int> list4 = new List<int> { 3, 7 };
+            //List<int> list5 = new List<int> { 0, 2, 7 };
+
+            //string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            //string file = Path.Combine(projectDir, "resourcesTask", "Collections", "taskCollections.json");
+            //string jsonData = File.ReadAllText(file);
+
+            //List<TaskCollection> list = new List<TaskCollection>();
+
+            //TaskCollection collection1 = new TaskCollection(1, "Райт + рид", "09.06.2025", list1, false, 
+            //    false, true, true, false, false);
+            //TaskCollection collection2 = new TaskCollection(2, "Рид + лист", "09.06.2025", list2, true, 
+            //    false, false, true, true, false);
+            //TaskCollection collection3 = new TaskCollection(3, "Райт + лист", "09.06.2025", list3, true,
+            //    false, true, false, false, false);
+            //TaskCollection collection4 = new TaskCollection(4, "Рид + лист2", "09.06.2025", list4, true,
+            //    false, false, true, false, false);
+            //TaskCollection collection5 = new TaskCollection(5, "Райт + рид + лист", "09.06.2025", list5, true,
+            //    false, true, true, false, false);
+
+            //list.Add(collection1);
+            //list.Add(collection2);
+            //list.Add(collection3);
+            //list.Add(collection4);
+            //list.Add(collection5);
+
+
+            //string shit = JsonConvert.SerializeObject(list, Formatting.Indented);
+            //File.WriteAllText(file, shit);
+
+
         }
 
         private void OpenChmHelp()
@@ -98,7 +134,7 @@ namespace IELTSAppProject
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            NavigationService?.Navigate(new CollectionPage(new TaskCollection(5, "zalupa variant", "date", new List<int>{ 0, 1, 2 })));
+            //NavigationService?.Navigate(new CollectionPage(new TaskCollection(5, "zalupa variant", "date", new List<int>{ 0, 1, 2 })));
             //NavigationService?.Navigate(new LanguageSelectionPage());
         }
 

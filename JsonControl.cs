@@ -29,6 +29,24 @@ namespace IELTSAppProject
             private set { }
         }
 
+        public static TaskCollection[] CollectionArray // Свойство, возвращающее массив с заданиями
+        {
+            get
+            {
+                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                string file = Path.Combine(projectDir, "resourcesTask", "Collections", "taskCollections.json");
+                if (!File.Exists(file))
+                    throw new Exception("Файл с json не найден!");
+
+                // Чтение JSON из файла
+                string jsonFromFile = File.ReadAllText(file);
+
+                // Десериализация
+                return JsonConvert.DeserializeObject<TaskCollection[]>(jsonFromFile);
+            }
+            private set { }
+        }
+
         public void AddTask() 
         {
             // Функция для добавления новых заданий
