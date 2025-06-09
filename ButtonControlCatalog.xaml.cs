@@ -1,6 +1,7 @@
 ﻿using DocumentFormat.OpenXml.VariantTypes;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,32 +20,40 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для ButtonControlCatalog.xaml
     /// </summary>
+    /// 
+
+    public class PassThroughConverter : IMultiValueConverter //конвертер для binding
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (values.Length < 3 || values.Any(v => v == null))
+                return string.Empty;
+
+            return string.Format("Вариант: {0} Название: {1} Дата публикации: {2}",
+                                values[0], values[1], values[2]); ;
+        } 
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+            => throw new NotSupportedException();
+    }
+
     public partial class ButtonControlCatalog : UserControl
     {
-        public event EventHandler<TaskCollection> NavigationRequested;
+        public event EventHandler<TaskCollection> NavigationRequested; //событие для клика по user control
         public ButtonControlCatalog(TaskCollection task)
         {
             InitializeComponent();
 
             this.DataContext = task;
-
-            var multiBind = new MultiBinding();
-
-            multiBind.StringFormat = "Вариант: {0} Название: {1} Дата публикации: {2}";
-
-            multiBind.Bindings.Add(new Binding("VariantId"));
-            multiBind.Bindings.Add(new Binding("VariantName"));
-            multiBind.Bindings.Add(new Binding("DateOfAccess"));
-
-            collection.SetBinding(Button.ContentProperty, multiBind);
         }
+
         
 
         private void collection_Click(object sender, RoutedEventArgs e)
         {
             TaskCollection task = (TaskCollection)this.DataContext;
 
-            NavigationRequested?.Invoke(this, task);
+            NavigationRequested?.Invoke(this, task); //применение события
         }
 
         //конвертация
