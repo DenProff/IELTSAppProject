@@ -332,7 +332,7 @@
       "C. to contribute to the defense of the country"
     ],
     "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
-    "RecommendedTime": 52.0,
+    "RecommendedTime": 20.0,
     "TaskType": "ListeningTask",
     "WithMistake": false
   },
@@ -387,7 +387,172 @@
       "C. is collected ready to be re-used"
     ],
     "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
-    "RecommendedTime": 52.0,
+    "RecommendedTime": 20.0,
+    "TaskType": "ListeningTask",
+    "WithMistake": false
+  },
+  {
+    "id": 8,
+    "Answer": [
+      "B",
+      "A",
+      "C",
+      "A",
+      "C",
+      "8",
+      "depth",
+      "afraid of",
+      "attack",
+      "migration patterns"
+    ],
+    "AudioPath": "listeningTrack3.mp3",
+    "Task1": "1. The student thought there were no crocodiles in Northern Africa because",
+    "Task2": "2. Generally, crocodiles live in groups of about",
+    "Task3": "3. African crocodiles usually live in areas with",
+    "Task4": "4. Crocodiles in dry areas live in caves located",
+    "Task5": "5. What change caused changes in crocodile populations in North Africa?",
+    "Task6": "6. Desert crocodiles sometimes live in places with dry periods that last up to _______ months.",
+    "Task7": "7. A hole dug by a female crocodile in which to lay eggs can have a _______ of up to 60 cm.",
+    "Task8": "8. Local people are not _______ crocodiles.",
+    "Task9": "9. Crocodiles _______ out of fear when humans populate their habitat.",
+    "Task0": "10. Researchers want to study more about population size, _______, and relations to other populations of crocodiles.",
+    "TaskAnswerList1": [
+      "A. North Africa contains very little wildlife for the crocodile to prey on",
+      "B. she found no mention in the literature of their existence there",
+      "C. there is very little water in North Africa"
+    ],
+    "TaskAnswerList2": [
+      "A. 20",
+      "B. 38",
+      "C. 46"
+    ],
+    "TaskAnswerList3": [
+      "A. hot, dry climates",
+      "B. hot, wet rainforests",
+      "C. warm, wet climates"
+    ],
+    "TaskAnswerList4": [
+      "A. underground",
+      "B. in mountainsides",
+      "C. underwater"
+    ],
+    "TaskAnswerList5": [
+      "A. They were driven away by a fierce predator",
+      "B. Crocodiles evolved from desert creatures to wetland creatures",
+      "C. North Africa used to be wetland but slowly turned to desert over time"
+    ],
+    "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
+    "RecommendedTime": 20.0,
+    "TaskType": "ListeningTask",
+    "WithMistake": false
+  },
+  {
+    "id": 9,
+    "Answer": [
+      "A",
+      "C",
+      "A",
+      "B",
+      "C",
+      "genetic component",
+      "carbohydrate",
+      "soothing",
+      "winter",
+      "inadequate"
+    ],
+    "AudioPath": "listeningTrack4.mp3",
+    "Task1": "1. Exposure to bright light",
+    "Task2": "2. Melatonin’s role in SAD is",
+    "Task3": "3. Subsyndromal SAD",
+    "Task4": "4. Among those affected by SAD, women make up nearly",
+    "Task5": "5. You would expect the typical SAD sufferer to be",
+    "Task6": "6. Depression probably has a _______ as it seems to run in the family.",
+    "Task7": "7. Many SAD sufferers have a _______ craving.",
+    "Task8": "8. Serotonin has a _______ effect on the brain.",
+    "Task9": "9. The serotonin system of the brain cannot regulate itself well during _______.",
+    "Task0": "10. Some neurotransmitters may be _______ in certain cases.",
+    "TaskAnswerList1": [
+      "A. stopped production of melatonin in patients",
+      "B. increased the production of melatonin in many patients",
+      "C. caused people to crave sweet things"
+    ],
+    "TaskAnswerList2": [
+      "A. not considered that important",
+      "B. now fully understood",
+      "C. not fully understood"
+    ],
+    "TaskAnswerList3": [
+      "A. is more common than SAD",
+      "B. has approximately the same number of sufferers as SAD",
+      "C. is far less common than SAD"
+    ],
+    "TaskAnswerList4": [
+      "A. 70%",
+      "B. 80%",
+      "C. 90%"
+    ],
+    "TaskAnswerList5": [
+      "A. a 45 year old man",
+      "B. a 16 year old girl",
+      "C. a 25 year old women"
+    ],
+    "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
+    "RecommendedTime": 20.0,
+    "TaskType": "ListeningTask",
+    "WithMistake": false
+  },
+  {
+    "id": 10,
+    "Answer": [
+      "B",
+      "A",
+      "B",
+      "C",
+      "C",
+      "1450",
+      "disease",
+      "prince",
+      "diet",
+      "attack humans"
+    ],
+    "AudioPath": "listeningTrack5.mp3",
+    "Task1": "1. When did Asiatic lions develop as a separate sub-species?",
+    "Task2": "2. Pictures of Asiatic lions can be seen on ancient coins from",
+    "Task3": "3. Asiatic lions disappeared from Europe",
+    "Task4": "4. Asiatic lions disappeared from everywhere",
+    "Task5": "5. Very few African lions have",
+    "Task6": "6. The sanctuary has an area of approximately _______ square kilometers.",
+    "Task7": "7. One threat to the lions in the sanctuary is _______.",
+    "Task8": "8. The ancestors of the Gir Sanctuary lions were protected by a _______.",
+    "Task9": "9. A large part of lions _______ consists of animals belonging to local farmers.",
+    "Task0": "10. The lions sometimes _______ especially when water is short.",
+    "TaskAnswerList1": [
+      "A. about 10,000 years ago",
+      "B. about 100,000 years ago",
+      "C. about 1,000,000 years ago"
+    ],
+    "TaskAnswerList2": [
+      "A. Greece",
+      "B. The Middle East",
+      "C. India"
+    ],
+    "TaskAnswerList3": [
+      "A. 2,500 years ago",
+      "B. 2,000 years ago",
+      "C. 1,900 years ago"
+    ],
+    "TaskAnswerList4": [
+      "A. in the 17th century",
+      "B. in the 18th century",
+      "C. in the 19th century"
+    ],
+    "TaskAnswerList5": [
+      "A. a long mane",
+      "B. a coat with varied colours",
+      "C. a fold of skin on their stomach"
+    ],
+    "TaskText": "Listen to the lecture-presentation ONCE and complete the following tasks.",
+    "RecommendedTime": 20.0,
     "TaskType": "ListeningTask",
     "WithMistake": false
   }

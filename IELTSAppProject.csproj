@@ -283,6 +283,9 @@
   <ItemGroup>
     <Content Include="listeningAudio\listeningTrack1.mp3" />
     <Content Include="listeningAudio\listeningTrack2.mp3" />
+    <Content Include="listeningAudio\listeningTrack3.mp3" />
+    <Content Include="listeningAudio\listeningTrack4.mp3" />
+    <Content Include="listeningAudio\listeningTrack5.mp3" />
     <Content Include="speakingAudioIdealAnswers\idealAnswer0.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
