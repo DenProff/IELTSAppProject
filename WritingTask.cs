@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace IELTSAppProject
 {
-    public class WritingTask : GeneralizedTask, INotifyPropertyChanged
+    public class WritingTask : GeneralizedTask
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public string Answer { get; set; }
         public string UserAnswer { get; set; }
 

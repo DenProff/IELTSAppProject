@@ -5,41 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IELTSAppProject"
       mc:Ignorable="d" 
-      Width="960" 
-      Height="450"
+      Width="1600" 
+      Height="550"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Grid Background="White" Margin="2,10,0,-10">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*" />
             <RowDefinition Height="49*" />
-            <RowDefinition Height="81*" />
-            <RowDefinition Height="59*" />
-            <RowDefinition Height="220*" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="70*" />
+            <RowDefinition Height="62*" />
+            <RowDefinition Height="231*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="190*"/>
-            <ColumnDefinition Width="231*"/>
-            <ColumnDefinition Width="239*"/>
-            <ColumnDefinition Width="276*"/>
+            <ColumnDefinition Width="346*"/>
+            <ColumnDefinition Width="341*"/>
+            <ColumnDefinition Width="441*"/>
+            <ColumnDefinition Width="610*"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock x:Name="idTextBox" Grid.Column="0" VerticalAlignment="Center" Height="32" Margin="0,0,11,0" FontSize="20">id</TextBlock>
 
-        <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,0,5" Width="210" x:Name="speakingConvert" FontSize="15">
+        <Button Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center"  Width="332" x:Name="speakingConvert" FontSize="20" Height="40">
             Конвертировать в docx
         </Button>
-        <Button Grid.Column="2" Grid.Row="0" Margin="5,4,12,5" FontSize="15">Добавить в подборку</Button>
+        <Button Grid.Column="2" Grid.Row="0" Margin="7,8,10,9" FontSize="20" Height="40">Добавить в подборку</Button>
 
-        <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="3" VerticalAlignment="Center" Height="32" Margin="3,0,0,0" FontSize="15">
+        <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="3" VerticalAlignment="Center" Height="32" Margin="3,0,0,0" FontSize="20">
             Рекоменд. время выполнения:
         </TextBlock>
 
-        <Button x:Name="startRecordbtn" Grid.Row="4" Grid.Column="0" Click="StartRecord" Margin="0,56,0,132" FontSize="20">Запись</Button>
-        <Button x:Name="stopRecordbtn" Grid.Row="4" Grid.Column="0" Click="StopRecord" Cursor="Hand" Margin="0,107,0,81" FontSize="20">Стоп</Button>
+        <Button x:Name="startRecordbtn" Grid.Row="4" Grid.Column="0" Click="StartRecord" Margin="10,43,11,148" FontSize="20" Height="40">Запись</Button>
+        <Button x:Name="stopRecordbtn" Grid.Row="4" Grid.Column="0" Click="StopRecord" Margin="10,99,11,92" FontSize="20" Height="40">Стоп</Button>
 
         <TextBlock x:Name="inputRecordingStatusTextBox" TextWrapping="Wrap" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" 
-                   HorizontalAlignment="Center" Background="Red" Height="108"  Width="124"  FontSize="20">
+                   HorizontalAlignment="Left" Background="Red" Height="108"  Width="124"  FontSize="20" Margin="26,0,0,0">
             Запись ещё не начата.
         </TextBlock>
 
@@ -49,13 +49,14 @@
 
         <TextBlock x:Name="taskTextBlock" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="2" FontSize="20">The Task</TextBlock>
         <TextBlock x:Name="topicTextBlock" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20">The topic</TextBlock>
-        <Button x:Name="playUserAnswerbtn" Grid.Row="4" Margin="9,56,6,132" Grid.Column="2" Content="Играть свою запись" Click="PlayUserAnswer" FontSize="20"/>
-        <Button x:Name="playRealAnswerbtn" Grid.Row="4" Margin="9,103,5,85" Grid.Column="2" Content="Играть пример" Click="PlayIdealAnswer" FontSize="20"/>
-        <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" 
-            HorizontalAlignment="Center" Background="Red" Height="108" Width="226" FontSize="20"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
+        <Button x:Name="playUserAnswerbtn" Grid.Row="4" Margin="9,43,6,148" Grid.Column="2" Content="Играть свою запись" Click="PlayUserAnswer" FontSize="20" Height="40"/>
+        <Button x:Name="playRealAnswerbtn" Grid.Row="4" Margin="7,99,7,92" Grid.Column="2" Content="Играть пример на макс. балл" Click="PlayIdealAnswer" FontSize="20" Height="40"/>
+        <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" Grid.Row="4" Grid.Column="3" VerticalAlignment="Top" 
+            HorizontalAlignment="Left" Background="Red" Height="108" Width="188" FontSize="20" Margin="31,65,0,0"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
         <Label Grid.Column="2" Content="Результат и пример на макс. балл:" HorizontalAlignment="Left" 
-            Grid.Row="4" VerticalAlignment="Top" Width="505" Height="38" Grid.ColumnSpan="2" FontSize="20"/>
-        <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="8,152,6,36" Grid.Column="2" Content="Стоп" Click="StopPlaying" FontSize="20"/>
-        <Button x:Name="HELP" FontSize="20"  Content="Помощь" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" Height="58" Width="127" Background="#F13C73" BorderThickness="2" Click="help_Click" Grid.Row="4" Tag="speaking"/>
+            Grid.Row="4" VerticalAlignment="Top" Width="441" Height="38" FontSize="20"/>
+        <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="9,153,5,38" Grid.Column="2" Content="Стоп" Click="StopPlaying" FontSize="20" Height="40"/>
+        <Button x:Name="HELP" FontSize="20"  Content="Помощь" HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Height="58" Width="126" Background="#F13C73" BorderThickness="2" Click="help_Click" Grid.Row="4" Tag="speaking"/>
+        <Button Grid.Column="3" Content="Критерии оценивания" HorizontalAlignment="Left" Margin="295,118,0,0" Grid.Row="4" VerticalAlignment="Top" Height="111" Click="ShowEvaluationCriteria" Width="245" FontSize="20"/>
     </Grid>
 </UserControl>
