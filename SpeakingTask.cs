@@ -8,17 +8,10 @@ using System.ComponentModel;
 
 namespace IELTSAppProject
 {
-    public class SpeakingTask : GeneralizedTask, INotifyPropertyChanged
+    public class SpeakingTask : GeneralizedTask
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        //public string AudioPathIdealAnswer { get; set; } // Путь к аудиофайлу с идеальным ответом
-        //public string AudioPathUserAnswer { get; set; } // Путь к аудиофайлу с ответом пользователя
-
         public SpeakingTask(int id, string taskText, double recTime, string taskType/*, string idealAns, string userAns*/) : base(id, taskText, recTime, taskType)
         {
-            //AudioPathIdealAnswer = idealAns;
-            //AudioPathUserAnswer = userAns;
         }
     }
 }

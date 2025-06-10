@@ -5,58 +5,59 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IELTSAppProject"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1600" 
+      Height="550"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*" />
-            <RowDefinition Height="49*" />
-            <RowDefinition Height="81*" />
+            <RowDefinition Height="54*" />
+            <RowDefinition Height="53*" />
+            <RowDefinition Height="64*" />
             <RowDefinition Height="60*" />
             <RowDefinition Height="219*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*"/>
-            <ColumnDefinition Width="49*"/>
-            <ColumnDefinition Width="181*"/>
-            <ColumnDefinition Width="14*"/>
-            <ColumnDefinition Width="109*"/>
-            <ColumnDefinition Width="14*"/>
-            <ColumnDefinition Width="179*"/>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="213*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="362*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="218*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="358*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="125*"/>
+            <ColumnDefinition Width="302*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="numTextBox" Grid.Column="0" VerticalAlignment="Center" Height="32">№</TextBlock>
-        <TextBlock x:Name="idTextBox" Grid.Column="1" VerticalAlignment="Center" Height="32">id</TextBlock>
+        <TextBlock x:Name="numTextBox" Grid.Column="0" VerticalAlignment="Center" Height="32" FontSize="20">№</TextBlock>
+        <TextBlock x:Name="idTextBox" Grid.Column="1" VerticalAlignment="Center" Height="32" FontSize="20">id</TextBlock>
 
-        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,0,5" Width="190" x:Name="writingConvert">
+        <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" FontSize="20" Height="40" Margin="0,13,0,13" Width="268" x:Name="writingConvert">
             Конвертировать в docx
         </Button>
-        <Button Grid.Column="4" Grid.Row="0" Margin="0,4,0,5">Поделиться</Button>
-        <Button Grid.Column="6" Grid.Row="0" Margin="0,4,0,5">Добавить в подборку</Button>
+        <Button Grid.Column="5" Grid.Row="0" Margin="20,9,2,17" Grid.ColumnSpan="3" FontSize="20" Height="40">Добавить в подборку</Button>
 
-        <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="8" VerticalAlignment="Center" Height="32">
+        <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="9" VerticalAlignment="Center" Height="32" FontSize="20">
             Рекоменд. время выполнения:
         </TextBlock>
 
-        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="2"><Run Language="ru-ru" Text="Задание"/></TextBlock>
-        <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">Тема</TextBlock>
-        <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="5" Height="30" Margin="10,0,0,0">
-            <ComboBoxItem Content="Первая тема"/>
-            <ComboBoxItem Content="Вторая тема"/>
-            <ComboBoxItem Content="Третья тема"/>
-            <ComboBoxItem Content="Четвёртая тема"/>
-            <ComboBoxItem Content="Пятая тема"/>
-            <ComboBoxItem Content="Шестая тема"/>
+        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" FontSize="20" Grid.ColumnSpan="7" Margin="0,0,6,41"><Run Language="ru-ru" Text="Задание"/></TextBlock>
+        <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center" Height="30">Тема</TextBlock>
+        <ComboBox x:Name="myComboBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="6" Height="30" Margin="10,0,6,0">
+            <ComboBoxItem Content="General English: "/>
+            <ComboBoxItem Content="General English: "/>
+            <ComboBoxItem Content="Academic English: "/>
+            <ComboBoxItem Content="Academic English: "/>
+            <ComboBoxItem Content="Business English: "/>
+            <ComboBoxItem Content="Business English: "/>
         </ComboBox>
-        <Button Grid.Column="8" Grid.Row="1" HorizontalAlignment="Center" Width="200">Сохранить выбор</Button>
-        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="7" materialDesign:HintAssist.Hint="Введите ваш ответ" Margin="0,0,0,10"/>
-        <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Сохранить ответ" Margin="0,21,0,166" Click="Button_Click"/>
-        <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Смотреть эссе на макс." Margin="0,140,0,47" Click="Button_Click"/>
-        <Button Grid.Column="8" Grid.Row="4" HorizontalAlignment="Center" Width="200" Content="Смотреть своё эссе" Margin="0,177,0,10" Click="Button_Click"/>
-        <TextBlock Background="Red" Grid.Column="8" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Height="63" Width="193"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
-        <Button Content="Помощь" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="8"/>
+        <Button Grid.Column="9" Grid.Row="1" HorizontalAlignment="Center" Width="200" Margin="0,15,0,10" FontSize="20" Height="40">Сохранить выбор</Button>
+        <TextBox FontSize="20" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="8" materialDesign:HintAssist.Hint="Введите ваш ответ" Margin="0,45,0,10" Grid.RowSpan="3"/>
+        <Button Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="282" FontSize="20" Height="40" Content="Сохранить ответ" Margin="0,10,0,218" Click="Button_Click"/>
+        <Button Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="282" FontSize="20" Height="40" Content="Смотреть эссе на макс." Margin="0,173,0,55" Click="Button_Click"/>
+        <Button Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="282" FontSize="20" Height="40" Content="Смотреть своё эссе" Margin="0,218,0,10" Click="Button_Click"/>
+        <TextBlock Background="Red"  Grid.Column="9" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="83" Width="282"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
+        <Button Content="Помощь" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="128" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="9"/>
     </Grid>
 </UserControl>
