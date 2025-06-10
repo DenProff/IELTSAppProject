@@ -17,7 +17,8 @@
         <Button Content="Выбрать язык" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
         <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,9">
-                <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black">
+                <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -32,7 +33,8 @@
                     </CheckBox.Resources>
                 </CheckBox>
 
-                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="readingCheckBox">
+                <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="readingCheckBox"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -46,7 +48,8 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="writingCheckBox">
+                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="writingCheckBox"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -60,7 +63,8 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="listeningCheckBox">
+                <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="listeningCheckBox"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -74,7 +78,8 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam">
+                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -88,7 +93,8 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49">
+                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
+                          Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -104,25 +110,22 @@
                 </CheckBox>
             </StackPanel>
         </GroupBox>
-        <Border Margin="50,200,403,105">
-            <ScrollViewer Style="{StaticResource MaterialDesignScrollViewer}">
-                <StackPanel RenderTransformOrigin="0.504,0.501" MaxHeight="600" MinHeight="300" MaxWidth="1200" MinWidth="500" Margin="37,153,344,151" Height="311" Width="644">
-                    <StackPanel.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform AngleY="-0.156"/>
-                            <RotateTransform/>
-                            <TranslateTransform Y="-1.088"/>
-                        </TransformGroup>
-                    </StackPanel.RenderTransform>
-                    <ItemsControl x:Name="TasksContainer">
-                        <!-- UserControl-ы будут добавляться сюда -->
-                    </ItemsControl>
+        <Border MaxHeight="600"
+                MinHeight="300"
+                Margin="10,195,340,148" BorderBrush="BlueViolet" BorderThickness="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro">
 
+                <StackPanel Margin="0,0,30,0" Width="780">
+
+
+                    <ItemsControl x:Name="TasksContainer" ItemsSource="{Binding TasksView}">
+
+                    </ItemsControl>
                 </StackPanel>
             </ScrollViewer>
-        </Border>
 
+        </Border>
+        
         <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>

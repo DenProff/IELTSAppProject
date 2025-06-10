@@ -36,10 +36,10 @@ namespace IELTSAppProject
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
             => throw new NotSupportedException();
     }
-
+    
     public partial class ButtonControlCatalog : UserControl
     {
-        public event EventHandler<TaskCollection> NavigationRequested; //событие для клика по user control
+        public event EventHandler<TaskCollection> NavigationRequested;
         public ButtonControlCatalog(TaskCollection task)
         {
             InitializeComponent();

@@ -20,6 +20,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
 using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+using System.Windows.Threading;
 
 namespace IELTSAppProject
 {
@@ -28,7 +30,10 @@ namespace IELTSAppProject
     /// </summary>
     public partial class TaskCatalogPage : Page
     {
-        
+        //локальные переменные для фильтрации
+        private ICollectionView _tasksView;
+        private ObservableCollection<TaskCollection> _allTasks;
+
         public TaskCatalogPage()
         {
             InitializeComponent();
@@ -49,106 +54,71 @@ namespace IELTSAppProject
                 }
             };
 
-            TaskCollection[] collectionArray = JsonControl.CollectionArray; // Десериализация в список json-файла со всеми заданиями
+            LoadTasks();
+        }
 
-
-            foreach (var task in collectionArray) // Перебор подборок в массиве для добавления их на экран
+        //загрузка всех UserControl-ов
+        private void LoadTasks()
+        {
+            _allTasks = new ObservableCollection<TaskCollection>(JsonControl.CollectionArray);
+            List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
+            foreach (var task in _allTasks) // Перебор подборок в массиве для добавления их на экран
             {
                 ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
                 userControl.NavigationRequested += (s, set) =>
                 {
                     NavigationService.Navigate(new CollectionPage(set)); //подписка на событие для клика по user control
                 };
-                TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
-            }
+                collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
-            while (this.NavigationService != null && this.NavigationService.Content == this)
+            }
+            _tasksView = CollectionViewSource.GetDefaultView(collections);
+            _tasksView.Filter = TaskFilter;
+
+            // Инициализация ItemsControl
+            TasksContainer.ItemsSource = _tasksView;
+        }
+
+        //фильтр
+        private bool TaskFilter(object item)
+        {
+            var task = (TaskCollection)((ButtonControlCatalog)item).DataContext;
+            bool isVisible = true;
+
+            // Фильтрация по типам заданий (OR-логика между чекбоксами одного типа)
+            if (speakCheackBox.IsChecked == true ||
+                readingCheckBox.IsChecked == true ||
+                writingCheckBox.IsChecked == true ||
+                listeningCheckBox.IsChecked == true)
             {
-                foreach (ButtonControlCatalog item in TasksContainer.Items)
-                {
-                    IsVariantsExist(item);
-                    IsFastRepeatExist(item);
-                    IsReadingExist(item);
-                    IsListeningExist(item);
-                    IsWritingExist(item);
-                    IsSpeakingExist(item);
-                }
+                isVisible = (speakCheackBox.IsChecked == true && task.isSpeaking) ||
+                           (readingCheckBox.IsChecked == true && task.isReading) ||
+                           (writingCheckBox.IsChecked == true && task.isWriting) ||
+                           (listeningCheckBox.IsChecked == true && task.isListening);
             }
 
+            // Дополнительные фильтры (AND-логика с основными)
+            if (varOfExam.IsChecked == true)
+                isVisible &= task.isVariants;
+
+            if (actualTasks.IsChecked == true)
+                isVisible &= task.isFastRepeat;
+
+            return isVisible;
         }
 
-        //проверка на существование в подборке задания Reading
-        private void IsReadingExist(ButtonControlCatalog elem)
+        //событие для перехода на задания
+        private void ButtonControlCatalog_NavigationRequested(object sender, TaskCollection task)
         {
-            if (((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isReading && readingCheckBox.IsChecked == false)
-                elem.IsEnabled = false;
-            else //(((TaskCollection)elem.DataContext).isReading && speakCheackBox.IsChecked == true)
-                elem.IsEnabled = true;
+            NavigationService?.Navigate(new CollectionPage(task));
         }
 
-        //проверка на существование в подборке задания Listening
-        private void IsListeningExist(ButtonControlCatalog elem)
+        //обновление данных
+        private void CheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            if (((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isListening && listeningCheckBox.IsChecked == false)
-                elem.IsEnabled = false;
-            else 
-                elem.IsEnabled = true;
+            _tasksView.Refresh();
         }
 
-        //проверка на существование в подборке задания Writing
-        private void IsWritingExist(ButtonControlCatalog elem)
-        {
-            if (((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isWriting && writingCheckBox.IsChecked == false)
-                elem.IsEnabled = false;
-            else 
-                elem.IsEnabled = true;
-        }
-
-        //проверка на существование в подборке задания Speaking
-        private void IsSpeakingExist(ButtonControlCatalog elem)
-        {
-            if (((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isSpeaking && speakCheackBox.IsChecked == false)
-                elem.IsEnabled = false;
-            else 
-                elem.IsEnabled = true;
-        }
-
-        //проверка на существование в подборке целого варианта экзамена
-        private void IsVariantsExist(ButtonControlCatalog elem)
-        {
-            if (((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isVariants && varOfExam.IsChecked == false)
-                elem.IsEnabled = false;
-            else
-            {
-                elem.IsEnabled = true;
-                readingCheckBox.IsChecked = true;
-                listeningCheckBox.IsChecked = true;
-                writingCheckBox.IsChecked = true;
-                speakCheackBox.IsChecked = true;
-            }
-                
-        }
-
-        //проверка на существование в подборке заданий для быстрого повторения
-        private void IsFastRepeatExist(ButtonControlCatalog elem)
-        {
-            if (((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == false ||
-                !((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == true ||
-                !((TaskCollection)elem.DataContext).isFastRepeat && actualTasks.IsChecked == false)
-                elem.IsEnabled = false;
-            else
-                elem.IsEnabled = true;
-        }
 
 
         private void OpenChmHelp()
