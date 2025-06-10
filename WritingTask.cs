@@ -10,13 +10,12 @@ namespace IELTSAppProject
 {
     public class WritingTask : GeneralizedTask
     {
-        public string Answer { get; set; }
-        public string UserAnswer { get; set; }
+        public string[] Answer { get; set; } // Хранит идеальные эссе для 6ти тем
+        public string UserAnswer { get; set; } // Пользователь выбирает всего одну тему, поэтому хранить нужно только её
 
-        public WritingTask(int id, string taskType, string taskText, string answer, double recTime) : base(id, taskText, recTime, taskType) // Запись поля
+        public WritingTask(int id, string taskType, string taskText, double recTime, string[] idealEssays) : base(id, taskText, recTime, taskType)
         {
-            Answer = answer;
+            Answer = idealEssays;
         }
-
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DocumentFormat.OpenXml.Drawing;
 using Path = System.IO.Path;
 
 namespace IELTSAppProject
@@ -23,32 +24,34 @@ namespace IELTSAppProject
     /// </summary>
     public partial class WritingUserControl : UserControl, ICheckable
     {
+        static string TaskText = "WRITE AN ESSAY ON ONE OF THE FOLLOWING TOPICS:";
+        public event Action topicIsChosen; // Событие генерируемое, когда тема выбрана
+        public WritingTask TaskData; // Задание на основе которого генерируется данный UserControl
 
-        static string TaskText = @"WRITE AN ESSAY ON ONE OF THE FOLLOWING TOPICS:";
-        public WritingUserControl(WritingTask data)
+        public WritingUserControl(WritingTask task)
         {
             InitializeComponent();
 
-            this.Loaded += (sender, e) =>
-            {
-                this.Focus();
-                this.Focusable = true;
-                Keyboard.Focus(this);
-            };
+            answeField.IsEnabled = false; // До начала написания эссе должна быть выбрана тема, поэтому изначально поле для ввода недоступно
+            showIdealEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе
+            showUsersEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе
 
-            this.KeyDown += (sender, e) =>
-            {
-                if (e.Key == Key.F1)
-                {
-                    OpenChmHelp();
-                    e.Handled = true;
-                }
-            };
+            taskTextBlock.Text = TaskText; // Установка общей формулировки задания
 
-            this.DataContext = data; // Запись в Binding информации из свойств объекта data
+            foreach (string topic in task.Answer)
+            {
+                topicsComboBox.Items.Add(topic); // Добавление тем в выпадающий список
+            }
+
+            idTextBox.Text = $"{task.id}"; // Установка id
+            recommendedTimeTextBlock.Text = $"{task.RecommendedTime}"; // Установка рекомендованного времени выполнения
+
+            this.topicIsChosen += UnblockAnswerField; // Подписка метода разблокировки поля для ввода ответа на событие
+
+            this.DataContext = task; // Запись в Binding информации из свойств объекта data
 
             //Подписка для конвертации
-            writingConvert.Click += (sender, e) => Conversion.ConvertWriting(data);
+            writingConvert.Click += (sender, e) => Conversion.ConvertWriting(task);
             writingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
 
@@ -77,16 +80,57 @@ namespace IELTSAppProject
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void help_Click(object sender, RoutedEventArgs e)
         {
             OpenChmHelp();
         }
 
-        public bool Check() => true;
+        public bool Check() => true; // Необходим для реализации интерфейса - не имеет функционала
+
+        private void SaveTopic(object sender, RoutedEventArgs e) // Фиксирует выбранную тему
+        {
+            if (topicsComboBox.SelectedItem != null) // Если тема была выбрана
+            {
+                topicsComboBox.IsEnabled = false; // Делает выбор темы более недоступным
+            }
+            else
+            {
+                ShowMessageWindow("Перед выполнением данного действия необходимо выбрать тему.");
+            }
+        }
+
+        private void SaveAnswer(object sender, RoutedEventArgs e) // Сохранение ответа пользователя
+        {
+            answeField.IsEnabled = false; // После сохранения ответа нельзя вносить изменения
+            showIdealEssay.IsEnabled = true;
+            showUsersEssay.IsEnabled = true;
+
+            TaskData.UserAnswer = answeField.Text; // Сохранение ответа пользователя
+
+            // Изменение интерфейса
+            infoTextBox.Text = "Ответ сохранён.";
+            infoTextBox.Background = Brushes.LightGreen;
+        }
+
+        private void UnblockAnswerField() // Разблокировка поля для ввода эссе пользователя после выбора темы
+        {
+            answeField.IsEnabled = true;
+            answeField.Text = "Введите свой ответ.";
+        }
+
+        private void ShowIdealEssay(object sender, RoutedEventArgs e) // Вывод примера идеального эссе по выбранной теме
+        {
+
+        }
+
+        private void ShowUsersEssay(object sender, RoutedEventArgs e) // Вывод эссе пользователя по выбранной теме
+        {
+
+        }
+
+        private void ShowMessageWindow(string message) // Всплывающее окно с сообщением
+        {
+            MessageBox.Show(message);
+        }
     }
 }

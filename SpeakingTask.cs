@@ -10,8 +10,6 @@ namespace IELTSAppProject
 {
     public class SpeakingTask : GeneralizedTask
     {
-        public SpeakingTask(int id, string taskText, double recTime, string taskType/*, string idealAns, string userAns*/) : base(id, taskText, recTime, taskType)
-        {
-        }
+        public SpeakingTask(int id, string taskText, double recTime, string taskType/*, string idealAns, string userAns*/) : base(id, taskText, recTime, taskType){}
     }
 }
