@@ -11,8 +11,10 @@ namespace IELTSAppProject
     public partial class SimpleAudioPlayer : UserControl
     {
         private DispatcherTimer timer;
+        private static SimpleAudioPlayer currentlyPlayingInstance;
+
         public static readonly DependencyProperty AudioPathProperty =
-        DependencyProperty.Register("AudioPath", typeof(string), typeof(SimpleAudioPlayer));
+            DependencyProperty.Register("AudioPath", typeof(string), typeof(SimpleAudioPlayer));
 
         public string AudioPath
         {
@@ -26,11 +28,24 @@ namespace IELTSAppProject
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(200);
             timer.Tick += UpdateProgress;
+
+            // Остановить воспроизведение при уничтожении контрола
+            this.Unloaded += (s, e) => StopPlayback();
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
+            // Если другой экземпляр уже играет, то он останавливается
+            if (currentlyPlayingInstance != null && currentlyPlayingInstance != this)
+            {
+                currentlyPlayingInstance.StopPlayback();
+            }
+
+            // Текущий экземпляр устанавливается как активный
+            currentlyPlayingInstance = this;
+
             SoundControl.AudioPath = AudioPath;
+
             if (SoundControl.WaveOut == null)
             {
                 SoundControl.PlayAudio();
@@ -49,15 +64,33 @@ namespace IELTSAppProject
             else
             {
                 SoundControl.PlayAudio();
+                timer.Start();
             }
         }
 
         private void UpdateProgress(object sender, EventArgs e)
         {
-            if (SoundControl.AudioFile != null)
+            if (SoundControl.AudioFile != null && SoundControl.WaveOut != null &&
+                SoundControl.WaveOut.PlaybackState == PlaybackState.Playing)
             {
-                ProgressSlider.Value = SoundControl.AudioFile.CurrentTime.TotalSeconds / SoundControl.AudioFile.TotalTime.TotalSeconds * 100;
-                TimeText.Text = SoundControl.AudioFile.CurrentTime.ToString(@"m\:ss") + " / " + SoundControl.AudioFile.TotalTime.ToString(@"m\:ss");
+                ProgressSlider.Value = SoundControl.AudioFile.CurrentTime.TotalSeconds /
+                                    SoundControl.AudioFile.TotalTime.TotalSeconds * 100;
+                TimeText.Text = SoundControl.AudioFile.CurrentTime.ToString(@"m\:ss") + " / " +
+                                SoundControl.AudioFile.TotalTime.ToString(@"m\:ss");
+            }
+        }
+
+        private void StopPlayback()
+        {
+            if (SoundControl.WaveOut != null)
+            {
+                SoundControl.StopAudio();
+                timer.Stop();
+
+                if (currentlyPlayingInstance == this)
+                {
+                    currentlyPlayingInstance = null;
+                }
             }
         }
     }
