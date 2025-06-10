@@ -23,6 +23,8 @@ namespace IELTSAppProject
     /// </summary>
     public partial class WritingUserControl : UserControl, ICheckable
     {
+
+        static string TaskText = @"WRITE AN ESSAY ON ONE OF THE FOLLOWING TOPICS:";
         public WritingUserControl(WritingTask data)
         {
             InitializeComponent();
