@@ -181,8 +181,19 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
         {
-            SpeakingEvaluationCriteriaWindow criteriaWindow = new SpeakingEvaluationCriteriaWindow();
-            criteriaWindow.ShowDialog();
+            string pdfPath = System.IO.Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "..\\..\\EvaluationCriterias\\SpeakingEvaluationCriteria.pdf");
+            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Получаем абсолютный путь
+
+            try
+            {
+                Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось открыть PDF с критериями.");
+            }
         }
     }
 }

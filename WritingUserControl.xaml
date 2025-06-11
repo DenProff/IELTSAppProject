@@ -51,6 +51,6 @@
         <Button x:Name="showUsersEssay" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="282" FontSize="20" Height="40" Content="Смотреть своё эссе" Margin="0,218,0,10" Click="ShowUsersEssay"/>
         <TextBlock x:Name="infoTextBox" Background="Red"  Grid.Column="9" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="83" Width="282"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
         <Button Content="Помощь" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="200" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="9"/>
-        <Button Grid.Column="9" Content="Посмотреть&#xA;критерии оценивания" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#F13C73" Height="73" Click="ShowEvaluationCriteria" Width="200" FontSize="20" Grid.RowSpan="2" Click=""/>
+        <Button Grid.Column="9" Content="Посмотреть&#xA;критерии оценивания" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#F13C73" Height="73" Click="ShowEvaluationCriteria" Width="200" FontSize="20" Grid.RowSpan="2"/>
     </Grid>
 </UserControl>

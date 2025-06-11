@@ -135,10 +135,21 @@ namespace IELTSAppProject
             answeField.Text = TaskData.UserAnswer; // Вывод в поле для ответа
         }
 
-        private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
+        private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для само-оценки
         {
-            WrittingEvaluationCriteriaWindow criteriaWindow = new WrittingEvaluationCriteriaWindow();
-            criteriaWindow.ShowDialog();
+            string pdfPath = System.IO.Path.Combine(
+                Directory.GetCurrentDirectory(),
+                "..\\..\\EvaluationCriterias\\WritingEvaluationCriteria.pdf");
+            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Получаем абсолютный путь
+
+            try
+            {
+                Process.Start(new ProcessStartInfo(pdfPath) { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удалось открыть PDF с критериями.");
+            }
         }
 
         private void ShowMessageWindow(string message) // Всплывающее окно с сообщением
