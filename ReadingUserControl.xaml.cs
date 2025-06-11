@@ -267,6 +267,22 @@ namespace IELTSAppProject
             this.rightAnswer2.Visibility = Visibility.Visible;
             this.rightAnswer1.Visibility = Visibility.Visible;
 
+            if (result)
+            {
+                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                string file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
+                string jsonData = File.ReadAllText(file);
+
+                List<Tuple<int, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string>>>(jsonData) ?? new List<Tuple<int, string>>();
+
+                Tuple<int, string> tuple = new Tuple<int, string>(((ReadingTask)this.DataContext).id, ((ReadingTask)this.DataContext).TaskType);
+
+                list.Add(tuple);
+
+                string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                File.WriteAllText(file, updatedJson);
+            }
+
             return result;
         }
     }

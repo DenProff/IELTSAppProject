@@ -30,7 +30,7 @@ namespace IELTSAppProject
     {
         //локальные переменные для фильтрации
         private ICollectionView _tasksView;
-        private ObservableCollection<TaskCollection> _allId;
+        private ObservableCollection<Tuple<int, string>> _allId;
         public MistakesPage()
         {
             InitializeComponent();
@@ -51,18 +51,31 @@ namespace IELTSAppProject
                 }
             };
 
-
+            LoadTasks();
         }
 
         //загрузка всех UserControl-ов
         private void LoadTasks()
         {
-            _allId = new ObservableCollection<TaskCollection>(JsonControl.CollectionArray);
+            _allId = new ObservableCollection<Tuple<int, string>>(JsonControl.MistakesArray);
             List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
-            foreach (var task in _allId) // Перебор подборок в массиве для добавления их на экран
+            foreach (Tuple<int, string> task in _allId) // Перебор подборок в массиве для добавления их на экран
             {
-                TaskCollection mistakeTask = new TaskCollection()
-                ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
+                TaskCollection mistakeTask = null;
+                if (task.Item2 == "ReadingTask")
+                {
+                    List<int> list = new List<int> { task.Item1 };
+                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", "",
+                         list, false, false, false, true, false, false );
+                }
+                else if (task.Item2 == "ListeningTask")
+                {
+                    List<int> list = new List<int> { task.Item1 };
+                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", "",
+                         list, true, false, false, false, false, false);
+                }
+
+                ButtonControlCatalog userControl = new ButtonControlCatalog(mistakeTask); // Создание UserControl-a на основе подборки
                 userControl.NavigationRequested += (s, set) =>
                 {
                     NavigationService.Navigate(new CollectionPage(set)); //подписка на событие для клика по user control
@@ -84,23 +97,12 @@ namespace IELTSAppProject
             bool isVisible = true;
 
             // Фильтрация по типам заданий (OR-логика между чекбоксами одного типа)
-            if (speakCheackBox.IsChecked == true ||
-                readingCheckBox.IsChecked == true ||
-                writingCheckBox.IsChecked == true ||
+            if (readingCheckBox.IsChecked == true ||
                 listeningCheckBox.IsChecked == true)
             {
-                isVisible = (speakCheackBox.IsChecked == true && task.isSpeaking) ||
-                           (readingCheckBox.IsChecked == true && task.isReading) ||
-                           (writingCheckBox.IsChecked == true && task.isWriting) ||
-                           (listeningCheckBox.IsChecked == true && task.isListening);
+                isVisible = (readingCheckBox.IsChecked == true && task.isReading) ||
+                            (listeningCheckBox.IsChecked == true && task.isListening);
             }
-
-            // Дополнительные фильтры (AND-логика с основными)
-            if (varOfExam.IsChecked == true)
-                isVisible &= task.isVariants;
-
-            if (actualTasks.IsChecked == true)
-                isVisible &= task.isFastRepeat;
 
             return isVisible;
         }

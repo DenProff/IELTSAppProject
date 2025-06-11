@@ -23,9 +23,9 @@ namespace IELTSAppProject
             private set { }
         }
 
-        public static int[] MistakesArray // Свойство, возвращающее массив с заданиями, в которых была допущена ошибка
+        public static Tuple<int, string>[] MistakesArray // Свойство, возвращающее массив с заданиями, в которых была допущена ошибка
         {
-            get => (int[])GetArray("resourcesTask", "Collections", "tasksWithMistakes.json");
+            get => (Tuple<int, string>[])GetArray("resourcesTask", "Collections", "tasksWithMistakes.json");
             private set { }
         }
 
@@ -50,7 +50,7 @@ namespace IELTSAppProject
             }
             else // Для массива ошибок (currentJson == "tasksWithMistakes.json")
             {
-                return (object)JsonConvert.DeserializeObject<int[]>(jsonFromFile);
+                return (object)JsonConvert.DeserializeObject<Tuple<int, string>[]>(jsonFromFile);
             }
         }
     }

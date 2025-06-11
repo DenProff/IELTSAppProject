@@ -17,21 +17,6 @@
         <Button Content="Выбрать язык" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
         <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,9">
-                <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black"
-                  Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
-                    <CheckBox.Resources>
-                        <Style TargetType="CheckBox">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#B7F200"/>
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Background" Value="#514ED9"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </CheckBox.Resources>
-                </CheckBox>
 
                 <CheckBox Content="Reading" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="readingCheckBox"
                   Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
@@ -48,21 +33,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Writing" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="writingCheckBox"
-                  Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
-                    <CheckBox.Resources>
-                        <Style TargetType="CheckBox">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#B7F200"/>
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Background" Value="#514ED9"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </CheckBox.Resources>
-                </CheckBox>
+                
                 <CheckBox Content="Listening" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="listeningCheckBox"
                   Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
@@ -78,36 +49,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
-                  Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
-                    <CheckBox.Resources>
-                        <Style TargetType="CheckBox">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#B7F200"/>
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Background" Value="#514ED9"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </CheckBox.Resources>
-                </CheckBox>
-                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
-                  Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
-                    <CheckBox.Resources>
-                        <Style TargetType="CheckBox">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="True">
-                                    <Setter Property="Background" Value="#B7F200"/>
-                                </Trigger>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Background" Value="#514ED9"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </CheckBox.Resources>
-                </CheckBox>
+               
             </StackPanel>
         </GroupBox>
         <Border MaxHeight="600"
