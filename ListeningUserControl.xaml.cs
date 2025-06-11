@@ -201,7 +201,7 @@ namespace IELTSAppProject
 
             //создание экземпляра TaskCollection
             TaskCollection userTask = new TaskCollection(data.id, name, today,
-                         idList, false, false, false, true, false, false);
+                         idList, true, false, false, false, false, false);
 
             List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
 

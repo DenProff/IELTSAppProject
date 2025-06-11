@@ -213,7 +213,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             //создание экземпляра TaskCollection
             TaskCollection userTask = new TaskCollection(data.id, name, today,
-                         idList, false, false, false, true, false, false);
+                         idList, false, true, false, false, false, false);
 
             List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
 
