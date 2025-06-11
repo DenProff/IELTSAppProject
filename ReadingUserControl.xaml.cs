@@ -206,8 +206,14 @@ namespace IELTSAppProject
         {
             ReadingTask task = (ReadingTask)this.DataContext;
             bool result = false;
+            int correctAnswers = 0;
+            string file;
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             if (task.Answer[0] == answer1.Text)
+            {
                 rightAnswer1.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer1.Text = "Неправильный ответ!";
@@ -216,7 +222,10 @@ namespace IELTSAppProject
 
 
             if (task.Answer[1] == answer2.Text)
+            {
                 rightAnswer2.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer2.Text = "Неправильный ответ!";
@@ -225,7 +234,10 @@ namespace IELTSAppProject
 
 
             if (task.Answer[2] == answer3.Text)
+            {
                 rightAnswer3.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer3.Text = "Неправильный ответ!";
@@ -234,7 +246,10 @@ namespace IELTSAppProject
 
 
             if (task.Answer[3] == answer4.Text)
+            {
                 rightAnswer4.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer4.Text = "Неправильный ответ!";
@@ -243,7 +258,10 @@ namespace IELTSAppProject
 
 
             if (task.Answer[4] == answer5.Text)
+            {
                 rightAnswer5.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer5.Text = "Неправильный ответ!";
@@ -252,7 +270,10 @@ namespace IELTSAppProject
 
 
             if (IsAnswerCorrect(task.Answer[5], answer61, answer62, answer63))
+            {
                 rightAnswer6.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 result = true;
@@ -261,7 +282,10 @@ namespace IELTSAppProject
 
 
             if (IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73))
+            {
                 rightAnswer7.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer7.Text = "Неправильный ответ!";
@@ -269,7 +293,10 @@ namespace IELTSAppProject
             }
 
             if (IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83))
+            {
                 rightAnswer8.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer8.Text = "Неправильный ответ!";
@@ -277,7 +304,10 @@ namespace IELTSAppProject
             }
 
             if (IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93))
+            {
                 rightAnswer9.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer9.Text = "Неправильный ответ!";
@@ -285,7 +315,10 @@ namespace IELTSAppProject
             }
 
             if (IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03))
+            {
                 rightAnswer0.Text = "Правильный ответ!";
+                correctAnswers++;
+            }
             else
             {
                 rightAnswer0.Text = "Неправильный ответ!";
@@ -305,8 +338,8 @@ namespace IELTSAppProject
 
             if (result)
             {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
+                projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
                 string jsonData = File.ReadAllText(file);
 
                 List<Tuple<int, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string>>>(jsonData) ?? new List<Tuple<int, string>>();
@@ -315,9 +348,20 @@ namespace IELTSAppProject
 
                 list.Add(tuple);
 
-                string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-                File.WriteAllText(file, updatedJson);
+                string updatedMistakesJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                File.WriteAllText(file, updatedMistakesJson);
             }
+
+            // Обновление количества правильных ответов
+            task.CorrectAnswers = correctAnswers;
+
+            GeneralizedTask[] taskArray = JsonControl.TaskArray;
+            int id = CollectionPage.SearchForIndexById(ref taskArray, task.id);
+            taskArray[id] = task;
+
+            file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
+            string updatedTasksJson = JsonConvert.SerializeObject(taskArray, Formatting.Indented);
+            File.WriteAllText(file, updatedTasksJson);
 
             return result;
         }

@@ -76,7 +76,7 @@ namespace IELTSAppProject
 
             // Обновление текстовых полей на странице статистики
             listeningStats.Text = $"{listeningCorrectTasks} / 5 ({listeningCorrectAnswers * 2}%)";
-            readingStats.Text = $"{readingCorrectTasks} / 5 ({listeningCorrectAnswers * 2}%)";
+            readingStats.Text = $"{readingCorrectTasks} / 5 ({readingCorrectAnswers * 2}%)";
         }
 
         private void OpenChmHelp()

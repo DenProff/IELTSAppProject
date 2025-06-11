@@ -55,6 +55,9 @@ namespace IELTSAppProject
         {
             ListeningTask task = (ListeningTask)DataContext;
             bool hasErrors = false;
+            int correctAnswers = 0;
+            string file;
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
             // Создаем массивы для хранения элементов
             RadioButton[][] radioButtonsGroups = new[]
@@ -84,6 +87,7 @@ namespace IELTSAppProject
                 resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
                 resultTextBlocks[i].Visibility = Visibility.Visible;
                 if (!isCorrect) hasErrors = true;
+                else correctAnswers++;
             }
 
             // Проверяем все группы TextBox в цикле
@@ -93,12 +97,12 @@ namespace IELTSAppProject
                 resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
                 resultTextBlocks[i].Visibility = Visibility.Visible;
                 if (!isCorrect) hasErrors = true;
+                else correctAnswers++;
             }
 
             if (hasErrors)
             {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
+                file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
                 string jsonData = File.ReadAllText(file);
 
                 List<Tuple<int, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string>>>(jsonData) ?? new List<Tuple<int, string>>();
@@ -107,9 +111,20 @@ namespace IELTSAppProject
 
                 list.Add(tuple);
 
-                string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-                File.WriteAllText(file, updatedJson);
+                string updatedMistakesJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+                File.WriteAllText(file, updatedMistakesJson);
             }
+
+            // Обновление количества правильных ответов
+            task.CorrectAnswers = correctAnswers;
+
+            GeneralizedTask[] taskArray = JsonControl.TaskArray;
+            int id = CollectionPage.SearchForIndexById(ref taskArray, task.id);
+            taskArray[id] = task;
+
+            file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
+            string updatedTasksJson = JsonConvert.SerializeObject(taskArray, Formatting.Indented);
+            File.WriteAllText(file, updatedTasksJson);
 
             return hasErrors; // true - если есть ошибки, false - если нет
         }
