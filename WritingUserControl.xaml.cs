@@ -25,7 +25,6 @@ namespace IELTSAppProject
     public partial class WritingUserControl : UserControl, ICheckable
     {
         static string TaskText = "WRITE AN ESSAY ON ONE OF THE FOLLOWING TOPICS:";
-        public event Action topicIsChosen; // Событие генерируемое, когда тема выбрана
         public WritingTask TaskData; // Задание на основе которого генерируется данный UserControl
 
         public WritingUserControl(WritingTask task)
@@ -35,6 +34,7 @@ namespace IELTSAppProject
             answeField.IsEnabled = false; // До начала написания эссе должна быть выбрана тема, поэтому изначально поле для ввода недоступно
             showIdealEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе
             showUsersEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе
+            saveAnswer.IsEnabled = false; // Пока не выбрана тема нельзя сохранить ответ
 
             taskTextBlock.Text = TaskText; // Установка общей формулировки задания
 
@@ -45,10 +45,8 @@ namespace IELTSAppProject
                 topicsComboBox.Items.Add(topic); // Добавление тем в выпадающий список
             }
 
-            idTextBox.Text = $"{task.id}"; // Установка id
-            recommendedTimeTextBlock.Text = $"{task.RecommendedTime}"; // Установка рекомендованного времени выполнения
-
-            this.topicIsChosen += UnblockAnswerField; // Подписка метода разблокировки поля для ввода ответа на событие
+            idTextBox.Text += $"{task.id}"; // Установка id
+            recommendedTimeTextBlock.Text += $"{task.RecommendedTime}"; // Установка рекомендованного времени выполнения
 
             //Подписка для конвертации
             writingConvert.Click += (sender, e) => Conversion.ConvertWriting(task);
@@ -92,6 +90,8 @@ namespace IELTSAppProject
             if (topicsComboBox.SelectedIndex != -1) // Если тема была выбрана
             {
                 topicsComboBox.IsEnabled = false; // Делает выбор темы более недоступным
+                saveTopicBtn.IsEnabled = false;   // Делает выбор темы более недоступным
+                UnblockAnswerField();
             }
             else
             {
@@ -115,6 +115,7 @@ namespace IELTSAppProject
         private void UnblockAnswerField() // Разблокировка поля для ввода эссе пользователя после выбора темы
         {
             answeField.IsEnabled = true;
+            saveAnswer.IsEnabled = true;
             answeField.Text = "Введите свой ответ.";
         }
 
@@ -141,7 +142,7 @@ namespace IELTSAppProject
         {
             string pdfPath = System.IO.Path.Combine(
                 Directory.GetCurrentDirectory(),
-                "..\\..\\EvaluationCriterias\\WritingEvaluationCriteria.pdf");
+                "..\\..\\EvaluationCriterias\\WritingEvaluationCriterias.pdf");
             pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
             try

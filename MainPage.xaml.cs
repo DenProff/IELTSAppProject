@@ -129,7 +129,7 @@ namespace IELTSAppProject
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             // NavigationService?.Navigate(new FirstTestPage());
-            NavigationService?.Navigate(new SpeakingUserControl(new SpeakingTask(0, "Проблема фимоза человечества", 12, "SpeakingTask")));
+            NavigationService?.Navigate(new WritingUserControl(new WritingTask(0, "WritingTask", "Текст задание это статическая константа", 40, new string[]{"idealAns1", "idealAns2", "idealAns3", "idealAns4", "idealAns5", "idealAns6"})));
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
