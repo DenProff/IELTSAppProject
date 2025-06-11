@@ -38,6 +38,8 @@ namespace IELTSAppProject
 
             taskTextBlock.Text = TaskText; // Установка общей формулировки задания
 
+            TaskData = task;
+
             foreach (string topic in task.Answer)
             {
                 topicsComboBox.Items.Add(topic); // Добавление тем в выпадающий список
