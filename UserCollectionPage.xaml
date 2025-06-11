@@ -111,6 +111,7 @@
         </GroupBox>
         <Border MaxHeight="600"
             MinHeight="300"
+            MaxWidth="810"
             Margin="10,195,340,148" BorderBrush="BlueViolet" BorderThickness="2">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro">
 
