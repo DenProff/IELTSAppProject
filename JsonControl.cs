@@ -13,43 +13,45 @@ namespace IELTSAppProject
     {
         public static GeneralizedTask[] TaskArray // Свойство, возвращающее массив с заданиями
         {
-            get
-            {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
-                if (!File.Exists(file))
-                    throw new Exception("Файл с json не найден!");
-
-                // Чтение JSON из файла
-                string jsonFromFile = File.ReadAllText(file);
-
-                // Десериализация
-                return JsonConvert.DeserializeObject<GeneralizedTask[]>(jsonFromFile);
-            }
+            get => (GeneralizedTask[])GetArray("resourcesTask", "tasks", "tasks.json");
             private set { }
         }
 
-        public static TaskCollection[] CollectionArray // Свойство, возвращающее массив с заданиями
+        public static TaskCollection[] CollectionArray // Свойство, возвращающее массив с подборками заданий
         {
-            get
-            {
-                string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string file = Path.Combine(projectDir, "resourcesTask", "Collections", "taskCollections.json");
-                if (!File.Exists(file))
-                    throw new Exception("Файл с json не найден!");
-
-                // Чтение JSON из файла
-                string jsonFromFile = File.ReadAllText(file);
-
-                // Десериализация
-                return JsonConvert.DeserializeObject<TaskCollection[]>(jsonFromFile);
-            }
+            get => (TaskCollection[]) GetArray("resourcesTask", "Collections", "taskCollections.json");
             private set { }
         }
 
-        public void AddTask() 
+        public static int[] MistakesArray // Свойство, возвращающее массив с заданиями, в которых была допущена ошибка
         {
-            // Функция для добавления новых заданий
+            get => (int[])GetArray("resourcesTask", "Collections", "tasksWithMistakes.json");
+            private set { }
+        }
+
+        public static object GetArray(string firstDirectory, string secondDirectory, string currentJson) // Функция десериализации json
+        {
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string file = Path.Combine(projectDir, firstDirectory, secondDirectory, currentJson);
+            if (!File.Exists(file))
+                throw new Exception("Файл с json не найден!");
+
+            // Чтение JSON из файла
+            string jsonFromFile = File.ReadAllText(file);
+
+            // Десериализация
+            if (currentJson == "taskCollections.json")
+            {
+                return (object)JsonConvert.DeserializeObject<TaskCollection[]>(jsonFromFile);
+            }
+            if (currentJson == "tasks.json")
+            {
+                return (object)JsonConvert.DeserializeObject<GeneralizedTask[]>(jsonFromFile);
+            }
+            else // Для массива ошибок (currentJson == "tasksWithMistakes.json")
+            {
+                return (object)JsonConvert.DeserializeObject<int[]>(jsonFromFile);
+            }
         }
     }
 }
