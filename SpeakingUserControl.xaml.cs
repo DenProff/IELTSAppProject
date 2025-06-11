@@ -200,7 +200,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             //работа с json
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
+            string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
             ReadingTask data = (ReadingTask)this.DataContext;
