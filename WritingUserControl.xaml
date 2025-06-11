@@ -40,7 +40,7 @@
             Рекоменд. время выполнения:
         </TextBlock>
 
-        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" FontSize="20" Grid.ColumnSpan="9" Margin="0,0,0,41" HorizontalAlignment="Left" Width="1218"><Run Language="ru-ru" Text="Задание"/></TextBlock>
+        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" FontSize="20" Grid.ColumnSpan="8" Margin="0,0,0,41" HorizontalAlignment="Left" Width="878"><Run Language="ru-ru" Text="Задание"/></TextBlock>
         <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" FontSize="20" VerticalAlignment="Center" Height="30">Тема</TextBlock>
         <ComboBox x:Name="topicsComboBox" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="6" Height="30" Margin="10,0,6,0">
         </ComboBox>
