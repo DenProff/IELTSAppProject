@@ -79,7 +79,8 @@ namespace IELTSAppProject
                                                                    // все методы Check
         {
             TaskCollectionDone?.Invoke(); // Вызов методов проверки, которые были подписаны на событие TaskCollectionDone в
-                                                               // конструкторе выше
+                                          // конструкторе выше
+            Check.IsEnabled = false;
         }
 
         public static int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве

@@ -154,7 +154,7 @@ namespace IELTSAppProject
 
         private void collections_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new UserCollectionPage());
         }
 
         private void language_Click(object sender, RoutedEventArgs e)

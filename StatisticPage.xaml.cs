@@ -107,11 +107,6 @@ namespace IELTSAppProject
             NavigationService?.GoBack();
         }
 
-        private void statistic_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void mistakes_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new MistakesPage());
@@ -119,7 +114,7 @@ namespace IELTSAppProject
 
         private void collections_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new UserCollectionPage());
         }
 
         private void language_Click(object sender, RoutedEventArgs e)

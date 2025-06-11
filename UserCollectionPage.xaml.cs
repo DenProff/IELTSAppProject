@@ -53,7 +53,7 @@ namespace IELTSAppProject
         //загрузка всех UserControl-ов
         private void LoadTasks()
         {
-            _allTasks = new ObservableCollection<TaskCollection>(JsonControl.CollectionArray);
+            _allTasks = new ObservableCollection<TaskCollection>(JsonControl.UserCollectionsArray);
             List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
             foreach (var task in _allTasks) // Перебор подборок в массиве для добавления их на экран
             {
