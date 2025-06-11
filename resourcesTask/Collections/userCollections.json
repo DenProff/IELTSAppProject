@@ -1,3 +1,45 @@
 [
-  
+  {
+    "VariantId": 6,
+    "VariantName": "ток лист",
+    "DateOfAccess": "",
+    "TaskIdList": [
+      6
+    ],
+    "isListening": false,
+    "isSpeaking": false,
+    "isWriting": false,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": false
+  },
+  {
+    "VariantId": 1,
+    "VariantName": "ток рид",
+    "DateOfAccess": "11.06.2025",
+    "TaskIdList": [
+      1
+    ],
+    "isListening": false,
+    "isSpeaking": false,
+    "isWriting": false,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": false
+  },
+  {
+    "VariantId": 2,
+    "VariantName": "все",
+    "DateOfAccess": "11.06.2025",
+    "TaskIdList": [
+      1,
+      6
+    ],
+    "isListening": true,
+    "isSpeaking": false,
+    "isWriting": false,
+    "isReading": true,
+    "isFastRepeat": false,
+    "isVariants": true
+  }
 ]
