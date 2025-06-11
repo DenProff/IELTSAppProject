@@ -342,9 +342,13 @@ namespace IELTSAppProject
                 file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
                 string jsonData = File.ReadAllText(file);
 
-                List<Tuple<int, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string>>>(jsonData) ?? new List<Tuple<int, string>>();
+                DateTime now = DateTime.Today; //берем сегодняшнюю дату
 
-                Tuple<int, string> tuple = new Tuple<int, string>(((ReadingTask)this.DataContext).id, ((ReadingTask)this.DataContext).TaskType);
+                string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
+
+                List<Tuple<int, string, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string, string>>>(jsonData) ?? new List<Tuple<int, string, string>>();
+
+                Tuple<int, string, string> tuple = new Tuple<int, string, string>(((ReadingTask)this.DataContext).id, ((ReadingTask)this.DataContext).TaskType, today);
 
                 list.Add(tuple);
 

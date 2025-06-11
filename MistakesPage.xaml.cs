@@ -30,7 +30,7 @@ namespace IELTSAppProject
     {
         //локальные переменные для фильтрации
         private ICollectionView _tasksView;
-        private ObservableCollection<Tuple<int, string>> _allId;
+        private ObservableCollection<Tuple<int, string, string>> _allId;
         public MistakesPage()
         {
             InitializeComponent();
@@ -57,21 +57,21 @@ namespace IELTSAppProject
         //загрузка всех UserControl-ов
         private void LoadTasks()
         {
-            _allId = new ObservableCollection<Tuple<int, string>>(JsonControl.MistakesArray);
+            _allId = new ObservableCollection<Tuple<int, string, string>>(JsonControl.MistakesArray);
             List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
-            foreach (Tuple<int, string> task in _allId) // Перебор подборок в массиве для добавления их на экран
+            foreach (Tuple<int, string, string> task in _allId) // Перебор подборок в массиве для добавления их на экран
             {
                 TaskCollection mistakeTask = null;
                 if (task.Item2 == "ReadingTask")
                 {
                     List<int> list = new List<int> { task.Item1 };
-                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", "",
+                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", task.Item3,
                          list, false, false, false, true, false, false );
                 }
                 else if (task.Item2 == "ListeningTask")
                 {
                     List<int> list = new List<int> { task.Item1 };
-                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", "",
+                    mistakeTask = new TaskCollection(task.Item1, $"{task.Item2} {task.Item1.ToString()}", task.Item3,
                          list, true, false, false, false, false, false);
                 }
 
