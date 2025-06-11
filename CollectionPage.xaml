@@ -4,8 +4,9 @@
       xmlns:local="clr-namespace:IELTSAppProject"
       Title="Combined Tasks"
       Background="WhiteSmoke">
-    <Grid MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300"  Height="700" Width="1177">
+<Grid MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700" Width="1177">
         <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
             <RowDefinition Height="30"/>
             <RowDefinition/>
             <RowDefinition Height="35"/>
@@ -13,18 +14,35 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ScrollViewer x:Name="MainScrollViewer" Grid.Row="1" Grid.ColumnSpan="2"
+        
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Row="2" Grid.ColumnSpan="3"
                   VerticalScrollBarVisibility="Auto"
                   HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,2">
             <ItemsControl x:Name="TasksContainer">
-                    <!-- UserControl-ы будут добавляться сюда -->
-                </ItemsControl>
-
+            </ItemsControl>
         </ScrollViewer>
-        <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="0" Margin="50 0 50 0" FontSize="20" Click="Check_Click">Проверить всё</Button>
-        <Button x:Name="Convert"  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="50 0 50 0" FontSize="20">Конвертировать всё в docx</Button>
-        <TextBlock x:Name="VariantId" FontSize="20">Id: </TextBlock>
-        <TextBlock x:Name="VariantName" Grid.Column="1" FontSize="20">Название: </TextBlock>
+        
+        <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" 
+                Margin="20 0 20 0" FontSize="20" Click="Check_Click" Content="Проверить всё"/>
+                
+        <Button x:Name="AddToCollection" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" 
+                Margin="20 0 20 0" FontSize="20" Click="AddToCollection_Click" Content="Добавить в подборки"/>
+                
+        <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
+                Margin="20 0 20 0" FontSize="20" Content="Конвертировать всё в docx"/>
+                
+        <TextBlock x:Name="VariantId" Grid.Row="1" Grid.ColumnSpan="3" FontSize="20">
+            <Run Text="Id:"/>
+        </TextBlock>
+        
+        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20">
+            <Run Text="Название:"/>
+        </TextBlock>
+        
+        <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Height="90" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" 
+                Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack" Grid.Row="0"/>
     </Grid>
 </Page>

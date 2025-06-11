@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using System.Windows.Threading;
+using Newtonsoft.Json;
 
 namespace IELTSAppProject
 {
@@ -146,6 +147,16 @@ namespace IELTSAppProject
                                   MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        private void turnBack_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.GoBack();
+        }
+
+        private void AddToCollection_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         //метод для получения списка заданий
