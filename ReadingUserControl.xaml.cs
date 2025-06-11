@@ -160,7 +160,11 @@ namespace IELTSAppProject
                 return;
                 
             name = window.UserInput;
-            
+
+            DateTime now = DateTime.Today; //берем сегодняшнюю дату
+
+            string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
+
             //работа с json
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
@@ -171,7 +175,7 @@ namespace IELTSAppProject
             List<int> idList = new List<int>() { data.id };
 
             //создание экземпляра TaskCollection
-            TaskCollection userTask = new TaskCollection(data.id, name, "",
+            TaskCollection userTask = new TaskCollection(data.id, name, today,
                          idList, false, false, false, true, false, false);
 
             List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();

@@ -197,6 +197,10 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 return;
 
             name = window.UserInput;
+            
+            DateTime now = DateTime.Today; //берем сегодняшнюю дату
+
+            string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;

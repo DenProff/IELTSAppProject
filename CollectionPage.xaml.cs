@@ -31,6 +31,8 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
+            this.DataContext = taskCollection; //ставим экземпляр TaskCollection в качестве контекстных данных
+
             this.Opacity = 0; // Делаем странцу прозрачной
 
             this.Loaded += (sender, e) =>
@@ -156,7 +158,41 @@ namespace IELTSAppProject
 
         private void AddToCollection_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            string name = ""; //название подборки
+
+            DialogInputWindow window = new DialogInputWindow();
+
+            window.ShowDialog(); //показ диалогового окна для ввода названия подборки
+
+            if (window.DialogResult != true) //если пользователь нажал отмена
+                return;
+
+            name = window.UserInput;
+
+            DateTime now = DateTime.Today; //берем сегодняшнюю дату
+
+            string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
+
+            //работа с json
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
+            string jsonData = File.ReadAllText(file);
+
+            TaskCollection data = (TaskCollection)this.DataContext;
+
+            //создание экземпляра TaskCollection
+            TaskCollection userTask = new TaskCollection(data.VariantId, name, today,
+                         data.TaskIdList, data.isListening, data.isWriting, data.isSpeaking,
+                         data.isReading, data.isVariants, data.isFastRepeat);
+
+            List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
+
+            list.Add(userTask);
+
+            string updatedJson = JsonConvert.SerializeObject(list, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(file, updatedJson);
+
+            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
 
         //метод для получения списка заданий
