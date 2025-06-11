@@ -123,6 +123,9 @@
     <Compile Include="CollectionPage.xaml.cs">
       <DependentUpon>CollectionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DialogInputWindow.xaml.cs">
+      <DependentUpon>DialogInputWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ICheckable.cs" />
     <Compile Include="JsonControl.cs" />
     <Compile Include="ListeningUserControl.xaml.cs">
@@ -155,6 +158,9 @@
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TaskCollection.cs" />
+    <Compile Include="UserCollectionPage.xaml.cs">
+      <DependentUpon>UserCollectionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WritingUserControl.xaml.cs">
       <DependentUpon>WritingUserControl.xaml</DependentUpon>
     </Compile>
@@ -169,6 +175,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DialogInputWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +240,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserCollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WritingUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,6 +278,7 @@
     </None>
     <None Include="resourcesTask\Collections\taskCollections.json" />
     <None Include="resourcesTask\Collections\tasksWithMistakes.json" />
+    <None Include="resourcesTask\Collections\userCollections.json" />
     <None Include="resourcesTask\tasks\listeningtask1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

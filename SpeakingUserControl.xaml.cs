@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace IELTSAppProject
 {
@@ -182,6 +183,42 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             {
                 MessageBox.Show($"Не удалось открыть PDF с критериями.");
             }
+        }
+
+        private void AddToCollection_Click(object sender, RoutedEventArgs e)
+        {
+            string name = ""; //название подборки
+
+            DialogInputWindow window = new DialogInputWindow();
+
+            window.ShowDialog(); //показ диалогового окна для ввода названия подборки
+
+            if (window.DialogResult != true) //если пользователь нажал отмена
+                return;
+
+            name = window.UserInput;
+
+            //работа с json
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
+            string jsonData = File.ReadAllText(file);
+
+            ReadingTask data = (ReadingTask)this.DataContext;
+
+            List<int> idList = new List<int>() { data.id };
+
+            //создание экземпляра TaskCollection
+            TaskCollection userTask = new TaskCollection(data.id, name, "",
+                         idList, false, false, false, true, false, false);
+
+            List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
+
+            list.Add(userTask);
+
+            string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+            File.WriteAllText(file, updatedJson);
+
+            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
     }
 }

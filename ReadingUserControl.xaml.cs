@@ -17,6 +17,7 @@ using DocumentFormat.OpenXml.Office2021.DocumentTasks;
 using System.Diagnostics;
 using Path = System.IO.Path;
 using DocumentFormat.OpenXml.Office2013.Word;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace IELTSAppProject
 {
@@ -147,9 +148,40 @@ namespace IELTSAppProject
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //добавление в подборку
         {
+            string name = ""; //название подборки
 
+            DialogInputWindow window = new DialogInputWindow();
+
+            window.ShowDialog(); //показ диалогового окна для ввода названия подборки
+
+            if (window.DialogResult != true) //если пользователь нажал отмена
+                return;
+                
+            name = window.UserInput;
+            
+            //работа с json
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
+            string jsonData = File.ReadAllText(file);
+
+            ReadingTask data = (ReadingTask)this.DataContext;
+
+            List<int> idList = new List<int>() { data.id };
+
+            //создание экземпляра TaskCollection
+            TaskCollection userTask = new TaskCollection(data.id, name, "",
+                         idList, false, false, false, true, false, false);
+
+            List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
+
+            list.Add(userTask);
+
+            string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
+            File.WriteAllText(file, updatedJson);
+
+            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
 
         //добавление в списки

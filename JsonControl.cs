@@ -29,6 +29,12 @@ namespace IELTSAppProject
             private set { }
         }
 
+        public static TaskCollection[] UserCollectionsArray // Свойство, возвращающее массив с подборками для пользователя
+        {
+            get => (TaskCollection[])GetArray("resourcesTask", "Collections", "userCollections.json");
+            private set { }
+        }
+
         public static object GetArray(string firstDirectory, string secondDirectory, string currentJson) // Функция десериализации json
         {
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -40,7 +46,7 @@ namespace IELTSAppProject
             string jsonFromFile = File.ReadAllText(file);
 
             // Десериализация
-            if (currentJson == "taskCollections.json")
+            if (currentJson == "taskCollections.json" || currentJson == "userCollections.json")
             {
                 return (object)JsonConvert.DeserializeObject<TaskCollection[]>(jsonFromFile);
             }
