@@ -140,7 +140,7 @@ namespace IELTSAppProject
             string pdfPath = System.IO.Path.Combine(
                 Directory.GetCurrentDirectory(),
                 "..\\..\\EvaluationCriterias\\WritingEvaluationCriteria.pdf");
-            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Получаем абсолютный путь
+            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
             try
             {

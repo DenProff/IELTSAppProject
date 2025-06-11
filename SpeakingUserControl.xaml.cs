@@ -44,8 +44,6 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             idTextBox.Text += (task.id).ToString();
             recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + "мин.";
 
-            this.DataContext = task; // Запись в Binding информации из свойств объекта task
-
             //Подписка для конвертации
             speakingConvert.Click += (sender, e) => Conversion.ConvertSpeaking(task);
             speakingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
@@ -76,16 +74,6 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             resultTextBlock.Text = "Можно слушать свой и пример идеального варианты ответа.";
             resultTextBlock.Background = Brushes.LightGreen;
-            //try
-            //{
-            //    // Строчка ниже из первой версии класса
-            //    //Task.AudioPathUserAnswer = File.ReadAllBytes(SoundControl.OutputFilePath);// Чтение файла
-            //}
-            //catch (Exception ex)
-            //{
-            //    
-                  // Тут было обновление интерфейса
-            //}
         }
 
         private void PlayUserAnswer(object sender, RoutedEventArgs e)
@@ -184,7 +172,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             string pdfPath = System.IO.Path.Combine(
                 Directory.GetCurrentDirectory(),
                 "..\\..\\EvaluationCriterias\\SpeakingEvaluationCriteria.pdf");
-            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Получаем абсолютный путь
+            pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
             try
             {
