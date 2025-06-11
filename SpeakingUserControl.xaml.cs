@@ -179,7 +179,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
         public bool Check() => true; // Необходим для реализации интерфейса - не имеет функционала
 
-        private void ShowEvaluationCriteria(object sender, RoutedEventArgs e)
+        private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
         {
             SpeakingEvaluationCriteriaWindow criteriaWindow = new SpeakingEvaluationCriteriaWindow();
             criteriaWindow.ShowDialog();

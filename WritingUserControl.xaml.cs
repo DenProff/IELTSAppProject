@@ -48,8 +48,6 @@ namespace IELTSAppProject
 
             this.topicIsChosen += UnblockAnswerField; // Подписка метода разблокировки поля для ввода ответа на событие
 
-            this.DataContext = task; // Запись в Binding информации из свойств объекта data
-
             //Подписка для конвертации
             writingConvert.Click += (sender, e) => Conversion.ConvertWriting(task);
             writingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
@@ -85,11 +83,11 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public bool Check() => true; // Необходим для реализации интерфейса - не имеет функционала
+        public bool Check() => true; // Метод необходим для реализации интерфейса - не имеет функционала для данного класса
 
         private void SaveTopic(object sender, RoutedEventArgs e) // Фиксирует выбранную тему
         {
-            if (topicsComboBox.SelectedItem != null) // Если тема была выбрана
+            if (topicsComboBox.SelectedIndex != -1) // Если тема была выбрана
             {
                 topicsComboBox.IsEnabled = false; // Делает выбор темы более недоступным
             }
@@ -120,12 +118,27 @@ namespace IELTSAppProject
 
         private void ShowIdealEssay(object sender, RoutedEventArgs e) // Вывод примера идеального эссе по выбранной теме
         {
-
+            int index = topicsComboBox.SelectedIndex; // Номер выбранной темы (индекс в массиве)
+            if (index != -1)
+            {
+                answeField.Text = TaskData.Answer[index]; // Вывод в поле для ответа
+            }
+            else
+            {
+                ShowMessageWindow("Вы не выбрали тему!"); // На всякий случай вывод сообщения - предполагается,
+                                                          // что оно не должно быть показано никогда
+            }
         }
 
         private void ShowUsersEssay(object sender, RoutedEventArgs e) // Вывод эссе пользователя по выбранной теме
         {
+            answeField.Text = TaskData.UserAnswer; // Вывод в поле для ответа
+        }
 
+        private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
+        {
+            WrittingEvaluationCriteriaWindow criteriaWindow = new WrittingEvaluationCriteriaWindow();
+            criteriaWindow.ShowDialog();
         }
 
         private void ShowMessageWindow(string message) // Всплывающее окно с сообщением

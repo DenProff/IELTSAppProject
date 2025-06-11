@@ -57,6 +57,6 @@
             Grid.Row="4" VerticalAlignment="Top" Width="441" Height="38" FontSize="20"/>
         <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="9,153,5,38" Grid.Column="2" Content="Стоп" Click="StopPlaying" FontSize="20" Height="40"/>
         <Button x:Name="HELP" FontSize="20"  Content="Помощь" HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Height="58" Width="126" Background="#F13C73" BorderThickness="2" Click="help_Click" Grid.Row="4" Tag="speaking"/>
-        <Button Grid.Column="3" Content="Критерии оценивания" HorizontalAlignment="Left" Margin="295,118,0,0" Grid.Row="4" VerticalAlignment="Top" Height="111" Click="ShowEvaluationCriteria" Width="245" FontSize="20"/>
+        <Button Grid.Column="3" Content="Посмотреть&#xD;&#xA;критерии оценивания" HorizontalAlignment="Left" Margin="283,155,0,0" Grid.Row="4" VerticalAlignment="Top" Background="#F13C73" Height="91" Click="ShowEvaluationCriteria" Width="245" FontSize="20"/>
     </Grid>
 </UserControl>
