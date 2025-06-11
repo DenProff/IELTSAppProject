@@ -49,7 +49,6 @@ namespace IELTSAppProject
                 }
             };
 
-
         }
 
         private void OpenChmHelp()

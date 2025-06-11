@@ -16,7 +16,6 @@ namespace IELTSAppProject
         public string TaskText { get; set; } // Текст задания
         public double RecommendedTime{ get; set; } // Рекомендуемое время для выполнения задания
         public string TaskType { get; set; } // Для работы json
-        public bool WithMistake { get; set; } // Была ли в этом задании допущена и не исправлена ошибка
 
         public GeneralizedTask(int id, string taskText, double recTime, string taskType)
         {
@@ -24,7 +23,6 @@ namespace IELTSAppProject
             RecommendedTime = recTime;
             this.id = id;
             this.TaskText = taskText;
-            WithMistake = false;
         }
     }
 }
