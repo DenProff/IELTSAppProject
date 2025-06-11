@@ -43,7 +43,7 @@ namespace IELTSAppProject
 
             DataContext = task; //контекстные данные
 
-            foreach (string topic in task.Answer)
+            foreach (string topic in task.Topics)
             {
                 topicsComboBox.Items.Add(topic); // Добавление тем в выпадающий список
             }
