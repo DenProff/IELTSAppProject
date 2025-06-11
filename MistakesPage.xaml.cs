@@ -28,7 +28,9 @@ namespace IELTSAppProject
     /// </summary>
     public partial class MistakesPage : Page
     {
-        
+        //локальные переменные для фильтрации
+        private ICollectionView _tasksView;
+        private ObservableCollection<TaskCollection> _allId;
         public MistakesPage()
         {
             InitializeComponent();
@@ -50,6 +52,69 @@ namespace IELTSAppProject
             };
 
 
+        }
+
+        //загрузка всех UserControl-ов
+        private void LoadTasks()
+        {
+            _allId = new ObservableCollection<TaskCollection>(JsonControl.CollectionArray);
+            List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
+            foreach (var task in _allId) // Перебор подборок в массиве для добавления их на экран
+            {
+                TaskCollection mistakeTask = new TaskCollection()
+                ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
+                userControl.NavigationRequested += (s, set) =>
+                {
+                    NavigationService.Navigate(new CollectionPage(set)); //подписка на событие для клика по user control
+                };
+                collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
+
+            }
+            _tasksView = CollectionViewSource.GetDefaultView(collections);
+            _tasksView.Filter = TaskFilter;
+
+            // Инициализация ItemsControl
+            TasksContainer.ItemsSource = _tasksView;
+        }
+
+        //фильтр
+        private bool TaskFilter(object item)
+        {
+            var task = (TaskCollection)((ButtonControlCatalog)item).DataContext;
+            bool isVisible = true;
+
+            // Фильтрация по типам заданий (OR-логика между чекбоксами одного типа)
+            if (speakCheackBox.IsChecked == true ||
+                readingCheckBox.IsChecked == true ||
+                writingCheckBox.IsChecked == true ||
+                listeningCheckBox.IsChecked == true)
+            {
+                isVisible = (speakCheackBox.IsChecked == true && task.isSpeaking) ||
+                           (readingCheckBox.IsChecked == true && task.isReading) ||
+                           (writingCheckBox.IsChecked == true && task.isWriting) ||
+                           (listeningCheckBox.IsChecked == true && task.isListening);
+            }
+
+            // Дополнительные фильтры (AND-логика с основными)
+            if (varOfExam.IsChecked == true)
+                isVisible &= task.isVariants;
+
+            if (actualTasks.IsChecked == true)
+                isVisible &= task.isFastRepeat;
+
+            return isVisible;
+        }
+
+        //событие для перехода на задания
+        private void ButtonControlCatalog_NavigationRequested(object sender, TaskCollection task)
+        {
+            NavigationService?.Navigate(new CollectionPage(task));
+        }
+
+        //обновление данных
+        private void CheckBox_CheckedChanged(object sender, RoutedEventArgs e)
+        {
+            _tasksView.Refresh();
         }
 
         private void OpenChmHelp()
@@ -83,11 +148,6 @@ namespace IELTSAppProject
         private void statistic_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new StatisticPage());
-        }
-
-        private void mistakes_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void collections_Click(object sender, RoutedEventArgs e)
