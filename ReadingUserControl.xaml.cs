@@ -357,15 +357,16 @@ namespace IELTSAppProject
             }
 
             // Обновление количества правильных ответов
-            task.CorrectAnswers = correctAnswers;
+            double[] statisticsArray = JsonControl.StatisticsArray;
 
-            GeneralizedTask[] taskArray = JsonControl.TaskArray;
-            int id = CollectionPage.SearchForIndexById(ref taskArray, task.id);
-            taskArray[id] = task;
+            if (correctAnswers == 10)
+                statisticsArray[4]++;
+            statisticsArray[3] += correctAnswers;
+            statisticsArray[5]++;
 
-            file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
-            string updatedTasksJson = JsonConvert.SerializeObject(taskArray, Formatting.Indented);
-            File.WriteAllText(file, updatedTasksJson);
+            file = Path.Combine(projectDir, "statistics", "", "statistics.json");
+            string updatedStatisticsJson = JsonConvert.SerializeObject(statisticsArray, Formatting.Indented);
+            File.WriteAllText(file, updatedStatisticsJson);
 
             return result;
         }

@@ -35,6 +35,12 @@ namespace IELTSAppProject
             private set { }
         }
 
+        public static double[] StatisticsArray // Свойство, возвращающее массив со статистикой
+        {
+            get => (double[])GetArray("statistics", "", "statistics.json");
+            private set { }
+        }
+
         public static object GetArray(string firstDirectory, string secondDirectory, string currentJson) // Функция десериализации json
         {
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -54,9 +60,13 @@ namespace IELTSAppProject
             {
                 return (object)JsonConvert.DeserializeObject<GeneralizedTask[]>(jsonFromFile);
             }
-            else // Для массива ошибок (currentJson == "tasksWithMistakes.json")
+            if (currentJson == "tasksWithMistakes.json")
             {
                 return (object)JsonConvert.DeserializeObject<Tuple<int, string>[]>(jsonFromFile);
+            }
+            else // (currentJson == "statistics.json")
+            {
+                return (object)JsonConvert.DeserializeObject<double[]>(jsonFromFile);
             }
         }
     }

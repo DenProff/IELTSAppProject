@@ -11,7 +11,6 @@ namespace IELTSAppProject
     {
         public List<string> Answer { get; set; }
         public string AudioPath { get; set; } // Путь к аудиофайлу
-        public int CorrectAnswers { get; set; } // Количество правильных ответов
 
         //поля к заданиям
         public string Task1 { get; set; }
@@ -39,13 +38,12 @@ namespace IELTSAppProject
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ListeningTask(int id, string taskType, string taskText, List<string> answer, double recTime, string audioPath, int correctAnswers, string task1, string task2, string task3,
+        public ListeningTask(int id, string taskType, string taskText, List<string> answer, double recTime, string audioPath, string task1, string task2, string task3,
             string task4, string task5, string task6, string task7, string task8, string task9, string task0, List<string> firstList, List<string> secondList,
             List<string> thirdList, List<string> fourthList, List<string> fifthList) : base(id, taskText, recTime, taskType)
         {
             Answer = answer;
             AudioPath = audioPath;
-            CorrectAnswers = correctAnswers;
             Task1 = task1;
             Task2 = task2;
             Task3 = task3;

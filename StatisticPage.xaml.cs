@@ -49,34 +49,25 @@ namespace IELTSAppProject
                 }
             };
 
-            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+            double[] statisticsArray = JsonControl.StatisticsArray;
 
             // Переменные для хранения правильных ответов/полностью решенных заданий Listening и Reading
-            int listeningCorrectAnswers = 0;
-            int listeningCorrectTasks = 0;
+            double listeningCorrectAnswers = statisticsArray[0];
+            double listeningCorrectTasks = statisticsArray[1];
+            double listeningTasksCount = statisticsArray[2];
 
-            int readingCorrectAnswers = 0;
-            int readingCorrectTasks = 0;
-
-            foreach (GeneralizedTask task in taskArray)
-            {
-                if (task is ListeningTask listeningTask)
-                {
-                    if (listeningTask.CorrectAnswers == 10)
-                        listeningCorrectTasks++;
-                    listeningCorrectAnswers += listeningTask.CorrectAnswers;
-                }
-                if (task is ReadingTask readingTask)
-                {
-                    if (readingTask.CorrectAnswers == 10)
-                        readingCorrectTasks++;
-                    readingCorrectAnswers += readingTask.CorrectAnswers;
-                }
-            }
+            double readingCorrectAnswers = statisticsArray[3];
+            double readingCorrectTasks = statisticsArray[4];
+            double readingTasksCount = statisticsArray[5];
 
             // Обновление текстовых полей на странице статистики
-            listeningStats.Text = $"{listeningCorrectTasks} / 5 ({listeningCorrectAnswers * 2}%)";
-            readingStats.Text = $"{readingCorrectTasks} / 5 ({readingCorrectAnswers * 2}%)";
+            listeningStats.Text = listeningTasksCount > 0
+            ? $"{listeningCorrectTasks} / {listeningTasksCount} ({Math.Round(listeningCorrectAnswers / listeningTasksCount * 10)}%)"
+            : $"{listeningCorrectTasks} / {listeningTasksCount} (0%)";
+
+            readingStats.Text = readingTasksCount > 0
+            ? $"{readingCorrectTasks} / {readingTasksCount} ({Math.Round(readingCorrectAnswers * 10 / readingTasksCount)}%)"
+            : $"{readingCorrectTasks} / {readingTasksCount} (0%)";
         }
 
         private void OpenChmHelp()

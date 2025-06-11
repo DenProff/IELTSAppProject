@@ -285,6 +285,7 @@
     <None Include="resourcesTask\tasks\tasks.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="statistics\statistics.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
