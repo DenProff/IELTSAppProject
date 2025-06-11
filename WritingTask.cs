@@ -14,9 +14,10 @@ namespace IELTSAppProject
         public string[] Answer { get; set; } // Хранит идеальные эссе для 6ти тем: 2 General, 2 Academic, 2 business - строго в этом порядке
         public string UserAnswer { get; set; } // Пользователь выбирает всего одну тему, поэтому хранить нужно только её
 
-        public WritingTask(int id, string taskType, string taskText, double recTime, string[] idealEssays) : base(id, taskText, recTime, taskType)
+        public WritingTask(int id, string taskType, string taskText, double recTime, string[] topics, string[] idealEssays) : base(id, taskText, recTime, taskType)
         {
             Answer = idealEssays;
+            Topics = topics;
         }
     }
 }
