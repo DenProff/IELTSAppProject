@@ -263,6 +263,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="resourcesTask\Collections\taskCollections.json" />
+    <None Include="resourcesTask\Collections\tasksWithMistakes.json" />
     <None Include="resourcesTask\tasks\listeningtask1.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
