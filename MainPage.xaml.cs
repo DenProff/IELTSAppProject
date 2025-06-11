@@ -121,21 +121,14 @@ namespace IELTSAppProject
             NavigationService?.Navigate(new TaskCatalogPage());
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            NavigationService?.Navigate(new ReadingUserControl(null));
-        }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            // NavigationService?.Navigate(new FirstTestPage());
-            NavigationService?.Navigate(new WritingUserControl(new WritingTask(0, "WritingTask", "Текст задание это статическая константа", 40, new string[]{"idealAns1", "idealAns2", "idealAns3", "idealAns4", "idealAns5", "idealAns6"})));
+            NavigationService?.Navigate(new FirstTestPage());
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            //NavigationService?.Navigate(new CollectionPage(new TaskCollection(5, "zalupa variant", "date", new List<int>{ 0, 1, 2 })));
-            //NavigationService?.Navigate(new LanguageSelectionPage());
+            NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
         private void help_Click(object sender, RoutedEventArgs e)

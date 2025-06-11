@@ -33,14 +33,14 @@ namespace IELTSAppProject
                     body.AppendChild(new Paragraph(new Run(new Text($"Тип задания: {elem.TaskType}"))));
                     //Заголовок
                     body.AppendChild(new Paragraph(
-                        new Run(new RunProperties(new FontSize() { Val = "32"}, new Bold()), new Text($"Id задания - {elem.id}"),
+                        new Run(new RunProperties(new FontSize() { Val = "28"}, new Bold()), new Text($"Id задания - {elem.id}"),
                         new Run(new Break()), // Перенос
-                        new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"{elem.TaskText}")))));
+                        new Run(new RunProperties(new FontSize() { Val = "28" }, new Bold()), new Text($"{elem.TextForReading}")))));
 
                     body.AppendChild(new Paragraph(new Run(new Text($"Рекомендованное время {elem.RecommendedTime} мин"))));
 
                     //Текст для задания
-                    body.AppendChild(new Paragraph(new Run(new Text(elem.TextForReading))));
+                    body.AppendChild(new Paragraph(new Run(new Text(elem.TaskText))));
 
                     //Задания (True/False/Not Stated)
                     body.AppendChild(new Paragraph(new Run(new Text(elem.Task1)), new Run(new Break()), new Run(new Text("True      " +
@@ -179,9 +179,9 @@ namespace IELTSAppProject
                 {
                     //Заголовок
                     body.AppendChild(new Paragraph(
-                        new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"Id задания - {elem.id}"),
+                        new Run(new RunProperties(new FontSize() { Val = "30" }, new Bold()), new Text($"Id задания - {elem.id}"),
                         new Run(new Break()), // Перенос
-                        new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"{elem.TaskText}")))));
+                        new Run(new RunProperties(new FontSize() { Val = "30" }, new Bold()), new Text($"{elem.TaskText}")))));
                 }
                 
             }

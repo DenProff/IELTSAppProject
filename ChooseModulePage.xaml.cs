@@ -84,7 +84,7 @@ namespace IELTSAppProject
 
         private void collections_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService?.Navigate(new UserCollectionPage());
         }
 
         private void language_Click(object sender, RoutedEventArgs e)
@@ -107,8 +107,10 @@ namespace IELTSAppProject
 
         private void testVar_Click(object sender, RoutedEventArgs e)
         {
-            WritingUserControl page = new WritingUserControl();
-            NavigationService?.Navigate(page);
+            List<int> list = new List<int> { 0, 2, 9, 11 };
+            TaskCollection task = new TaskCollection(0, "TestVariant", "12.06.2025", list,
+                true, true, true, true, false, true);
+            NavigationService.Navigate(new CollectionPage(task));
         }
 
         private void moduleTasks_Click(object sender, RoutedEventArgs e)

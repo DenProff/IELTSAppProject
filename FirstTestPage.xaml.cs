@@ -45,7 +45,10 @@ namespace IELTSAppProject
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CollectionPage(null));
+            List<int> list = new List<int> { 0, 2, 9, 11 };
+            TaskCollection task = new TaskCollection(0, "TestVariant", "12.06.2025", list, 
+                true, true, true, true, false, true);
+            NavigationService.Navigate(new CollectionPage(task));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
