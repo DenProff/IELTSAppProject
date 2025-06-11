@@ -203,7 +203,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
-            ReadingTask data = (ReadingTask)this.DataContext;
+            SpeakingTask data = (SpeakingTask)this.DataContext;
 
             List<int> idList = new List<int>() { data.id };
 

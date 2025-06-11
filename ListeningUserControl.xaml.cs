@@ -176,7 +176,7 @@ namespace IELTSAppProject
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
-            ReadingTask data = (ReadingTask)this.DataContext;
+            ListeningTask data = (ListeningTask)this.DataContext;
 
             List<int> idList = new List<int>() { data.id };
 
