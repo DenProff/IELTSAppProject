@@ -39,11 +39,11 @@
                         <Separator Margin="0,10,0,10" />
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Listening: " FontWeight="Bold" Foreground="White" FontSize="18" />
-                            <TextBlock Text="14 / 20 (70%)" Foreground="LightGreen" FontSize="18" Margin="6,0,0,0" />
+                            <TextBlock x:Name ="listeningStats" Text="" Foreground="LightGreen" FontSize="18" Margin="7,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Reading:  " FontWeight="Bold" FontSize="18" Foreground="White" />
-                            <TextBlock Text="  20 / 20 (100%)" Foreground="LightGreen" FontSize="18" />
+                            <TextBlock x:Name ="readingStats" Text="" Foreground="LightGreen" FontSize="18" Margin="10,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Writing: " FontWeight="Bold" FontSize="18" Foreground="White" />

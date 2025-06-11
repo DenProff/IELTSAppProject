@@ -49,6 +49,34 @@ namespace IELTSAppProject
                 }
             };
 
+            GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
+
+            // Переменные для хранения правильных ответов/полностью решенных заданий Listening и Reading
+            int listeningCorrectAnswers = 0;
+            int listeningCorrectTasks = 0;
+
+            int readingCorrectAnswers = 0;
+            int readingCorrectTasks = 0;
+
+            foreach (GeneralizedTask task in taskArray)
+            {
+                if (task is ListeningTask listeningTask)
+                {
+                    if (listeningTask.CorrectAnswers == 10)
+                        listeningCorrectTasks++;
+                    listeningCorrectAnswers += listeningTask.CorrectAnswers;
+                }
+                if (task is ReadingTask readingTask)
+                {
+                    if (readingTask.CorrectAnswers == 10)
+                        readingCorrectTasks++;
+                    readingCorrectAnswers += readingTask.CorrectAnswers;
+                }
+            }
+
+            // Обновление текстовых полей на странице статистики
+            listeningStats.Text = $"{listeningCorrectTasks} / 5 ({listeningCorrectAnswers * 2}%)";
+            readingStats.Text = $"{readingCorrectTasks} / 5 ({listeningCorrectAnswers * 2}%)";
         }
 
         private void OpenChmHelp()
