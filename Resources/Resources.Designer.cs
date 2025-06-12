@@ -241,6 +241,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Рекомендованное время:.
+        /// </summary>
+        internal static string recomendedTime {
+            get {
+                return ResourceManager.GetString("recomendedTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Русский.
         /// </summary>
         internal static string rusLanguage {

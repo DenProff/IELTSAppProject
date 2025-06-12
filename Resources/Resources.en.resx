@@ -177,6 +177,9 @@
   <data name="prevPage" xml:space="preserve">
     <value>Go back</value>
   </data>
+  <data name="recomendedTime" xml:space="preserve">
+    <value>Recommended time:</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Russian  </value>
   </data>
