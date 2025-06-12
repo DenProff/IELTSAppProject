@@ -14,7 +14,7 @@ namespace IELTSAppProject
     {
         public static void SetLanguageResourcesMethod(string languageCode, string[] resourcesKeysArray, object sender)
         {
-            // Получение ресурсов для выбранного языка
+            // Получение ресурсов для одного из языков
             ResourceManager resourceManager = new ResourceManager("IELTSAppProject.Resources.Resources", Assembly.GetExecutingAssembly());
 
             // Получение из ресурсов текстов по заданному ключу
