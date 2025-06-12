@@ -76,6 +76,20 @@ namespace IELTSAppProject
             // Смена цветов
             listeningStats.Foreground = GetPercentageColorBrush(listeningPercentage);
             readingStats.Foreground = GetPercentageColorBrush(readingPercentage);
+
+            // Формирование рекомендации
+            if (listeningPercentage < readingPercentage)
+            {
+                recomendation.Text = "Listening";
+            }
+            else if (listeningPercentage > readingPercentage)
+            {
+                recomendation.Text = "Reading";
+            }
+            else
+            {
+                recomendation.Text = "Listening и Reading";
+            }
         }
 
         private void OpenChmHelp()

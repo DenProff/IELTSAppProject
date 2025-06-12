@@ -76,7 +76,7 @@
             <Border BorderBrush="#333" BorderThickness="1" Background="#514ED9" Padding="10" CornerRadius="20" Grid.Row="1" Margin="0,50,581,0" Width="541">
                 <StackPanel>
                     <TextBlock Text="Рекомендуется поработать над:" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,5,0,0"/>
-                    <TextBlock Text="Listening" FontWeight="Bold" Foreground="Red" FontSize="18" Margin="0,5,0,5" />
+                    <TextBlock x:Name="recomendation" Text="" FontWeight="Bold" Foreground="Red" FontSize="18" Margin="0,5,0,5" />
                 </StackPanel>
             </Border>
         </Grid>
