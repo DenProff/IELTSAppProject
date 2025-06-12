@@ -104,7 +104,7 @@ namespace IELTSAppProject
 
         private void SaveAnswer(object sender, RoutedEventArgs e) // Сохранение ответа пользователя
         {
-            answeField.IsEnabled = false; // После сохранения ответа нельзя вносить изменения
+            answeField.IsReadOnly = true; // После сохранения ответа нельзя вносить изменения
             showIdealEssay.IsEnabled = true;
             showUsersEssay.IsEnabled = true;
 
