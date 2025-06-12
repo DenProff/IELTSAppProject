@@ -43,27 +43,15 @@ namespace IELTSAppProject
             };
         }
 
-        private void russianLanguage_Click(object sender, RoutedEventArgs e)
-        {
+        private void RussianLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("ru");
 
-        }
+        private void ChineseLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("zh-CN");
 
-        private void chineseLanguage_Click(object sender, RoutedEventArgs e)
-        {
+        private void EnglishLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("en");
 
-        }
+        private void SpanishLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("es");
 
-        private void englishLanguage_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void spanishLanguage_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void turnBack_Click(object sender, RoutedEventArgs e)
+        private void TurnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.GoBack();
         }

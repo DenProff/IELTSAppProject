@@ -25,7 +25,7 @@
                        HorizontalAlignment="Center"/>
 
             <!-- Русский (выбран) -->
-            <RadioButton Content="Русский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="russianLanguage_Click" IsChecked="True">
+            <RadioButton Content="Русский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="RussianLanguage_Click" IsChecked="True">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -67,7 +67,7 @@
             </RadioButton>
 
             <!-- Китайский -->
-            <RadioButton Content="Китайский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="russianLanguage_Click">
+            <RadioButton Content="Китайский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="RussianLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -109,7 +109,7 @@
             </RadioButton>
 
             <!-- Английский -->
-            <RadioButton Content="Английский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="englishLanguage" Click="englishLanguage_Click">
+            <RadioButton Content="Английский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="englishLanguage" Click="EnglishLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -151,7 +151,7 @@
             </RadioButton>
 
             <!-- Английский -->
-            <RadioButton Content="Испанский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="spanishLanguage" Click="spanishLanguage_Click">
+            <RadioButton Content="Испанский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="spanishLanguage" Click="SpanishLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -193,7 +193,7 @@
             </RadioButton>
         </StackPanel>
         </Border>
-                <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
+                <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="TurnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
         <Button x:Name="help"
             Content="Помощь"
             HorizontalAlignment="Left"
