@@ -60,14 +60,22 @@ namespace IELTSAppProject
             double readingCorrectTasks = statisticsArray[4];
             double readingTasksCount = statisticsArray[5];
 
-            // Обновление текстовых полей на странице статистики
-            listeningStats.Text = listeningTasksCount > 0
-            ? $"{listeningCorrectTasks} / {listeningTasksCount} ({Math.Round(listeningCorrectAnswers / listeningTasksCount * 10)}%)"
-            : $"{listeningCorrectTasks} / {listeningTasksCount} (0%)";
+            // Расчеты статистики
+            int listeningPercentage = listeningTasksCount > 0
+            ? (int)Math.Round(listeningCorrectAnswers / listeningTasksCount * 10)
+            : 0;
 
-            readingStats.Text = readingTasksCount > 0
-            ? $"{readingCorrectTasks} / {readingTasksCount} ({Math.Round(readingCorrectAnswers * 10 / readingTasksCount)}%)"
-            : $"{readingCorrectTasks} / {readingTasksCount} (0%)";
+            int readingPercentage = readingTasksCount > 0
+            ? (int)Math.Round(readingCorrectAnswers * 10 / readingTasksCount)
+            : 0;
+
+            // Обновление текстовых полей на странице статистики
+            listeningStats.Text = $"{listeningCorrectTasks} / {listeningTasksCount} ({listeningPercentage}%)";
+            readingStats.Text = $"{readingCorrectTasks} / {readingTasksCount} ({readingPercentage}%)";
+
+            // Смена цветов
+            listeningStats.Foreground = GetPercentageColorBrush(listeningPercentage);
+            readingStats.Foreground = GetPercentageColorBrush(readingPercentage);
         }
 
         private void OpenChmHelp()
@@ -91,6 +99,16 @@ namespace IELTSAppProject
                                   MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+        }
+
+        // Метод для получения цвета
+        private Brush GetPercentageColorBrush(int percentage)
+        {
+            if (percentage < 1) return Brushes.LightGray;         // 0% - серый
+            if (percentage <= 30) return Brushes.Red;             // 0-30% - красный
+            if (percentage <= 60) return Brushes.Orange;          // 31-60% - оранжевый
+            if (percentage <= 80) return Brushes.YellowGreen;     // 61-80% - желто-зеленый
+            return Brushes.LawnGreen;                             // 81-100% - зеленый
         }
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
