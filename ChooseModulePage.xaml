@@ -22,9 +22,15 @@
                 x:Name="language" Margin="1007,0,0,0">
             <TextBlock Text="{DynamicResource chooseLanguage}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
-        <Button Content="Решать готовые варианты&#xD;&#xA;       в формате IELTS" HorizontalAlignment="Center" VerticalAlignment="Center" Height="206" Width="338" Background="#FF35C0CD" Click="varOfExam_Click" FontSize="19" x:Name="varOfExam"/>
-        <Button Content="Входное тестирование" HorizontalAlignment="Left" Margin="792,0,0,0" VerticalAlignment="Center" Height="206" Width="336" Background="#FF35C0CD" Click="testVar_Click" FontWeight="SemiBold" FontSize="19" x:Name="testVar"/>
-        <Button Content="            Задания по разделам&#xD;&#xA; (Listening, Reading, Speaking, Writing)" HorizontalAlignment="Left" Margin="42,0,0,0" VerticalAlignment="Center" Height="206" Width="336" Background="#FF35C0CD" Click="moduleTasks_Click" FontWeight="SemiBold" FontSize="17" x:Name="moduleTasks"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Height="206" Width="338" Background="#FF35C0CD" Click="varOfExam_Click" FontSize="19" x:Name="varOfExam">
+            <TextBlock Text="{DynamicResource solveIELTSformat}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="792,0,0,0" VerticalAlignment="Center" Height="206" Width="336" Background="#FF35C0CD" Click="testVar_Click" FontWeight="SemiBold" FontSize="19" x:Name="testVar">
+            <TextBlock Text="{DynamicResource solveEnterVariantBTN}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="42,0,0,0" VerticalAlignment="Center" Height="206" Width="336" Background="#FF35C0CD" Click="moduleTasks_Click" FontWeight="SemiBold" FontSize="17" x:Name="moduleTasks">
+            <TextBlock Text="{DynamicResource tasksByType}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
+        </Button>
         <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>

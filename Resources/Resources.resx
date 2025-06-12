@@ -171,8 +171,14 @@
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Решать входной вариант</value>
   </data>
+  <data name="solveIELTSformat" xml:space="preserve">
+    <value>Решать готовые варианты в формате IELTS</value>
+  </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Начать (продолжить) подготовку</value>
+  </data>
+  <data name="tasksByType" xml:space="preserve">
+    <value>Задания по разделам (Listening, Reading, Speaking, Writing)</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Добро пожаловать в приложение для подготовки к экзамену в формате IELTS</value>

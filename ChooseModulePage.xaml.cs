@@ -143,7 +143,10 @@ namespace IELTSAppProject
         "myCollections",
         "chooseLanguage",
         "help",
-        "prevPage"
+        "prevPage",
+        "tasksByType",
+        "solveIELTSformat",
+        "solveEnterVariantBTN"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

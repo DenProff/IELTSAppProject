@@ -223,11 +223,29 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Решать готовые варианты в формате IELTS.
+        /// </summary>
+        internal static string solveIELTSformat {
+            get {
+                return ResourceManager.GetString("solveIELTSformat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Начать (продолжить) подготовку.
         /// </summary>
         internal static string startOrContinuePreporation {
             get {
                 return ResourceManager.GetString("startOrContinuePreporation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Задания по разделам (Listening, Reading, Speaking, Writing).
+        /// </summary>
+        internal static string tasksByType {
+            get {
+                return ResourceManager.GetString("tasksByType", resourceCulture);
             }
         }
         
