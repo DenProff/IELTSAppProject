@@ -217,6 +217,13 @@ namespace IELTSAppProject
 
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
-
+        public static string[] resourcesKeysArray =
+{
+        "describeTextBlockFirstTestPage",
+        "solveEnterVariantBTN",
+        "notSolveEnterVariantBTN",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

@@ -129,6 +129,12 @@
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>Выберите нужный режим</value>
   </data>
+  <data name="convertBTN" xml:space="preserve">
+    <value>Конвертировать в docx</value>
+  </data>
+  <data name="describeTextBlockFirstTestPage" xml:space="preserve">
+    <value>Для начала работы советуем вам пройти входное тестирование, чтобы мы могли собрать статистику и вы увидели какие задания у вас получаются хуже. Если вы уже решали входной тест, можете продолжить  работу с нужными вам заданиями</value>
+  </data>
   <data name="engLanguage" xml:space="preserve">
     <value>Английский</value>
   </data>
@@ -144,8 +150,26 @@
   <data name="help" xml:space="preserve">
     <value>Помощь</value>
   </data>
+  <data name="myCollections" xml:space="preserve">
+    <value>Мои подборки заданий</value>
+  </data>
+  <data name="myMistakes" xml:space="preserve">
+    <value>Мои ошибки</value>
+  </data>
+  <data name="myStatistics" xml:space="preserve">
+    <value>Моя статистика</value>
+  </data>
+  <data name="notSolveEnterVariantBTN" xml:space="preserve">
+    <value>Работать по своему усмотрению (не решать входной вариант)</value>
+  </data>
+  <data name="prevPage" xml:space="preserve">
+    <value>Вернуться назад</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Русский</value>
+  </data>
+  <data name="solveEnterVariantBTN" xml:space="preserve">
+    <value>Решать входной вариант</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Начать (продолжить) подготовку</value>

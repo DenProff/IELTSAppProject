@@ -20,7 +20,14 @@ namespace IELTSAppProject
             // Получение из ресурсов текстов по заданному ключу
             foreach (string key in resourcesKeysArray)
             {
-                ((Page)sender).Resources[key] = resourceManager.GetString(key, new CultureInfo(languageCode));
+                if (sender is Page)
+                {
+                    ((Page)sender).Resources[key] = resourceManager.GetString(key, new CultureInfo(languageCode));
+                }
+                else
+                {
+                    ((UserControl)sender).Resources[key] = resourceManager.GetString(key, new CultureInfo(languageCode));
+                }
             }
         }
     }

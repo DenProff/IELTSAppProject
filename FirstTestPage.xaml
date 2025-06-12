@@ -14,12 +14,15 @@
                 <DropShadowEffect BlurRadius="10" Color="LightBlue" ShadowDepth="0" />
             </Border.Effect>
             <StackPanel Height="188" RenderTransformOrigin="0.498,0.684">
-                <TextBlock FontSize="20" FontWeight="Bold" Margin="0 0 0 20" Height="223" TextAlignment="Center" Foreground="#FFFAF5F5" FontFamily="Palatino Linotype" Width="660"><Run Text="Для начала работы советуем вам пройти входное тестирование, "/><LineBreak/><Run Text="чтобы мы могли собрать статистику и вы увидели какие"/><LineBreak/><Run Text=" задания у вас получаются хуже"/><LineBreak/><Run/><LineBreak/><Run Text="Если вы уже решали входной тест, можете продолжить "/><LineBreak/><Run Text="работу с нужными вам заданиями"/></TextBlock>
+                <TextBlock FontSize="20" TextWrapping="Wrap" FontWeight="Bold" Margin="0 0 0 20" Height="223" TextAlignment="Center" Foreground="#FFFAF5F5" FontFamily="Palatino Linotype" Width="660" Text="{DynamicResource describeTextBlockFirstTestPage}"/>
             </StackPanel>
         </Border>
-        <Button Content="Решать входной вариант" HorizontalAlignment="Left" Margin="148,421,0,0" VerticalAlignment="Top" Height="169" Width="295" Background="#FF35C0CD" Click="Button_Click" FontSize="17" x:Name="testVar"/>
-        <Button Content="Работать по своему усмотрению&#xD;&#xA;   (не решать входной вариант)" HorizontalAlignment="Left" Margin="725,421,0,0" VerticalAlignment="Top" Height="169" Width="301" Background="#FF35C0CD" Click="Button_Click_1" FontWeight="SemiBold" FontSize="17" x:Name="continue"/>
-        <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_2" FontSize="16" FontWeight="Bold" x:Name="turnBack"/>
-        <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
+        <Button Content="{DynamicResource solveEnterVariantBTN}" HorizontalAlignment="Left" Margin="148,421,0,0" VerticalAlignment="Top" Height="169" Width="295" Background="#FF35C0CD" Click="Button_Click" FontSize="17" x:Name="testVar"/>
+        <Button HorizontalAlignment="Left" Margin="725,421,0,0" VerticalAlignment="Top"
+                Height="169" Width="301" Background="#FF35C0CD" Click="Button_Click_1" FontWeight="SemiBold" FontSize="17" x:Name="continue">
+            <TextBlock Text="{DynamicResource notSolveEnterVariantBTN}" TextWrapping="Wrap"/>
+        </Button>
+        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_2" FontSize="16" FontWeight="Bold" x:Name="turnBack"/>
+        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </Page>

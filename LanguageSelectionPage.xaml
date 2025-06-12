@@ -67,7 +67,7 @@
             </RadioButton>
 
             <!-- Китайский -->
-                <RadioButton Content="{DynamicResource chiLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="RussianLanguage_Click">
+                <RadioButton Content="{DynamicResource chiLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="ChineseLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -193,9 +193,10 @@
             </RadioButton>
         </StackPanel>
         </Border>
-                <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="TurnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="TurnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack">
+            <TextBlock Text="{DynamicResource prevPage}"/>
+        </Button>
         <Button x:Name="help"
-            Content="Помощь"
             HorizontalAlignment="Left"
             Background="#F13C73"
             Width="93"
@@ -203,6 +204,8 @@
             Click="help_Click"
             Margin="0,644,0,0"
             FontSize="13"
-            BorderThickness="0"/>
+            BorderThickness="0">
+            <TextBlock Text="{DynamicResource help}"/>
+        </Button>
     </Grid>
 </Page>

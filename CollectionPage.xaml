@@ -31,7 +31,7 @@
                 Margin="20 0 20 0" FontSize="20" Click="AddToCollection_Click" Content="Добавить в подборки"/>
 
         <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
-                Margin="20 0 20 0" FontSize="20" Content="Конвертировать всё в docx"/>
+                Margin="20 0 20 0" FontSize="20" Content="{DynamicResource convertBTN}"/>
 
         <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20">
             <Run Text="Id:"/>
@@ -41,7 +41,7 @@
             <Run Text="Название:"/>
         </TextBlock>
 
-        <Button Content="Вернуться назад" HorizontalAlignment="Left" VerticalAlignment="Center" 
+        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Center" 
                 Height="46" Width="177" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" 
                 Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
     </Grid>

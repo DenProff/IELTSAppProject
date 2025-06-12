@@ -129,6 +129,12 @@
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>选择所需模式</value>
   </data>
+  <data name="convertBTN" xml:space="preserve">
+    <value>转换为docx</value>
+  </data>
+  <data name="describeTextBlockFirstTestPage" xml:space="preserve">
+    <value>我们建议从分级测试开始，以便收集数据并找出您的薄弱环节。如果您已完成测试，可以直接练习特定题型</value>
+  </data>
   <data name="engLanguage" xml:space="preserve">
     <value>英语</value>
   </data>
@@ -144,8 +150,26 @@
   <data name="help" xml:space="preserve">
     <value>帮助</value>
   </data>
+  <data name="myCollections" xml:space="preserve">
+    <value>我的任务集</value>
+  </data>
+  <data name="myMistakes" xml:space="preserve">
+    <value>我的错误</value>
+  </data>
+  <data name="myStatistics" xml:space="preserve">
+    <value>我的统计数据</value>
+  </data>
+  <data name="notSolveEnterVariantBTN" xml:space="preserve">
+    <value>自定义练习模式（跳过分级测试）</value>
+  </data>
+  <data name="prevPage" xml:space="preserve">
+    <value>返回</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>俄语</value>
+  </data>
+  <data name="solveEnterVariantBTN" xml:space="preserve">
+    <value>参加分级测试</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>开始（继续）准备</value>

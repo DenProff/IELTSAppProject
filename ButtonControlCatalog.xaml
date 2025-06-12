@@ -31,6 +31,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="Конвертировать в docx" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertCollection" Click="convertCollection_Click" FontSize="12"/>
+        <Button Content="{DynamicResource convertBTN}" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertCollection" Click="convertCollection_Click" FontSize="12"/>
     </Grid>
 </UserControl>

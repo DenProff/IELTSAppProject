@@ -51,6 +51,15 @@ namespace IELTSAppProject
                 }
             };
 
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
             GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
 
             VariantId.Text += taskCollection.VariantId;
@@ -236,5 +245,13 @@ namespace IELTSAppProject
             }
             MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
+        public static string[] resourcesKeysArray =
+{
+        "describeTextBlockFirstTestPage",
+        "solveEnterVariantBTN",
+        "notSolveEnterVariantBTN",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

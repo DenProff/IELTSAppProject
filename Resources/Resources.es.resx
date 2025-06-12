@@ -129,6 +129,12 @@
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>Selecciona el modo deseado</value>
   </data>
+  <data name="convertBTN" xml:space="preserve">
+    <value>Convertir a docx</value>
+  </data>
+  <data name="describeTextBlockFirstTestPage" xml:space="preserve">
+    <value>Recomendamos comenzar con un test de nivel para recopilar estadísticas e identificar tus áreas débiles. Si ya lo has realizado, puedes practicar tareas específicas</value>
+  </data>
   <data name="engLanguage" xml:space="preserve">
     <value>Inglés  </value>
   </data>
@@ -144,8 +150,26 @@
   <data name="help" xml:space="preserve">
     <value>Ayuda</value>
   </data>
+  <data name="myCollections" xml:space="preserve">
+    <value>Mis colecciones de tareas</value>
+  </data>
+  <data name="myMistakes" xml:space="preserve">
+    <value>Mis errores</value>
+  </data>
+  <data name="myStatistics" xml:space="preserve">
+    <value>Mis estadísticas</value>
+  </data>
+  <data name="notSolveEnterVariantBTN" xml:space="preserve">
+    <value>Modo personalizado (omitir test de nivel)</value>
+  </data>
+  <data name="prevPage" xml:space="preserve">
+    <value>Volver atrás</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Ruso  </value>
+  </data>
+  <data name="solveEnterVariantBTN" xml:space="preserve">
+    <value>Realizar test de nivel</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Empezar (continuar) la preparación</value>

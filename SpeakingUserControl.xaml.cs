@@ -40,6 +40,15 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             Task = task;
             InitializeComponent();
 
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
             taskTextBlock.Text = taskText;
             topicTextBlock.Text = task.TaskText;
             idTextBox.Text += (task.id).ToString();
@@ -225,6 +234,16 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             File.WriteAllText(file, updatedJson);
 
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+
+
         }
+        public static string[] resourcesKeysArray =
+{
+        "describeTextBlockFirstTestPage",
+        "solveEnterVariantBTN",
+        "notSolveEnterVariantBTN",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

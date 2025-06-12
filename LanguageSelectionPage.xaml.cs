@@ -93,12 +93,14 @@ namespace IELTSAppProject
         }
 
         public static string[] resourcesKeysArray =
-{
+        {
         "chooseCurrentLanguage",
         "espLanguage",
         "engLanguage",
         "rusLanguage",
-        "chiLanguage"
+        "chiLanguage",
+        "help",
+        "prevPage"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

@@ -129,6 +129,12 @@
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>Select the desired mode</value>
   </data>
+  <data name="convertBTN" xml:space="preserve">
+    <value>Convert into docx</value>
+  </data>
+  <data name="describeTextBlockFirstTestPage" xml:space="preserve">
+    <value>We recommend starting with a placement test to gather statistics and identify your weak areas. If you've already taken the test, you can proceed to practice specific tasks</value>
+  </data>
   <data name="engLanguage" xml:space="preserve">
     <value>English  </value>
   </data>
@@ -144,8 +150,26 @@
   <data name="help" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="myCollections" xml:space="preserve">
+    <value>My task collections</value>
+  </data>
+  <data name="myMistakes" xml:space="preserve">
+    <value>My mistakes</value>
+  </data>
+  <data name="myStatistics" xml:space="preserve">
+    <value>My statistics</value>
+  </data>
+  <data name="notSolveEnterVariantBTN" xml:space="preserve">
+    <value>Custom practice mode (skip placement test)</value>
+  </data>
+  <data name="prevPage" xml:space="preserve">
+    <value>Go back</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Russian  </value>
+  </data>
+  <data name="solveEnterVariantBTN" xml:space="preserve">
+    <value>Take the placement test</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Start (continue) preparation</value>

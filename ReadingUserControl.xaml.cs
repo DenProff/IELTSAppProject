@@ -39,6 +39,15 @@ namespace IELTSAppProject
                 Keyboard.Focus(this);
             };
 
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
             ////////запись в json
             //List<string> first = new List<string>();
             //List<string> second = new List<string>();
@@ -57,9 +66,9 @@ namespace IELTSAppProject
             //    "biologists and geneticists", "gains awarness", "heritability",
             //    "It provides immunity to offspring without prior exposure.");
 
-            
 
-         
+
+
             //string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             //string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
             //string jsonData = File.ReadAllText(file);
@@ -370,5 +379,13 @@ namespace IELTSAppProject
 
             return result;
         }
+        public static string[] resourcesKeysArray =
+{
+        "describeTextBlockFirstTestPage",
+        "solveEnterVariantBTN",
+        "notSolveEnterVariantBTN",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

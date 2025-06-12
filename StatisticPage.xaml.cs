@@ -90,6 +90,14 @@ namespace IELTSAppProject
             {
                 recomendation.Text = "Listening и Reading";
             }
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
         }
 
         private void OpenChmHelp()
@@ -149,5 +157,15 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
+
+        public static string[] resourcesKeysArray =
+{
+        "myStatistics",
+        "myMistakes",
+        "myCollections",
+        "chooseLanguage",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

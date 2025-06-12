@@ -31,6 +31,14 @@ namespace IELTSAppProject
         public WritingUserControl(WritingTask task)
         {
             InitializeComponent();
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
 
             answeField.IsEnabled = false; // До начала написания эссе должна быть выбрана тема, поэтому изначально поле для ввода недоступно
             showIdealEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе
@@ -202,5 +210,13 @@ namespace IELTSAppProject
 
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
+        public static string[] resourcesKeysArray =
+{
+        "describeTextBlockFirstTestPage",
+        "solveEnterVariantBTN",
+        "notSolveEnterVariantBTN",
+        "help",
+        "prevPage"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

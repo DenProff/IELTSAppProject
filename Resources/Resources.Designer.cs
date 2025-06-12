@@ -97,6 +97,24 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Конвертировать в docx.
+        /// </summary>
+        internal static string convertBTN {
+            get {
+                return ResourceManager.GetString("convertBTN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Для начала работы советуем вам пройти входное тестирование, чтобы мы могли собрать статистику и вы увидели какие задания у вас получаются хуже. Если вы уже решали входной тест, можете продолжить  работу с нужными вам заданиями.
+        /// </summary>
+        internal static string describeTextBlockFirstTestPage {
+            get {
+                return ResourceManager.GetString("describeTextBlockFirstTestPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Английский.
         /// </summary>
         internal static string engLanguage {
@@ -142,11 +160,65 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Мои подборки заданий.
+        /// </summary>
+        internal static string myCollections {
+            get {
+                return ResourceManager.GetString("myCollections", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Мои ошибки.
+        /// </summary>
+        internal static string myMistakes {
+            get {
+                return ResourceManager.GetString("myMistakes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Моя статистика.
+        /// </summary>
+        internal static string myStatistics {
+            get {
+                return ResourceManager.GetString("myStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Работать по своему усмотрению (не решать входной вариант).
+        /// </summary>
+        internal static string notSolveEnterVariantBTN {
+            get {
+                return ResourceManager.GetString("notSolveEnterVariantBTN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вернуться назад.
+        /// </summary>
+        internal static string prevPage {
+            get {
+                return ResourceManager.GetString("prevPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Русский.
         /// </summary>
         internal static string rusLanguage {
             get {
                 return ResourceManager.GetString("rusLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Решать входной вариант.
+        /// </summary>
+        internal static string solveEnterVariantBTN {
+            get {
+                return ResourceManager.GetString("solveEnterVariantBTN", resourceCulture);
             }
         }
         
