@@ -113,29 +113,29 @@ namespace IELTSAppProject
         }
 
 
+        //справка
+        private void OpenChmHelp()
+        {
+            string chmPath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Help",
+                "referenceData.chm"
+            );
 
-        //private void OpenChmHelp()
-        //{
-        //    string chmPath = Path.Combine(
-        //        AppDomain.CurrentDomain.BaseDirectory,
-        //        "Help",
-        //        "referenceData.chm"
-        //    );
-
-        //    if (File.Exists(chmPath))
-        //    {
-        //        try
-        //        {
-        //            // Открыть страницу "settings.html" внутри CHM
-        //            Process.Start("hh.exe", $"{chmPath}::/taskСollections.htm");
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
-        //                          MessageBoxButton.OK, MessageBoxImage.Error);
-        //        }
-        //    }
-        //}
+            if (File.Exists(chmPath))
+            {
+                try
+                {
+                    // Открыть страницу "settings.html" внутри CHM
+                    Process.Start("hh.exe", $"{chmPath}::/taskСollections.htm");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -157,10 +157,10 @@ namespace IELTSAppProject
             NavigationService?.Navigate(new LanguageSelectionPage());
         }
 
-        //private void help_Click(object sender, RoutedEventArgs e)
-        //{
-        //    OpenChmHelp();
-        //}
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            OpenChmHelp();
+        }
     }
 
 
