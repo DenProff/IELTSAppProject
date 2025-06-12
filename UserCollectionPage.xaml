@@ -23,7 +23,7 @@
             <TextBlock Text="{DynamicResource chooseLanguage}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
         <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
-        <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
+        <GroupBox Header="{DynamicResource taskType}" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,9">
                 <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
@@ -86,7 +86,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
+                <CheckBox Content="{DynamicResource IELTSvariants}" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -101,7 +101,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
+                <CheckBox Content="{DynamicResource fewTimeBeforeExam}" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">

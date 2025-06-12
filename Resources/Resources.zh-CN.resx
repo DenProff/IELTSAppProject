@@ -153,6 +153,9 @@
   <data name="help" xml:space="preserve">
     <value>帮助</value>
   </data>
+  <data name="IELTSvariants" xml:space="preserve">
+    <value>雅思套题</value>
+  </data>
   <data name="myCollections" xml:space="preserve">
     <value>我的任务集</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>按题型分类练习 (听力、阅读、口语、写作)</value>
+  </data>
+  <data name="taskType" xml:space="preserve">
+    <value>题目种类</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>欢迎使用IELTS考试准备应用</value>

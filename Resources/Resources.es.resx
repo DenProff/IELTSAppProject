@@ -153,6 +153,9 @@
   <data name="help" xml:space="preserve">
     <value>Ayuda</value>
   </data>
+  <data name="IELTSvariants" xml:space="preserve">
+    <value>Versiones del IELTS</value>
+  </data>
   <data name="myCollections" xml:space="preserve">
     <value>Mis colecciones de tareas</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Tareas por sección (Listening, Reading, Speaking, Writing)</value>
+  </data>
+  <data name="taskType" xml:space="preserve">
+    <value>Clase de ejercicios</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Bienvenido a la aplicación de preparación para el examen IELTS</value>

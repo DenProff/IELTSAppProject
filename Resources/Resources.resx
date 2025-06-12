@@ -153,6 +153,9 @@
   <data name="help" xml:space="preserve">
     <value>Помощь</value>
   </data>
+  <data name="IELTSvariants" xml:space="preserve">
+    <value>Варианты экзамены IELTS</value>
+  </data>
   <data name="myCollections" xml:space="preserve">
     <value>Мои подборки заданий</value>
   </data>
@@ -182,6 +185,9 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Задания по разделам (Listening, Reading, Speaking, Writing)</value>
+  </data>
+  <data name="taskType" xml:space="preserve">
+    <value>Вид заданий:</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Добро пожаловать в приложение для подготовки к экзамену в формате IELTS</value>

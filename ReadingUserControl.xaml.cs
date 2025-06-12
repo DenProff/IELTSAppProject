@@ -385,7 +385,9 @@ namespace IELTSAppProject
         "solveEnterVariantBTN",
         "notSolveEnterVariantBTN",
         "help",
-        "prevPage"
+        "prevPage",
+        "convertBTN",
+        "addToCollection"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

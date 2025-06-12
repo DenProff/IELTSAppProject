@@ -169,6 +169,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Варианты экзамены IELTS.
+        /// </summary>
+        internal static string IELTSvariants {
+            get {
+                return ResourceManager.GetString("IELTSvariants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Мои подборки заданий.
         /// </summary>
         internal static string myCollections {
@@ -255,6 +264,15 @@ namespace IELTSAppProject.Resources {
         internal static string tasksByType {
             get {
                 return ResourceManager.GetString("tasksByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вид заданий:.
+        /// </summary>
+        internal static string taskType {
+            get {
+                return ResourceManager.GetString("taskType", resourceCulture);
             }
         }
         

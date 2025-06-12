@@ -47,14 +47,7 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-            // Загрузка сохранённого язык
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
-            {
-                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
-            }
 
-            // Подписка на смену языка - событие в классе LanguageChange
-            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
             LoadTasks();
         }
 
@@ -177,7 +170,10 @@ namespace IELTSAppProject
         "myCollections",
         "chooseLanguage",
         "help",
-        "prevPage"
+        "prevPage",
+        "fewTimeBeforeExam",
+        "taskType",
+        "IELTSvariants"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 
