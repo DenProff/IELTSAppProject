@@ -55,6 +55,7 @@ namespace IELTSAppProject
             LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
 
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
+            idTextBox.Text = $"id: {data.id}";
 
             listeningConvert.Click += (sender, e) => Conversion.ConvertListening(data);
             listeningConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");

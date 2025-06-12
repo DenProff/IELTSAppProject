@@ -18,22 +18,20 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.4*"/>
                 <ColumnDefinition Width="1.45*"/>
                 <ColumnDefinition Width="1.45*"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="1.15*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="numTextBox" Grid.Column="0" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="20">№</TextBlock>
-            <TextBlock x:Name="idTextBox" Grid.Column="1" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="30">id</TextBlock>
+            <TextBlock x:Name="idTextBox" Text="" Grid.Column="0" VerticalAlignment="Center" Margin="5,0,5,0" MinWidth="30" FontSize="14"/>
 
-            <Button Grid.Column="2" Grid.Row="0" Margin="14,5,14,5" MinWidth="120" FontSize="13" x:Name="listeningConvert" Content="{DynamicResource convertBTN}"/>
-            <Button Grid.Column="3" Grid.Row="0" Margin="10,5,15,5" MinWidth="120" FontSize="13" Click="AddToCollection_Click" Content="{DynamicResource addToCollection}"/>
+            <Button Grid.Column="1" Grid.Row="0" Margin="14,5,14,5" MinWidth="120" FontSize="13" x:Name="listeningConvert" Content="{DynamicResource convertBTN}"/>
+            <Button Grid.Column="2" Grid.Row="0" Margin="10,5,15,5" MinWidth="120" FontSize="13" Click="AddToCollection_Click" Content="{DynamicResource addToCollection}"/>
 
 
-            <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="6" VerticalAlignment="Center" Margin="10,0,0,0" 
+            <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="4" VerticalAlignment="Center" Margin="10,0,0,0" 
                        HorizontalAlignment="Right" MinWidth="150" Text="{Binding RecommendedTime, StringFormat='Рекомендуемое время выполнения: {0} мин  '}" FontSize="14">
             </TextBlock>
         </Grid>
