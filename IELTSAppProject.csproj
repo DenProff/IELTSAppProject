@@ -281,9 +281,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <Generator>ResXFileCodeGenerator</Generator>
+    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+  </EmbeddedResource>
   <EmbeddedResource Include="Resources\Resources.en.resx">
     <Generator>ResXFileCodeGenerator</Generator>
     <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
