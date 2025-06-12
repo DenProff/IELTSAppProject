@@ -9,18 +9,18 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="IELTS App" Height="700" Width="1165">
 
-    <Grid x:Name="taskCatalog"  Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
-        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
-        <Button Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="statistic_Click" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0"/>
-        <Button Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD"
+    <Grid x:Name="taskCatalog"  Background="#FF9900" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
+        <Button Foreground="White" Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
+        <Button Foreground="White" Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="statistic_Click" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0"/>
+        <Button Foreground="White" Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
+        <Button Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC"
                 Style="{StaticResource MaterialDesignFlatButton}" Click="collections_Click" FontSize="17" FontWeight="Bold" x:Name="collections"
                 Margin="736,0,0,0">
             <TextBlock Text="{DynamicResource myCollections}" TextWrapping="Wrap"/>
         </Button>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170"
-                Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold"
-                x:Name="language" Margin="1007,0,0,0">
+                Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold"
+                x:Name="language" Margin="1007,0,0,0" Foreground="White">
             <TextBlock Text="{DynamicResource chooseLanguage}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
         <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
@@ -120,8 +120,8 @@
         </GroupBox>
         <Border MaxHeight="600"
                 MinHeight="300"
-                Margin="10,195,340,148" BorderBrush="BlueViolet" BorderThickness="2">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro">
+                Margin="10,195,340,148" BorderBrush="Black" BorderThickness="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro" Margin="0,0,0,-53">
 
                 <StackPanel Margin="0,0,30,0" Width="780">
 
@@ -134,7 +134,8 @@
 
         </Border>
 
-        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
+        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="Red" BorderThickness="2" x:Name="help" Click="help_Click"/>
 
     </Grid>
 </Page>
+

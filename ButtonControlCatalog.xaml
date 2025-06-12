@@ -22,7 +22,7 @@
             </Button.Content>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="25"  Background="#0078D7"  BorderThickness="0">
+                    <Border CornerRadius="25"  Background="#3333CC"  BorderThickness="0">
                         <ContentPresenter 
                     Margin="10,0,0,0"
                     HorizontalAlignment="Left" 
@@ -31,6 +31,6 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Content="{DynamicResource convertBTN}" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertCollection" Click="convertCollection_Click" FontSize="12"/>
+        <Button Background="DarkRed" Content="{DynamicResource convertBTN}" Foreground="White" Height="34" Width="167" HorizontalAlignment="Left" Margin="568,17,0,17" x:Name="convertCollection" Click="convertCollection_Click" FontSize="12"/>
     </Grid>
 </UserControl>

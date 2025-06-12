@@ -8,22 +8,22 @@
       d:DesignHeight="700" d:DesignWidth="1165"
       Title="UserCollectionPage">
 
-    <Grid x:Name="taskCatalog"  Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700" Width="1165">
-        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
-        <Button Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="statistic_Click" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0"/>
-        <Button Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD"
+    <Grid x:Name="taskCatalog"  Background="#FF9900" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700" Width="1165">
+        <Button Foreground="White" Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
+        <Button Foreground="White" Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="statistic_Click" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0"/>
+        <Button Foreground="White" Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC"
         Style="{StaticResource MaterialDesignFlatButton}" FontSize="17" FontWeight="Bold" x:Name="collections"
-        Margin="736,0,0,0">
+        Margin="736,0,0,0" Foreground="White">
             <TextBlock Text="{DynamicResource myCollections}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170"
-                Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold"
-                x:Name="language" Margin="1007,0,0,0">
+                Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold"
+                x:Name="language" Margin="1007,0,0,0" Foreground="White">
             <TextBlock Text="{DynamicResource chooseLanguage}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
-        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
-        <GroupBox Header="{DynamicResource taskType}" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
+        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="Red" BorderThickness="2" x:Name="help" Click="help_Click"/>
+        <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,9">
                 <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
@@ -86,7 +86,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="{DynamicResource IELTSvariants}" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
+                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -101,7 +101,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="{DynamicResource fewTimeBeforeExam}" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
+                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
                       Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -121,8 +121,8 @@
         <Border MaxHeight="600"
             MinHeight="300"
             MaxWidth="810"
-            Margin="10,195,340,148" BorderBrush="BlueViolet" BorderThickness="2">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro">
+            Margin="10,195,340,148" BorderBrush="Black" BorderThickness="2">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Gainsboro" Margin="0,0,0,-53">
 
                 <StackPanel Margin="0,0,30,0" Width="780">
 
@@ -139,3 +139,4 @@
 
     </Grid>
 </Page>
+
