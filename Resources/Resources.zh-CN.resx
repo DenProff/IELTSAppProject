@@ -177,6 +177,9 @@
   <data name="prevPage" xml:space="preserve">
     <value>返回</value>
   </data>
+  <data name="recomendedTime" xml:space="preserve">
+    <value>推荐时长:</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>俄语</value>
   </data>

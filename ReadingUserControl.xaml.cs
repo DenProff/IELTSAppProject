@@ -387,7 +387,8 @@ namespace IELTSAppProject
         "help",
         "prevPage",
         "convertBTN",
-        "addToCollection"
+        "addToCollection",
+        "recomendedTime"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

@@ -717,9 +717,8 @@ VerticalAlignment="Center"/>
                 </StackPanel>
             </ScrollViewer>
         </Border>
-        <TextBlock HorizontalAlignment="Left" Height="42" Margin="154,16,0,0" TextWrapping="Wrap" Text="Рекомендованное время:" VerticalAlignment="Top" Width="238" Foreground="Black" FontSize="17" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="154,16,0,0" TextWrapping="Wrap" Text="{DynamicResource recomendedTime}" VerticalAlignment="Top" Width="238" Foreground="Black" FontSize="17" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Height="42" Margin="373,16,0,0" TextWrapping="Wrap" Text="{Binding RecomTime, RelativeSource={RelativeSource AncestorType=UserControl}}" VerticalAlignment="Top" Width="148" Foreground="Black" x:Name="recTime" FontSize="17" Grid.Column="1"/>
         <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </UserControl>
-

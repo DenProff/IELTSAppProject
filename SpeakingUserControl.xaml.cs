@@ -243,7 +243,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         "solveEnterVariantBTN",
         "notSolveEnterVariantBTN",
         "help",
-        "prevPage"
+        "prevPage",
+        "recomendedTime"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }
