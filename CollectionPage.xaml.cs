@@ -53,6 +53,9 @@ namespace IELTSAppProject
 
             GeneralizedTask[] taskArray = JsonControl.TaskArray; // Десериализация в список json-файла со всеми заданиями
 
+            VariantId.Text += taskCollection.VariantId;
+            VariantName.Text  += taskCollection.VariantName;
+
             foreach (int taskId in taskCollection) // Перебор id, хранящихся в поле-списке TaskCollection (id заданий, которые надо подгрузить)
             {
                 // Подтягивание заданий из json по id при помощи бинарного поиска - не реализовано

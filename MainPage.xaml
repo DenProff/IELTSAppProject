@@ -8,7 +8,7 @@
       d:DesignHeight="700" d:DesignWidth="1165"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
   Title="IELTS App" Height="700" Width="1165">
-    <Grid x:Name="mainScreen" Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300"  Height="700" Width="1177" >
+    <Grid x:Name="mainScreen" Background="#FF9900" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300"  Height="700" Width="1177" >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="647*"/>
@@ -20,34 +20,39 @@
                    TextWrapping="Wrap">
         </TextBlock>
         <Button HorizontalAlignment="Left" Margin="140,323,0,0" Height="165" Width="260" Click="Button_Click" x:Name="lessTime" FontSize="20"
-            FontFamily="Medium" FontWeight="Medium" VerticalAlignment="Top" Background="#FF35C0CD">
+            FontFamily="Medium" FontWeight="Medium" VerticalAlignment="Top" Background="#3333CC">
             <TextBlock Text="{DynamicResource fewTimeBeforeExam}" 
                TextWrapping="Wrap" 
-               TextAlignment="Center"/>
+               TextAlignment="Center"
+               Foreground="#FFFFFF"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="89,323,0,0" VerticalAlignment="Top"
                 Height="165" Width="260" Click="Button_Click_1" FontWeight="Medium" x:Name="teacherMode" FontSize="20" Grid.Column="1"
-                Background="#FF35C0CD">
+                Background="#3333CC">
             <TextBlock Text="{DynamicResource findForPupils}" 
-               TextWrapping="Wrap" 
+               TextWrapping="Wrap"
+               Foreground="#FFFFFF"
                TextAlignment="Center"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="458,323,0,0" VerticalAlignment="Top"
-                Height="165" Width="260" Click="Button_Click_3" FontWeight="Medium" x:Name="continueWork" FontSize="20" Background="#FF35C0CD"
+                Height="165" Width="260" Click="Button_Click_3" FontWeight="Medium" x:Name="continueWork" FontSize="20" Background="#3333CC"
                 Grid.ColumnSpan="2">
             <TextBlock Text="{DynamicResource startOrContinuePreporation}" 
-               TextWrapping="Wrap" 
+               TextWrapping="Wrap"
+               Foreground="#FFFFFF"
                TextAlignment="Center"/>
         </Button>
         <TextBlock Text="{DynamicResource chooseModeTextBlock}" FontFamily="Arial Black" FontSize="22" Opacity="0.995" LineHeight="6" Margin="104,176,105,491" x:Name="chooseModule" TextAlignment="Center" Grid.ColumnSpan="2" />
         <Button HorizontalAlignment="Left" Margin="328,0,0,0" VerticalAlignment="Top" Height="97" Width="157"
                 FontWeight="Bold" Click="Button_Click_4" x:Name="chooseLanguage" RenderTransformOrigin="0.489,0.488" Grid.Column="1"
-                FontSize="18" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}">
+                FontSize="18" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}">
             <TextBlock Text="{DynamicResource chooseLanguage}" 
                TextWrapping="Wrap" 
-               TextAlignment="Center"/>
+               TextAlignment="Center"
+               Foreground="#FFFFFF"/>
+            
         </Button>
-        <Button HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73"
+        <Button HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#FF0000"
                 BorderThickness="2" x:Name="help" Click="help_Click">
             <TextBlock Text="{DynamicResource help}" 
                TextWrapping="Wrap" 

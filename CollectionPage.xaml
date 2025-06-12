@@ -33,7 +33,7 @@
         <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
                 Margin="20 0 20 0" FontSize="20" Content="Конвертировать всё в docx"/>
 
-        <TextBlock x:Name="VariantId" Grid.Row="1" Grid.ColumnSpan="3" FontSize="20">
+        <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20">
             <Run Text="Id:"/>
         </TextBlock>
 
