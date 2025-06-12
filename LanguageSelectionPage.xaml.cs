@@ -58,6 +58,11 @@ namespace IELTSAppProject
 
         }
 
+        private void spanishLanguage_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void turnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.GoBack();
