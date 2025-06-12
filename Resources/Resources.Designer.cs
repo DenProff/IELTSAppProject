@@ -22,7 +22,7 @@ namespace IELTSAppProject.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace IELTSAppProject.Resources {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IELTSAppProject.Resources.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace IELTSAppProject.Resources {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Выбор языка.
         /// </summary>
-        public static string chooseLanguage {
+        internal static string chooseLanguage {
             get {
                 return ResourceManager.GetString("chooseLanguage", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Выберите нужный режим.
         /// </summary>
-        public static string chooseModeTextBlock {
+        internal static string chooseModeTextBlock {
             get {
                 return ResourceManager.GetString("chooseModeTextBlock", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на У меня мало времени до экзамена!.
         /// </summary>
-        public static string fewTimeBeforeExam {
+        internal static string fewTimeBeforeExam {
             get {
                 return ResourceManager.GetString("fewTimeBeforeExam", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Найти задания для своих учеников.
         /// </summary>
-        public static string findForPupils {
+        internal static string findForPupils {
             get {
                 return ResourceManager.GetString("findForPupils", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Помощь.
         /// </summary>
-        public static string help {
+        internal static string help {
             get {
                 return ResourceManager.GetString("help", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Начать (продолжить) подготовку.
         /// </summary>
-        public static string startOrContinuePreporation {
+        internal static string startOrContinuePreporation {
             get {
                 return ResourceManager.GetString("startOrContinuePreporation", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace IELTSAppProject.Resources {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Добро пожаловать в приложение для подготовки к экзамену в формате IELTS.
         /// </summary>
-        public static string welcomeTextBlock {
+        internal static string welcomeTextBlock {
             get {
                 return ResourceManager.GetString("welcomeTextBlock", resourceCulture);
             }
