@@ -168,6 +168,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Работать по своему усмотрению (не решать входной вариант)</value>
   </data>
+  <data name="playOrPause" xml:space="preserve">
+    <value>Играть/Пауза</value>
+  </data>
   <data name="prevPage" xml:space="preserve">
     <value>Вернуться назад</value>
   </data>

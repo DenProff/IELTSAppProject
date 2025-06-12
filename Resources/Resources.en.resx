@@ -168,6 +168,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Custom practice mode (skip placement test)</value>
   </data>
+  <data name="playOrPause" xml:space="preserve">
+    <value>Play/Pause</value>
+  </data>
   <data name="prevPage" xml:space="preserve">
     <value>Go back</value>
   </data>

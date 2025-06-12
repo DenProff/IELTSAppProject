@@ -168,6 +168,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Modo personalizado (omitir test de nivel)</value>
   </data>
+  <data name="playOrPause" xml:space="preserve">
+    <value>Reproducir/Pausa</value>
+  </data>
   <data name="prevPage" xml:space="preserve">
     <value>Volver atrás</value>
   </data>

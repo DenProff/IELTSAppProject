@@ -168,6 +168,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>自定义练习模式（跳过分级测试）</value>
   </data>
+  <data name="playOrPause" xml:space="preserve">
+    <value>播放/暂停</value>
+  </data>
   <data name="prevPage" xml:space="preserve">
     <value>返回</value>
   </data>

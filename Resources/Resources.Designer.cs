@@ -214,6 +214,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Играть/Пауза.
+        /// </summary>
+        internal static string playOrPause {
+            get {
+                return ResourceManager.GetString("playOrPause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вернуться назад.
         /// </summary>
         internal static string prevPage {

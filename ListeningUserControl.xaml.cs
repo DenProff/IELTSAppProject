@@ -45,6 +45,15 @@ namespace IELTSAppProject
                 }
             };
 
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
 
             listeningConvert.Click += (sender, e) => Conversion.ConvertListening(data);
@@ -223,7 +232,9 @@ namespace IELTSAppProject
         "solveEnterVariantBTN",
         "notSolveEnterVariantBTN",
         "help",
-        "prevPage"
+        "prevPage",
+        "convertBTN",
+        "addToCollection"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

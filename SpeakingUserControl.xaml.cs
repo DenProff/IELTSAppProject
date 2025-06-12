@@ -39,7 +39,6 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             Task = task;
             InitializeComponent();
-
             // Загрузка сохранённого язык
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
             {
@@ -48,6 +47,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             // Подписка на смену языка - событие в классе LanguageChange
             LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
 
             taskTextBlock.Text = taskText;
             topicTextBlock.Text = task.TaskText;

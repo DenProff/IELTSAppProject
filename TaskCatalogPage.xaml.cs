@@ -189,6 +189,8 @@ namespace IELTSAppProject
         "myCollections",
         "chooseLanguage",
         "help",
+        "convertBTN",
+        "addToCollection",
         "prevPage"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
