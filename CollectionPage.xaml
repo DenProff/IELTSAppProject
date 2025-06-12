@@ -28,7 +28,7 @@
                 Margin="20 0 20 0" FontSize="20" Click="Check_Click" Content="Проверить всё"/>
 
         <Button x:Name="AddToCollection" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" 
-                Margin="20 0 20 0" FontSize="20" Click="AddToCollection_Click" Content="Добавить в подборки"/>
+                Margin="20 0 20 0" FontSize="20" Click="AddToCollection_Click" Content="{DynamicResource addToCollection}"/>
 
         <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
                 Margin="20 0 20 0" FontSize="20" Content="{DynamicResource convertBTN}"/>

@@ -61,6 +61,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить в подборку.
+        /// </summary>
+        internal static string addToCollection {
+            get {
+                return ResourceManager.GetString("addToCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Китайский.
         /// </summary>
         internal static string chiLanguage {

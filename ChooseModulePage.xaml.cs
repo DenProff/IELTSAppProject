@@ -136,6 +136,7 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
+
         public static string[] resourcesKeysArray =
         {
         "myStatistics",

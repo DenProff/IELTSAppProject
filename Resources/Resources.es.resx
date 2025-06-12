@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addToCollection" xml:space="preserve">
+    <value>Añadir a colección</value>
+  </data>
   <data name="chiLanguage" xml:space="preserve">
     <value>Chino  </value>
   </data>
@@ -171,8 +174,14 @@
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Realizar test de nivel</value>
   </data>
+  <data name="solveIELTSformat" xml:space="preserve">
+    <value>Practicar exámenes completos en formato IELTS</value>
+  </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Empezar (continuar) la preparación</value>
+  </data>
+  <data name="tasksByType" xml:space="preserve">
+    <value>Tareas por sección (Listening, Reading, Speaking, Writing)</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Bienvenido a la aplicación de preparación para el examen IELTS</value>
