@@ -29,59 +29,59 @@
 
                     <TextBlock FontSize="18" Text="{Binding Task1}" x:Name="textTask1" TextWrapping="Wrap" LineHeight="6" Height="44" Width="778" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Background="#FF673AB7">
-                            <ComboBoxItem Content="True"/>
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="Not Stated"/>
+                        <ComboBox Width="200" x:Name="answer1" HorizontalAlignment="Left" Foreground="White" Background="#FF673AB7">
+                            <ComboBoxItem Content="True" Foreground="Black"/>
+                            <ComboBoxItem Content="False" Foreground="Black"/>
+                            <ComboBoxItem Content="Not Stated" Foreground="Black"/>
                         </ComboBox>
                         <TextBlock FontSize="18" Text ="" x:Name="rightAnswer1" Margin="10,0, 0, 0" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
                     <TextBlock FontSize="18" Text="{Binding Task2}" x:Name="textTask2" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="778" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Background="#FF673AB7">
-                            <ComboBoxItem Content="True"/>
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="Not Stated"/>
+                        <ComboBox Width="200" x:Name="answer2" HorizontalAlignment="Left" Foreground="White" Background="#FF673AB7">
+                            <ComboBoxItem Content="True" Foreground="Black"/>
+                            <ComboBoxItem Content="False" Foreground="Black"/>
+                            <ComboBoxItem Content="Not Stated" Foreground="Black"/>
                         </ComboBox>
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer2" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
                     <TextBlock FontSize="18" Text="{Binding Task3}" x:Name="textTask3" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="781" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Background="#FF673AB7">
-                            <ComboBoxItem Content="True"/>
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="Not Stated"/>
+                        <ComboBox Width="200" x:Name="answer3" HorizontalAlignment="Left" Foreground="White" Background="#FF673AB7">
+                            <ComboBoxItem Content="True" Foreground="Black"/>
+                            <ComboBoxItem Content="False" Foreground="Black"/>
+                            <ComboBoxItem Content="Not Stated" Foreground="Black"/>
                         </ComboBox>
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer3" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
                     <TextBlock FontSize="18" Text="{Binding Task4}" x:Name="textTask4" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="785" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Background="#FF673AB7">
-                            <ComboBoxItem Content="True"/>
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="Not Stated"/>
+                        <ComboBox Width="200" x:Name="answer4" HorizontalAlignment="Left" Foreground="White" Background="#FF673AB7">
+                            <ComboBoxItem Content="True" Foreground="Black"/>
+                            <ComboBoxItem Content="False" Foreground="Black"/>
+                            <ComboBoxItem Content="Not Stated" Foreground="Black"/>
                         </ComboBox>
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer4" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
                     <TextBlock FontSize="18" Text="{Binding Task5}" x:Name="textTask5" Margin="0,15,0,0" Height="44" TextWrapping="Wrap" LineHeight="6" Width="790" HorizontalAlignment="Left"/>
                     <StackPanel Orientation="Horizontal">
-                        <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Background="#FF673AB7">
-                            <ComboBoxItem Content="True"/>
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="Not Stated"/>
+                        <ComboBox Width="200" x:Name="answer5" HorizontalAlignment="Left" Foreground="White" Background="#FF673AB7">
+                            <ComboBoxItem Content="True" Foreground="Black"/>
+                            <ComboBoxItem Content="False" Foreground="Black"/>
+                            <ComboBoxItem Content="Not Stated" Foreground="Black"/>
                         </ComboBox>
                         <TextBlock FontSize="18" Margin="15,0, 0, 0" x:Name="rightAnswer5" Width="300" HorizontalAlignment="Center" Visibility="Hidden"/>
                     </StackPanel>
 
-                    <StackPanel Margin="20,0,0,0">
+                    <StackPanel Margin="0,0,0,0">
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task6}" 
-                               TextWrapping="Wrap" Foreground="White" Margin="0, 15, 0, 0"/>
-                            <RadioButton Content="{Binding TaskAnswerList6[0]}" Margin="20,5,0,0" x:Name="answer61"  Foreground="White">
+                               TextWrapping="Wrap" Foreground="Black" FontSize="18" Margin="0, 15, 0, 0"/>
+                            <RadioButton Content="{Binding TaskAnswerList6[0]}" Margin="20,5,0,0" x:Name="answer61"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -121,7 +121,7 @@
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList6[1]}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList6[1]}" Margin="20,0,0,0"  x:Name="answer62"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -161,7 +161,7 @@
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList6[2]}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList6[2]}" Margin="20,0,0,0"  x:Name="answer63"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -206,8 +206,8 @@
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task7}" 
-                               TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding TaskAnswerList7[0]}" Margin="20,5,0,0"  x:Name="answer71"  Foreground="White">
+                               TextWrapping="Wrap"  Foreground="Black" FontSize="18"/>
+                            <RadioButton Content="{Binding TaskAnswerList7[0]}" Margin="20,5,0,0"  x:Name="answer71" Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -247,7 +247,7 @@
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList7[1]}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList7[1]}" Margin="20,0,0,0"  x:Name="answer72"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -287,7 +287,7 @@
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList7[2]}" Margin="20,0,0,0" x:Name="answer73"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList7[2]}" Margin="20,0,0,0" x:Name="answer73"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -332,8 +332,8 @@ VerticalAlignment="Center"/>
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task8}" 
-                               TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding TaskAnswerList8[0]}" Margin="20,5,0,0" x:Name="answer81"  Foreground="White">
+                               TextWrapping="Wrap"  Foreground="Black" FontSize="18"/>
+                            <RadioButton Content="{Binding TaskAnswerList8[0]}" Margin="20,5,0,0" x:Name="answer81"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -373,7 +373,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList8[1]}" Margin="20,0,0,0" x:Name="answer82"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList8[1]}" Margin="20,0,0,0" x:Name="answer82"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -413,7 +413,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList8[2]}" Margin="20,0,0,0" x:Name="answer83"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList8[2]}" Margin="20,0,0,0" x:Name="answer83"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -458,8 +458,8 @@ VerticalAlignment="Center"/>
 
                         <StackPanel Margin="0,0,0,15">
                             <TextBlock Text="{Binding Task9}" 
-                               TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding TaskAnswerList9[0]}" Margin="20,5,0,0" x:Name="answer91"  Foreground="White">
+                               TextWrapping="Wrap"  Foreground="Black" FontSize="18"/>
+                            <RadioButton Content="{Binding TaskAnswerList9[0]}" Margin="20,5,0,0" x:Name="answer91"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -499,7 +499,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList9[1]}" Margin="20,0,0,0" x:Name="answer92"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList9[1]}" Margin="20,0,0,0" x:Name="answer92"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -539,7 +539,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList9[2]}" Margin="20,0,0,0" x:Name="answer93"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList9[2]}" Margin="20,0,0,0" x:Name="answer93"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -584,8 +584,8 @@ VerticalAlignment="Center"/>
 
                         <StackPanel Margin="0,0,0,20">
                             <TextBlock Text="{Binding Task0}" 
-                               TextWrapping="Wrap"  Foreground="White"/>
-                            <RadioButton Content="{Binding TaskAnswerList0[0]}" Margin="20,5,0,0" x:Name="answer01"  Foreground="White">
+                               TextWrapping="Wrap"  Foreground="Black" FontSize="18"/>
+                            <RadioButton Content="{Binding TaskAnswerList0[0]}" Margin="20,5,0,0" x:Name="answer01"  Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -625,7 +625,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList0[1]}" Margin="20,0,0,0" x:Name="answer02"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList0[1]}" Margin="20,0,0,0" x:Name="answer02" Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
@@ -665,7 +665,7 @@ VerticalAlignment="Center"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
-                            <RadioButton Content="{Binding TaskAnswerList0[2]}" Margin="20,0,0,0" x:Name="answer03"  Foreground="White">
+                            <RadioButton Content="{Binding TaskAnswerList0[2]}" Margin="20,0,0,0" x:Name="answer03" Foreground="Black" FontSize="18">
                                 <RadioButton.Template>
                                     <ControlTemplate TargetType="RadioButton">
                                         <StackPanel Orientation="Horizontal">
