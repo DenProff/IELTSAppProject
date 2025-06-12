@@ -260,6 +260,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<Compile Include="Resources\Resources.en.Designer.cs">
+    <AutoGen>True</AutoGen>
+    <DesignTime>True</DesignTime>
+    <DependentUpon>Resources.en.resx</DependentUpon>
+  </Compile>
+  <Compile Include="Resources\Resources.es.Designer.cs">
+    <AutoGen>True</AutoGen>
+    <DesignTime>True</DesignTime>
+    <DependentUpon>Resources.es.resx</DependentUpon>
+  </Compile>
+  <Compile Include="Resources\Resources.zh-CN.Designer.cs">
+    <AutoGen>True</AutoGen>
+    <DesignTime>True</DesignTime>
+    <DependentUpon>Resources.zh-CN.resx</DependentUpon>
+  </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -269,6 +284,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  <EmbeddedResource Include="Resources\Resources.en.resx">
+    <Generator>ResXFileCodeGenerator</Generator>
+    <LastGenOutput>Resources.en.Designer.cs</LastGenOutput>
+  </EmbeddedResource>
+  <EmbeddedResource Include="Resources\Resources.es.resx">
+    <Generator>ResXFileCodeGenerator</Generator>
+    <LastGenOutput>Resources.es.Designer.cs</LastGenOutput>
+  </EmbeddedResource>
+  <EmbeddedResource Include="Resources\Resources.zh-CN.resx">
+    <Generator>ResXFileCodeGenerator</Generator>
+    <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
+  </EmbeddedResource>
+
     <None Include="bin\Debug\Help\referenceData.chm" />
     <None Include="ClassDiagram.cd" />
     <None Include="EvaluationCriterias\SpeakingEvaluationCriteria.pdf" />
@@ -295,6 +323,7 @@
   <ItemGroup>
     <Folder Include="resourcesTask\Languages\" />
     <Folder Include="speakingAudioUsersAnswers\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="иконка2.ico">
