@@ -120,6 +120,9 @@
   <data name="addToCollection" xml:space="preserve">
     <value>添加到收藏集</value>
   </data>
+  <data name="checkAll" xml:space="preserve">
+    <value>检查全部</value>
+  </data>
   <data name="chiLanguage" xml:space="preserve">
     <value>中文</value>
   </data>

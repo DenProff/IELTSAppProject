@@ -70,6 +70,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Проверить всё.
+        /// </summary>
+        internal static string checkAll {
+            get {
+                return ResourceManager.GetString("checkAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Китайский.
         /// </summary>
         internal static string chiLanguage {

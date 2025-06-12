@@ -247,11 +247,11 @@ namespace IELTSAppProject
         }
         public static string[] resourcesKeysArray =
 {
-        "describeTextBlockFirstTestPage",
-        "solveEnterVariantBTN",
-        "notSolveEnterVariantBTN",
         "help",
-        "prevPage"
+        "prevPage",
+        "convertBTN",
+        "addToCollection",
+        "checkAll"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

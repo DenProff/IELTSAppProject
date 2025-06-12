@@ -120,6 +120,9 @@
   <data name="addToCollection" xml:space="preserve">
     <value>Add to collection</value>
   </data>
+  <data name="checkAll" xml:space="preserve">
+    <value>Check All</value>
+  </data>
   <data name="chiLanguage" xml:space="preserve">
     <value>Chinese  </value>
   </data>

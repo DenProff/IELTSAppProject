@@ -120,6 +120,9 @@
   <data name="addToCollection" xml:space="preserve">
     <value>Добавить в подборку</value>
   </data>
+  <data name="checkAll" xml:space="preserve">
+    <value>Проверить всё</value>
+  </data>
   <data name="chiLanguage" xml:space="preserve">
     <value>Китайский</value>
   </data>

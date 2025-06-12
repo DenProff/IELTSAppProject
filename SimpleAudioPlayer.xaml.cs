@@ -31,6 +31,14 @@ namespace IELTSAppProject
 
             // Остановить воспроизведение при уничтожении контрола
             this.Unloaded += (s, e) => StopPlayback();
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
@@ -93,5 +101,10 @@ namespace IELTSAppProject
                 }
             }
         }
+        public static string[] resourcesKeysArray =
+        {
+        "playOrPause"
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
+        
     }
 }
