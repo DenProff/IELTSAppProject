@@ -150,7 +150,16 @@ namespace IELTSAppProject
                         new Run(new Break()), // Перенос
                         new Run(new RunProperties(new FontSize() { Val = "32" }, new Bold()), new Text($"{elem.TaskText}")))));
 
-                   
+                    body.AppendChild(new Paragraph(new Run(new RunProperties(new FontSize() { Val = "20"}), new Text($"Темы"))));
+
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[0]}"))));
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[1]}"))));
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[2]}"))));
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[3]}"))));
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[4]}"))));
+                    body.AppendChild(new Paragraph(new Run(new Text($"{elem.Topics[5]}"))));
+
+
                 }
                 
             }
