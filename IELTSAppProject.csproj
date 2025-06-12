@@ -158,6 +158,8 @@
       <DependentUpon>TaskCatalogPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TaskCollection.cs" />
+    <Compile Include="SetLanguageResources.cs" />
+    <Compile Include="LanguageChange.cs" />
     <Compile Include="UserCollectionPage.xaml.cs">
       <DependentUpon>UserCollectionPage.xaml</DependentUpon>
     </Compile>
