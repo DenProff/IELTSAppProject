@@ -46,6 +46,15 @@ namespace IELTSAppProject
                 }
             };
 
+            // Загрузка сохранённого язык
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+
             //List<int> list1 = new List<int> { 0, 1 };
             //List<int> list2 = new List<int> { 1, 6 };
             //List<int> list3 = new List<int> { 0, 6 };
@@ -135,5 +144,16 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
+
+        public static string[] resourcesKeysArray =
+    {
+            "welcomeTextBlock",
+            "chooseModeTextBlock",
+            "fewTimeBeforeExam",
+            "findForPupils",
+            "startOrContinuePreporation",
+            "chooseLanguage",
+            "help"
+            }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }
