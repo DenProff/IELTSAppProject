@@ -56,6 +56,7 @@ namespace IELTSAppProject
 
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
             idTextBox.Text = $"id: {data.id}";
+            recommendedTimeTextBlock.Text = $"Рекомендуемое время выполнения: {data.RecommendedTime} мин";
 
             listeningConvert.Click += (sender, e) => Conversion.ConvertListening(data);
             listeningConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
