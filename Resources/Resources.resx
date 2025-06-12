@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="chiLanguage" xml:space="preserve">
+    <value>Китайский</value>
+  </data>
+  <data name="chooseCurrentLanguage" xml:space="preserve">
+    <value>Выберите язык, на котором вы хотите работать в приложении</value>
+  </data>
   <data name="chooseLanguage" xml:space="preserve">
     <value>Выбор языка</value>
   </data>
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>Выберите нужный режим</value>
+  </data>
+  <data name="engLanguage" xml:space="preserve">
+    <value>Английский</value>
+  </data>
+  <data name="espLanguage" xml:space="preserve">
+    <value>Испанский</value>
   </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>У меня мало времени до экзамена!</value>
@@ -131,6 +143,9 @@
   </data>
   <data name="help" xml:space="preserve">
     <value>Помощь</value>
+  </data>
+  <data name="rusLanguage" xml:space="preserve">
+    <value>Русский</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Начать (продолжить) подготовку</value>

@@ -61,6 +61,24 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Китайский.
+        /// </summary>
+        internal static string chiLanguage {
+            get {
+                return ResourceManager.GetString("chiLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выберите язык, на котором вы хотите работать в приложении.
+        /// </summary>
+        internal static string chooseCurrentLanguage {
+            get {
+                return ResourceManager.GetString("chooseCurrentLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Выбор языка.
         /// </summary>
         internal static string chooseLanguage {
@@ -75,6 +93,24 @@ namespace IELTSAppProject.Resources {
         internal static string chooseModeTextBlock {
             get {
                 return ResourceManager.GetString("chooseModeTextBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Английский.
+        /// </summary>
+        internal static string engLanguage {
+            get {
+                return ResourceManager.GetString("engLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Испанский.
+        /// </summary>
+        internal static string espLanguage {
+            get {
+                return ResourceManager.GetString("espLanguage", resourceCulture);
             }
         }
         
@@ -102,6 +138,15 @@ namespace IELTSAppProject.Resources {
         internal static string help {
             get {
                 return ResourceManager.GetString("help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Русский.
+        /// </summary>
+        internal static string rusLanguage {
+            get {
+                return ResourceManager.GetString("rusLanguage", resourceCulture);
             }
         }
         

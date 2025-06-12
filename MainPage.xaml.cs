@@ -146,7 +146,7 @@ namespace IELTSAppProject
         }
 
         public static string[] resourcesKeysArray =
-    {
+        {
             "welcomeTextBlock",
             "chooseModeTextBlock",
             "fewTimeBeforeExam",
@@ -154,6 +154,6 @@ namespace IELTSAppProject
             "startOrContinuePreporation",
             "chooseLanguage",
             "help"
-            }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
+        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

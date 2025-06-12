@@ -117,11 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="chiLanguage" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="chooseCurrentLanguage" xml:space="preserve">
+    <value>选择您想在应用中使用的语言</value>
+  </data>
   <data name="chooseLanguage" xml:space="preserve">
     <value>语言选择</value>
   </data>
   <data name="chooseModeTextBlock" xml:space="preserve">
     <value>选择所需模式</value>
+  </data>
+  <data name="engLanguage" xml:space="preserve">
+    <value>英语</value>
+  </data>
+  <data name="espLanguage" xml:space="preserve">
+    <value>西班牙语</value>
   </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>我考试前时间不多了！</value>
@@ -131,6 +143,9 @@
   </data>
   <data name="help" xml:space="preserve">
     <value>帮助</value>
+  </data>
+  <data name="rusLanguage" xml:space="preserve">
+    <value>俄语</value>
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>开始（继续）准备</value>

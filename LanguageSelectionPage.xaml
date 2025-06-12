@@ -16,7 +16,7 @@
         BorderBrush="#FF0078D7"
         Padding="15">
         <StackPanel Margin="0,0,0,0" Background=" #514ED9">
-            <TextBlock Text="Выберите язык, на котором вы хотите работать в приложении" 
+                <TextBlock Text="{DynamicResource chooseCurrentLanguage}" 
                        FontSize="20"
                        Foreground="White"
                        FontWeight="Bold"
@@ -25,7 +25,7 @@
                        HorizontalAlignment="Center"/>
 
             <!-- Русский (выбран) -->
-            <RadioButton Content="Русский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="RussianLanguage_Click" IsChecked="True">
+                <RadioButton Content="{DynamicResource rusLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="RussianLanguage_Click" IsChecked="True">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -67,7 +67,7 @@
             </RadioButton>
 
             <!-- Китайский -->
-            <RadioButton Content="Китайский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="RussianLanguage_Click">
+                <RadioButton Content="{DynamicResource chiLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="chineseLanguage" Click="RussianLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -109,7 +109,7 @@
             </RadioButton>
 
             <!-- Английский -->
-            <RadioButton Content="Английский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="englishLanguage" Click="EnglishLanguage_Click">
+            <RadioButton Content="{DynamicResource engLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="englishLanguage" Click="EnglishLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
@@ -151,7 +151,7 @@
             </RadioButton>
 
             <!-- Английский -->
-            <RadioButton Content="Испанский" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="spanishLanguage" Click="SpanishLanguage_Click">
+            <RadioButton Content="{DynamicResource espLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="spanishLanguage" Click="SpanishLanguage_Click">
                 <RadioButton.Template>
                     <ControlTemplate TargetType="RadioButton">
                         <StackPanel Orientation="Horizontal">
