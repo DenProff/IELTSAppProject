@@ -62,7 +62,7 @@ namespace IELTSAppProject
             }
             if (currentJson == "tasksWithMistakes.json")
             {
-                return (object)JsonConvert.DeserializeObject<Tuple<int, string>[]>(jsonFromFile);
+                return (object)JsonConvert.DeserializeObject<Tuple<int, string, string>[]>(jsonFromFile);
             }
             else // (currentJson == "statistics.json")
             {
