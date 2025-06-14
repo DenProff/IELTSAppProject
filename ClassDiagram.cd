@@ -3,7 +3,7 @@
   <Class Name="IELTSAppProject.GeneralizedTask" Collapsed="true">
     <Position X="5.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAAAAgAAAAAEAAAAAQAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAACgA=</HashCode>
       <FileName>GeneralizedTask.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -18,10 +18,9 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SpeakingTask.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ListeningTask" Collapsed="true">
     <Position X="5" Y="2.75" Width="1.5" />
@@ -50,10 +49,9 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAgAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAiAAAAA=</HashCode>
       <FileName>WritingTask.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.ReadingTask" Collapsed="true">
     <Position X="8" Y="2.75" Width="1.5" />
@@ -64,17 +62,38 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="IELTSAppProject.SoundControl" Collapsed="true">
-    <Position X="4.75" Y="3.75" Width="1.5" />
+    <Position X="2.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAAASAAAAEoBAAEIAEAgAQAggACAIAA=</HashCode>
+      <HashCode>AAAAAAAgAAAAAAAASAAAAEoAAAEoAEAgAQAggAAAIAA=</HashCode>
       <FileName>SoundControl.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="IELTSAppProject.JsonControl" Collapsed="true">
-    <Position X="6.75" Y="3.75" Width="1.5" />
+    <Position X="4.25" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEEAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAAAEQAAA=</HashCode>
       <FileName>JsonControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IELTSAppProject.LanguageChange" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LanguageChange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IELTSAppProject.SetLanguageResources" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SetLanguageResources.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IELTSAppProject.Conversion" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Сonversion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
