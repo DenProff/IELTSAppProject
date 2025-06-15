@@ -25,8 +25,8 @@ namespace IELTSAppProject
     public partial class UserCollectionPage : Page
     {
         //локальные переменные для фильтрации
-        private ICollectionView _tasksView;
-        private ObservableCollection<TaskCollection> _allTasks;
+        private ICollectionView tasksView;
+        private ObservableCollection<TaskCollection> allTasks;
 
         public UserCollectionPage()
         {
@@ -61,9 +61,9 @@ namespace IELTSAppProject
         //загрузка всех UserControl-ов
         private void LoadTasks()
         {
-            _allTasks = new ObservableCollection<TaskCollection>(JsonControl.UserCollectionsArray);
+            allTasks = new ObservableCollection<TaskCollection>(JsonControl.UserCollectionsArray);
             List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
-            foreach (var task in _allTasks) // Перебор подборок в массиве для добавления их на экран
+            foreach (var task in allTasks) // Перебор подборок в массиве для добавления их на экран
             {
                 ButtonControlCatalog userControl = new ButtonControlCatalog(task); // Создание UserControl-a на основе подборки
                 userControl.NavigationRequested += (s, set) =>
@@ -73,11 +73,11 @@ namespace IELTSAppProject
                 collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
             }
-            _tasksView = CollectionViewSource.GetDefaultView(collections);
-            _tasksView.Filter = TaskFilter;
+            tasksView = CollectionViewSource.GetDefaultView(collections);
+            tasksView.Filter = TaskFilter;
 
             // Инициализация ItemsControl
-            TasksContainer.ItemsSource = _tasksView;
+            TasksContainer.ItemsSource = tasksView;
         }
 
         //фильтр
@@ -117,7 +117,7 @@ namespace IELTSAppProject
         //обновление данных
         private void CheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            _tasksView.Refresh();
+            tasksView.Refresh();
         }
 
 

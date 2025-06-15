@@ -29,8 +29,8 @@ namespace IELTSAppProject
     public partial class MistakesPage : Page
     {
         //локальные переменные для фильтрации
-        private ICollectionView _tasksView;
-        private ObservableCollection<Tuple<int, string, string>> _allId;
+        private ICollectionView tasksView;
+        private ObservableCollection<Tuple<int, string, string>> allId;
         public MistakesPage()
         {
             InitializeComponent();
@@ -65,9 +65,9 @@ namespace IELTSAppProject
         //загрузка всех UserControl-ов
         private void LoadTasks()
         {
-            _allId = new ObservableCollection<Tuple<int, string, string>>(JsonControl.MistakesArray);
+            allId = new ObservableCollection<Tuple<int, string, string>>(JsonControl.MistakesArray);
             List<ButtonControlCatalog> collections = new List<ButtonControlCatalog>();
-            foreach (Tuple<int, string, string> task in _allId) // Перебор подборок в массиве для добавления их на экран
+            foreach (Tuple<int, string, string> task in allId) // Перебор подборок в массиве для добавления их на экран
             {
                 TaskCollection mistakeTask = null;
                 if (task.Item2 == "ReadingTask")
@@ -91,11 +91,11 @@ namespace IELTSAppProject
                 collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
             }
-            _tasksView = CollectionViewSource.GetDefaultView(collections);
-            _tasksView.Filter = TaskFilter;
+            tasksView = CollectionViewSource.GetDefaultView(collections);
+            tasksView.Filter = TaskFilter;
 
             // Инициализация ItemsControl
-            TasksContainer.ItemsSource = _tasksView;
+            TasksContainer.ItemsSource = tasksView;
         }
 
         //фильтр
@@ -124,7 +124,7 @@ namespace IELTSAppProject
         //обновление данных
         private void CheckBox_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            _tasksView.Refresh();
+            tasksView.Refresh();
         }
 
         private void OpenChmHelp()

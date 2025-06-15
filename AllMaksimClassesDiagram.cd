@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IELTSAppProject.ReadingTask">
+    <Position X="2" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAIAAQAAAAiARIBAAABAgAAgAAAgE=</HashCode>
+      <FileName>ReadingTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IELTSAppProject.GeneralizedTask">
+    <Position X="5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAACgA=</HashCode>
+      <FileName>GeneralizedTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IELTSAppProject.Conversion">
+    <Position X="5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Сonversion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IELTSAppProject.UserCollectionPage">
+    <Position X="6.5" Y="7.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAEAAAwAAAAAAEQARACAAAABAEAgAACAAAA=</HashCode>
+      <FileName>UserCollectionPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IELTSAppProject.ReadingUserControl">
+    <Position X="0.75" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAgAAAAAAAAAAAAAAEGAQAAAAAABAAAgAAAAAAA=</HashCode>
+      <FileName>ReadingUserControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="IELTSAppProject.MistakesPage">
+    <Position X="3" Y="7.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAEAAAwAAAAAAEAABACAAAABAEAgAACAQAA=</HashCode>
+      <FileName>MistakesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
