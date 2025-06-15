@@ -198,11 +198,11 @@ namespace IELTSAppProject
         }
 
         //добавление в списки
-        public static void AddToList(ref List<string> list, params string[] answers)
-        {
-            for (int i = 0; i < answers.Length; i++)
-                list.Add(answers[i]);
-        }
+        //public static void AddToList(ref List<string> list, params string[] answers)
+        //{
+        //    for (int i = 0; i < answers.Length; i++)
+        //        list.Add(answers[i]);
+        //}
 
         //открытие справки
         private void help_Click(object sender, RoutedEventArgs e)

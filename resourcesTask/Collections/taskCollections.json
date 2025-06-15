@@ -1,7 +1,7 @@
 [
   {
     "VariantId": 1,
-    "VariantName": "Райт + рид",
+    "VariantName": "Writing+Reading",
     "DateOfAccess": "09.06.2025",
     "TaskIdList": [
       0,
@@ -16,7 +16,7 @@
   },
   {
     "VariantId": 2,
-    "VariantName": "Рид + лист",
+    "VariantName": "Reading+Listening",
     "DateOfAccess": "09.06.2025",
     "TaskIdList": [
       1,
@@ -31,7 +31,7 @@
   },
   {
     "VariantId": 3,
-    "VariantName": "Райт + лист",
+    "VariantName": "Writing+Listening",
     "DateOfAccess": "09.06.2025",
     "TaskIdList": [
       0,
@@ -46,7 +46,7 @@
   },
   {
     "VariantId": 4,
-    "VariantName": "Рид + лист2",
+    "VariantName": "Reading+Listening",
     "DateOfAccess": "09.06.2025",
     "TaskIdList": [
       3,
@@ -61,7 +61,7 @@
   },
   {
     "VariantId": 5,
-    "VariantName": "Райт + рид + лист",
+    "VariantName": "W+R+L",
     "DateOfAccess": "09.06.2025",
     "TaskIdList": [
       0,
