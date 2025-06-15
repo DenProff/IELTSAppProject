@@ -51,8 +51,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             taskTextBlock.Text = taskText;
             topicTextBlock.Text = task.TaskText;
-            idTextBox.Text += (task.id).ToString();
-            recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + "мин.";
+            idTextBox.Text += " " + (task.id).ToString();
+            recommendedTimeTextBlock.Text += task.RecommendedTime.ToString() + " мин.";
 
             DataContext = task; //контекстные данные
 

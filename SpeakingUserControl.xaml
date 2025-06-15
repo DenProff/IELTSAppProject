@@ -37,7 +37,7 @@
         <Button x:Name="stopRecordbtn" Grid.Row="4" Grid.Column="0" Click="StopRecord" Margin="10,99,11,92" FontSize="17" Height="40">Стоп</Button>
 
         <TextBlock x:Name="inputRecordingStatusTextBox" TextWrapping="Wrap" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" 
-                   HorizontalAlignment="Left" Background="Red" Height="108"  Width="124"  FontSize="17" Margin="26,0,0,0">
+                   HorizontalAlignment="Center" Background="Red" Height="108"  Width="124"  FontSize="17">
             Запись ещё не начата.
         </TextBlock>
 
@@ -50,11 +50,11 @@
         <Button x:Name="playUserAnswerbtn" Grid.Row="4" Margin="9,43,6,148" Grid.Column="2" Content="Играть свою запись" Click="PlayUserAnswer" FontSize="17" Height="40"/>
         <Button x:Name="playRealAnswerbtn" Grid.Row="4" Margin="7,99,7,92" Grid.Column="2" Content="Играть пример на макс. балл" Click="PlayIdealAnswer" FontSize="17" Height="40"/>
         <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" Grid.Row="4" Grid.Column="3" VerticalAlignment="Top" 
-            HorizontalAlignment="Left" Background="Red" Height="108" Width="188" FontSize="17" Margin="31,65,0,0"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
+            HorizontalAlignment="Center" Background="Red" Height="108" Width="188" FontSize="17" Margin="0,71,0,0"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
         <Label Grid.Column="2" Content="Результат и пример на макс. балл:" HorizontalAlignment="Left" 
             Grid.Row="4" VerticalAlignment="Top" Width="441" Height="38" FontSize="17"/>
         <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="9,173,5,38" Grid.Column="2" Content="Стоп" Click="StopPlaying" FontSize="17" Height="40"/>
         <Button x:Name="HELP" FontSize="17"  Content="{DynamicResource help}" HorizontalAlignment="Center" Margin="0,193,0,0" VerticalAlignment="Top" Height="58" Width="126" Background="#F13C73" BorderThickness="2" Click="help_Click" Grid.Row="4" Tag="speaking"/>
-        <Button Grid.Column="3" Content="Посмотреть&#xD;&#xA;критерии оценивания" HorizontalAlignment="Left" Margin="211,185,0,0" Grid.Row="4" VerticalAlignment="Top" Background="#F13C73" Height="74" Click="ShowEvaluationCriteria" Width="188" FontSize="17"/>
+        <Button Grid.Column="3" Content="Посмотреть&#xD;&#xA;критерии оценивания" HorizontalAlignment="Left" Margin="97,185,0,0" Grid.Row="4" VerticalAlignment="Top" Background="#F13C73" Height="74" Click="ShowEvaluationCriteria" Width="219" FontSize="17"/>
     </Grid>
 </UserControl>
