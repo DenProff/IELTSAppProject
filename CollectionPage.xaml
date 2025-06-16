@@ -33,13 +33,9 @@
         <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
                 Margin="20 0 20 0" FontSize="20" Content="{DynamicResource convertBTN}"/>
 
-        <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20">
-            <Run Text="Id:"/>
-        </TextBlock>
+        <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20" Text="Id:"/>
 
-        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20">
-            <Run Text="Название:"/>
-        </TextBlock>
+        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20" Text="Название подборки:"/>
 
         <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Center" 
                 Height="46" Width="177" Background="#FF673AB7" Style="{StaticResource MaterialDesignFlatButton}" 
