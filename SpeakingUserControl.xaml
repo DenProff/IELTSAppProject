@@ -37,7 +37,7 @@
         <Button x:Name="stopRecordbtn" Grid.Row="4" Grid.Column="0" Click="StopRecord" Margin="10,99,11,92" FontSize="17" Height="40">Стоп</Button>
 
         <TextBlock x:Name="inputRecordingStatusTextBox" TextWrapping="Wrap" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" 
-                   HorizontalAlignment="Center" Background="Red" Height="108"  Width="124"  FontSize="17">
+                   HorizontalAlignment="Center" Background="Red" Height="108"  Width="124"  FontSize="17" Foreground="White">
             Запись ещё не начата.
         </TextBlock>
 
@@ -46,11 +46,11 @@
 
 
         <TextBlock x:Name="taskTextBlock" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="2" FontSize="17">The Task</TextBlock>
-        <TextBlock x:Name="topicTextBlock" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" FontSize="17">The topic</TextBlock>
+        <TextBlock x:Name="topicTextBlock" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" FontSize="17" Text="The topic:"/>
         <Button x:Name="playUserAnswerbtn" Grid.Row="4" Margin="9,43,6,148" Grid.Column="2" Content="Играть свою запись" Click="PlayUserAnswer" FontSize="17" Height="40"/>
         <Button x:Name="playRealAnswerbtn" Grid.Row="4" Margin="7,99,7,92" Grid.Column="2" Content="Играть пример на макс. балл" Click="PlayIdealAnswer" FontSize="17" Height="40"/>
         <TextBlock x:Name="resultTextBlock" TextWrapping="Wrap" Grid.Row="4" Grid.Column="3" VerticalAlignment="Top" 
-            HorizontalAlignment="Center" Background="Red" Height="108" Width="188" FontSize="17" Margin="0,71,0,0"><Run Text="Запись "/><Run Language="ru-ru" Text="можно проиграть после добавления ответа."/></TextBlock>
+            HorizontalAlignment="Center" Background="Red" Height="108" Width="188" FontSize="17" Margin="0,71,0,0" Text="Запись можно проиграть после добавления ответа." Foreground="White"/>
         <Label Grid.Column="2" Content="Результат и пример на макс. балл:" HorizontalAlignment="Left" 
             Grid.Row="4" VerticalAlignment="Top" Width="441" Height="38" FontSize="17"/>
         <Button x:Name="stopPlayingbtn" Grid.Row="4" Margin="9,173,5,38" Grid.Column="2" Content="Стоп" Click="StopPlaying" FontSize="17" Height="40"/>
