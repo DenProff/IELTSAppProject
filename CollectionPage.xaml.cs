@@ -31,9 +31,9 @@ namespace IELTSAppProject
         {
             InitializeComponent();
 
-            this.DataContext = taskCollection; //ставим экземпляр TaskCollection в качестве контекстных данных
+            this.DataContext = taskCollection; //Ставит экземпляр TaskCollection в качестве контекстных данных
 
-            this.Opacity = 0; // Делаем странцу прозрачной
+            this.Opacity = 0; // Делает страницу прозрачной
 
             this.Loaded += (sender, e) =>
             {

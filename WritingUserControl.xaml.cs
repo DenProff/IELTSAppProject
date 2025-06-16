@@ -56,8 +56,8 @@ namespace IELTSAppProject
                 topicsComboBox.Items.Add(topic); // Добавление тем в выпадающий список
             }
 
-            idTextBox.Text += $"{task.id}"; // Установка id
-            recommendedTimeTextBlock.Text += $"{task.RecommendedTime}"; // Установка рекомендованного времени выполнения
+            idTextBox.Text += $" {task.id}"; // Установка id
+            recommendedTimeTextBlock.Text += $" {task.RecommendedTime}"; // Установка рекомендованного времени выполнения
 
             //Подписка для конвертации
             writingConvert.Click += (sender, e) => Conversion.ConvertWriting(task);
