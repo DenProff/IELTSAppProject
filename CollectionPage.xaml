@@ -9,33 +9,37 @@
             <RowDefinition Height="90"/>
             <RowDefinition Height="30"/>
             <RowDefinition/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="41"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer x:Name="MainScrollViewer" Grid.Row="2" Grid.ColumnSpan="3"
+        <ScrollViewer x:Name="MainScrollViewer" Grid.Row="2" Grid.ColumnSpan="4"
                   VerticalScrollBarVisibility="Auto"
-                  HorizontalScrollBarVisibility="Disabled" Margin="0,0,0,2">
+                  HorizontalScrollBarVisibility="Disabled">
             <ItemsControl x:Name="TasksContainer">
             </ItemsControl>
         </ScrollViewer>
 
-        <Button x:Name="Check" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="0" 
-                Margin="20 0 20 0" FontSize="20" Click="Check_Click" Content="{DynamicResource checkAll}"/>
+        <Button x:Name="help" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Background="#F13C73"
+                Margin="20,0,20,0" FontSize="20" Click="Check_Click" Content="{DynamicResource help}" Height="40"/>
 
-        <Button x:Name="AddToCollection" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" 
-                Margin="20 0 20 0" FontSize="20" Click="AddToCollection_Click" Content="{DynamicResource addToCollection}"/>
+        <Button x:Name="Check" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" 
+                Margin="20,0,20,0" FontSize="20" Click="Check_Click" Content="{DynamicResource checkAll}" Height="40"/>
 
-        <Button x:Name="Convert" VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="2" 
-                Margin="20 0 20 0" FontSize="20" Content="{DynamicResource convertBTN}"/>
+        <Button x:Name="AddToCollection" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" 
+                Margin="20,0,20,0" FontSize="20" Click="AddToCollection_Click" Content="{DynamicResource addToCollection}" Height="40"/>
+
+        <Button x:Name="Convert" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" 
+                Margin="20,0,20,0" FontSize="20" Content="{DynamicResource convertBTN}" Height="40"/>
 
         <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20" Text="Id:"/>
 
-        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20" Text="Название подборки:"/>
+        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20" Text="Название подборки:" Margin="294,0,294,0"/>
 
         <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Center" 
                 Height="46" Width="177" Background="#FF673AB7" Style="{StaticResource MaterialDesignFlatButton}" 
