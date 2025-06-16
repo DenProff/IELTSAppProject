@@ -34,11 +34,11 @@ namespace IELTSAppProject
             // Загрузка сохранённого язык
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
             {
-                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
             }
 
             // Подписка на смену языка - событие в классе LanguageChange
-            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
 
             answeField.IsEnabled = false; // До начала написания эссе должна быть выбрана тема, поэтому изначально поле для ввода недоступно
             showIdealEssay.IsEnabled = false; // Пока не сохранён ответ нельзя показывать другие эссе

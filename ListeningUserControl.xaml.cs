@@ -48,11 +48,11 @@ namespace IELTSAppProject
             // Загрузка сохранённого язык
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
             {
-                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
             }
 
             // Подписка на смену языка - событие в классе LanguageChange
-            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, resourcesKeysArray, this);
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
 
             this.DataContext = data; // Запись в Binding информации из свойств объекта data
             idTextBox.Text = $"id: {data.id}";
