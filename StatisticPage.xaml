@@ -82,5 +82,6 @@
                 </StackPanel>
             </Border>
         </Grid>
+        <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="Red" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </Page>
