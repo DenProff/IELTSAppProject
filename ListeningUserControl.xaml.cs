@@ -111,24 +111,30 @@ namespace IELTSAppProject
                 else correctAnswers++;
             }
 
+            projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
+            string jsonData = File.ReadAllText(file);
+
+            List<Tuple<int, string, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string, string>>>(jsonData) ?? new List<Tuple<int, string, string>>(); //десериализация файла с ошибками
+
             if (hasErrors)
             {
-                file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
-                string jsonData = File.ReadAllText(file);
-
                 DateTime now = DateTime.Today; //берем сегодняшнюю дату
 
                 string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
-                List<Tuple<int, string, string>> list = JsonConvert.DeserializeObject<List<Tuple<int, string, string>>>(jsonData) ?? new List<Tuple<int, string, string>>();
-
                 Tuple<int, string, string> tuple = new Tuple<int, string, string>(((ListeningTask)this.DataContext).id, ((ListeningTask)this.DataContext).TaskType, today);
 
-                list.Add(tuple);
-
-                string updatedMistakesJson = JsonConvert.SerializeObject(list, Formatting.Indented);
-                File.WriteAllText(file, updatedMistakesJson);
+                if (!list.Contains(list.FirstOrDefault(elem => elem.Item2 == "ListeningTask" && elem.Item1 == ((ListeningTask)DataContext).id))) //если в этом разделе ошибок еще нет такой подборки
+                    list.Add(tuple);
             }
+            if (!hasErrors && list.Any(elem => elem.Item2 == "ListeningTask" && elem.Item1 == ((ListeningTask)DataContext).id)) //если решено верно, но подборка есть в разделе ошибок
+            {
+                list.Remove(list.FirstOrDefault(elem => elem.Item2 == "ListeningTask" && elem.Item1 == ((ListeningTask)DataContext).id));
+            }
+
+            string updatedMistakesJson = JsonConvert.SerializeObject(list, Formatting.Indented); //сериализация файла с ошибками
+            File.WriteAllText(file, updatedMistakesJson);
 
             // Обновление количества правильных ответов
             double[] statisticsArray = JsonControl.StatisticsArray;
