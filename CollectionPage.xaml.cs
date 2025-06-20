@@ -34,9 +34,10 @@ namespace IELTSAppProject
 
             this.DataContext = taskCollection; //Ставит экземпляр TaskCollection в качестве контекстных данных
 
-            TaskCollection[] collectionArray = JsonControl.UserCollectionsArray;
+            TaskCollection[] collectionArray = JsonControl.UserCollectionsArray; //получаем массив с подборками пользователей
 
-            if (collectionArray.Any(elem => elem.TaskIdList.SequenceEqual(taskCollection.TaskIdList)))
+            if (collectionArray.Any(elem => elem.TaskIdList.SequenceEqual(taskCollection.TaskIdList))) //ищем, если нашлись в массиве текущие индексы заданий
+                //то делаем кнопку для удаления подборки из раздела персональных подборок доступной
             {
                 delete_btn.Visibility = Visibility.Visible;
                 delete_btn.IsEnabled = true;
@@ -263,25 +264,29 @@ namespace IELTSAppProject
         "checkAll"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
 
+        //Удаление подборки из раздела персональных подборок пользователя
         private void delete_btn_Click(object sender, RoutedEventArgs e)
         {
-            TaskCollection taskCollection = (TaskCollection)this.DataContext;
+            TaskCollection taskCollection = (TaskCollection)this.DataContext; //получаем текущий экземпляр подборки
 
+            //Работа с десериализация Json
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
             List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
 
+            //Удаляем элемент, который содержит нужные индексы заданий
             list.Remove(list.FirstOrDefault(elem => elem.TaskIdList.SequenceEqual(taskCollection.TaskIdList))); 
 
+            //Сериализация Json
             string updatedJson = JsonConvert.SerializeObject(list, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
             MessageBox.Show("Подборка удалена из раздела \"Мои подборки заданий\"\nПерезайдите " +
                 "в этот раздел заново, чтобы увидеть изменения");
 
-            delete_btn.IsEnabled = false;
+            delete_btn.IsEnabled = false; //делаем кнопку недоступной повторно
         }
     }
 }
