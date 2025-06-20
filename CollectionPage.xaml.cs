@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using System.Windows.Threading;
 using Newtonsoft.Json;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace IELTSAppProject
 {
@@ -32,6 +33,14 @@ namespace IELTSAppProject
             InitializeComponent();
 
             this.DataContext = taskCollection; //Ставит экземпляр TaskCollection в качестве контекстных данных
+
+            TaskCollection[] collectionArray = JsonControl.UserCollectionsArray;
+
+            if (collectionArray.Any(elem => elem.TaskIdList.SequenceEqual(taskCollection.TaskIdList)))
+            {
+                delete_btn.Visibility = Visibility.Visible;
+                delete_btn.IsEnabled = true;
+            }
 
             this.Opacity = 0; // Делает страницу прозрачной
 
@@ -253,5 +262,26 @@ namespace IELTSAppProject
         "addToCollection",
         "checkAll"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            TaskCollection taskCollection = (TaskCollection)this.DataContext;
+
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
+            string jsonData = File.ReadAllText(file);
+
+            List<TaskCollection> list = JsonConvert.DeserializeObject<List<TaskCollection>>(jsonData) ?? new List<TaskCollection>();
+
+            list.Remove(list.FirstOrDefault(elem => elem.TaskIdList.SequenceEqual(taskCollection.TaskIdList))); 
+
+            string updatedJson = JsonConvert.SerializeObject(list, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(file, updatedJson);
+
+            MessageBox.Show("Подборка удалена из раздела \"Мои подборки заданий\"\nПерезайдите " +
+                "в этот раздел заново, чтобы увидеть изменения");
+
+            delete_btn.IsEnabled = false;
+        }
     }
 }

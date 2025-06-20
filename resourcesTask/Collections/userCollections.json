@@ -1,19 +1,5 @@
 [
   {
-    "VariantId": 11,
-    "VariantName": "fdgfhfh",
-    "DateOfAccess": "12.06.2025",
-    "TaskIdList": [
-      11
-    ],
-    "isListening": false,
-    "isSpeaking": false,
-    "isWriting": true,
-    "isReading": false,
-    "isFastRepeat": false,
-    "isVariants": false
-  },
-  {
     "VariantId": 0,
     "VariantName": "ssqswd",
     "DateOfAccess": "12.06.2025",
@@ -43,20 +29,5 @@
     "isReading": true,
     "isFastRepeat": false,
     "isVariants": true
-  },
-  {
-    "VariantId": 2,
-    "VariantName": "fgh",
-    "DateOfAccess": "12.06.2025",
-    "TaskIdList": [
-      1,
-      6
-    ],
-    "isListening": true,
-    "isSpeaking": false,
-    "isWriting": false,
-    "isReading": true,
-    "isFastRepeat": true,
-    "isVariants": false
   }
 ]
