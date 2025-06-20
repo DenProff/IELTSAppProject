@@ -193,5 +193,15 @@ namespace IELTSAppProject
         "addToCollection",
         "prevPage"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
+
+        private void baseCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new TaskCatalogPage());
+        }
+
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new MainPage());
+        }
     }
 }

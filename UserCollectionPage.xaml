@@ -134,6 +134,12 @@
             </ScrollViewer>
 
         </Border>
+        <Button Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="171" Background="#3333CC"
+            Style="{StaticResource MaterialDesignFlatButton}" Click="baseCatalog_Click" FontSize="17" FontWeight="Bold" x:Name="baseCatalog"
+            Margin="994,530,0,0">
+            <TextBlock Text="Основной каталог заданий" TextWrapping="Wrap" Width="139"/>
+        </Button>
+        <Button Content="На главный экран"  HorizontalAlignment="Left" Margin="1007,642,0,0" VerticalAlignment="Top" Height="58" Width="158" Background="Red" BorderThickness="2" x:Name="home" Click="home_Click"/>
 
         <!-- <Button Content="Помощь" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/> -->
 
