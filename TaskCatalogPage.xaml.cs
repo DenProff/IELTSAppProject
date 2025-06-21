@@ -125,8 +125,8 @@ namespace IELTSAppProject
             else
                 emptyMessage.Visibility = Visibility.Visible;
 
-           
 
+            // Дополнительные фильтры (AND-логика с основными)
             if (actualTasks.IsChecked == true)
                 isVisible &= task.isFastRepeat;
 
