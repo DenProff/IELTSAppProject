@@ -120,6 +120,12 @@
   <data name="addToCollection" xml:space="preserve">
     <value>Добавить в подборку</value>
   </data>
+  <data name="answerFileMistake" xml:space="preserve">
+    <value>Файл записи не найден, это ошибка, приносим свои извинения.</value>
+  </data>
+  <data name="answerIsSaved" xml:space="preserve">
+    <value>Ответ сохранён.</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Проверить всё</value>
   </data>
@@ -171,6 +177,9 @@
   <data name="myStatistics" xml:space="preserve">
     <value>Моя статистика</value>
   </data>
+  <data name="nothingIsPlaying" xml:space="preserve">
+    <value>Сейчас ничего не проигрывается.</value>
+  </data>
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Работать по своему усмотрению (не решать входной вариант)</value>
   </data>
@@ -179,6 +188,9 @@
   </data>
   <data name="playIdealAnswer" xml:space="preserve">
     <value>Играть пример на макс. балл</value>
+  </data>
+  <data name="playingWasStopped" xml:space="preserve">
+    <value>Воспроизведение остановлено.</value>
   </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Играть/Пауза</value>
@@ -191,6 +203,9 @@
   </data>
   <data name="recomendedTime" xml:space="preserve">
     <value>Рекомендованное время:</value>
+  </data>
+  <data name="recordAnswerFirst" xml:space="preserve">
+    <value>Сначала запишите свой ответ.</value>
   </data>
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>Запись можно проиграть после добавления ответа.</value>
@@ -225,26 +240,14 @@
   <data name="stop" xml:space="preserve">
     <value>Стоп</value>
   </data>
-  <data name="String2" xml:space="preserve">
-    <value>Ответ сохранён.</value>
-  </data>
-  <data name="String3" xml:space="preserve">
-    <value>Сначала запишите свой ответ.</value>
-  </data>
-  <data name="String4" xml:space="preserve">
-    <value>Файл записи не найден, это ошибка, приносим свои извинения.</value>
-  </data>
-  <data name="String5" xml:space="preserve">
-    <value>Сейчас ничего не проигрывается.</value>
-  </data>
-  <data name="String6" xml:space="preserve">
-    <value>Воспроизведение остановлено.</value>
-  </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Задания по разделам (Listening, Reading, Speaking, Writing)</value>
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Вид заданий:</value>
+  </data>
+  <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
+    <value>Можно слушать свой и пример идеального варианты ответа.</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Добро пожаловать в приложение для подготовки к экзамену в формате IELTS</value>

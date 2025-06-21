@@ -71,7 +71,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             {
                 SoundControl.StartRecording(Task.id, true);
                 isRecordingInProgress = true;
-                inputRecordingStatusTextBox.Text = "recordingInProgress";
+                inputRecordingStatusTextBox.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordingInProgress");
                 inputRecordingStatusTextBox.Background = Brushes.LightGreen; // При начале записи цвет квадрата с текстом меняется с красного на зелёный
             }
         }
@@ -85,10 +85,10 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             //Обновление интерфейса
             isRecordingInProgress = false;
             isRecordingDone = true;
-            inputRecordingStatusTextBox.Text = "answerIsSaved";
+            inputRecordingStatusTextBox.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "answerIsSaved");
             inputRecordingStatusTextBox.Background = Brushes.LightGreen;
 
-            resultTextBlock.Text = "Можно слушать свой и пример идеального варианты ответа.";
+            resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "UserAndIdealAnswersAreEnable");
             resultTextBlock.Background = Brushes.LightGreen;
         }
 
@@ -96,7 +96,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingDone)
             {
-                resultTextBlock.Text = "recordAnswerFirst";
+                resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordAnswerFirst");
                 return;
             }
 
@@ -108,7 +108,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             // Проверка существования файла
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("Файл записи не найден, это ошибка, приносим свои извинения.");
+                MessageBox.Show("answerFileMistake");
                 return;
             }
 
@@ -120,7 +120,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingDone)
             {
-                resultTextBlock.Text = "recordAnswerFirst";
+                resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordAnswerFirst");
                 return;
             }
 
@@ -132,7 +132,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             // Проверка существования файла
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("Файл записи не найден, это ошибка, приносим свои извинения.");
+                MessageBox.Show("answerFileMistake");
                 return;
             }
 
@@ -144,13 +144,13 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isPlayingSomeAnswerInProgress)
             {
-                resultTextBlock.Text = "Сейчас ничего не проигрывается.";
+                resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "nothingIsPlaying");
                 return;
             }
 
             SoundControl.StopAudio(); // Остановка воспроизведения
             isPlayingSomeAnswerInProgress = false;
-            resultTextBlock.Text = "Воспроизведение остановлено.";
+            resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "playingWasStopped");
         }
 
         private void OpenChmHelp()
