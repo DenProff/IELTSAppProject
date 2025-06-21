@@ -150,6 +150,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>Inglés  </value>
   </data>
+  <data name="EnterAnswerHere" xml:space="preserve">
+    <value>Ingrese su respuesta aquí</value>
+  </data>
   <data name="EnterAnswerHereMessage" xml:space="preserve">
     <value>Escribe tu respuesta aquí:</value>
   </data>
@@ -216,14 +219,35 @@
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>La grabación aún no ha comenzado.</value>
   </data>
+  <data name="remindToChooseTopic" xml:space="preserve">
+    <value>No olvide seleccionar un tema antes de escribir su ensayo</value>
+  </data>
+  <data name="remindToChooseTopicMessageBox" xml:space="preserve">
+    <value>Debe seleccionar un tema antes de esta acción</value>
+  </data>
   <data name="ResAndMaxPointsMessage" xml:space="preserve">
     <value>Tu resultado y respuesta modelo:</value>
   </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Ruso  </value>
   </data>
+  <data name="saveAnswer" xml:space="preserve">
+    <value>Guardar respuesta</value>
+  </data>
+  <data name="saveTopicChoice" xml:space="preserve">
+    <value>Guardar selección de tema</value>
+  </data>
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>Ver criterios de evaluación</value>
+  </data>
+  <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
+    <value>La visualización de ensayos solo está disponible después de guardar el suyo</value>
+  </data>
+  <data name="showMaxEssay" xml:space="preserve">
+    <value>Ver ensayo con puntuación máxima</value>
+  </data>
+  <data name="showUserEssay" xml:space="preserve">
+    <value>Ver su ensayo</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Realizar test de nivel</value>
@@ -248,6 +272,9 @@
   </data>
   <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
     <value>Puedes escuchar tanto tu respuesta como la respuesta modelo</value>
+  </data>
+  <data name="UserDidNotChooseTopic" xml:space="preserve">
+    <value>¡No has seleccionado un tema!</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Bienvenido a la aplicación de preparación para el examen IELTS</value>

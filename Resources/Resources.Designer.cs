@@ -160,6 +160,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите свой ответ сюда..
+        /// </summary>
+        internal static string EnterAnswerHere {
+            get {
+                return ResourceManager.GetString("EnterAnswerHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Запишите свой ответ здесь:.
         /// </summary>
         internal static string EnterAnswerHereMessage {
@@ -358,6 +367,24 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Перед написанием эссе не забудте выбрать тему выше.
+        /// </summary>
+        internal static string remindToChooseTopic {
+            get {
+                return ResourceManager.GetString("remindToChooseTopic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Перед данным действием необходимо выбрать тему.
+        /// </summary>
+        internal static string remindToChooseTopicMessageBox {
+            get {
+                return ResourceManager.GetString("remindToChooseTopicMessageBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Результат и пример на макс. балл:.
         /// </summary>
         internal static string ResAndMaxPointsMessage {
@@ -376,11 +403,56 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Сохранить ответ.
+        /// </summary>
+        internal static string saveAnswer {
+            get {
+                return ResourceManager.GetString("saveAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сохранить выбор темы.
+        /// </summary>
+        internal static string saveTopicChoice {
+            get {
+                return ResourceManager.GetString("saveTopicChoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Посмотреть критерии оценивания.
         /// </summary>
         internal static string SeeEvaluationCriteria {
             get {
                 return ResourceManager.GetString("SeeEvaluationCriteria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Просмотр эссе можно будет выполнять только после сохранения собственного.
+        /// </summary>
+        internal static string showEnableOnlyAfterAnswering {
+            get {
+                return ResourceManager.GetString("showEnableOnlyAfterAnswering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Смотреть эссе на макс..
+        /// </summary>
+        internal static string showMaxEssay {
+            get {
+                return ResourceManager.GetString("showMaxEssay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Смотреть своё эссе.
+        /// </summary>
+        internal static string showUserEssay {
+            get {
+                return ResourceManager.GetString("showUserEssay", resourceCulture);
             }
         }
         
@@ -453,6 +525,15 @@ namespace IELTSAppProject.Resources {
         internal static string UserAndIdealAnswersAreEnable {
             get {
                 return ResourceManager.GetString("UserAndIdealAnswersAreEnable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Вы не выбрали тему!.
+        /// </summary>
+        internal static string UserDidNotChooseTopic {
+            get {
+                return ResourceManager.GetString("UserDidNotChooseTopic", resourceCulture);
             }
         }
         

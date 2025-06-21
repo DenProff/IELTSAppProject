@@ -54,12 +54,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="saveTopicBtn" Height="40" Grid.Column="9" Grid.Row="1" HorizontalAlignment="Center" Width="257"  FontSize="17" Click="SaveTopic" Content="Сохранить выбор темы" Margin="0,12,0,13"/>
-        <TextBox x:Name="answeField" FontSize="17" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="8" materialDesign:HintAssist.Hint="Перед написанием эссе не забудте выбрать тему выше" Margin="0,64,3,10" Grid.RowSpan="3"/>
-        <Button x:Name="saveAnswer" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="Сохранить ответ" Margin="0,10,0,218" Click="SaveAnswer"/>
-        <Button x:Name="showIdealEssay" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="Смотреть эссе на макс." Margin="0,160,0,68" Click="ShowIdealEssay"/>
-        <Button x:Name="showUsersEssay" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="Смотреть своё эссе" Margin="0,218,0,10" Click="ShowUsersEssay"/>
-        <TextBlock x:Name="infoTextBox" Background="Red" Foreground="White"  Grid.Column="9" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Height="83" Width="282"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
+        <Button x:Name="saveTopicBtn" Height="40" Grid.Column="9" Grid.Row="1" HorizontalAlignment="Center" Width="257"  FontSize="17" Click="SaveTopic" Content="{DynamicResource saveTopicChoice}" Margin="0,12,0,13"/>
+        <TextBox x:Name="answeField" FontSize="17" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="8" materialDesign:HintAssist.Hint="{DynamicResource remindToChooseTopic}" Margin="0,64,3,10" Grid.RowSpan="3"/>
+        <Button x:Name="saveAnswer" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="{DynamicResource saveAnswer}" Margin="0,10,0,218" Click="SaveAnswer"/>
+        <Button x:Name="showIdealEssay" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="{DynamicResource showMaxEssay}" Margin="0,160,0,68" Click="ShowIdealEssay"/>
+        <Button x:Name="showUsersEssay" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="{DynamicResource showUserEssay}" Margin="0,218,0,10" Click="ShowUsersEssay"/>
+        <TextBlock x:Name="infoTextBox" Background="Red" Foreground="White"  Grid.Column="9" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Height="83" Width="282" Text="{DynamicResource showEnableOnlyAfterAnswering}"/>
         <Button Content="{DynamicResource help}" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="256" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="9"/>
         <Button Grid.Column="9" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#F13C73" Height="73" Click="ShowEvaluationCriteria" Width="256" FontSize="17" Grid.RowSpan="2">
             <TextBlock Text="{DynamicResource SeeEvaluationCriteria}" TextWrapping="Wrap"/>

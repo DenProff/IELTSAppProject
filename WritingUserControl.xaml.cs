@@ -106,7 +106,7 @@ namespace IELTSAppProject
             }
             else
             {
-                ShowMessageWindow("Перед выполнением данного действия необходимо выбрать тему.");
+                ShowMessageWindow("remindToChooseTopicMessageBox");
             }
         }
 
@@ -119,7 +119,7 @@ namespace IELTSAppProject
             TaskData.UserAnswer = answeField.Text; // Сохранение ответа пользователя
 
             // Изменение интерфейса
-            infoTextBox.Text = "Ответ сохранён.";
+            infoTextBox.Text = "answerIsSaved";
             infoTextBox.Background = Brushes.LightGreen;
         }
 
@@ -127,7 +127,7 @@ namespace IELTSAppProject
         {
             answeField.IsEnabled = true;
             saveAnswer.IsEnabled = true;
-            answeField.Text = "Введите свой ответ.";
+            answeField.Text = "EnterAnswerHere";
         }
 
         private void ShowIdealEssay(object sender, RoutedEventArgs e) // Вывод примера идеального эссе по выбранной теме
@@ -139,7 +139,7 @@ namespace IELTSAppProject
             }
             else
             {
-                ShowMessageWindow("Вы не выбрали тему!"); // На всякий случай вывод сообщения - предполагается,
+                ShowMessageWindow("UserDidNotChooseTopic"); // На всякий случай вывод сообщения - предполагается,
                                                           // что оно не должно быть показано никогда
             }
         }

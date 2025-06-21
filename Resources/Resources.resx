@@ -150,6 +150,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>Английский</value>
   </data>
+  <data name="EnterAnswerHere" xml:space="preserve">
+    <value>Введите свой ответ сюда.</value>
+  </data>
   <data name="EnterAnswerHereMessage" xml:space="preserve">
     <value>Запишите свой ответ здесь:</value>
   </data>
@@ -216,14 +219,35 @@
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>Запись ещё не начата.</value>
   </data>
+  <data name="remindToChooseTopic" xml:space="preserve">
+    <value>Перед написанием эссе не забудте выбрать тему выше</value>
+  </data>
+  <data name="remindToChooseTopicMessageBox" xml:space="preserve">
+    <value>Перед данным действием необходимо выбрать тему</value>
+  </data>
   <data name="ResAndMaxPointsMessage" xml:space="preserve">
     <value>Результат и пример на макс. балл:</value>
   </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Русский</value>
   </data>
+  <data name="saveAnswer" xml:space="preserve">
+    <value>Сохранить ответ</value>
+  </data>
+  <data name="saveTopicChoice" xml:space="preserve">
+    <value>Сохранить выбор темы</value>
+  </data>
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>Посмотреть критерии оценивания</value>
+  </data>
+  <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
+    <value>Просмотр эссе можно будет выполнять только после сохранения собственного</value>
+  </data>
+  <data name="showMaxEssay" xml:space="preserve">
+    <value>Смотреть эссе на макс.</value>
+  </data>
+  <data name="showUserEssay" xml:space="preserve">
+    <value>Смотреть своё эссе</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Решать входной вариант</value>
@@ -248,6 +272,9 @@
   </data>
   <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
     <value>Можно слушать свой и пример идеального варианты ответа.</value>
+  </data>
+  <data name="UserDidNotChooseTopic" xml:space="preserve">
+    <value>Вы не выбрали тему!</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Добро пожаловать в приложение для подготовки к экзамену в формате IELTS</value>

@@ -150,6 +150,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>English  </value>
   </data>
+  <data name="EnterAnswerHere" xml:space="preserve">
+    <value>Enter your answer here</value>
+  </data>
   <data name="EnterAnswerHereMessage" xml:space="preserve">
     <value>Enter your answer here:</value>
   </data>
@@ -216,14 +219,35 @@
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>Recording hasn't started yet.</value>
   </data>
+  <data name="remindToChooseTopic" xml:space="preserve">
+    <value>Don't forget to select a topic before writing your essay</value>
+  </data>
+  <data name="remindToChooseTopicMessageBox" xml:space="preserve">
+    <value>You need to select a topic before this action</value>
+  </data>
   <data name="ResAndMaxPointsMessage" xml:space="preserve">
     <value>Your result and model answer:</value>
   </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Russian  </value>
   </data>
+  <data name="saveAnswer" xml:space="preserve">
+    <value>Save answer</value>
+  </data>
+  <data name="saveTopicChoice" xml:space="preserve">
+    <value>Save topic selection</value>
+  </data>
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>View scoring criteria</value>
+  </data>
+  <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
+    <value>Essay viewing is only available after saving your own</value>
+  </data>
+  <data name="showMaxEssay" xml:space="preserve">
+    <value>View maximum-scoring essay</value>
+  </data>
+  <data name="showUserEssay" xml:space="preserve">
+    <value>View your essay</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Take the placement test</value>
@@ -248,6 +272,9 @@
   </data>
   <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
     <value>You can listen to both your answer and the model answer</value>
+  </data>
+  <data name="UserDidNotChooseTopic" xml:space="preserve">
+    <value>You haven't selected a topic!</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Welcome to the IELTS exam preparation app</value>
