@@ -201,6 +201,9 @@
   <data name="myStatistics" xml:space="preserve">
     <value>Моя статистика</value>
   </data>
+  <data name="noNeededCollectionsYet" xml:space="preserve">
+    <value />
+  </data>
   <data name="nothingIsPlaying" xml:space="preserve">
     <value>Сейчас ничего не проигрывается.</value>
   </data>

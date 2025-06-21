@@ -313,6 +313,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string noNeededCollectionsYet {
+            get {
+                return ResourceManager.GetString("noNeededCollectionsYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сейчас ничего не проигрывается..
         /// </summary>
         internal static string nothingIsPlaying {

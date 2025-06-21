@@ -129,7 +129,7 @@
 
                 <StackPanel Margin="0,0,30,0" Width="780">
 
-                    <TextBlock Text="Здесь еще нет подходящих подборок" FontSize="25" HorizontalAlignment="Center" Visibility="Hidden" x:Name="emptyMessage"/>
+                    <TextBlock Text="{DynamicResource noNeededCollectionsYet}" FontSize="25" HorizontalAlignment="Center" Visibility="Hidden" x:Name="emptyMessage"/>
                     <ItemsControl x:Name="TasksContainer" ItemsSource="{Binding TasksView}">
 
                     </ItemsControl>
