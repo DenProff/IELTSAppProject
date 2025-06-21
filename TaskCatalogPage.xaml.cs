@@ -117,13 +117,13 @@ namespace IELTSAppProject
             //Для вывода надписи об отсутствии подборок
             if (isVisible || (varOfExam.IsChecked == true && task.isVariants) ||
                 (actualTasks.IsChecked == true && task.isFastRepeat) ||
-                          //когда все галочки не нажаты
-                          (speakCheackBox.IsChecked == false &&
-                          readingCheckBox.IsChecked == false &&
-                          writingCheckBox.IsChecked == false &&
-                          listeningCheckBox.IsChecked == false &&
-                          actualTasks.IsChecked == false &&
-                          varOfExam.IsChecked == false))
+                 //когда все галочки не нажаты
+                 (speakCheackBox.IsChecked == false &&
+                  readingCheckBox.IsChecked == false &&
+                  writingCheckBox.IsChecked == false &&
+                  listeningCheckBox.IsChecked == false &&
+                  actualTasks.IsChecked == false &&
+                  varOfExam.IsChecked == false))
                 emptyMessage.Visibility = Visibility.Hidden;
             else
                 emptyMessage.Visibility = Visibility.Visible;
