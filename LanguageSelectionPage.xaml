@@ -25,7 +25,7 @@
                        HorizontalAlignment="Center"/>
 
                 <!-- Русский (выбран) -->
-                <RadioButton Content="{DynamicResource rusLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="RussianLanguage_Click" IsChecked="True">
+                <RadioButton Content="{DynamicResource rusLanguage}" FontSize="19" FontWeight="Bold" Foreground="White" x:Name="russianLanguage" Click="RussianLanguage_Click">
                     <RadioButton.Template>
                         <ControlTemplate TargetType="RadioButton">
                             <StackPanel Orientation="Horizontal">
