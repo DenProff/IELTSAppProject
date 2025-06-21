@@ -26,7 +26,7 @@
         </ScrollViewer>
 
         <Button x:Name="help" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Background="#F13C73"
-                Margin="20,0,20,0" FontSize="20" Click="Check_Click" Content="{DynamicResource help}" Height="40"/>
+                Margin="20,0,20,0" FontSize="20" Click="help_Click" Content="{DynamicResource help}" Height="40"/>
 
         <Button x:Name="Check" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" 
                 Margin="20,0,20,0" FontSize="20" Click="Check_Click" Content="{DynamicResource checkAll}" Height="40"/>

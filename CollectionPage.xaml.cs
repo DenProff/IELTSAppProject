@@ -293,5 +293,10 @@ namespace IELTSAppProject
         {
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
+
+        private void help_Click(object sender, RoutedEventArgs e)
+        {
+            OpenChmHelp();
+        }
     }
 }
