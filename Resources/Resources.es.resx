@@ -144,6 +144,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>Inglés  </value>
   </data>
+  <data name="EnterAnswerHereMessage" xml:space="preserve">
+    <value>Escribe tu respuesta aquí:</value>
+  </data>
   <data name="espLanguage" xml:space="preserve">
     <value>Español  </value>
   </data>
@@ -171,8 +174,14 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Modo personalizado (omitir test de nivel)</value>
   </data>
+  <data name="playIdealAnswer" xml:space="preserve">
+    <value>Reproducir respuesta modelo</value>
+  </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Reproducir/Pausa</value>
+  </data>
+  <data name="playUserAnswer" xml:space="preserve">
+    <value>Reproducir tu grabación</value>
   </data>
   <data name="prevPage" xml:space="preserve">
     <value>Volver atrás</value>
@@ -180,8 +189,20 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>Duración sugerida:</value>
   </data>
+  <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
+    <value>La grabación solo se puede reproducir después de agregar una respuesta.</value>
+  </data>
+  <data name="recordingNotStartedMessage" xml:space="preserve">
+    <value>La grabación aún no ha comenzado.</value>
+  </data>
+  <data name="ResAndMaxPointsMessage" xml:space="preserve">
+    <value>Tu resultado y respuesta modelo:</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Ruso  </value>
+  </data>
+  <data name="SeeEvaluationCriteria" xml:space="preserve">
+    <value>Ver criterios de evaluación</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Realizar test de nivel</value>
@@ -191,6 +212,12 @@
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Empezar (continuar) la preparación</value>
+  </data>
+  <data name="startRecording" xml:space="preserve">
+    <value>Comenzar grabación</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Detener</value>
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Tareas por sección (Listening, Reading, Speaking, Writing)</value>

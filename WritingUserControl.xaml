@@ -36,7 +36,7 @@
 
         <TextBlock x:Name="recommendedTimeTextBlock" Grid.Column="8" Grid.ColumnSpan="2" Margin="10,0,10,0" VerticalAlignment="Center" Height="32" FontSize="17" Text="{DynamicResource recomendedTime}"/>
 
-        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" FontSize="17" Grid.ColumnSpan="8" Margin="0,20,0,20" HorizontalAlignment="Left" Width="878"><Run Language="ru-ru" Text="Задание"/></TextBlock>
+        <TextBlock x:Name="taskTextBlock" Grid.Column="1" Grid.Row="2" FontSize="17" Grid.ColumnSpan="8" Margin="0,20,0,20" HorizontalAlignment="Left" Width="878" Text="The task"/>
         <TextBlock x:Name="topicTextBlock" Grid.Column="1" Grid.Row="1" FontSize="17" VerticalAlignment="Center" Height="30" Text="The topic:" Grid.ColumnSpan="2" Margin="0,0,245,0"/>
         <ComboBox x:Name="topicsComboBox" 
           Grid.Column="2" 
@@ -61,6 +61,8 @@
         <Button x:Name="showUsersEssay" Height="40" Grid.Column="9" Grid.Row="4" HorizontalAlignment="Center" Width="266" FontSize="17" Content="Смотреть своё эссе" Margin="0,218,0,10" Click="ShowUsersEssay"/>
         <TextBlock x:Name="infoTextBox" Background="Red" Foreground="White"  Grid.Column="9" HorizontalAlignment="Center" Margin="0,72,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" Height="83" Width="282"><Run Language="ru-ru" Text="Просмотр эссе можно будет выполнять только после сохранения собственного"/></TextBlock>
         <Button Content="{DynamicResource help}" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Height="58" Width="256" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click" Grid.Row="3" Grid.Column="9"/>
-        <Button Grid.Column="9" Content="Посмотреть&#xA;критерии оценивания" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#F13C73" Height="73" Click="ShowEvaluationCriteria" Width="256" FontSize="17" Grid.RowSpan="2"/>
+        <Button Grid.Column="9" HorizontalAlignment="Center" Margin="0,60,0,0" Grid.Row="1" VerticalAlignment="Top" Background="#F13C73" Height="73" Click="ShowEvaluationCriteria" Width="256" FontSize="17" Grid.RowSpan="2">
+            <TextBlock Text="{DynamicResource SeeEvaluationCriteria}" TextWrapping="Wrap"/>
+        </Button>
     </Grid>
 </UserControl>

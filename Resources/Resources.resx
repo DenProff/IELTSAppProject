@@ -144,6 +144,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>Английский</value>
   </data>
+  <data name="EnterAnswerHereMessage" xml:space="preserve">
+    <value>Запишите свой ответ здесь:</value>
+  </data>
   <data name="espLanguage" xml:space="preserve">
     <value>Испанский</value>
   </data>
@@ -171,8 +174,17 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Работать по своему усмотрению (не решать входной вариант)</value>
   </data>
+  <data name="PDFmistake" xml:space="preserve">
+    <value>Не удалось открыть PDF с критериями.</value>
+  </data>
+  <data name="playIdealAnswer" xml:space="preserve">
+    <value>Играть пример на макс. балл</value>
+  </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Играть/Пауза</value>
+  </data>
+  <data name="playUserAnswer" xml:space="preserve">
+    <value>Играть свою запись</value>
   </data>
   <data name="prevPage" xml:space="preserve">
     <value>Вернуться назад</value>
@@ -180,8 +192,23 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>Рекомендованное время:</value>
   </data>
+  <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
+    <value>Запись можно проиграть после добавления ответа.</value>
+  </data>
+  <data name="recordingInProgress" xml:space="preserve">
+    <value>Запись идёт.</value>
+  </data>
+  <data name="recordingNotStartedMessage" xml:space="preserve">
+    <value>Запись ещё не начата.</value>
+  </data>
+  <data name="ResAndMaxPointsMessage" xml:space="preserve">
+    <value>Результат и пример на макс. балл:</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Русский</value>
+  </data>
+  <data name="SeeEvaluationCriteria" xml:space="preserve">
+    <value>Посмотреть критерии оценивания</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Решать входной вариант</value>
@@ -191,6 +218,27 @@
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Начать (продолжить) подготовку</value>
+  </data>
+  <data name="startRecording" xml:space="preserve">
+    <value>Запись</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>Ответ сохранён.</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value>Сначала запишите свой ответ.</value>
+  </data>
+  <data name="String4" xml:space="preserve">
+    <value>Файл записи не найден, это ошибка, приносим свои извинения.</value>
+  </data>
+  <data name="String5" xml:space="preserve">
+    <value>Сейчас ничего не проигрывается.</value>
+  </data>
+  <data name="String6" xml:space="preserve">
+    <value>Воспроизведение остановлено.</value>
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Задания по разделам (Listening, Reading, Speaking, Writing)</value>

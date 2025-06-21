@@ -144,6 +144,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>英语</value>
   </data>
+  <data name="EnterAnswerHereMessage" xml:space="preserve">
+    <value>在此输入您的答案：</value>
+  </data>
   <data name="espLanguage" xml:space="preserve">
     <value>西班牙语</value>
   </data>
@@ -171,8 +174,14 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>自定义练习模式（跳过分级测试）</value>
   </data>
+  <data name="playIdealAnswer" xml:space="preserve">
+    <value>播放满分范例</value>
+  </data>
   <data name="playOrPause" xml:space="preserve">
     <value>播放/暂停</value>
+  </data>
+  <data name="playUserAnswer" xml:space="preserve">
+    <value>播放您的录音</value>
   </data>
   <data name="prevPage" xml:space="preserve">
     <value>返回</value>
@@ -180,8 +189,20 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>推荐时长:</value>
   </data>
+  <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
+    <value>只有在添加答案后才能播放录音。</value>
+  </data>
+  <data name="recordingNotStartedMessage" xml:space="preserve">
+    <value>录音尚未开始。</value>
+  </data>
+  <data name="ResAndMaxPointsMessage" xml:space="preserve">
+    <value>您的答案和满分范例：</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>俄语</value>
+  </data>
+  <data name="SeeEvaluationCriteria" xml:space="preserve">
+    <value>查看评分标准</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>参加分级测试</value>
@@ -191,6 +212,12 @@
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>开始（继续）准备</value>
+  </data>
+  <data name="startRecording" xml:space="preserve">
+    <value>开始录音</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>停止</value>
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>按题型分类练习 (听力、阅读、口语、写作)</value>

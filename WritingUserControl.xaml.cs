@@ -162,7 +162,7 @@ namespace IELTSAppProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Не удалось открыть PDF с критериями.");
+                MessageBox.Show(SetLanguageResources.GetString(Properties.Settings.Default.Language, "PDFmistake"));
             }
         }
 
@@ -210,16 +210,5 @@ namespace IELTSAppProject
 
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
-        public static string[] resourcesKeysArray =
-{
-        "describeTextBlockFirstTestPage",
-        "solveEnterVariantBTN",
-        "notSolveEnterVariantBTN",
-        "help",
-        "convertBTN",
-        "addToCollection",
-        "prevPage",
-        "recomendedTime"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

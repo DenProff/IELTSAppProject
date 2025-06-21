@@ -142,6 +142,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Запишите свой ответ здесь:.
+        /// </summary>
+        internal static string EnterAnswerHereMessage {
+            get {
+                return ResourceManager.GetString("EnterAnswerHereMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Испанский.
         /// </summary>
         internal static string espLanguage {
@@ -223,11 +232,38 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не удалось открыть PDF с критериями..
+        /// </summary>
+        internal static string PDFmistake {
+            get {
+                return ResourceManager.GetString("PDFmistake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Играть пример на макс. балл.
+        /// </summary>
+        internal static string playIdealAnswer {
+            get {
+                return ResourceManager.GetString("playIdealAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Играть/Пауза.
         /// </summary>
         internal static string playOrPause {
             get {
                 return ResourceManager.GetString("playOrPause", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Играть свою запись.
+        /// </summary>
+        internal static string playUserAnswer {
+            get {
+                return ResourceManager.GetString("playUserAnswer", resourceCulture);
             }
         }
         
@@ -250,11 +286,56 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись можно проиграть после добавления ответа..
+        /// </summary>
+        internal static string recordingEnableOnlyAfterSettingAnswer {
+            get {
+                return ResourceManager.GetString("recordingEnableOnlyAfterSettingAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись идёт..
+        /// </summary>
+        internal static string recordingInProgress {
+            get {
+                return ResourceManager.GetString("recordingInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись ещё не начата..
+        /// </summary>
+        internal static string recordingNotStartedMessage {
+            get {
+                return ResourceManager.GetString("recordingNotStartedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Результат и пример на макс. балл:.
+        /// </summary>
+        internal static string ResAndMaxPointsMessage {
+            get {
+                return ResourceManager.GetString("ResAndMaxPointsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Русский.
         /// </summary>
         internal static string rusLanguage {
             get {
                 return ResourceManager.GetString("rusLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Посмотреть критерии оценивания.
+        /// </summary>
+        internal static string SeeEvaluationCriteria {
+            get {
+                return ResourceManager.GetString("SeeEvaluationCriteria", resourceCulture);
             }
         }
         
@@ -282,6 +363,69 @@ namespace IELTSAppProject.Resources {
         internal static string startOrContinuePreporation {
             get {
                 return ResourceManager.GetString("startOrContinuePreporation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись.
+        /// </summary>
+        internal static string startRecording {
+            get {
+                return ResourceManager.GetString("startRecording", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Стоп.
+        /// </summary>
+        internal static string stop {
+            get {
+                return ResourceManager.GetString("stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ответ сохранён..
+        /// </summary>
+        internal static string String2 {
+            get {
+                return ResourceManager.GetString("String2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сначала запишите свой ответ..
+        /// </summary>
+        internal static string String3 {
+            get {
+                return ResourceManager.GetString("String3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл записи не найден, это ошибка, приносим свои извинения..
+        /// </summary>
+        internal static string String4 {
+            get {
+                return ResourceManager.GetString("String4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сейчас ничего не проигрывается..
+        /// </summary>
+        internal static string String5 {
+            get {
+                return ResourceManager.GetString("String5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Воспроизведение остановлено..
+        /// </summary>
+        internal static string String6 {
+            get {
+                return ResourceManager.GetString("String6", resourceCulture);
             }
         }
         

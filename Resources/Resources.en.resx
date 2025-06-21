@@ -144,6 +144,9 @@
   <data name="engLanguage" xml:space="preserve">
     <value>English  </value>
   </data>
+  <data name="EnterAnswerHereMessage" xml:space="preserve">
+    <value>Enter your answer here:</value>
+  </data>
   <data name="espLanguage" xml:space="preserve">
     <value>Spanish  </value>
   </data>
@@ -171,8 +174,14 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Custom practice mode (skip placement test)</value>
   </data>
+  <data name="playIdealAnswer" xml:space="preserve">
+    <value>Play model answer</value>
+  </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Play/Pause</value>
+  </data>
+  <data name="playUserAnswer" xml:space="preserve">
+    <value>Play your recording</value>
   </data>
   <data name="prevPage" xml:space="preserve">
     <value>Go back</value>
@@ -180,8 +189,20 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>Recommended time:</value>
   </data>
+  <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
+    <value>Recording can be played only after adding an answer.</value>
+  </data>
+  <data name="recordingNotStartedMessage" xml:space="preserve">
+    <value>Recording hasn't started yet.</value>
+  </data>
+  <data name="ResAndMaxPointsMessage" xml:space="preserve">
+    <value>Your result and model answer:</value>
+  </data>
   <data name="rusLanguage" xml:space="preserve">
     <value>Russian  </value>
+  </data>
+  <data name="SeeEvaluationCriteria" xml:space="preserve">
+    <value>View scoring criteria</value>
   </data>
   <data name="solveEnterVariantBTN" xml:space="preserve">
     <value>Take the placement test</value>
@@ -191,6 +212,12 @@
   </data>
   <data name="startOrContinuePreporation" xml:space="preserve">
     <value>Start (continue) preparation</value>
+  </data>
+  <data name="startRecording" xml:space="preserve">
+    <value>Start recording</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Stop</value>
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Tasks by section (Listening, Reading, Speaking, Writing)</value>

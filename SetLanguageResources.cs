@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
@@ -13,19 +14,22 @@ namespace IELTSAppProject
 {
     public class SetLanguageResources
     {
+        private static ResourceManager ResourceManager
+        {
+            get => new ResourceManager("IELTSAppProject.Resources.Resources", Assembly.GetExecutingAssembly());
+        }
+            
+
         public static void SetLanguageResourcesMethod(string languageCode,/* string[] resourcesKeysArray,*/ object sender)
         {
-            // Получение ресурсов для одного из языков
-            ResourceManager resourceManager = new ResourceManager("IELTSAppProject.Resources.Resources", Assembly.GetExecutingAssembly());
-
             CultureInfo culture = new CultureInfo(languageCode);
-            using (ResourceSet resourceSet = resourceManager.GetResourceSet(culture, true, true))
+            using (ResourceSet resourceSet = ResourceManager.GetResourceSet(culture, true, true))
             {
                 // Перебор всех ключей и обновление ресурсов в контроле или странице
                 foreach (DictionaryEntry entry in resourceSet)
                 {
                     string key = entry.Key.ToString();
-                    string value = resourceManager.GetString(key, culture);
+                    string value = ResourceManager.GetString(key, culture);
 
                     if (sender is Page page)
                     {
@@ -37,19 +41,16 @@ namespace IELTSAppProject
                     }
                 }
             }
+        }
 
-            //// Получение из ресурсов текстов по заданному ключу
-            //foreach (string key in resourcesKeysArray)
-            //{
-            //    if (sender is Page)
-            //    {
-            //        ((Page)sender).Resources[key] = resourceManager.GetString(key, new CultureInfo(languageCode));
-            //    }
-            //    else
-            //    {
-            //        ((UserControl)sender).Resources[key] = resourceManager.GetString(key, new CultureInfo(languageCode));
-            //    }
-            //}
+        public static string GetString(string languageCode, string key)
+        {
+            CultureInfo culture = new CultureInfo(languageCode);
+            using (ResourceSet resourceSet = ResourceManager.GetResourceSet(culture, true, true))
+            {
+                // По ключу и установленной через LanguageChange.SetLanguage культуре из ресурсов возвращается значение
+                return ResourceManager.GetString(key, culture) ?? key; // Если из ресурсов возвращается null, то выводится
+            }                                                                               // ключ - иначе были бы исключения
         }
     }
 }

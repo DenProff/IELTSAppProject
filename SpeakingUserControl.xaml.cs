@@ -16,6 +16,7 @@ using System.IO;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using System.Globalization;
 
 namespace IELTSAppProject
 {
@@ -48,6 +49,9 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             // Подписка на смену языка - событие в классе LanguageChange
             LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
 
+            // Установка текста в элементах, где он будет меняться по мере работы с заданием
+            inputRecordingStatusTextBox.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordingNotStartedMessage");
+            resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordingEnableOnlyAfterSettingAnswer");
 
             taskTextBlock.Text = taskText;
             topicTextBlock.Text += " " + task.TaskText;
@@ -67,7 +71,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             {
                 SoundControl.StartRecording(Task.id, true);
                 isRecordingInProgress = true;
-                inputRecordingStatusTextBox.Text = "Запись идёт.";
+                inputRecordingStatusTextBox.Text = "recordingInProgress";
                 inputRecordingStatusTextBox.Background = Brushes.LightGreen; // При начале записи цвет квадрата с текстом меняется с красного на зелёный
             }
         }
@@ -81,7 +85,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             //Обновление интерфейса
             isRecordingInProgress = false;
             isRecordingDone = true;
-            inputRecordingStatusTextBox.Text = "Ответ сохранён.";
+            inputRecordingStatusTextBox.Text = "answerIsSaved";
             inputRecordingStatusTextBox.Background = Brushes.LightGreen;
 
             resultTextBlock.Text = "Можно слушать свой и пример идеального варианты ответа.";
@@ -92,7 +96,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingDone)
             {
-                resultTextBlock.Text = "Сначала запишите свой ответ.";
+                resultTextBlock.Text = "recordAnswerFirst";
                 return;
             }
 
@@ -116,7 +120,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             if (!isRecordingDone)
             {
-                resultTextBlock.Text = "Сначала запишите свой ответ.";
+                resultTextBlock.Text = "recordAnswerFirst";
                 return;
             }
 
@@ -152,7 +156,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         private void OpenChmHelp()
         {
             string chmPath = System.IO.Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,  
+                AppDomain.CurrentDomain.BaseDirectory,
                 "Help",
                 "referenceData.chm"
             );
@@ -192,7 +196,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Не удалось открыть PDF с критериями.");
+                MessageBox.Show(SetLanguageResources.GetString(Properties.Settings.Default.Language, "PDFmistake"));
             }
         }
 
@@ -208,7 +212,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 return;
 
             name = window.UserInput;
-            
+
             DateTime now = DateTime.Today; //берем сегодняшнюю дату
 
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
@@ -234,17 +238,6 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             File.WriteAllText(file, updatedJson);
 
             MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
-
-
         }
-        public static string[] resourcesKeysArray =
-{
-        "describeTextBlockFirstTestPage",
-        "solveEnterVariantBTN",
-        "notSolveEnterVariantBTN",
-        "help",
-        "prevPage",
-        "recomendedTime"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }
