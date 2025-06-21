@@ -9,16 +9,16 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="IELTS App" Height="700" Width="1165">
 
-    <Grid x:Name="statistics"  Background="#FFB840" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
-        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack"/>
-        <Button Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0"/>
-        <Button Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD"
+    <Grid x:Name="statistics"  Background="#FF9900" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
+        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack" Foreground="White"/>
+        <Button Content="{DynamicResource myStatistics}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" FontSize="17" FontWeight="Bold" x:Name="statistic" Margin="232,0,0,0" Foreground="White"/>
+        <Button Content="{DynamicResource myMistakes}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="mistakes_Click" FontSize="17" FontWeight="Bold" x:Name="mistakes" Margin="484,0,0,0" Foreground="White"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC"
                 Style="{StaticResource MaterialDesignFlatButton}" Click="collections_Click" FontSize="17" FontWeight="Bold" x:Name="collections"
-                Margin="736,0,0,0">
+                Margin="736,0,0,0" Foreground="White">
             <TextBlock Text="{DynamicResource myCollections}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
-        <Button Content="{DynamicResource chooseLanguage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
+        <Button Content="{DynamicResource chooseLanguage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0" Foreground="White"/>
         <Grid Margin="20,200,20,80">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -31,7 +31,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Border BorderBrush="#333" BorderThickness="1" Background="#514ED9" Padding="10" Grid.Column="0" CornerRadius="20" Margin="0,0,20,0">
+                <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" Grid.Column="0" CornerRadius="20" Margin="0,0,20,0">
                     <StackPanel>
                         <TextBlock FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,5,0,5">
                             <Run>Количество успешно/неуспешно</Run>
@@ -59,7 +59,7 @@
                 </Border>
 
                 <!-- Правый столбец: Статистика по экзаменам -->
-                <Border BorderBrush="#333" BorderThickness="1" Background="#514ED9" Padding="10" Grid.Column="1" CornerRadius="20" Margin="20,0,0,0">
+                <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" Grid.Column="1" CornerRadius="20" Margin="20,0,0,0">
                     <StackPanel>
                         <TextBlock Text="Статистика по сданным экзаменам:" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,20,0,15"/>
                         <Separator Margin="0,10,0,10"/>
@@ -75,7 +75,7 @@
                 </Border>
             </Grid>
 
-            <Border BorderBrush="#333" BorderThickness="1" Background="#514ED9" Padding="10" CornerRadius="20" Grid.Row="1" Margin="0,50,581,0" Width="541">
+            <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" CornerRadius="20" Grid.Row="1" Margin="0,50,581,0" Width="541">
                 <StackPanel>
                     <TextBlock Text="Рекомендуется поработать над:" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,5,0,0"/>
                     <TextBlock x:Name="recomendation" Text="" FontWeight="Bold" Foreground="Red" FontSize="18" Margin="0,5,0,5" />

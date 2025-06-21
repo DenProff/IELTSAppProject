@@ -9,7 +9,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       Title="IELTS App" Height="700" Width="1165">
     <Grid x:Name="firstTest"  Background="#FF9900" MaxWidth="1900" MinWidth="400" MaxHeight="1000" MinHeight="300" Height="700">
-        <Border MinWidth="400" MaxWidth="1900" Background=" #514ED9" Padding="30" VerticalAlignment="Top" HorizontalAlignment="Center" CornerRadius="20" Margin="0,85,0,0" Height="265" Width="711">
+        <Border MinWidth="400" MaxWidth="1900" Background=" #3333CC" Padding="30" VerticalAlignment="Top" HorizontalAlignment="Center" CornerRadius="20" Margin="0,85,0,0" Height="265" Width="711">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="10" Color="LightBlue" ShadowDepth="0" />
             </Border.Effect>
@@ -17,12 +17,12 @@
                 <TextBlock FontSize="20" TextWrapping="Wrap" FontWeight="Bold" Margin="0 0 0 20" Height="223" TextAlignment="Center" Foreground="#FFFAF5F5" FontFamily="Palatino Linotype" Width="660" Text="{DynamicResource describeTextBlockFirstTestPage}"/>
             </StackPanel>
         </Border>
-        <Button Content="{DynamicResource solveEnterVariantBTN}" HorizontalAlignment="Left" Margin="148,421,0,0" VerticalAlignment="Top" Height="169" Width="295" Background="#FF35C0CD" Click="Button_Click" FontSize="17" x:Name="testVar"/>
+        <Button Content="{DynamicResource solveEnterVariantBTN}" HorizontalAlignment="Left" Margin="148,421,0,0" VerticalAlignment="Top" Height="169" Width="295" Background="#3333CC" Click="Button_Click" FontSize="17" x:Name="testVar"/>
         <Button HorizontalAlignment="Left" Margin="725,421,0,0" VerticalAlignment="Top"
-                Height="169" Width="301" Background="#FF35C0CD" Click="Button_Click_1" FontWeight="SemiBold" FontSize="17" x:Name="continue">
+                Height="169" Width="301" Background="#3333CC" Click="Button_Click_1" FontWeight="SemiBold" FontSize="17" x:Name="continue">
             <TextBlock Text="{DynamicResource notSolveEnterVariantBTN}" TextWrapping="Wrap"/>
         </Button>
-        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_2" FontSize="16" FontWeight="Bold" x:Name="turnBack"/>
+        <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="Button_Click_2" FontSize="16" FontWeight="Bold" x:Name="turnBack" Foreground="White"/>
         <Button Content="{DynamicResource help}" HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#F13C73" BorderThickness="2" x:Name="help" Click="help_Click"/>
     </Grid>
 </Page>
