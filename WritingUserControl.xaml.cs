@@ -106,7 +106,7 @@ namespace IELTSAppProject
             }
             else
             {
-                ShowMessageWindow("remindToChooseTopicMessageBox");
+                ShowMessageWindow(SetLanguageResources.GetString(Properties.Settings.Default.Language, "remindToChooseTopicMessageBox"));
             }
         }
 
@@ -119,7 +119,7 @@ namespace IELTSAppProject
             TaskData.UserAnswer = answeField.Text; // Сохранение ответа пользователя
 
             // Изменение интерфейса
-            infoTextBox.Text = "answerIsSaved";
+            infoTextBox.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "answerIsSaved");
             infoTextBox.Background = Brushes.LightGreen;
         }
 
@@ -127,7 +127,7 @@ namespace IELTSAppProject
         {
             answeField.IsEnabled = true;
             saveAnswer.IsEnabled = true;
-            answeField.Text = "EnterAnswerHere";
+            answeField.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "EnterAnswerHere");
         }
 
         private void ShowIdealEssay(object sender, RoutedEventArgs e) // Вывод примера идеального эссе по выбранной теме
@@ -139,7 +139,7 @@ namespace IELTSAppProject
             }
             else
             {
-                ShowMessageWindow("UserDidNotChooseTopic"); // На всякий случай вывод сообщения - предполагается,
+                ShowMessageWindow(SetLanguageResources.GetString(Properties.Settings.Default.Language, "UserDidNotChooseTopic")); // На всякий случай вывод сообщения - предполагается,
                                                           // что оно не должно быть показано никогда
             }
         }
