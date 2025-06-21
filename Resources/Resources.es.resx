@@ -129,6 +129,9 @@
   <data name="answerIsSaved" xml:space="preserve">
     <value>Respuesta guardada</value>
   </data>
+  <data name="avargeScore" xml:space="preserve">
+    <value>Puntuación promedio:</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Verificar todo</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="espLanguage" xml:space="preserve">
     <value>Español  </value>
   </data>
+  <data name="examsStatistics" xml:space="preserve">
+    <value>Estadísticas de exámenes:</value>
+  </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>¡Tengo poco tiempo antes del examen!</value>
   </data>
@@ -201,6 +207,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Modo personalizado (omitir test de nivel)</value>
   </data>
+  <data name="passedExamsQuantity" xml:space="preserve">
+    <value>Número de exámenes completados:</value>
+  </data>
   <data name="PDFmistake" xml:space="preserve">
     <value>Error al abrir el PDF con criterios</value>
   </data>
@@ -221,6 +230,9 @@
   </data>
   <data name="recomendedTime" xml:space="preserve">
     <value>Duración sugerida:</value>
+  </data>
+  <data name="recommendToWorkOn" xml:space="preserve">
+    <value>Recomendado para practicar:</value>
   </data>
   <data name="recordAnswerFirst" xml:space="preserve">
     <value>Graba tu respuesta primero</value>
@@ -258,6 +270,9 @@
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>Ver criterios de evaluación</value>
   </data>
+  <data name="selfCheck" xml:space="preserve">
+    <value>Autoevaluación</value>
+  </data>
   <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
     <value>La visualización de ensayos solo está disponible después de guardar el suyo</value>
   </data>
@@ -284,6 +299,12 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Tareas por sección (Listening, Reading, Speaking, Writing)</value>
+  </data>
+  <data name="tasksStatisicsPart1" xml:space="preserve">
+    <value>Número de tareas exitosas/fallidas</value>
+  </data>
+  <data name="tasksStatisicsPart2" xml:space="preserve">
+    <value>completadas por categoría:</value>
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Clase de ejercicios</value>

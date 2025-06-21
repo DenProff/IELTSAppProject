@@ -129,6 +129,9 @@
   <data name="answerIsSaved" xml:space="preserve">
     <value>Ответ сохранён.</value>
   </data>
+  <data name="avargeScore" xml:space="preserve">
+    <value>Средний балл: </value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Проверить всё</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="espLanguage" xml:space="preserve">
     <value>Испанский</value>
   </data>
+  <data name="examsStatistics" xml:space="preserve">
+    <value>Статистика по сданным экзаменам:</value>
+  </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>У меня мало времени до экзамена!</value>
   </data>
@@ -201,6 +207,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Работать по своему усмотрению (не решать входной вариант)</value>
   </data>
+  <data name="passedExamsQuantity" xml:space="preserve">
+    <value>Количество сданных экзаменов: </value>
+  </data>
   <data name="PDFmistake" xml:space="preserve">
     <value>Не удалось открыть PDF с критериями.</value>
   </data>
@@ -221,6 +230,9 @@
   </data>
   <data name="recomendedTime" xml:space="preserve">
     <value>Рекомендованное время:</value>
+  </data>
+  <data name="recommendToWorkOn" xml:space="preserve">
+    <value>Рекомендуется поработать над:</value>
   </data>
   <data name="recordAnswerFirst" xml:space="preserve">
     <value>Сначала запишите свой ответ.</value>
@@ -258,6 +270,9 @@
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>Посмотреть критерии оценивания</value>
   </data>
+  <data name="selfCheck" xml:space="preserve">
+    <value>Самопроверка</value>
+  </data>
   <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
     <value>Просмотр эссе можно будет выполнять только после сохранения собственного</value>
   </data>
@@ -284,6 +299,12 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Задания по разделам (Listening, Reading, Speaking, Writing)</value>
+  </data>
+  <data name="tasksStatisicsPart1" xml:space="preserve">
+    <value>Количество успешно/неуспешно</value>
+  </data>
+  <data name="tasksStatisicsPart2" xml:space="preserve">
+    <value>выполненных заданий по категориям:</value>
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Вид заданий:</value>

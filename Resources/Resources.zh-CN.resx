@@ -129,6 +129,9 @@
   <data name="answerIsSaved" xml:space="preserve">
     <value>答案已保存</value>
   </data>
+  <data name="avargeScore" xml:space="preserve">
+    <value>平均分数：</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>检查全部</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="espLanguage" xml:space="preserve">
     <value>西班牙语</value>
   </data>
+  <data name="examsStatistics" xml:space="preserve">
+    <value>考试统计：</value>
+  </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>我考试前时间不多了！</value>
   </data>
@@ -201,6 +207,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>自定义练习模式（跳过分级测试）</value>
   </data>
+  <data name="passedExamsQuantity" xml:space="preserve">
+    <value>已完成考试数量：</value>
+  </data>
   <data name="PDFmistake" xml:space="preserve">
     <value>无法打开评分标准PDF文件</value>
   </data>
@@ -221,6 +230,9 @@
   </data>
   <data name="recomendedTime" xml:space="preserve">
     <value>推荐时长:</value>
+  </data>
+  <data name="recommendToWorkOn" xml:space="preserve">
+    <value>推荐练习：</value>
   </data>
   <data name="recordAnswerFirst" xml:space="preserve">
     <value>请先录制您的答案</value>
@@ -258,6 +270,9 @@
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>查看评分标准</value>
   </data>
+  <data name="selfCheck" xml:space="preserve">
+    <value>自我检查</value>
+  </data>
   <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
     <value>只有在保存您的作文后才能查看范文</value>
   </data>
@@ -284,6 +299,12 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>按题型分类练习 (听力、阅读、口语、写作)</value>
+  </data>
+  <data name="tasksStatisicsPart1" xml:space="preserve">
+    <value>按类别统计成功/失败</value>
+  </data>
+  <data name="tasksStatisicsPart2" xml:space="preserve">
+    <value>完成的任务数量：</value>
   </data>
   <data name="taskType" xml:space="preserve">
     <value>题目种类</value>

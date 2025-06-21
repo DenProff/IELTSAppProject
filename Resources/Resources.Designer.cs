@@ -97,6 +97,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Средний балл: .
+        /// </summary>
+        internal static string avargeScore {
+            get {
+                return ResourceManager.GetString("avargeScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Проверить всё.
         /// </summary>
         internal static string checkAll {
@@ -214,6 +223,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Статистика по сданным экзаменам:.
+        /// </summary>
+        internal static string examsStatistics {
+            get {
+                return ResourceManager.GetString("examsStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на У меня мало времени до экзамена!.
         /// </summary>
         internal static string fewTimeBeforeExam {
@@ -313,6 +331,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество сданных экзаменов: .
+        /// </summary>
+        internal static string passedExamsQuantity {
+            get {
+                return ResourceManager.GetString("passedExamsQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Не удалось открыть PDF с критериями..
         /// </summary>
         internal static string PDFmistake {
@@ -372,6 +399,15 @@ namespace IELTSAppProject.Resources {
         internal static string recomendedTime {
             get {
                 return ResourceManager.GetString("recomendedTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Рекомендуется поработать над:.
+        /// </summary>
+        internal static string recommendToWorkOn {
+            get {
+                return ResourceManager.GetString("recommendToWorkOn", resourceCulture);
             }
         }
         
@@ -484,6 +520,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Самопроверка.
+        /// </summary>
+        internal static string selfCheck {
+            get {
+                return ResourceManager.GetString("selfCheck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Просмотр эссе можно будет выполнять только после сохранения собственного.
         /// </summary>
         internal static string showEnableOnlyAfterAnswering {
@@ -561,6 +606,24 @@ namespace IELTSAppProject.Resources {
         internal static string tasksByType {
             get {
                 return ResourceManager.GetString("tasksByType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество успешно/неуспешно.
+        /// </summary>
+        internal static string tasksStatisicsPart1 {
+            get {
+                return ResourceManager.GetString("tasksStatisicsPart1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на выполненных заданий по категориям:.
+        /// </summary>
+        internal static string tasksStatisicsPart2 {
+            get {
+                return ResourceManager.GetString("tasksStatisicsPart2", resourceCulture);
             }
         }
         

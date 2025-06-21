@@ -129,6 +129,9 @@
   <data name="answerIsSaved" xml:space="preserve">
     <value>Answer saved</value>
   </data>
+  <data name="avargeScore" xml:space="preserve">
+    <value>Average score:</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Check All</value>
   </data>
@@ -168,6 +171,9 @@
   <data name="espLanguage" xml:space="preserve">
     <value>Spanish  </value>
   </data>
+  <data name="examsStatistics" xml:space="preserve">
+    <value>Exam statistics:</value>
+  </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>I have little time before the exam!</value>
   </data>
@@ -201,6 +207,9 @@
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Custom practice mode (skip placement test)</value>
   </data>
+  <data name="passedExamsQuantity" xml:space="preserve">
+    <value>Number of completed exams:</value>
+  </data>
   <data name="PDFmistake" xml:space="preserve">
     <value>Failed to open PDF with criteria</value>
   </data>
@@ -221,6 +230,9 @@
   </data>
   <data name="recomendedTime" xml:space="preserve">
     <value>Recommended time:</value>
+  </data>
+  <data name="recommendToWorkOn" xml:space="preserve">
+    <value>Recommended to work on:</value>
   </data>
   <data name="recordAnswerFirst" xml:space="preserve">
     <value>Record your answer first</value>
@@ -258,6 +270,9 @@
   <data name="SeeEvaluationCriteria" xml:space="preserve">
     <value>View scoring criteria</value>
   </data>
+  <data name="selfCheck" xml:space="preserve">
+    <value>Self-check</value>
+  </data>
   <data name="showEnableOnlyAfterAnswering" xml:space="preserve">
     <value>Essay viewing is only available after saving your own</value>
   </data>
@@ -284,6 +299,12 @@
   </data>
   <data name="tasksByType" xml:space="preserve">
     <value>Tasks by section (Listening, Reading, Speaking, Writing)</value>
+  </data>
+  <data name="tasksStatisicsPart1" xml:space="preserve">
+    <value>Number of successful/unsuccessful</value>
+  </data>
+  <data name="tasksStatisicsPart2" xml:space="preserve">
+    <value>completed tasks by category:</value>
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Task types</value>

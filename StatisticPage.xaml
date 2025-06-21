@@ -37,11 +37,8 @@
 
                 <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" Grid.Column="0" CornerRadius="20" Margin="0,0,20,0">
                     <StackPanel>
-                        <TextBlock FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,5,0,5">
-                            <Run>Количество успешно/неуспешно</Run>
-                            <LineBreak/>
-                            <Run>выполненных заданий по категориям:</Run>
-                        </TextBlock>
+                        <TextBlock Text="{DynamicResource tasksStatisicsPart1}" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,5,0,5"/>
+                        <TextBlock Text="{DynamicResource tasksStatisicsPart2}" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center"/>
                         <Separator Margin="0,10,0,10" />
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Listening: " FontWeight="Bold" Foreground="White" FontSize="18" />
@@ -53,11 +50,11 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Writing: " FontWeight="Bold" FontSize="18" Foreground="White" />
-                            <TextBlock Text="Самопроверка" Foreground="#FFFFFF03" FontSize="18" Margin="19,0,0,0"/>
+                            <TextBlock Text="{DynamicResource selfCheck}" Foreground="#FFFFFF03" FontSize="18" Margin="19,0,0,0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="Speaking: " FontWeight="Bold" FontSize="18" Foreground="White" />
-                            <TextBlock Text="Самопроверка" Foreground="#FFFFFF03" FontSize="18" Margin="5,0,0,10"/>
+                            <TextBlock Text="{DynamicResource selfCheck}" Foreground="#FFFFFF03" FontSize="18" Margin="5,0,0,10"/>
                         </StackPanel>
                     </StackPanel>
                 </Border>
@@ -65,14 +62,14 @@
                 <!-- Правый столбец: Статистика по экзаменам -->
                 <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" Grid.Column="1" CornerRadius="20" Margin="20,0,0,0">
                     <StackPanel>
-                        <TextBlock Text="Статистика по сданным экзаменам:" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,20,0,15"/>
+                        <TextBlock Text="{DynamicResource examsStatistics}" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,20,0,15"/>
                         <Separator Margin="0,10,0,10"/>
                         <StackPanel Orientation="Horizontal" Margin="0,22,0,5">
-                            <TextBlock Text="Количество сданных экзаменов: " FontWeight="Bold" Foreground="White" FontSize="18"  />
+                            <TextBlock Text="{DynamicResource passedExamsQuantity}" FontWeight="Bold" Foreground="White" FontSize="18"  />
                             <TextBlock x:Name ="examCount" Text="" Foreground="LightGray" FontSize="18" Margin="7,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                            <TextBlock Text="Средний балл: " FontWeight="Bold" Foreground="White" FontSize="18" />
+                            <TextBlock Text="{DynamicResource avargeScore}" FontWeight="Bold" Foreground="White" FontSize="18" />
                             <TextBlock x:Name ="examStats" Text="" Foreground="LightGray" FontSize="18" Margin="7,0,0,0" />
                         </StackPanel>
                     </StackPanel>
@@ -81,7 +78,7 @@
 
             <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" CornerRadius="20" Grid.Row="1" Margin="0,50,581,0" Width="541">
                 <StackPanel>
-                    <TextBlock Text="Рекомендуется поработать над:" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,5,0,0"/>
+                    <TextBlock Text="{DynamicResource recommendToWorkOn}" TextWrapping="Wrap" FontWeight="Bold" Foreground="White" FontSize="18" Margin="0,5,0,0"/>
                     <TextBlock x:Name="recomendation" Text="" FontWeight="Bold" Foreground="Red" FontSize="18" Margin="0,5,0,5" />
                 </StackPanel>
             </Border>
@@ -90,8 +87,8 @@
         <Button Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="171" Background="#3333CC"
             Style="{StaticResource MaterialDesignFlatButton}" Click="baseCatalog_Click" FontSize="17" FontWeight="Bold" x:Name="baseCatalog"
             Margin="994,530,0,0">
-            <TextBlock Text="Основной каталог заданий" TextWrapping="Wrap" Width="139"/>
+            <TextBlock Text="{DynamicResource mainCatalog}" TextWrapping="Wrap" Width="139"/>
         </Button>
-        <Button Content="На главный экран"  HorizontalAlignment="Left" Margin="1007,642,0,0" VerticalAlignment="Top" Height="58" Width="158" Background="Red" BorderThickness="2" x:Name="home" Click="home_Click"/>
+        <Button Content="{DynamicResource mainScreen}"  HorizontalAlignment="Left" Margin="1007,642,0,0" VerticalAlignment="Top" Height="58" Width="158" Background="Red" BorderThickness="2" x:Name="home" Click="home_Click"/>
     </Grid>
 </Page>
