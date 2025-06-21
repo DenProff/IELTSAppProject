@@ -313,7 +313,7 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на Здесь еще нет подходящих подборок.
         /// </summary>
         internal static string noNeededCollectionsYet {
             get {

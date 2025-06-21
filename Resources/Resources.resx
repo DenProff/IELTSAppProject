@@ -202,7 +202,7 @@
     <value>Моя статистика</value>
   </data>
   <data name="noNeededCollectionsYet" xml:space="preserve">
-    <value />
+    <value>Здесь еще нет подходящих подборок</value>
   </data>
   <data name="nothingIsPlaying" xml:space="preserve">
     <value>Сейчас ничего не проигрывается.</value>
