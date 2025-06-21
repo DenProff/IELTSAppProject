@@ -8,6 +8,7 @@ using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace IELTSAppProject
@@ -38,6 +39,10 @@ namespace IELTSAppProject
                     else if (sender is UserControl userControl)
                     {
                         userControl.Resources[key] = value;
+                    }
+                    else if (sender is Window window)
+                    {
+                        window.Resources[key] = value;
                     }
                 }
             }

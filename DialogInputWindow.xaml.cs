@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DocumentFormat.OpenXml.Office2021.DocumentTasks;
 
 namespace IELTSAppProject
 {
@@ -24,6 +25,13 @@ namespace IELTSAppProject
         public DialogInputWindow()
         {
             InitializeComponent();
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
+            {
+                SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
+            }
+
+            // Подписка на смену языка - событие в классе LanguageChange
+            LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
