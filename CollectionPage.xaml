@@ -39,13 +39,13 @@
 
         <TextBlock x:Name="VariantId" Grid.Row="1" FontSize="20" Text="Id:"/>
 
-        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20" Text="Название подборки:" Margin="294,0,294,0"/>
+        <TextBlock x:Name="VariantName" Grid.Row="1" Grid.ColumnSpan="4" FontSize="20" Text="{DynamicResource variantName}" Margin="294,0,294,0"/>
 
         <Button Content="{DynamicResource prevPage}" HorizontalAlignment="Left" VerticalAlignment="Center" 
                 Height="46" Width="177" Background="#FF673AB7" Style="{StaticResource MaterialDesignFlatButton}" 
                 Click="turnBack_Click" FontSize="17" FontWeight="Bold" x:Name="turnBack" Foreground="White"/>
 
         <Button x:Name="delete_btn" VerticalAlignment="Center" Grid.Column="3" Background="Red"
-        Margin="183,0,0,0" FontSize="20" Click="delete_btn_Click" Content="Удалить" Height="46" Visibility="Hidden"/>
+        Margin="183,0,0,0" FontSize="20" Click="delete_btn_Click" Content="{DynamicResource deleteCollection}" Height="46" Visibility="Hidden"/>
     </Grid>
 </Page>

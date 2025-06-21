@@ -61,6 +61,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Принять.
+        /// </summary>
+        internal static string accept {
+            get {
+                return ResourceManager.GetString("accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Добавить в подборку.
         /// </summary>
         internal static string addToCollection {
@@ -142,11 +151,29 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Удалить.
+        /// </summary>
+        internal static string deleteCollection {
+            get {
+                return ResourceManager.GetString("deleteCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Для начала работы советуем вам пройти входное тестирование, чтобы мы могли собрать статистику и вы увидели какие задания у вас получаются хуже. Если вы уже решали входной тест, можете продолжить  работу с нужными вам заданиями.
         /// </summary>
         internal static string describeTextBlockFirstTestPage {
             get {
                 return ResourceManager.GetString("describeTextBlockFirstTestPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Введите название новой персональной подборки:.
+        /// </summary>
+        internal static string dialogBoxMessage {
+            get {
+                return ResourceManager.GetString("dialogBoxMessage", resourceCulture);
             }
         }
         
@@ -385,6 +412,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Отмена.
+        /// </summary>
+        internal static string refuse {
+            get {
+                return ResourceManager.GetString("refuse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Перед написанием эссе не забудте выбрать тему выше.
         /// </summary>
         internal static string remindToChooseTopic {
@@ -561,6 +597,15 @@ namespace IELTSAppProject.Resources {
         internal static string UserDidNotChooseTopic {
             get {
                 return ResourceManager.GetString("UserDidNotChooseTopic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Название подборки:.
+        /// </summary>
+        internal static string variantName {
+            get {
+                return ResourceManager.GetString("variantName", resourceCulture);
             }
         }
         

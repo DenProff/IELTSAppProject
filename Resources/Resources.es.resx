@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accept" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
   <data name="addToCollection" xml:space="preserve">
     <value>Añadir a colección</value>
   </data>
@@ -144,8 +147,14 @@
   <data name="convertBTN" xml:space="preserve">
     <value>Convertir a docx</value>
   </data>
+  <data name="deleteCollection" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
   <data name="describeTextBlockFirstTestPage" xml:space="preserve">
     <value>Recomendamos comenzar con un test de nivel para recopilar estadísticas e identificar tus áreas débiles. Si ya lo has realizado, puedes practicar tareas específicas</value>
+  </data>
+  <data name="dialogBoxMessage" xml:space="preserve">
+    <value>Ingrese nombre para nueva colección personal:</value>
   </data>
   <data name="engLanguage" xml:space="preserve">
     <value>Inglés  </value>
@@ -225,6 +234,9 @@
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>La grabación aún no ha comenzado.</value>
   </data>
+  <data name="refuse" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="remindToChooseTopic" xml:space="preserve">
     <value>No olvide seleccionar un tema antes de escribir su ensayo</value>
   </data>
@@ -284,6 +296,9 @@
   </data>
   <data name="UserDidNotChooseTopic" xml:space="preserve">
     <value>¡No has seleccionado un tema!</value>
+  </data>
+  <data name="variantName" xml:space="preserve">
+    <value>Nombre de la colección:</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Bienvenido a la aplicación de preparación para el examen IELTS</value>

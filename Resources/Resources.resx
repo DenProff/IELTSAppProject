@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accept" xml:space="preserve">
+    <value>Принять</value>
+  </data>
   <data name="addToCollection" xml:space="preserve">
     <value>Добавить в подборку</value>
   </data>
@@ -144,8 +147,14 @@
   <data name="convertBTN" xml:space="preserve">
     <value>Конвертировать в docx</value>
   </data>
+  <data name="deleteCollection" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
   <data name="describeTextBlockFirstTestPage" xml:space="preserve">
     <value>Для начала работы советуем вам пройти входное тестирование, чтобы мы могли собрать статистику и вы увидели какие задания у вас получаются хуже. Если вы уже решали входной тест, можете продолжить  работу с нужными вам заданиями</value>
+  </data>
+  <data name="dialogBoxMessage" xml:space="preserve">
+    <value>Введите название новой персональной подборки:</value>
   </data>
   <data name="engLanguage" xml:space="preserve">
     <value>Английский</value>
@@ -225,6 +234,9 @@
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>Запись ещё не начата.</value>
   </data>
+  <data name="refuse" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
   <data name="remindToChooseTopic" xml:space="preserve">
     <value>Перед написанием эссе не забудте выбрать тему выше</value>
   </data>
@@ -284,6 +296,9 @@
   </data>
   <data name="UserDidNotChooseTopic" xml:space="preserve">
     <value>Вы не выбрали тему!</value>
+  </data>
+  <data name="variantName" xml:space="preserve">
+    <value>Название подборки:</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Добро пожаловать в приложение для подготовки к экзамену в формате IELTS</value>
