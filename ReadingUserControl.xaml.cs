@@ -18,6 +18,7 @@ using System.Diagnostics;
 using Path = System.IO.Path;
 using DocumentFormat.OpenXml.Office2013.Word;
 using DocumentFormat.OpenXml.Wordprocessing;
+using System.Windows.Media;
 
 namespace IELTSAppProject
 {
@@ -220,117 +221,137 @@ namespace IELTSAppProject
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             if (task.Answer[0] == answer1.Text)
             {
-                rightAnswer1.Text = "Правильный ответ!";
+                rightAnswer1.Foreground = Brushes.Green;
+                rightAnswer1.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer1.Text = "Неправильный ответ!";
+                rightAnswer1.Foreground = Brushes.Red;
+                rightAnswer1.Text = "Wrong answer!";
                 result = true;
             }
 
 
             if (task.Answer[1] == answer2.Text)
             {
-                rightAnswer2.Text = "Правильный ответ!";
+                rightAnswer2.Foreground = Brushes.Green;
+                rightAnswer2.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer2.Text = "Неправильный ответ!";
+                rightAnswer1.Foreground = Brushes.Red;
+                rightAnswer2.Text = "Wrong answer!";
                 result = true;
             }
 
 
             if (task.Answer[2] == answer3.Text)
             {
-                rightAnswer3.Text = "Правильный ответ!";
+                rightAnswer3.Foreground = Brushes.Green;
+                rightAnswer3.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer3.Text = "Неправильный ответ!";
+                rightAnswer3.Foreground = Brushes.Red;
+                rightAnswer3.Text = "Wrong answer!";
                 result = true;
             }
 
 
             if (task.Answer[3] == answer4.Text)
             {
-                rightAnswer4.Text = "Правильный ответ!";
+                rightAnswer4.Foreground = Brushes.Green;
+                rightAnswer4.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer4.Text = "Неправильный ответ!";
+                rightAnswer4.Foreground = Brushes.Red;
+                rightAnswer4.Text = "Wrong answer!";
                 result = true;
             }
 
 
             if (task.Answer[4] == answer5.Text)
             {
-                rightAnswer5.Text = "Правильный ответ!";
+                rightAnswer5.Foreground = Brushes.Green;
+                rightAnswer5.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer5.Text = "Неправильный ответ!";
+                rightAnswer5.Foreground = Brushes.Red;
+                rightAnswer5.Text = "Wrong answer!";
                 result = true;
             }
 
 
             if (IsAnswerCorrect(task.Answer[5], answer61, answer62, answer63))
             {
-                rightAnswer6.Text = "Правильный ответ!";
+                rightAnswer6.Foreground = Brushes.Green;
+                rightAnswer6.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
+                rightAnswer6.Foreground = Brushes.Red;
                 result = true;
-                rightAnswer6.Text = "Неправильный ответ!";
+                rightAnswer6.Text = "Wrong answer!";
             }
 
 
             if (IsAnswerCorrect(task.Answer[6], answer71, answer72, answer73))
             {
-                rightAnswer7.Text = "Правильный ответ!";
+                rightAnswer7.Foreground = Brushes.Green;
+                rightAnswer7.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer7.Text = "Неправильный ответ!";
+                rightAnswer7.Foreground = Brushes.Red;
+                rightAnswer7.Text = "Wrong answer!";
                 result = true;
             }
 
             if (IsAnswerCorrect(task.Answer[7], answer81, answer82, answer83))
             {
-                rightAnswer8.Text = "Правильный ответ!";
+                rightAnswer8.Foreground = Brushes.Green;
+                rightAnswer8.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer8.Text = "Неправильный ответ!";
+                rightAnswer8.Foreground = Brushes.Red;
+                rightAnswer8.Text = "Wrong answer!";
                 result = true;
             }
 
             if (IsAnswerCorrect(task.Answer[8], answer91, answer92, answer93))
             {
-                rightAnswer9.Text = "Правильный ответ!";
+                rightAnswer9.Foreground = Brushes.Green;
+                rightAnswer9.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer9.Text = "Неправильный ответ!";
+                rightAnswer9.Foreground = Brushes.Red;
+                rightAnswer9.Text = "Wrong answer!";
                 result = true;
             }
 
             if (IsAnswerCorrect(task.Answer[9], answer01, answer02, answer03))
             {
-                rightAnswer0.Text = "Правильный ответ!";
+                rightAnswer0.Foreground = Brushes.Green;
+                rightAnswer0.Text = "Right answer!";
                 correctAnswers++;
             }
             else
             {
-                rightAnswer0.Text = "Неправильный ответ!";
+                rightAnswer0.Foreground = Brushes.Red;
+                rightAnswer0.Text = "Wrong answer!";
                 result = true;
             }
 

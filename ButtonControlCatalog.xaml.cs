@@ -29,7 +29,7 @@ namespace IELTSAppProject
             if (values.Length < 3 || values.Any(v => v == null))
                 return string.Empty;
 
-            return string.Format("Вариант: {0} Название: {1} Дата публикации: {2}",
+            return string.Format("Variant: {0} Name: {1} Date of publication: {2}",
                                 values[0], values[1], values[2]); ;
         } 
 
