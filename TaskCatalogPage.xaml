@@ -23,7 +23,7 @@
                 x:Name="language" Margin="1007,0,0,0" Foreground="White">
             <TextBlock Text="{DynamicResource chooseLanguage}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
-        <GroupBox Header="Вид заданий" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
+        <GroupBox Header="{DynamicResource taskTypes}" Margin="857,200,33,199" MaxHeight="500" MaxWidth="350" MinHeight="300" MinWidth="150" Background="#514ED9" FontSize="18" FontWeight="Bold">
             <StackPanel Margin="0,0,0,9">
                 <CheckBox Content="Speaking" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" x:Name="speakCheackBox" BorderBrush="Black"
                           Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
@@ -86,7 +86,7 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="Варианты экзамена IELTS" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
+                <CheckBox Content="{DynamicResource IELTSvariants}" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="varOfExam"
                           Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
@@ -101,8 +101,11 @@
                         </Style>
                     </CheckBox.Resources>
                 </CheckBox>
-                <CheckBox Content="У меня мало времени&#xD;&#xA; до экзамена" Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
+                <CheckBox Margin="5" FontSize="18" FontWeight="Bold" Foreground="Wheat" BorderBrush="Black" x:Name="actualTasks" Height="49"
                           Checked="CheckBox_CheckedChanged" Unchecked="CheckBox_CheckedChanged">
+                    <CheckBox.Content>
+                        <TextBlock Text="{DynamicResource fewTimeBeforeExam}" TextWrapping="Wrap"/>
+                    </CheckBox.Content>
                     <CheckBox.Resources>
                         <Style TargetType="CheckBox">
                             <Style.Triggers>
@@ -137,9 +140,9 @@
         <Button Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Height="85" Width="171" Background="#3333CC"
             Style="{StaticResource MaterialDesignFlatButton}" Click="baseCatalog_Click" FontSize="17" FontWeight="Bold" x:Name="baseCatalog"
             Margin="994,530,0,0" IsEnabled="False">
-            <TextBlock Text="Основной каталог заданий" TextWrapping="Wrap" Width="139"/>
+            <TextBlock Text="{DynamicResource mainCatalog}" TextWrapping="Wrap" Width="139"/>
         </Button>
-        <Button Content="На главный экран"  HorizontalAlignment="Left" Margin="1007,642,0,0" VerticalAlignment="Top" Height="58" Width="158" Background="Red" BorderThickness="2" x:Name="home" Click="home_Click"/>
+        <Button Content="{DynamicResource mainScreen}"  HorizontalAlignment="Left" Margin="1007,642,0,0" VerticalAlignment="Top" Height="58" Width="158" Background="Red" BorderThickness="2" x:Name="home" Click="home_Click"/>
 
     </Grid>
 </Page>

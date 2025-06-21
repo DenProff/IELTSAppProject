@@ -171,6 +171,12 @@
   <data name="IELTSvariants" xml:space="preserve">
     <value>雅思套题</value>
   </data>
+  <data name="mainCatalog" xml:space="preserve">
+    <value>主要任务目录</value>
+  </data>
+  <data name="mainScreen" xml:space="preserve">
+    <value>返回主屏幕</value>
+  </data>
   <data name="myCollections" xml:space="preserve">
     <value>我的任务集</value>
   </data>
@@ -269,6 +275,9 @@
   </data>
   <data name="taskType" xml:space="preserve">
     <value>题目种类</value>
+  </data>
+  <data name="taskTypes" xml:space="preserve">
+    <value>任务类型</value>
   </data>
   <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
     <value>您可以收听自己的答案和范例答案</value>

@@ -223,6 +223,24 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Основной каталог заданий.
+        /// </summary>
+        internal static string mainCatalog {
+            get {
+                return ResourceManager.GetString("mainCatalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на На главный экран.
+        /// </summary>
+        internal static string mainScreen {
+            get {
+                return ResourceManager.GetString("mainScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Мои подборки заданий.
         /// </summary>
         internal static string myCollections {
@@ -516,6 +534,15 @@ namespace IELTSAppProject.Resources {
         internal static string taskType {
             get {
                 return ResourceManager.GetString("taskType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Виды заданий.
+        /// </summary>
+        internal static string taskTypes {
+            get {
+                return ResourceManager.GetString("taskTypes", resourceCulture);
             }
         }
         

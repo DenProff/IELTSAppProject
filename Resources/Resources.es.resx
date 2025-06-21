@@ -171,6 +171,12 @@
   <data name="IELTSvariants" xml:space="preserve">
     <value>Versiones del IELTS</value>
   </data>
+  <data name="mainCatalog" xml:space="preserve">
+    <value>Catálogo principal de tareas</value>
+  </data>
+  <data name="mainScreen" xml:space="preserve">
+    <value>A la pantalla principal</value>
+  </data>
   <data name="myCollections" xml:space="preserve">
     <value>Mis colecciones de tareas</value>
   </data>
@@ -269,6 +275,9 @@
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Clase de ejercicios</value>
+  </data>
+  <data name="taskTypes" xml:space="preserve">
+    <value>Tipos de tareas</value>
   </data>
   <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
     <value>Puedes escuchar tanto tu respuesta como la respuesta modelo</value>
