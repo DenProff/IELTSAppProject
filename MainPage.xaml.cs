@@ -138,7 +138,7 @@ namespace IELTSAppProject
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //chooseLanguage  russianLanguage chineseLanguage  englishLanguage spanishLanguage
-            LanguageSelectionPage page = new LanguageSelectionPage()ж
+            LanguageSelectionPage page = new LanguageSelectionPage();
 
             NavigationService?.Navigate(page);
         }

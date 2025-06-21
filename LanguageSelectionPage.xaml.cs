@@ -49,6 +49,8 @@ namespace IELTSAppProject
 
             // Подписка на смену языка - событие в классе LanguageChange
             LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
+
+            MarkCurrentLanguage(); // Отметка языка системы на данный момент
         }
 
         private void RussianLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("ru");
@@ -102,5 +104,25 @@ namespace IELTSAppProject
         "help",
         "prevPage"
         }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
+
+        private void MarkCurrentLanguage()
+        {
+            string currentLanguage = Properties.Settings.Default.Language;
+            switch (currentLanguage)
+            {
+                case "ru":
+                    russianLanguage.IsChecked = true;
+                    break;
+                case "en":
+                    englishLanguage.IsChecked = true;
+                    break;
+                case "es":
+                    spanishLanguage.IsChecked = true;
+                    break;
+                case "zh-CN":
+                    chineseLanguage.IsChecked = true;
+                    break;
+            }
+        }
     }
 }
