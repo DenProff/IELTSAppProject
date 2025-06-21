@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+﻿using DocumentFormat.OpenXml.Drawing;
+using DocumentFormat.OpenXml.Office2021.DocumentTasks;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -95,7 +96,8 @@ namespace IELTSAppProject
             for (int i = 0; i < 5; i++)
             {
                 bool isCorrect = IsAnswerCorrect(task.Answer[i], radioButtonsGroups[i]);
-                resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
+                resultTextBlocks[i].Text = isCorrect ? "Right answer!" : "Wrong answer!";
+                resultTextBlocks[i].Foreground = isCorrect ? Brushes.Green : Brushes.Red;
                 resultTextBlocks[i].Visibility = Visibility.Visible;
                 if (!isCorrect) hasErrors = true;
                 else correctAnswers++;
@@ -105,7 +107,8 @@ namespace IELTSAppProject
             for (int i = 5; i < 10; i++)
             {
                 bool isCorrect = task.Answer[i] == textBoxesGroups[i-5].Text.ToLower();
-                resultTextBlocks[i].Text = isCorrect ? "Правильно!" : "Неправильно!";
+                resultTextBlocks[i].Text = isCorrect ? "Right answer!" : "Wrong answer!";
+                resultTextBlocks[i].Foreground = isCorrect ? Brushes.Green : Brushes.Red;
                 resultTextBlocks[i].Visibility = Visibility.Visible;
                 if (!isCorrect) hasErrors = true;
                 else correctAnswers++;
