@@ -91,6 +91,8 @@ namespace IELTSAppProject
                 collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
             }
+            if (collections.Count == 0) //если нет подборок
+                emptyMessage.Visibility = Visibility.Visible;
             tasksView = CollectionViewSource.GetDefaultView(collections);
             tasksView.Filter = TaskFilter;
 
@@ -111,6 +113,16 @@ namespace IELTSAppProject
                 isVisible = (readingCheckBox.IsChecked == true && task.isReading) ||
                             (listeningCheckBox.IsChecked == true && task.isListening);
             }
+
+            //Для вывода надписи об отсутствии подборок
+            if (isVisible ||
+                          //когда все галочки не нажаты
+                          (
+                          readingCheckBox.IsChecked == false &&
+                          listeningCheckBox.IsChecked == false))
+                emptyMessage.Visibility = Visibility.Hidden;
+            else
+                emptyMessage.Visibility = Visibility.Visible;
 
             return isVisible;
         }
