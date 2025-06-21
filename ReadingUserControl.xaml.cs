@@ -67,13 +67,9 @@ namespace IELTSAppProject
             //    "biologists and geneticists", "gains awarness", "heritability",
             //    "It provides immunity to offspring without prior exposure.");
 
-
-
-
             //string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             //string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
             //string jsonData = File.ReadAllText(file);
-
 
             //List<GeneralizedTask> list = JsonConvert.DeserializeObject<List<GeneralizedTask>>(jsonData) ?? new List<GeneralizedTask>();
 
@@ -81,46 +77,13 @@ namespace IELTSAppProject
 
             //string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             //File.WriteAllText(file, updatedJson);
-            //data = task;
 
-            //ReadingTask newTask = null;
-
-            //try
-            //{
-            //    string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            //    string file = Path.Combine(projectDir, "resourcesTask", "tasks", "tasks.json");
-            //    if (!File.Exists(file))
-            //    {
-            //        MessageBox.Show("Файл не найден!");
-            //        return;
-            //    }
             if (data != null)
             {
                 this.RecomTime = data.RecommendedTime.ToString() + " мин.";
-                //    // Сериализуем объект в JSON
-                //    string jsonObject = JsonConvert.SerializeObject(data);
-
-                //    // Записываем JSON в файл (перезаписываем, если существует)
-                //    File.WriteAllText(file, jsonObject);
-
-                //    // Читаем JSON из файла (после закрытия потока)
-                //    string jsonFromFile = File.ReadAllText(file);
-
-                //    // Десериализуем обратно в объект
-                //    newTask = JsonConvert.DeserializeObject<ReadingTask>(jsonFromFile);
-
+               
                 this.DataContext = data;
             }
-            
-            //}
-            //catch (IOException ex)
-            //{
-            //    MessageBox.Show($"Ошибка доступа к файлу: {ex.Message}");
-            //}
-            //catch (JsonException ex)
-            //{
-            //    MessageBox.Show($"Ошибка формата JSON: {ex.Message}");
-            //}
 
             //подписка на событие клика
             convertToDocx.Click += (sender, e) => Conversion.ConvertReading(data);
@@ -179,6 +142,11 @@ namespace IELTSAppProject
             string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
+            if (!File.Exists(jsonData))
+            {
+                MessageBox.Show("Файл не найден!");
+                return;
+            }
 
             ReadingTask data = (ReadingTask)this.DataContext;
 
