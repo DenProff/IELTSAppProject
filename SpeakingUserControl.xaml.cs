@@ -62,7 +62,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
 
             //Подписка для конвертации
             speakingConvert.Click += (sender, e) => Conversion.ConvertSpeaking(task);
-            speakingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+            speakingConvert.Click += (sender, e) => Conversion.ConvertMessage();
         }
 
         private void StartRecord(object sender, RoutedEventArgs e) // Начало записи
@@ -237,7 +237,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
-            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+            CollectionPage.AddMessage();
         }
     }
 }

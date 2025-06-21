@@ -196,5 +196,10 @@ namespace IELTSAppProject
             }
         }
 
+        public static void ConvertMessage() //метод для вывода сообщения о конвертации
+        {
+            MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+        }
+
     }
 }

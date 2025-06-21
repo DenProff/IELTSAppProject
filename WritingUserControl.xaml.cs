@@ -61,7 +61,7 @@ namespace IELTSAppProject
 
             //Подписка для конвертации
             writingConvert.Click += (sender, e) => Conversion.ConvertWriting(task);
-            writingConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+            writingConvert.Click += (sender, e) => Conversion.ConvertMessage();
         }
 
         public WritingUserControl() { }
@@ -208,7 +208,7 @@ namespace IELTSAppProject
             string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
-            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+            CollectionPage.AddMessage();
         }
     }
 }

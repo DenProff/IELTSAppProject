@@ -215,7 +215,7 @@ namespace IELTSAppProject
             string updatedJson = JsonConvert.SerializeObject(list, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
-            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+            AddMessage();
         }
 
         //метод для получения списка заданий
@@ -287,6 +287,11 @@ namespace IELTSAppProject
                 "в этот раздел заново, чтобы увидеть изменения");
 
             delete_btn.IsEnabled = false; //делаем кнопку недоступной повторно
+        }
+
+        public static void AddMessage() //метод вывода сообщения о добавлении подборки в персональные
+        {
+            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
         }
     }
 }

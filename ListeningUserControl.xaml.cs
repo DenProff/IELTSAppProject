@@ -60,7 +60,7 @@ namespace IELTSAppProject
             recommendedTimeTextBlock.Text = $"Рекомендуемое время выполнения: {data.RecommendedTime} мин";
 
             listeningConvert.Click += (sender, e) => Conversion.ConvertListening(data);
-            listeningConvert.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+            listeningConvert.Click += (sender, e) => Conversion.ConvertMessage();
         }
 
         public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
@@ -235,7 +235,7 @@ namespace IELTSAppProject
             string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
-            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+            CollectionPage.AddMessage();
         }
         public static string[] resourcesKeysArray =
 {

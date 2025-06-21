@@ -124,7 +124,7 @@ namespace IELTSAppProject
 
             //подписка на событие клика
             convertToDocx.Click += (sender, e) => Conversion.ConvertReading(data);
-            convertToDocx.Click += (sender, e) => MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
+            convertToDocx.Click += (sender, e) => Conversion.ConvertMessage();
         }
         
         //проверка ответов
@@ -195,7 +195,7 @@ namespace IELTSAppProject
             string updatedJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(file, updatedJson);
 
-            MessageBox.Show("Данная подбока добавлена в раздел \"Мои подборки заданий\"");
+            CollectionPage.AddMessage();
         }
 
         //добавление в списки
