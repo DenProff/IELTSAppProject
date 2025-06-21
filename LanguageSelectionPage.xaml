@@ -196,16 +196,11 @@
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#3333CC" Style="{StaticResource MaterialDesignFlatButton}" Click="TurnBack_Click" FontSize="17" Foreground="White" FontWeight="Bold" x:Name="turnBack">
             <TextBlock Text="{DynamicResource prevPage}"/>
         </Button>
-        <Button x:Name="help"
-            HorizontalAlignment="Left"
-            Background="Red"
-            Width="93"
-            Height="56"
-            Click="help_Click"
-            Margin="0,644,0,0"
-            FontSize="13"
-            BorderThickness="0">
-            <TextBlock Text="{DynamicResource help}"/>
+        <Button HorizontalAlignment="Left" Margin="0,642,0,0" VerticalAlignment="Top" Height="58" Width="99" Background="#FF0000"
+                BorderThickness="2" x:Name="help" Click="help_Click">
+            <TextBlock Text="{DynamicResource help}" 
+               TextWrapping="Wrap" 
+               TextAlignment="Center"/>
         </Button>
     </Grid>
 </Page>
