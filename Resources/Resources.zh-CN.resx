@@ -120,6 +120,12 @@
   <data name="addToCollection" xml:space="preserve">
     <value>添加到收藏集</value>
   </data>
+  <data name="answerFileMistake" xml:space="preserve">
+    <value>未找到录音文件，我们为此错误深表歉意</value>
+  </data>
+  <data name="answerIsSaved" xml:space="preserve">
+    <value>答案已保存</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>检查全部</value>
   </data>
@@ -171,11 +177,20 @@
   <data name="myStatistics" xml:space="preserve">
     <value>我的统计数据</value>
   </data>
+  <data name="nothingIsPlaying" xml:space="preserve">
+    <value>当前没有播放内容</value>
+  </data>
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>自定义练习模式（跳过分级测试）</value>
   </data>
+  <data name="PDFmistake" xml:space="preserve">
+    <value>无法打开评分标准PDF文件</value>
+  </data>
   <data name="playIdealAnswer" xml:space="preserve">
     <value>播放满分范例</value>
+  </data>
+  <data name="playingWasStopped" xml:space="preserve">
+    <value>播放已停止</value>
   </data>
   <data name="playOrPause" xml:space="preserve">
     <value>播放/暂停</value>
@@ -189,8 +204,14 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>推荐时长:</value>
   </data>
+  <data name="recordAnswerFirst" xml:space="preserve">
+    <value>请先录制您的答案</value>
+  </data>
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>只有在添加答案后才能播放录音。</value>
+  </data>
+  <data name="recordingInProgress" xml:space="preserve">
+    <value>正在录音中</value>
   </data>
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>录音尚未开始。</value>
@@ -224,6 +245,9 @@
   </data>
   <data name="taskType" xml:space="preserve">
     <value>题目种类</value>
+  </data>
+  <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
+    <value>您可以收听自己的答案和范例答案</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>欢迎使用IELTS考试准备应用</value>

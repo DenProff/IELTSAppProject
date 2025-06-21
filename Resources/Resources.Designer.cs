@@ -70,6 +70,24 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Файл записи не найден, это ошибка, приносим свои извинения..
+        /// </summary>
+        internal static string answerFileMistake {
+            get {
+                return ResourceManager.GetString("answerFileMistake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ответ сохранён..
+        /// </summary>
+        internal static string answerIsSaved {
+            get {
+                return ResourceManager.GetString("answerIsSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Проверить всё.
         /// </summary>
         internal static string checkAll {
@@ -223,6 +241,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Сейчас ничего не проигрывается..
+        /// </summary>
+        internal static string nothingIsPlaying {
+            get {
+                return ResourceManager.GetString("nothingIsPlaying", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Работать по своему усмотрению (не решать входной вариант).
         /// </summary>
         internal static string notSolveEnterVariantBTN {
@@ -246,6 +273,15 @@ namespace IELTSAppProject.Resources {
         internal static string playIdealAnswer {
             get {
                 return ResourceManager.GetString("playIdealAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Воспроизведение остановлено..
+        /// </summary>
+        internal static string playingWasStopped {
+            get {
+                return ResourceManager.GetString("playingWasStopped", resourceCulture);
             }
         }
         
@@ -282,6 +318,15 @@ namespace IELTSAppProject.Resources {
         internal static string recomendedTime {
             get {
                 return ResourceManager.GetString("recomendedTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сначала запишите свой ответ..
+        /// </summary>
+        internal static string recordAnswerFirst {
+            get {
+                return ResourceManager.GetString("recordAnswerFirst", resourceCulture);
             }
         }
         
@@ -385,51 +430,6 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Ответ сохранён..
-        /// </summary>
-        internal static string String2 {
-            get {
-                return ResourceManager.GetString("String2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Сначала запишите свой ответ..
-        /// </summary>
-        internal static string String3 {
-            get {
-                return ResourceManager.GetString("String3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Файл записи не найден, это ошибка, приносим свои извинения..
-        /// </summary>
-        internal static string String4 {
-            get {
-                return ResourceManager.GetString("String4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Сейчас ничего не проигрывается..
-        /// </summary>
-        internal static string String5 {
-            get {
-                return ResourceManager.GetString("String5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Воспроизведение остановлено..
-        /// </summary>
-        internal static string String6 {
-            get {
-                return ResourceManager.GetString("String6", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Задания по разделам (Listening, Reading, Speaking, Writing).
         /// </summary>
         internal static string tasksByType {
@@ -444,6 +444,15 @@ namespace IELTSAppProject.Resources {
         internal static string taskType {
             get {
                 return ResourceManager.GetString("taskType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Можно слушать свой и пример идеального варианты ответа..
+        /// </summary>
+        internal static string UserAndIdealAnswersAreEnable {
+            get {
+                return ResourceManager.GetString("UserAndIdealAnswersAreEnable", resourceCulture);
             }
         }
         

@@ -120,6 +120,12 @@
   <data name="addToCollection" xml:space="preserve">
     <value>Add to collection</value>
   </data>
+  <data name="answerFileMistake" xml:space="preserve">
+    <value>Recording file not found, we apologize for the error</value>
+  </data>
+  <data name="answerIsSaved" xml:space="preserve">
+    <value>Answer saved</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Check All</value>
   </data>
@@ -171,11 +177,20 @@
   <data name="myStatistics" xml:space="preserve">
     <value>My statistics</value>
   </data>
+  <data name="nothingIsPlaying" xml:space="preserve">
+    <value>Nothing is currently playing</value>
+  </data>
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Custom practice mode (skip placement test)</value>
   </data>
+  <data name="PDFmistake" xml:space="preserve">
+    <value>Failed to open PDF with criteria</value>
+  </data>
   <data name="playIdealAnswer" xml:space="preserve">
     <value>Play model answer</value>
+  </data>
+  <data name="playingWasStopped" xml:space="preserve">
+    <value>Playback stopped</value>
   </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Play/Pause</value>
@@ -189,8 +204,14 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>Recommended time:</value>
   </data>
+  <data name="recordAnswerFirst" xml:space="preserve">
+    <value>Record your answer first</value>
+  </data>
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>Recording can be played only after adding an answer.</value>
+  </data>
+  <data name="recordingInProgress" xml:space="preserve">
+    <value>Recording in progress</value>
   </data>
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>Recording hasn't started yet.</value>
@@ -224,6 +245,9 @@
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Task types</value>
+  </data>
+  <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
+    <value>You can listen to both your answer and the model answer</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Welcome to the IELTS exam preparation app</value>

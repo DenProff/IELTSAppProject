@@ -120,6 +120,12 @@
   <data name="addToCollection" xml:space="preserve">
     <value>Añadir a colección</value>
   </data>
+  <data name="answerFileMistake" xml:space="preserve">
+    <value>Archivo de grabación no encontrado, disculpe el error</value>
+  </data>
+  <data name="answerIsSaved" xml:space="preserve">
+    <value>Respuesta guardada</value>
+  </data>
   <data name="checkAll" xml:space="preserve">
     <value>Verificar todo</value>
   </data>
@@ -171,11 +177,20 @@
   <data name="myStatistics" xml:space="preserve">
     <value>Mis estadísticas</value>
   </data>
+  <data name="nothingIsPlaying" xml:space="preserve">
+    <value>No se está reproduciendo nada actualmente</value>
+  </data>
   <data name="notSolveEnterVariantBTN" xml:space="preserve">
     <value>Modo personalizado (omitir test de nivel)</value>
   </data>
+  <data name="PDFmistake" xml:space="preserve">
+    <value>Error al abrir el PDF con criterios</value>
+  </data>
   <data name="playIdealAnswer" xml:space="preserve">
     <value>Reproducir respuesta modelo</value>
+  </data>
+  <data name="playingWasStopped" xml:space="preserve">
+    <value>Reproducción detenida</value>
   </data>
   <data name="playOrPause" xml:space="preserve">
     <value>Reproducir/Pausa</value>
@@ -189,8 +204,14 @@
   <data name="recomendedTime" xml:space="preserve">
     <value>Duración sugerida:</value>
   </data>
+  <data name="recordAnswerFirst" xml:space="preserve">
+    <value>Graba tu respuesta primero</value>
+  </data>
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>La grabación solo se puede reproducir después de agregar una respuesta.</value>
+  </data>
+  <data name="recordingInProgress" xml:space="preserve">
+    <value>Grabación en curso</value>
   </data>
   <data name="recordingNotStartedMessage" xml:space="preserve">
     <value>La grabación aún no ha comenzado.</value>
@@ -224,6 +245,9 @@
   </data>
   <data name="taskType" xml:space="preserve">
     <value>Clase de ejercicios</value>
+  </data>
+  <data name="UserAndIdealAnswersAreEnable" xml:space="preserve">
+    <value>Puedes escuchar tanto tu respuesta como la respuesta modelo</value>
   </data>
   <data name="welcomeTextBlock" xml:space="preserve">
     <value>Bienvenido a la aplicación de preparación para el examen IELTS</value>
