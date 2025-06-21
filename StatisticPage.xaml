@@ -18,7 +18,7 @@
                 Margin="736,0,0,0">
             <TextBlock Text="{DynamicResource myCollections}" TextWrapping="Wrap" HorizontalAlignment="Center"/>
         </Button>
-        <Button Content="{DynamicResource chooseLanguage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1007,0,0,0"/>
+        <Button Content="{DynamicResource chooseLanguage}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="93" Width="170" Background="#FF35C0CD" Style="{StaticResource MaterialDesignFlatButton}" Click="language_Click" FontSize="17" FontWeight="Bold" x:Name="language" Margin="1001,0,0,0"/>
         <Grid Margin="20,200,20,80">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
