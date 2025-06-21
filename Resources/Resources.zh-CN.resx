@@ -177,6 +177,9 @@
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>我考试前时间不多了！</value>
   </data>
+  <data name="fileInstalled" xml:space="preserve">
+    <value>任务文件已下载并保存在您的桌面上</value>
+  </data>
   <data name="findForPupils" xml:space="preserve">
     <value>为您的学生查找任务</value>
   </data>

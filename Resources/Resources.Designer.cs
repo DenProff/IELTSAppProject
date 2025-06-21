@@ -241,6 +241,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Файлы с заданиями скачаны и находятся на вашем рабочем столе.
+        /// </summary>
+        internal static string fileInstalled {
+            get {
+                return ResourceManager.GetString("fileInstalled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Найти задания для своих учеников.
         /// </summary>
         internal static string findForPupils {
