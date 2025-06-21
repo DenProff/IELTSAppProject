@@ -111,9 +111,6 @@ namespace IELTSAppProject
             if (varOfExam.IsChecked == true)
                 isVisible &= task.isVariants;
 
-            if (actualTasks.IsChecked == true)
-                isVisible &= task.isFastRepeat;
-
             //Для вывода надписи об отсутствии подборок
             if (isVisible || (varOfExam.IsChecked == true && task.isVariants) ||
                 (actualTasks.IsChecked == true && task.isFastRepeat) ||
@@ -127,6 +124,13 @@ namespace IELTSAppProject
                 emptyMessage.Visibility = Visibility.Hidden;
             else
                 emptyMessage.Visibility = Visibility.Visible;
+
+           
+
+            if (actualTasks.IsChecked == true)
+                isVisible &= task.isFastRepeat;
+
+            
 
             return isVisible;
         }
