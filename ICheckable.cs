@@ -8,6 +8,6 @@ namespace IELTSAppProject
 {
     public interface ICheckable
     {
-        bool Check(); // Метод проверки ответов пользователя
+        (bool hasErrors, int correctAnswers) Check(); // Метод проверки ответов пользователя
     }
 }

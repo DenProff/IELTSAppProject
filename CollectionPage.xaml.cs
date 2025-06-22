@@ -24,7 +24,7 @@ namespace IELTSAppProject
     /// <summary>
     /// Логика взаимодействия для CollectionPage.xaml
     /// </summary>
-    public delegate bool TaskCollectionDoneDelegate();
+    public delegate (bool hasErrors, int correctAnswers) TaskCollectionDoneDelegate();
     public partial class CollectionPage : Page
     {
         public event TaskCollectionDoneDelegate TaskCollectionDone; // Событие, генерируемое, когда пользователь хочет проверить все ответы
@@ -84,7 +84,13 @@ namespace IELTSAppProject
                 ICheckable userControl = FindUserControlType(taskArray[index]); // Создание UserControl-a на основе задания с найденным id
                 TasksContainer.Items.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
-                TaskCollectionDone += userControl.Check; // Подписка метода проверки добавляемого UserControl-а
+                TaskCollectionDone += () =>            // Подписка метода проверки добавляемого UserControl-а
+                {
+                    if (userControl is ListeningUserControl || userControl is ReadingUserControl)
+                        return userControl.Check();
+                    else
+                        return (userControl.Check().hasErrors, 0);
+                };
             }
 
             // После полной загрузки элементов, включаем видимость страницы и прокручиваем вверх до ее начала
@@ -100,9 +106,44 @@ namespace IELTSAppProject
         private void Check_Click(object sender, RoutedEventArgs e) // Обработчик события кнопки "Проверить всё" - при нажатии на кнопку сработают
                                                                    // все методы Check
         {
-            TaskCollectionDone?.Invoke(); // Вызов методов проверки, которые были подписаны на событие TaskCollectionDone в
-                                          // конструкторе выше
+            TaskCollection taskCollection = (TaskCollection)DataContext;
+            int totalCorrect = 0;
+
+            if (taskCollection.isVariants)
+            {
+                foreach (var item in TasksContainer.Items)
+                {
+                    if (item is ICheckable checkable)
+                    {
+                        var result = checkable.Check();
+
+                        if (item is ListeningUserControl || item is ReadingUserControl)
+                            totalCorrect += result.correctAnswers;
+                    }
+                }
+                UpdateExamStatistics(totalCorrect);
+            }
+            else
+            {
+                TaskCollectionDone?.Invoke(); // Вызов методов проверки, которые были подписаны на событие TaskCollectionDone в
+                                              // конструкторе выше
+            }
+
             Check.IsEnabled = false;
+        }
+
+        // Обновление статистики по экзаменам
+        private void UpdateExamStatistics(int totalCorrectAnswers)
+        {
+            string path = System.IO.Path.Combine(
+                Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName,
+                "statistics",
+                "statistics.json");
+
+            double[] stats = JsonControl.StatisticsArray;
+            stats[6]++; // +1 к количеству экзаменов
+            stats[7] += totalCorrectAnswers; // Добавляем сумму правильных ответов
+            File.WriteAllText(path, JsonConvert.SerializeObject(stats, Newtonsoft.Json.Formatting.Indented));
         }
 
         public static int SearchForIndexById(ref GeneralizedTask[] array, int id) // Бинарный поиск по id; возвращается индекс элемента с искомым id в массиве

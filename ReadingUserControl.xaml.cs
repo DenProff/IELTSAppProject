@@ -180,7 +180,7 @@ namespace IELTSAppProject
         }
 
         //проверка ответов
-        public bool Check()
+        public (bool, int) Check()
         {
             ReadingTask task = (ReadingTask)this.DataContext;
             bool result = false;
@@ -371,7 +371,7 @@ namespace IELTSAppProject
             string updatedStatisticsJson = JsonConvert.SerializeObject(statisticsArray, Formatting.Indented);
             File.WriteAllText(file, updatedStatisticsJson);
 
-            return result;
+            return (result, correctAnswers);
         }
         public static string[] resourcesKeysArray =
 {

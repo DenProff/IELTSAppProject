@@ -63,7 +63,7 @@ namespace IELTSAppProject
             listeningConvert.Click += (sender, e) => Conversion.ConvertMessage();
         }
 
-        public bool Check() // Данный метод должен реализовывать проверку ответов пользователя
+        public (bool, int) Check() // Данный метод должен реализовывать проверку ответов пользователя
         {
             ListeningTask task = (ListeningTask)DataContext;
             bool hasErrors = false;
@@ -151,7 +151,7 @@ namespace IELTSAppProject
             string updatedStatisticsJson = JsonConvert.SerializeObject(statisticsArray, Formatting.Indented);
             File.WriteAllText(file, updatedStatisticsJson);
 
-            return hasErrors; // true - если есть ошибки, false - если нет
+            return (hasErrors, correctAnswers);
         }
 
         private void SimpleAudioPlayer_Loaded(object sender, RoutedEventArgs e)

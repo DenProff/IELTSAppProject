@@ -60,6 +60,9 @@ namespace IELTSAppProject
             double readingCorrectTasks = statisticsArray[4];
             double readingTasksCount = statisticsArray[5];
 
+            double examsCount = statisticsArray[6];
+            double correctAnswersCount = statisticsArray[7];
+
             // Расчеты статистики
             int listeningPercentage = listeningTasksCount > 0
             ? (int)Math.Round(listeningCorrectAnswers / listeningTasksCount * 10)
@@ -69,9 +72,15 @@ namespace IELTSAppProject
             ? (int)Math.Round(readingCorrectAnswers * 10 / readingTasksCount)
             : 0;
 
+            double examsAverageScore = correctAnswersCount > 0
+            ? Math.Round(correctAnswersCount * 10 / (examsCount * 20), 2)
+            : 0;
+
             // Обновление текстовых полей на странице статистики
             listeningStats.Text = $"{listeningCorrectTasks} / {listeningTasksCount} ({listeningPercentage}%)";
             readingStats.Text = $"{readingCorrectTasks} / {readingTasksCount} ({readingPercentage}%)";
+            examCount.Text = examsCount.ToString();
+            examStats.Text = examsAverageScore.ToString();
 
             // Смена цветов
             listeningStats.Foreground = GetPercentageColorBrush(listeningPercentage);

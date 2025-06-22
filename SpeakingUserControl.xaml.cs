@@ -181,7 +181,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             OpenChmHelp();
         }
 
-        public bool Check() => true; // Необходим для реализации интерфейса - не имеет функционала
+        public (bool, int) Check() => (true, 0); // Необходим для реализации интерфейса - не имеет функционала
 
         private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
         {

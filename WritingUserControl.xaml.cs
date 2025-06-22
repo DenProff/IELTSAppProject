@@ -94,7 +94,7 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public bool Check() => true; // Метод необходим для реализации интерфейса - не имеет функционала для данного класса
+        public (bool, int) Check() => (true, 0); // Метод необходим для реализации интерфейса - не имеет функционала для данного класса
 
         private void SaveTopic(object sender, RoutedEventArgs e) // Фиксирует выбранную тему
         {
