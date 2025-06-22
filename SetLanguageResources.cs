@@ -15,7 +15,7 @@ namespace IELTSAppProject
 {
     public class SetLanguageResources
     {
-        private static ResourceManager ResourceManager
+        private static ResourceManager ResourceManager // Экземпляр класса ResourceManager необходим для работы с ресурсами
         {
             get => new ResourceManager("IELTSAppProject.Resources.Resources", Assembly.GetExecutingAssembly());
         }
@@ -24,9 +24,11 @@ namespace IELTSAppProject
         public static void SetLanguageResourcesMethod(string languageCode,/* string[] resourcesKeysArray,*/ object sender)
         {
             CultureInfo culture = new CultureInfo(languageCode);
-            using (ResourceSet resourceSet = ResourceManager.GetResourceSet(culture, true, true))
+            using (ResourceSet resourceSet = ResourceManager.GetResourceSet(culture, true, true)) // ResourceSet реализует IDisposable, using нужен
+                                                                                                  // для освобождения памяти. Сам ResourceSet -
+                                                                                                  // загрузка ресурсов конкретной культуры
             {
-                // Перебор всех ключей и обновление ресурсов в контроле или странице
+                // Перебор всех пар ключ-значение и обновление ресурсов в контроле или странице
                 foreach (DictionaryEntry entry in resourceSet)
                 {
                     string key = entry.Key.ToString();
@@ -48,14 +50,12 @@ namespace IELTSAppProject
             }
         }
 
-        public static string GetString(string languageCode, string key)
+        public static string GetString(string languageCode, string key) // Функция для использования файлов ресурсов прямо в cs-файлах
         {
             CultureInfo culture = new CultureInfo(languageCode);
-            using (ResourceSet resourceSet = ResourceManager.GetResourceSet(culture, true, true))
-            {
-                // По ключу и установленной через LanguageChange.SetLanguage культуре из ресурсов возвращается значение
-                return ResourceManager.GetString(key, culture) ?? key; // Если из ресурсов возвращается null, то выводится
-            }                                                                               // ключ - иначе были бы исключения
+
+            // По ключу и установленной через LanguageChange.SetLanguage культуре из ресурсов возвращается значение
+            return ResourceManager.GetString(key, culture) ?? key; // Если из ресурсов возвращается null, то функцией возвращается ключ                                                                           // ключ - иначе были бы исключения
         }
     }
 }
