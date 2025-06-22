@@ -132,7 +132,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             // Проверка существования файла
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("answerFileMistake");
+                MessageBox.Show(SetLanguageResources.GetString(Properties.Settings.Default.Language, "answerFileMistake"));
                 return;
             }
 
