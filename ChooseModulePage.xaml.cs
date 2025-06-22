@@ -136,18 +136,5 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
-
-        public static string[] resourcesKeysArray =
-        {
-        "myStatistics",
-        "myMistakes",
-        "myCollections",
-        "chooseLanguage",
-        "help",
-        "prevPage",
-        "tasksByType",
-        "solveIELTSformat",
-        "solveEnterVariantBTN"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

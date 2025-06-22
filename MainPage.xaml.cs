@@ -147,16 +147,5 @@ namespace IELTSAppProject
         {
             OpenChmHelp();
         }
-
-        public static string[] resourcesKeysArray =
-        {
-            "welcomeTextBlock",
-            "chooseModeTextBlock",
-            "fewTimeBeforeExam",
-            "findForPupils",
-            "startOrContinuePreporation",
-            "chooseLanguage",
-            "help"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

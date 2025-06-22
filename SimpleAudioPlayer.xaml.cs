@@ -100,11 +100,6 @@ namespace IELTSAppProject
                     currentlyPlayingInstance = null;
                 }
             }
-        }
-        public static string[] resourcesKeysArray =
-        {
-        "playOrPause"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
-        
+        }  
     }
 }

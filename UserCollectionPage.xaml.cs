@@ -184,19 +184,6 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public static string[] resourcesKeysArray =
-{
-        "myStatistics",
-        "myMistakes",
-        "myCollections",
-        "chooseLanguage",
-        "help",
-        "prevPage",
-        "fewTimeBeforeExam",
-        "taskType",
-        "IELTSvariants"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
-
         private void home_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new MainPage());
