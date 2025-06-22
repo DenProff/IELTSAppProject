@@ -102,9 +102,5 @@ namespace IELTSAppProject
 
             return list;
         }
-        public static string[] resourcesKeysArray =
-{
-        "convertBTN"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
     }
 }

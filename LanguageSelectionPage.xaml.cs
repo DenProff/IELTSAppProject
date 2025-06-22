@@ -41,7 +41,7 @@ namespace IELTSAppProject
                     e.Handled = true;
                 }
             };
-            // Загрузка сохранённого язык
+            // Загрузка сохранённого языка
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
             {
                 SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
@@ -50,7 +50,7 @@ namespace IELTSAppProject
             // Подписка на смену языка - событие в классе LanguageChange
             LanguageChange.LanguageChanged += () => SetLanguageResources.SetLanguageResourcesMethod(Properties.Settings.Default.Language, this);
 
-            MarkCurrentLanguage(); // Отметка языка системы на данный момент
+            MarkCurrentLanguage(); // Отметка RadioButton, соответствующего языку системы на данный момент
         }
 
         private void RussianLanguage_Click(object sender, RoutedEventArgs e) => LanguageChange.SetLanguage("ru");
@@ -94,18 +94,7 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public static string[] resourcesKeysArray =
-        {
-        "chooseCurrentLanguage",
-        "espLanguage",
-        "engLanguage",
-        "rusLanguage",
-        "chiLanguage",
-        "help",
-        "prevPage"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
-
-        private void MarkCurrentLanguage()
+        private void MarkCurrentLanguage() // Метод отмечающий нужный вариант RadioButton, в зависимости от языка, на котором сейчас работает система
         {
             string currentLanguage = Properties.Settings.Default.Language;
             switch (currentLanguage)
