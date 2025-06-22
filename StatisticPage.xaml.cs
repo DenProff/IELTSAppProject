@@ -77,8 +77,8 @@ namespace IELTSAppProject
             : 0;
 
             // Обновление текстовых полей на странице статистики
-            listeningStats.Text = $"{listeningCorrectTasks} / {listeningTasksCount} ({listeningPercentage}%)";
-            readingStats.Text = $"{readingCorrectTasks} / {readingTasksCount} ({readingPercentage}%)";
+            listeningStats.Text = $"{listeningCorrectTasks} / {listeningTasksCount} ({listeningCorrectAnswers} / {listeningTasksCount * 10})";
+            readingStats.Text = $"{readingCorrectTasks} / {readingTasksCount} ({readingCorrectAnswers} / {readingTasksCount * 10})";
             examCount.Text = examsCount.ToString();
             examStats.Text = examsAverageScore.ToString();
 

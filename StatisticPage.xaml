@@ -66,7 +66,7 @@
                         <Separator Margin="0,10,0,10"/>
                         <StackPanel Orientation="Horizontal" Margin="0,22,0,5">
                             <TextBlock Text="{DynamicResource passedExamsQuantity}" FontWeight="Bold" Foreground="White" FontSize="18"  />
-                            <TextBlock x:Name ="examCount" Text="" Foreground="LightGray" FontSize="18" Margin="7,0,0,0" />
+                            <TextBlock x:Name ="examCount" Text="" Foreground="GhostWhite" FontSize="18" Margin="7,0,0,0" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                             <TextBlock Text="{DynamicResource avargeScore}" FontWeight="Bold" Foreground="White" FontSize="18" />
