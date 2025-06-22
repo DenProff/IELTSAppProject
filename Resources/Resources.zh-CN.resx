@@ -208,6 +208,9 @@
   <data name="noNeededCollectionsYet" xml:space="preserve">
     <value>这里还没有合适的选择</value>
   </data>
+  <data name="NoRecordingDeviceWarning" xml:space="preserve">
+    <value>此合集包含口语任务，需要录音设备。您未连接录音设备，无法完成此合集练习。</value>
+  </data>
   <data name="nothingIsPlaying" xml:space="preserve">
     <value>当前没有播放内容</value>
   </data>

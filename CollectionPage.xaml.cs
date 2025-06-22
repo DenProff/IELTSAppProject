@@ -18,6 +18,7 @@ using DocumentFormat.OpenXml.Drawing.Charts;
 using System.Windows.Threading;
 using Newtonsoft.Json;
 using DocumentFormat.OpenXml.Wordprocessing;
+using NAudio.Wave;
 
 namespace IELTSAppProject
 {
@@ -31,6 +32,13 @@ namespace IELTSAppProject
         public CollectionPage(TaskCollection taskCollection)
         {
             InitializeComponent();
+
+            if (taskCollection.isSpeaking && !SoundControl.IsRecordingDeviceAvailable)
+            {
+                MessageBox.Show(SetLanguageResources.GetString(Properties.Settings.Default.Language, "NoRecordingDeviceWarning"));
+                Dispatcher.BeginInvoke(new Action(() => NavigationService?.GoBack()), DispatcherPriority.ContextIdle);
+                return;
+            }
 
             this.DataContext = taskCollection; //Ставит экземпляр TaskCollection в качестве контекстных данных
 
@@ -296,14 +304,6 @@ namespace IELTSAppProject
             }
             MessageBox.Show("Файл/ы с заданием скачан и находится на вашем рабочем столе");
         }
-        public static string[] resourcesKeysArray =
-{
-        "help",
-        "prevPage",
-        "convertBTN",
-        "addToCollection",
-        "checkAll"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
 
         //Удаление подборки из раздела персональных подборок пользователя
         private void delete_btn_Click(object sender, RoutedEventArgs e)

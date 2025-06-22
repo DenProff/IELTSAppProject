@@ -14,9 +14,20 @@ namespace IELTSAppProject
 {
     public abstract class SoundControl
     {
-        public static bool IsRecordingDeviceAvailable // Есть ли подключенные устройства записи?
+
+        public static bool IsRecordingDeviceAvailable
         {
-            get { return WaveIn.DeviceCount > 0; }
+            get
+            {
+                try
+                {
+                    return WaveIn.DeviceCount > 1;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
         }
         private static WaveInEvent waveIn; // Для записи звука с микрофона
         private static WaveFileWriter writer; // Для записи в wav

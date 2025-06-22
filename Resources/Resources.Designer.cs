@@ -332,6 +332,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на В данной подборке есть задания на говорение, для них необходимо записывающее устройтсво. Вы не подключили записывающее устройство и не можете решать данную подборку..
+        /// </summary>
+        internal static string NoRecordingDeviceWarning {
+            get {
+                return ResourceManager.GetString("NoRecordingDeviceWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Сейчас ничего не проигрывается..
         /// </summary>
         internal static string nothingIsPlaying {

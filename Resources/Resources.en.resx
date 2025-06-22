@@ -208,6 +208,9 @@
   <data name="noNeededCollectionsYet" xml:space="preserve">
     <value>There are no suitable selections here yet</value>
   </data>
+  <data name="NoRecordingDeviceWarning" xml:space="preserve">
+    <value>This collection contains speaking tasks which require a recording device. You haven't connected a recording device and cannot complete this collection.</value>
+  </data>
   <data name="nothingIsPlaying" xml:space="preserve">
     <value>Nothing is currently playing</value>
   </data>

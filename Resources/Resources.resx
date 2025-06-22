@@ -208,6 +208,9 @@
   <data name="noNeededCollectionsYet" xml:space="preserve">
     <value>Здесь еще нет подходящих подборок</value>
   </data>
+  <data name="NoRecordingDeviceWarning" xml:space="preserve">
+    <value>В данной подборке есть задания на говорение, для них необходимо записывающее устройтсво. Вы не подключили записывающее устройство и не можете решать данную подборку.</value>
+  </data>
   <data name="nothingIsPlaying" xml:space="preserve">
     <value>Сейчас ничего не проигрывается.</value>
   </data>
