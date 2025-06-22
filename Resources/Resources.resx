@@ -178,6 +178,9 @@
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>У меня мало времени до экзамена!</value>
   </data>
+  <data name="fileInstalled" xml:space="preserve">
+    <value>Файлы с заданиями скачаны и находятся на вашем рабочем столе</value>
+  </data>
   <data name="findForPupils" xml:space="preserve">
     <value>Найти задания для своих учеников</value>
   </data>

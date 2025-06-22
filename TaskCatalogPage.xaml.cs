@@ -202,18 +202,6 @@ namespace IELTSAppProject
             OpenChmHelp();
         }
 
-        public static string[] resourcesKeysArray =
-{
-        "myStatistics",
-        "myMistakes",
-        "myCollections",
-        "chooseLanguage",
-        "help",
-        "convertBTN",
-        "addToCollection",
-        "prevPage"
-        }; // Массив с ключами для ресурсов - необходимо для реализации многоязычности
-
         private void baseCatalog_Click(object sender, RoutedEventArgs e)
         {
             NavigationService?.Navigate(new TaskCatalogPage());

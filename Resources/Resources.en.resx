@@ -178,6 +178,9 @@
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>I have little time before the exam!</value>
   </data>
+  <data name="fileInstalled" xml:space="preserve">
+    <value>Task files have been downloaded and are on your desktop</value>
+  </data>
   <data name="findForPupils" xml:space="preserve">
     <value>Find tasks for your students</value>
   </data>
