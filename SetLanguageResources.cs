@@ -13,7 +13,7 @@ using System.Windows.Controls;
 
 namespace IELTSAppProject
 {
-    public class SetLanguageResources
+    public abstract class SetLanguageResources
     {
         private static ResourceManager ResourceManager // Экземпляр класса ResourceManager необходим для работы с ресурсами
         {

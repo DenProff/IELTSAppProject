@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace IELTSAppProject
 {
-    public class Conversion
+    public abstract class Conversion
     {
 
         public static void ConvertReading(ReadingTask elem)

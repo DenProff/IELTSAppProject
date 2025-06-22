@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IELTSAppProject
 {
-    public class LanguageChange
+    public abstract class LanguageChange
     {
         public static event Action LanguageChanged;
 
