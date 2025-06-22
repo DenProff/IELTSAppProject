@@ -62,7 +62,7 @@
                 <!-- Правый столбец: Статистика по экзаменам -->
                 <Border BorderBrush="#333" BorderThickness="1" Background="#3333CC" Padding="10" Grid.Column="1" CornerRadius="20" Margin="20,0,0,0">
                     <StackPanel>
-                        <TextBlock Text="{DynamicResource examsStatistics}" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,20,0,15"/>
+                        <TextBlock Text="{DynamicResource examsStatistics}" FontWeight="Bold" Foreground="White" FontSize="19" HorizontalAlignment="Center" TextAlignment="Center" Margin="0,5,0,5"/>
                         <Separator Margin="0,10,0,10"/>
                         <StackPanel Orientation="Horizontal" Margin="0,22,0,5">
                             <TextBlock Text="{DynamicResource passedExamsQuantity}" FontWeight="Bold" Foreground="White" FontSize="18"  />

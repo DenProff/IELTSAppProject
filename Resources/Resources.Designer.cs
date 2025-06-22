@@ -223,7 +223,8 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Статистика по сданным экзаменам:.
+        ///   Ищет локализованную строку, похожую на Статистика по сданным экзаменам:
+        ///(Без учета Writing и Speaking).
         /// </summary>
         internal static string examsStatistics {
             get {

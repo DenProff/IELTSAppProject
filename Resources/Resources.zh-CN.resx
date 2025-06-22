@@ -172,7 +172,8 @@
     <value>西班牙语</value>
   </data>
   <data name="examsStatistics" xml:space="preserve">
-    <value>考试统计：</value>
+    <value>考试统计：
+(不包括Writing和Speaking)</value>
   </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>我考试前时间不多了！</value>

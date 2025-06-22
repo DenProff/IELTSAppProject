@@ -172,7 +172,8 @@
     <value>Испанский</value>
   </data>
   <data name="examsStatistics" xml:space="preserve">
-    <value>Статистика по сданным экзаменам:</value>
+    <value>Статистика по сданным экзаменам:
+(Без учета Writing и Speaking)</value>
   </data>
   <data name="fewTimeBeforeExam" xml:space="preserve">
     <value>У меня мало времени до экзамена!</value>

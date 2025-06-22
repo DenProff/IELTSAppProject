@@ -88,7 +88,7 @@ namespace IELTSAppProject
             }
             else
             {
-                recomendation.Text = "Listening и Reading";
+                recomendation.Text = "Listening, Reading";
             }
             // Загрузка сохранённого язык
             if (!string.IsNullOrEmpty(Properties.Settings.Default.Language)) // Дополнительная безопасность, чтобы если что не было исключений
