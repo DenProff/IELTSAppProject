@@ -85,6 +85,7 @@ namespace IELTSAppProject
             // Смена цветов
             listeningStats.Foreground = GetPercentageColorBrush(listeningPercentage);
             readingStats.Foreground = GetPercentageColorBrush(readingPercentage);
+            examStats.Foreground = GetScoreColorBrush(examsAverageScore);
 
             // Формирование рекомендации
             if (listeningPercentage < readingPercentage)
@@ -140,6 +141,16 @@ namespace IELTSAppProject
             if (percentage <= 60) return Brushes.Orange;          // 31-60% - оранжевый
             if (percentage <= 80) return Brushes.YellowGreen;     // 61-80% - желто-зеленый
             return Brushes.LawnGreen;                             // 81-100% - зеленый
+        }
+
+        // Метод для получения цвета
+        private Brush GetScoreColorBrush(double score)
+        {
+            if (score == 0) return Brushes.LightGray;      // 0 - серый
+            if (score < 4) return Brushes.Red;             // 0-3.9 - красный
+            if (score < 6) return Brushes.Orange;          // 4-5.9 - оранжевый
+            if (score < 8) return Brushes.YellowGreen;     // 6-7.9 - желто-зеленый
+            return Brushes.LawnGreen;                      // 8-10 - зеленый
         }
 
         private void turnBack_Click(object sender, RoutedEventArgs e)
