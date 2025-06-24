@@ -348,7 +348,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resourcesTask\Languages\" />
     <Folder Include="speakingAudioUsersAnswers\" />
   </ItemGroup>
   <ItemGroup>
