@@ -100,6 +100,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 return;
             }
 
+            StopPlaying(this, new RoutedEventArgs()); // Если уже что-то было запущено - оно выключается
+
             isPlayingSomeAnswerInProgress = true;
 
             // Получение пути к файлу
@@ -123,6 +125,8 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 resultTextBlock.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordAnswerFirst");
                 return;
             }
+
+            StopPlaying(this, new RoutedEventArgs()); // Если уже что-то было запущено - оно выключается
 
             isPlayingSomeAnswerInProgress = true;
 
