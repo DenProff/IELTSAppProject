@@ -333,6 +333,9 @@
     <Content Include="listeningAudio\listeningTrack4.mp3" />
     <Content Include="listeningAudio\listeningTrack5.mp3" />
     <Content Include="speakingAudioIdealAnswers\idealAnswer0.wav" />
+    <Content Include="speakingAudioIdealAnswers\idealAnswer12.wav" />
+    <Content Include="speakingAudioIdealAnswers\idealAnswer13.wav" />
+    <Content Include="speakingAudioIdealAnswers\idealAnswer14.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
