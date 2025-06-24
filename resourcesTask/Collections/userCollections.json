@@ -1,33 +1,3 @@
 [
-  {
-    "VariantId": 0,
-    "VariantName": "ssqswd",
-    "DateOfAccess": "12.06.2025",
-    "TaskIdList": [
-      0
-    ],
-    "isListening": false,
-    "isSpeaking": true,
-    "isWriting": false,
-    "isReading": false,
-    "isFastRepeat": false,
-    "isVariants": false
-  },
-  {
-    "VariantId": 0,
-    "VariantName": "fdgddsf",
-    "DateOfAccess": "12.06.2025",
-    "TaskIdList": [
-      0,
-      2,
-      9,
-      11
-    ],
-    "isListening": true,
-    "isSpeaking": true,
-    "isWriting": true,
-    "isReading": true,
-    "isFastRepeat": false,
-    "isVariants": true
-  }
+  
 ]
