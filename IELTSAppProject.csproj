@@ -336,13 +336,21 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="resourcesTask\Collections\taskCollections.json" />
-    <None Include="resourcesTask\Collections\tasksWithMistakes.json" />
-    <None Include="resourcesTask\Collections\userCollections.json" />
-    <None Include="resourcesTask\tasks\tasks.json">
+    <Content Include="resourcesTask\Collections\taskCollections.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="statistics\statistics.json" />
+    </Content>
+    <Content Include="resourcesTask\Collections\tasksWithMistakes.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resourcesTask\Collections\userCollections.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resourcesTask\tasks\tasks.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="statistics\statistics.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
