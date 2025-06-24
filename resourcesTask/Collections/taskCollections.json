@@ -59,20 +59,92 @@
     "isFastRepeat": false,
     "isVariants": false
   },
-  {
-    "VariantId": 5,
-    "VariantName": "W+R+L",
-    "DateOfAccess": "09.06.2025",
-    "TaskIdList": [
-      0,
-      2,
-      7
-    ],
-    "isListening": true,
-    "isSpeaking": false,
-    "isWriting": true,
-    "isReading": true,
-    "isFastRepeat": false,
-    "isVariants": false
-  }
+    {
+        "VariantId": 5,
+        "VariantName": "W+R+L",
+        "DateOfAccess": "09.06.2025",
+        "TaskIdList": [
+            0,
+            2,
+            7
+        ],
+        "isListening": true,
+        "isSpeaking": false,
+        "isWriting": true,
+        "isReading": true,
+        "isFastRepeat": false,
+        "isVariants": false
+    },
+    {
+        "VariantId": 6,
+        "VariantName": "Ultra Speaking exam",
+        "DateOfAccess": "09.06.2025",
+        "TaskIdList": [
+            0,
+            12,
+            13,
+            14
+        ],
+        "isListening": false,
+        "isSpeaking": true,
+        "isWriting": false,
+        "isReading": false,
+        "isFastRepeat": true,
+        "isVariants": false
+    },
+    {
+        "VariantId": 7,
+        "VariantName": "Ultra Writing exam",
+        "DateOfAccess": "09.06.2025",
+        "TaskIdList": [
+            11,
+            15,
+            16,
+            17
+        ],
+        "isListening": false,
+        "isSpeaking": false,
+        "isWriting": true,
+        "isReading": false,
+        "isFastRepeat": true,
+        "isVariants": false
+    },
+    {
+        "VariantId": 8,
+        "VariantName": "Кeversed exam variant",
+        "DateOfAccess": "09.06.2025",
+        "TaskIdList": [
+            3,
+            11,
+            14,
+            6
+        ],
+        "isListening": true,
+        "isSpeaking": true,
+        "isWriting": true,
+        "isReading": true,
+        "isFastRepeat": false,
+        "isVariants": false
+    },
+    {
+        "VariantId": 9,
+        "VariantName": "Ultra Giper Nareshka exam",
+        "DateOfAccess": "09.06.2025",
+        "TaskIdList": [
+            6,
+            7,
+            13,
+            12,
+            16,
+            17,
+            2,
+            4
+        ],
+        "isListening": true,
+        "isSpeaking": true,
+        "isWriting": true,
+        "isReading": true,
+        "isFastRepeat": false,
+        "isVariants": false
+    }
 ]
