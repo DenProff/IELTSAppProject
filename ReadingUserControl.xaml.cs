@@ -142,7 +142,7 @@ namespace IELTSAppProject
             string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
-            if (!File.Exists(jsonData))
+            if (!File.Exists(file))
             {
                 MessageBox.Show("Файл не найден!");
                 return;
@@ -208,7 +208,7 @@ namespace IELTSAppProject
             }
             else
             {
-                rightAnswer1.Foreground = Brushes.Red;
+                rightAnswer2.Foreground = Brushes.Red;
                 rightAnswer2.Text = "Wrong answer!";
                 result = true;
             }
