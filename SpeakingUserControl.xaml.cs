@@ -222,7 +222,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+            string projectDir = Directory.GetCurrentDirectory();
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 

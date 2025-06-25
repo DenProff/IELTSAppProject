@@ -189,7 +189,7 @@ namespace IELTSAppProject
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
+            string projectDir = Directory.GetCurrentDirectory();
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
