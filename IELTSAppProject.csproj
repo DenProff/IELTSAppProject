@@ -362,9 +362,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="speakingAudioUsersAnswers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="иконка2.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

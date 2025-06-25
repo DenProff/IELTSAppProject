@@ -57,8 +57,12 @@ namespace IELTSAppProject
         public static void StartRecording(int taskId, bool isUserAudioNeeded) // Название файла для записи ответа формируется на основе id задания speaking
         {
             string filePath = GetAnswerFilePath(taskId, isUserAudioNeeded);
-            
+
             string dir = Path.GetDirectoryName(filePath);
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
 
             waveIn = new WaveInEvent();
             waveIn.DeviceNumber = 0;
