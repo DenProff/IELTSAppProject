@@ -91,7 +91,7 @@ namespace IELTSAppProject
                 if (string.IsNullOrEmpty(AudioPath)) return;
 
                 string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-                string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+                string projectRoot = Path.GetFullPath(Path.Combine(baseDir));
                 AudioPath = Path.Combine(projectRoot, "listeningAudio", AudioPath);
                 AudioFile = new AudioFileReader(AudioPath);
                 WaveOut = new WaveOutEvent();

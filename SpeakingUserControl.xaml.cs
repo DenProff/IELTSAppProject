@@ -191,7 +191,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         {
             string pdfPath = System.IO.Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
-                "..\\..\\EvaluationCriterias\\SpeakingEvaluationCriteria.pdf");
+                "EvaluationCriterias\\SpeakingEvaluationCriteria.pdf");
             pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
             try

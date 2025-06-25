@@ -153,7 +153,7 @@ namespace IELTSAppProject
         {
             string pdfPath = System.IO.Path.Combine(
                 AppDomain.CurrentDomain.BaseDirectory,
-                "..\\..\\EvaluationCriterias\\WritingEvaluationCriterias.pdf");
+                "EvaluationCriterias\\WritingEvaluationCriterias.pdf");
             pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
             try

@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -325,13 +325,19 @@
       <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="AllMaksimClassesDiagram.cd" />
-    <Content Include="bin\Debug\Help\referenceData.chm">
+    <None Include="ClassDiagram.cd" />
+    <Content Include="EvaluationCriterias\SpeakingEvaluationCriteria.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="ClassDiagram.cd" />
-    <None Include="EvaluationCriterias\SpeakingEvaluationCriteria.pdf" />
-    <None Include="EvaluationCriterias\WritingEvaluationCriterias.pdf" />
-    <None Include="IELTSAppProject_TemporaryKey.pfx" />
+    <Content Include="EvaluationCriterias\WritingEvaluationCriterias.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Help\referenceData.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IELTSAppProject_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -365,15 +371,33 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="listeningAudio\listeningTrack1.mp3" />
-    <Content Include="listeningAudio\listeningTrack2.mp3" />
-    <Content Include="listeningAudio\listeningTrack3.mp3" />
-    <Content Include="listeningAudio\listeningTrack4.mp3" />
-    <Content Include="listeningAudio\listeningTrack5.mp3" />
-    <Content Include="speakingAudioIdealAnswers\idealAnswer0.wav" />
-    <Content Include="speakingAudioIdealAnswers\idealAnswer12.wav" />
-    <Content Include="speakingAudioIdealAnswers\idealAnswer13.wav" />
-    <Content Include="speakingAudioIdealAnswers\idealAnswer14.wav" />
+    <Content Include="listeningAudio\listeningTrack1.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="listeningAudio\listeningTrack2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="listeningAudio\listeningTrack3.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="listeningAudio\listeningTrack4.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="listeningAudio\listeningTrack5.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="speakingAudioIdealAnswers\idealAnswer0.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="speakingAudioIdealAnswers\idealAnswer12.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="speakingAudioIdealAnswers\idealAnswer13.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="speakingAudioIdealAnswers\idealAnswer14.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
