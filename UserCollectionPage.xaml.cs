@@ -73,6 +73,8 @@ namespace IELTSAppProject
                 collections.Add(userControl); // Добавление UserControl-а в выделенное в xaml-е пространство
 
             }
+            if (collections.Count == 0) //если нет подборок
+                emptyMessage.Visibility = Visibility.Visible;
             tasksView = CollectionViewSource.GetDefaultView(collections);
             tasksView.Filter = TaskFilter;
 

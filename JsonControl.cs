@@ -43,7 +43,7 @@ namespace IELTSAppProject
 
         public static object GetArray(string firstDirectory, string secondDirectory, string currentJson) // Функция десериализации json
         {
-            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            string projectDir = Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
             string file = Path.Combine(projectDir, firstDirectory, secondDirectory, currentJson);
             if (!File.Exists(file))
                 throw new Exception("Файл с json не найден!");

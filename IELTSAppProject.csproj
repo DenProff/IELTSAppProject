@@ -17,7 +17,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\Максим\ВЫШКА ПРОГА\Проект\Сетап и все такое\</PublishUrl>
+    <PublishUrl>D:\Максим\ВЫШКА ПРОГА\Проект\сетапы\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,8 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -326,7 +325,9 @@
       <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="AllMaksimClassesDiagram.cd" />
-    <None Include="bin\Debug\Help\referenceData.chm" />
+    <Content Include="bin\Debug\Help\referenceData.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="ClassDiagram.cd" />
     <None Include="EvaluationCriterias\SpeakingEvaluationCriteria.pdf" />
     <None Include="EvaluationCriterias\WritingEvaluationCriterias.pdf" />
