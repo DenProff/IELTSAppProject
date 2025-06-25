@@ -139,7 +139,7 @@ namespace IELTSAppProject
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
             if (!File.Exists(jsonData))
@@ -333,7 +333,7 @@ namespace IELTSAppProject
             this.rightAnswer2.Visibility = Visibility.Visible;
             this.rightAnswer1.Visibility = Visibility.Visible;
 
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
             string jsonData = File.ReadAllText(file);
 

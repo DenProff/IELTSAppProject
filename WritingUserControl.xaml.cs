@@ -152,7 +152,7 @@ namespace IELTSAppProject
         private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для само-оценки
         {
             string pdfPath = System.IO.Path.Combine(
-                Directory.GetCurrentDirectory(),
+                AppDomain.CurrentDomain.BaseDirectory,
                 "..\\..\\EvaluationCriterias\\WritingEvaluationCriterias.pdf");
             pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
@@ -189,7 +189,7 @@ namespace IELTSAppProject
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 

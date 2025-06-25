@@ -190,7 +190,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
         private void ShowEvaluationCriteria(object sender, RoutedEventArgs e) // Вывод критериев для самооценки
         {
             string pdfPath = System.IO.Path.Combine(
-                Directory.GetCurrentDirectory(),
+                AppDomain.CurrentDomain.BaseDirectory,
                 "..\\..\\EvaluationCriterias\\SpeakingEvaluationCriteria.pdf");
             pdfPath = System.IO.Path.GetFullPath(pdfPath); // Путь к файлу с критериями
 
@@ -222,7 +222,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 

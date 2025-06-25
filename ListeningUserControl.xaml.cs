@@ -69,7 +69,7 @@ namespace IELTSAppProject
             bool hasErrors = false;
             int correctAnswers = 0;
             string file;
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
 
             // Создаем массивы для хранения элементов
             RadioButton[][] radioButtonsGroups = new[]
@@ -114,7 +114,7 @@ namespace IELTSAppProject
                 else correctAnswers++;
             }
 
-            projectDir = Directory.GetCurrentDirectory();
+            projectDir = AppDomain.CurrentDomain.BaseDirectory;
             file = Path.Combine(projectDir, "resourcesTask", "Collections", "tasksWithMistakes.json");
             string jsonData = File.ReadAllText(file);
 
@@ -216,7 +216,7 @@ namespace IELTSAppProject
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 

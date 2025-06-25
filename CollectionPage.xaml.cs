@@ -143,7 +143,7 @@ namespace IELTSAppProject
         // Обновление статистики по экзаменам
         private void UpdateExamStatistics(int totalCorrectAnswers)
         {
-            string path = System.IO.Path.Combine(Directory.GetCurrentDirectory(),
+            string path = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                 "statistics",
                 "statistics.json");
 
@@ -245,7 +245,7 @@ namespace IELTSAppProject
             string today = now.ToString("dd.MM.yyyy"); //преводим ее в строку
 
             //работа с json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
@@ -310,7 +310,7 @@ namespace IELTSAppProject
             TaskCollection taskCollection = (TaskCollection)this.DataContext; //получаем текущий экземпляр подборки
 
             //Работа с десериализация Json
-            string projectDir = Directory.GetCurrentDirectory();
+            string projectDir = AppDomain.CurrentDomain.BaseDirectory;
             string file = System.IO.Path.Combine(projectDir, "resourcesTask", "Collections", "userCollections.json");
             string jsonData = File.ReadAllText(file);
 
