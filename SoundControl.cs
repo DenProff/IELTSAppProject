@@ -45,7 +45,7 @@ namespace IELTSAppProject
         {
             // Получение пути к папке проекта
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-            string projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
+            string projectRoot = Path.GetFullPath(Path.Combine(baseDir));
 
             // Путь к папке speakingAudioUsersAnswers
             string userAnswersDir = Path.Combine(projectRoot, isUserAudioNeeded ? "speakingAudioUsersAnswers" : "speakingAudioIdealAnswers");
