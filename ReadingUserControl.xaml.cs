@@ -347,7 +347,7 @@ namespace IELTSAppProject
 
                 Tuple<int, string, string> tuple = new Tuple<int, string, string>(((ReadingTask)this.DataContext).id, ((ReadingTask)this.DataContext).TaskType, today);
 
-                if (list.Contains(list.FirstOrDefault(elem => elem.Item2 == "ReadingTask" && elem.Item1 == ((ReadingTask)DataContext).id))) //если в этом разделе ошибок еще нет такой подборки
+                if (!list.Contains(list.FirstOrDefault(elem => elem.Item2 == "ReadingTask" && elem.Item1 == ((ReadingTask)DataContext).id))) //если в этом разделе ошибок еще нет такой подборки
                     list.Add(tuple);
             }
             if (!result && list.Any(elem => elem.Item2 == "ReadingTask" && elem.Item1 == ((ReadingTask)DataContext).id)) //если решено верно, но подборка есть в разделе ошибок
