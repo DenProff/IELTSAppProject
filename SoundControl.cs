@@ -21,7 +21,16 @@ namespace IELTSAppProject
             {
                 try
                 {
-                    return WaveIn.DeviceCount > 1;
+                    if (WaveIn.DeviceCount == 0) // WaveIn.DeviceCount - число доступных устройств
+                        return false;
+
+                    // Дополнительная проверка формата
+                    IEnumerable<WaveInCapabilities> devices = Enumerable.Range(0, WaveIn.DeviceCount)
+                                          .Select(n => WaveIn.GetCapabilities(n)); // Возвращаются объекты WaveInCapabilities
+                                                                                   // - информация о возможностях устройства
+
+                    // Хотя бы одно устройство доступно?
+                    return devices.Any(d => d.Channels > 0);
                 }
                 catch
                 {
