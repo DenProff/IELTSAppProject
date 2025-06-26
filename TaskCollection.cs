@@ -24,9 +24,6 @@ namespace IELTSAppProject
         [JsonProperty] public bool isFastRepeat { get; set; } //есть ли в подборке задания для быстрого повторения
         [JsonProperty] public bool isVariants { get; set; } //есть ли в подборке варианты экзамена
 
-
-        public event Checking Solved; // Событие, генерируемое при нажатии пользователем кнопки "проверить всё"
-
         public TaskCollection() { }
 
         public TaskCollection(int varId, string varName, string date, List<int> taskIdList, bool listening,
