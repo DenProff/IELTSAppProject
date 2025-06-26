@@ -16,7 +16,7 @@
         <Label Grid.Row="0" FontSize="16" Content="{DynamicResource dialogBoxMessage}"/>
         <TextBox x:Name="InputTextBox" Grid.Row="1" Margin="0,0,0,5" FontSize="18" MaxLength="25"/>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="OkButton" Content="{DynamicResource accept}" Width="76" Margin="0,0,40,0" Click="OkButton_Click"/>
+            <Button x:Name="OkButton" Content="OK" Width="76" Margin="0,0,40,0" Click="OkButton_Click"/>
             <Button Content="{DynamicResource refuse}" Width="86" Click="Cansel_Click"/>
         </StackPanel>
     </Grid>
