@@ -250,6 +250,9 @@
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>只有在添加答案后才能播放录音。</value>
   </data>
+  <data name="recordingForcedToStopped" xml:space="preserve">
+    <value>录音已停止，因超过5分钟限制！请继续完成其他任务。</value>
+  </data>
   <data name="recordingInProgress" xml:space="preserve">
     <value>正在录音中</value>
   </data>

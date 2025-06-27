@@ -458,6 +458,15 @@ namespace IELTSAppProject.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Запись остановлена, так как время привысило пять минут! Приступайте к выполнению других заданий..
+        /// </summary>
+        internal static string recordingForcedToStopped {
+            get {
+                return ResourceManager.GetString("recordingForcedToStopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Запись идёт..
         /// </summary>
         internal static string recordingInProgress {

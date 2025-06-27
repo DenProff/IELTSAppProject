@@ -250,6 +250,9 @@
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>Запись можно проиграть после добавления ответа.</value>
   </data>
+  <data name="recordingForcedToStopped" xml:space="preserve">
+    <value>Запись остановлена, так как время привысило пять минут! Приступайте к выполнению других заданий.</value>
+  </data>
   <data name="recordingInProgress" xml:space="preserve">
     <value>Запись идёт.</value>
   </data>

@@ -250,6 +250,9 @@
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>Recording can be played only after adding an answer.</value>
   </data>
+  <data name="recordingForcedToStopped" xml:space="preserve">
+    <value>Recording stopped as it exceeded 5 minutes! Proceed to other tasks.</value>
+  </data>
   <data name="recordingInProgress" xml:space="preserve">
     <value>Recording in progress</value>
   </data>

@@ -17,6 +17,7 @@ using DocumentFormat.OpenXml.Spreadsheet;
 using System.Diagnostics;
 using Newtonsoft.Json;
 using System.Globalization;
+using System.Windows.Threading;
 
 namespace IELTSAppProject
 {
@@ -35,6 +36,10 @@ namespace IELTSAppProject
 - Summarize your ideas.
 
 Your speech should last no less than 3 minutes and no longer than 5 minutes.";
+
+        private DispatcherTimer recordingTimer; // Замеряет время каждую секунду
+        private DateTime recordingStartTime; // Время начала записи
+        private TimeSpan maxRecordingDuration = TimeSpan.FromMinutes(5); // Максимальное время записи - 5 минут
 
         public SpeakingUserControl(SpeakingTask task)
         {
@@ -58,11 +63,33 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             idTextBox.Text += " " + (task.id).ToString();
             recommendedTimeTextBlock.Text += " " + task.RecommendedTime.ToString() + " мин.";
 
+            // Организация контроля времени
+            recordingTimer = new DispatcherTimer();
+            recordingTimer.Interval = TimeSpan.FromSeconds(1); // Проверка времени записи каждую секунду
+            recordingTimer.Tick += CheckOfTimeEverySecond; // Каждую секунду будет вызываться обработчик события "Tick" - RecordingTimer_Tick
+
             DataContext = task; //контекстные данные
 
             //Подписка для конвертации
             speakingConvert.Click += (sender, e) => Conversion.ConvertSpeaking(task);
             speakingConvert.Click += (sender, e) => Conversion.ConvertMessage();
+        }
+
+        private void CheckOfTimeEverySecond(object sender, EventArgs e)
+        {
+            if (isRecordingInProgress)
+            {
+                TimeSpan elapsedTime = DateTime.Now - recordingStartTime; // Сколько времени прошло от начала записи
+                
+                if (elapsedTime >= maxRecordingDuration) // Если время записи превысило лимит
+                {
+                    StopRecord(this, new RoutedEventArgs()); // Принудительная остановка записи
+                    recordingTimer.Stop(); // Остановка таймера
+
+                    // Всплывающее окно, чтобы пользователь точно не пропустил сообщение и не тратил время
+                    MessageBox.Show(SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordingForcedToStopped"));
+                }
+            }
         }
 
         private void StartRecord(object sender, RoutedEventArgs e) // Начало записи
@@ -73,14 +100,18 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
                 isRecordingInProgress = true;
                 inputRecordingStatusTextBox.Text = SetLanguageResources.GetString(Properties.Settings.Default.Language, "recordingInProgress");
                 inputRecordingStatusTextBox.Background = Brushes.LightGreen; // При начале записи цвет квадрата с текстом меняется с красного на зелёный
+
+                recordingStartTime = DateTime.Now; // Фиксация времени начала записи ответа
+                recordingTimer.Start(); // Запуск таймера
             }
         }
 
-        private void StopRecord(object sender, RoutedEventArgs e)
+        private void StopRecord(object sender, RoutedEventArgs e) // Окончание записи
         {
             if (!isRecordingInProgress) return;
 
             SoundControl.StopRecording(); // Остановка записи
+            recordingTimer.Stop(); // Остановка таймера (прошло менее 5 минут, но пользователь сам остановил запись)
 
             //Обновление интерфейса
             isRecordingInProgress = false;
@@ -92,7 +123,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             resultTextBlock.Background = Brushes.LightGreen;
         }
 
-        private void PlayUserAnswer(object sender, RoutedEventArgs e)
+        private void PlayUserAnswer(object sender, RoutedEventArgs e) // Воспроизведение ответа пользователя
         {
             if (!isRecordingDone)
             {
@@ -118,7 +149,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             SoundControl.PlayAudio(); // Воспроизведение аудио
         }
 
-        private void PlayIdealAnswer(object sender, RoutedEventArgs e)
+        private void PlayIdealAnswer(object sender, RoutedEventArgs e) // Воспроизведение примера ответа на максимальный балл
         {
             if (!isRecordingDone)
             {
@@ -144,7 +175,7 @@ Your speech should last no less than 3 minutes and no longer than 5 minutes.";
             SoundControl.PlayAudio(); // Воспроизведение аудио
         }
 
-        private void StopPlaying(object sender, RoutedEventArgs e)
+        private void StopPlaying(object sender, RoutedEventArgs e) // Остановка воспроизведения
         {
             if (!isPlayingSomeAnswerInProgress)
             {

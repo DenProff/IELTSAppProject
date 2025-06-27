@@ -250,6 +250,9 @@
   <data name="recordingEnableOnlyAfterSettingAnswer" xml:space="preserve">
     <value>La grabación solo se puede reproducir después de agregar una respuesta.</value>
   </data>
+  <data name="recordingForcedToStopped" xml:space="preserve">
+    <value>¡La grabación se detuvo por exceder 5 minutos! Continúa con otras tareas.</value>
+  </data>
   <data name="recordingInProgress" xml:space="preserve">
     <value>Grabación en curso</value>
   </data>
