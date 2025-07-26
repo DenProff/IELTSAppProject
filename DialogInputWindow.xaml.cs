@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using DocumentFormat.OpenXml.Office2021.DocumentTasks;
+using System.Text.RegularExpressions;
 
 namespace IELTSAppProject
 {
@@ -36,9 +37,17 @@ namespace IELTSAppProject
 
         private void OkButton_Click(object sender, RoutedEventArgs e)
         {
-            UserInput = InputTextBox.Text;
-            DialogResult = true;
-            Close();
+            string pattern = @"\w+";
+            //название подборки соответствует паттерну
+            if (Regex.IsMatch(InputTextBox.Text, pattern, RegexOptions.IgnoreCase)) 
+            {
+                UserInput = InputTextBox.Text;
+                DialogResult = true;
+                Close();
+            }
+            else //название подборки не соответствует паттерну
+                MessageBox.Show("Название подборки не может быть пустым");
+            
         }
 
         private void Cansel_Click(object sender, RoutedEventArgs e)
